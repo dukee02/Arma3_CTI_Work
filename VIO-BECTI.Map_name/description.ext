@@ -1,0 +1,37 @@
+/*
+	BECTI: By Benny (benny_boy66@hotmail.fr)
+	  "Praise the bugs!"
+*/
+
+#include "Rsc\Game.hpp"
+#include "Rsc\Resources.hpp"
+#include "Rsc\Dialogs.hpp"
+#include "Rsc\Notifications.hpp"
+#include "Rsc\Sounds.hpp"
+#include "Rsc\Debriefing.hpp"
+#include "Rsc\Parameters.hpp"
+#include "Rsc\titles.hpp"
+
+enableDebugConsole = 1;
+
+loadScreen = "VIO_BECTI.jpg";
+
+//Config for Pylon Manager
+class CfgPylonManager
+{
+//Blacklisted Magazines
+//blacklistedMagazines[] = {"PylonMissile_Missile_AMRAAM_D_INT_x1","PylonRack_Bomb_SDB_x4"};
+
+//Nothing is rearm everywhere
+rearmObjects[] = {
+	"B_Truck_01_ammo_F",
+	"B_T_Truck_01_ammo_F",
+	"O_Truck_02_Ammo_F",
+	"O_T_Truck_02_Ammo_F",
+	"O_Truck_03_ammo_F",
+	"I_Truck_02_ammo_F"
+	};
+
+//Distance needed from rearmObjects[]
+rearmRange = 50;
+};
