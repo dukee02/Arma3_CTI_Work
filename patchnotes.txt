@@ -1,4 +1,5 @@
-[Changed] Some default parameters
-[Fixed] Independent start don't work
-[Added] image on loadscreen
-
+[Added] Message to Enemy if Arty shoots (Arty computer disable this)
+[Added] Option to enable Arma3 revive
+[Fixed] wracks disappears afer some seconds
+[Fixed] an error occures with town defenses
+[Fixed] an error with missing naval upgrades
