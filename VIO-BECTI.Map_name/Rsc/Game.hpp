@@ -4,11 +4,11 @@ respawnDelay = 3;
 respawnDialog = false;
 
 //--- Require briefing.html to show up.
-onLoadMission = "VIO-BECTI-SciFi V2.0.2";
+onLoadName = "VIO-BECTI Cold-War V2.0";
 onLoadMissionTime = false;
-onLoadName = "VIO-BECTI-SciFi V2.0.2_b211206";
+onLoadMission = "VIO-BECTI Cold-War V2.0_alpha220306";
 
-briefingName = "VIO-BECTI-SciFi V2.0.2_b211206";
+briefingName = "VIO-BECTI Cold-War V2.0";
 
 //--- ArmA 3 Specifics
 dev = "Benny";
