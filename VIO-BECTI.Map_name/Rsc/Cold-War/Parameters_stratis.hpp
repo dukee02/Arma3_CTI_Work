@@ -192,7 +192,7 @@ class Params {
 		default = 0;
 	};
 	class CTI_BASE_AREA_MAX {
-		title = "BASE: Maximum Size (Area)";
+		title = "BASE: Maximum amount (Area)";
 		values[] = {0,1,2,3,4,5,6,7,8};
 		texts[] = {"Disabled","1","2","3","4","5","6","7","8"};
 		default = 4;
@@ -656,6 +656,12 @@ class Params {
 		values[] = {2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,35,40,45,50,60,70,80,90,100};
 		texts[] = {"2","4","6","8","10","12","14","16","18","20","22","24","26","28","30","35","40","45","50","60","70","80","90","100"};
 		default = 10;
+	};
+	class CTI_AI_VEHICLE_LOCK {
+		title = "AI Vehicles locked?";
+		values[] = {0,1};
+		texts[] = {"Disabled - needed if you want to transport AI Teams","Enabled (default)"};
+		default = 1;
 	};
 	class CTI_AI_VEHICLE_LOCK {
 		title = "AI Vehicles locked?";
