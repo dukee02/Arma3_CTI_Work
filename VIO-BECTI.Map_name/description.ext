@@ -11,17 +11,21 @@
 #include "Rsc\Debriefing.hpp"
 #include "Rsc\Parameters.hpp"
 #include "Rsc\titles.hpp"
+//https://forums.bohemia.net/forums/topic/224041-release-vehicle-appearance-manager-gui/
+#include "VAM_GUI\defines.hpp"
+#include "VAM_GUI\VAM_GUI_controls.hpp"
+#include "VAM_GUI\VAM_GUI_classes.hpp"
 
 //--- Global Garbage Collection Settings
 MinPlayerDistance = 0;					//The minimum distance from any player. Set the value to 0 to remove the min. distance. 
-CorpseManagerMode = 1;					//Garbage collecting mode 0: None, 1: All scenario objects, 2: Only objects that can respawn, 3: Only objects that cannot respawn
+CorpseManagerMode = 0;					//Garbage collecting mode 0: None, 1: All scenario objects, 2: Only objects that can respawn, 3: Only objects that cannot respawn
 CorpseLimit = 200;						//Maximum allowed number of dead bodies in the scenario. 
-CorpseRemovalMinTime = 60;				//Time in seconds before a dead body is removed when the number of dead bodies exceeds the 'Limit'. 
-CorpseRemovalMaxTime = 600;				//Time in seconds before a dead body is removed when the number of dead bodies is below or equals the 'Limit'. 
-WreckManagerMode = 1;					//Garbage collecting mode 0: None, 1: All scenario objects, 2: Only objects that can respawn, 3: Only objects that cannot respawn
-WreckLimit = 50;						//Maximum allowed number of destroyed vehicles in the scenario. 
-WreckRemovalMinTime = 300;				//Time in seconds before a dead body is removed when the number of dead bodies exceeds the 'Limit'. 
-WreckRemovalMaxTime	= 3000;				//Time in seconds before a dead body is removed when the number of dead bodies is below or equals the 'Limit'. 
+CorpseRemovalMinTime = 600;				//Time in seconds before a dead body is removed when the number of dead bodies exceeds the 'Limit'. 
+CorpseRemovalMaxTime = 1800;			//Time in seconds before a dead body is removed when the number of dead bodies is below or equals the 'Limit'. 
+WreckManagerMode = 0;					//Garbage collecting mode 0: None, 1: All scenario objects, 2: Only objects that can respawn, 3: Only objects that cannot respawn
+WreckLimit = 40;						//Maximum allowed number of destroyed vehicles in the scenario. 
+WreckRemovalMinTime = 1200;				//Time in seconds before a dead body is removed when the number of dead bodies exceeds the 'Limit'. 
+WreckRemovalMaxTime	= 3600;				//Time in seconds before a dead body is removed when the number of dead bodies is below or equals the 'Limit'. 
 
 //--- Global Revive Settings
 //ReviveMode = 0;                         //0: disabled, 1: enabled, 2: controlled by player attributes
@@ -36,8 +40,7 @@ ReviveBleedOutDelay = 120;              //unconscious state duration (in secs)
 
 enableDebugConsole = 1;
 
-loadScreen = "VIO_BECTI.jpg";
-
+/*
 //Config for Pylon Manager
 class CfgPylonManager
 {
@@ -46,6 +49,11 @@ class CfgPylonManager
 
 //Nothing is rearm everywhere
 rearmObjects[] = {
+	"RU_WarfareBVehicleServicePoint",		//Ammo building
+	"Land_Cargo_House_V1_F",				//Ammo building
+	"Land_Pod_Heli_Transport_04_ammo_F",
+	"B_Slingload_01_Ammo_F",
+	
 	"B_Truck_01_ammo_F",
 	"B_T_Truck_01_ammo_F",
 	"O_Truck_02_Ammo_F",
@@ -56,4 +64,4 @@ rearmObjects[] = {
 
 //Distance needed from rearmObjects[]
 rearmRange = 50;
-};
+};*/

@@ -64,6 +64,7 @@ _team = grpNull;
 {if ((group _x getVariable "cti_uid") == _uid) exitWith {_team = group _x}} forEach playableUnits;
 if (isNull _team) exitWith {if (CTI_Log_Level >= CTI_Log_Error) then {["ERROR", "FILE: Server\Functions\Server_OnPlayerDisconnected.sqf", format["Disconnected Player [%1] [%2] group couldn't be found among the current playable units", _name, _uid]] call CTI_CO_FNC_Log}};
 
+_side = side _team;
 _commander = (_side) call CTI_CO_FNC_GetSideCommander;
 _is_commander = if (_commander == _team) then {true} else {false};
 
@@ -72,12 +73,18 @@ if (_is_commander && !isNull _team) then {
 	
 	//--- Sanitize the commander informations.
 	_logic = (_side) Call CTI_CO_FNC_GetSideLogic;
-	_logic setVariable ["cti_commander", grpNull, true];
+	_logic setVariable ["cti_commander", (_logic getVariable "cti_commander_team"), true];
 	
 	//--- Send a message!
 	[["CLIENT", _side], "Client_OnMessageReceived", ["commander-disconnected"]] call CTI_CO_FNC_NetSend;
-	
-	if ((missionNamespace getVariable "CTI_AI_COMMANDER_ENABLED") == 1) then { (_side) execFSM "Server\FSM\update_commander.fsm" }; //--- AI commander takeover
+	//let this or maybe we change it to an automatic vote, but the popup may not wanted?
+	if ((missionNamespace getVariable "CTI_AI_COMMANDER_ENABLED") == 1) then {
+		if (CTI_Log_Level >= CTI_Log_Information) then {["INFORMATION", "FILE: Server\Functions\Server_OnPlayerDisconnected.sqf", format["Team [%1] Commander disconnected, AI take command.", _side]] call CTI_CO_FNC_Log;};
+		if !(_logic getVariable "cti_ai_commander") then {
+			_logic setVariable ["cti_ai_commander", true];
+			_side ExecFSM "Server\FSM\Update_Commander.fsm";
+		};
+	}; //--- AI commander takeover
 };
 
 _side = _get select 3; //--- Get the last side joined
@@ -98,6 +105,11 @@ if ((missionNamespace getVariable "CTI_AI_TEAMS_JIP_PRESERVE") == 0) then {
 };
 
 _get set [1, _funds];
+//save the funds to the file
+if (missionNamespace getvariable "CTI_PERSISTANT" > 0) then {
+	//["funds_group",_side,_team] call CTI_SE_FNC_SAVE;
+	["funds_player",_side,_team,_uid] call CTI_SE_FNC_SAVE;
+};
 
 if ((missionNamespace getVariable "CTI_AI_TEAMS_ENABLED") > 0 && !isNil {_group getVariable "cti_ai_active"}) then { //--- Place the leader back at base
 	_leader enableAI "Move";

@@ -25,7 +25,7 @@ item20[] = {"",7,210,696.000000,896.000000,704.000000,904.000000,0.000000,""};
 item21[] = {"",7,210,696.000000,-279.000000,704.000000,-271.000000,0.000000,""};
 item22[] = {"Construction",4,218,50.000000,400.000000,150.000000,450.000000,2.000000,"Construction"};
 item23[] = {"Management",4,218,-250.000000,400.000000,-150.000000,450.000000,1.000000,"Management"};
-item24[] = {"Determine",2,4346,50.000000,500.000000,150.000000,550.000000,0.000000,"Determine"};
+item24[] = {"Determine",2,250,50.000000,500.000000,150.000000,550.000000,0.000000,"Determine"};
 item25[] = {"Determine_1",2,250,-250.000000,500.000000,-150.000000,550.000000,0.000000,"Determine"};
 item26[] = {"Nil",8,218,-100.000000,600.000000,0.000000,650.000000,0.000000,"Nil"};
 item27[] = {"Skip",2,250,-100.000000,700.000000,0.000000,750.000000,0.000000,"Skip"};
@@ -37,7 +37,7 @@ item32[] = {"Respawning",8,218,-250.000000,0.000000,-150.000000,50.000000,0.0000
 item33[] = {"Skip_1",2,250,-500.000000,0.000000,-400.000000,50.000000,0.000000,"Skip"};
 item34[] = {"",7,210,-454.000000,-279.000000,-446.000000,-271.000000,0.000000,""};
 item35[] = {"Salvagers",4,218,425.000000,600.000000,525.000000,650.000000,1.000000,"Salvagers"};
-item36[] = {"Update_Salvagers",2,250,425.000000,700.000000,525.000000,750.000000,0.000000,"Update" \n "Salvagers"};
+item36[] = {"Update_Salvagers",2,4346,425.000000,700.000000,525.000000,750.000000,0.000000,"Update" \n "Salvagers"};
 item37[] = {"Phase_III_HQ",2,250,-100.000000,200.000000,0.000000,250.000000,0.000000,"Phase III" \n "HQ"};
 item38[] = {"Ready",4,218,-100.000000,300.000000,0.000000,350.000000,1.000000,"Ready"};
 item39[] = {"Deploy",4,218,50.000000,125.000000,150.000000,175.000000,1.000000,"Deploy"};
@@ -112,8 +112,8 @@ link59[] = {44,45};
 link60[] = {45,46};
 link61[] = {46,41};
 link62[] = {47,33};
-globals[] = {0.000000,0,0,0,0,640,480,1,240,6316128,1,-510.543121,801.041626,1061.856934,-101.072792,997,884,1};
-window[] = {2,-1,-1,-1,-1,856,26,1405,26,3,1015};
+globals[] = {0.000000,0,0,0,0,640,480,1,240,6316128,1,-756.375305,1078.072510,898.349121,-1050.751709,832,884,1};
+window[] = {2,-1,-1,-32000,-32000,934,-1816,-437,104,3,850};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -157,6 +157,7 @@ class FSM
                          "_logical_path = missionNamespace getVariable format[""CTI_%1_Commander_Path"", _side];" \n
                          "_logical_path_reached = 0;" \n
                          "_logical_path_index = 0;" \n
+                         "_logical_static_placing_index = 0;" \n
                          "" \n
                          "(leader _sideCommander) addEventHandler [""killed"", format[""[_this select 0, %1] spawn CTI_FSM_UpdateCommander_Respawn"", _sideID]];"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
@@ -397,7 +398,7 @@ class FSM
                          "					{if ((_x select 0) == ((_var select 0) select 0)) exitWith {_index = _forEachIndex }} forEach _template;" \n
                          "					if (_index != -1) then {" \n
                          "						_emplacement = [_side, _var, _template select _index] call CTI_FSM_UpdateCommander_GetStructureEmplacement;" \n
-                         "						if (_emplacement select 0 != 0 && _emplacement select 1 != 0) then {_build = [(_var select 0) select 0, _var select 2, _emplacement]};" \n
+                         "						if ((_emplacement select 0) select 0 != 0 && (_emplacement select 0) select 1 != 0) then {_build = [(_var select 0) select 0, _var select 2, _emplacement]};" \n
                          "					} else {" \n
                          "						_increment = true; //--- We can't do it, what's next?" \n
                          "					};" \n
@@ -421,7 +422,8 @@ class FSM
                          "//--- Something is going to be built" \n
                          "if (count _build > 0) then {" \n
                          "	if (_funds >= (_build select 1)) then {" \n
-                         "		_position = _build select 2;" \n
+                         "		_position = (_build select 2) select 0;" \n
+                         "		_direction = (_build select 2) select 1;" \n
                          "		_var = missionNamespace getVariable format [""CTI_%1_%2"", _side, _build select 0];" \n
                          "		_distance_structure = (_var select 4) select 1;" \n
                          "		_dir_to = [leader _sideCommander, _position] call CTI_CO_FNC_GetDirTo;" \n
@@ -429,9 +431,8 @@ class FSM
                          "		if ((leader _sideCommander) distance _goto <= 35 && unitReady (leader _sideCommander) && alive (leader _sideCommander)) then {" \n
                          "			//--- Construct" \n
                          "			(leader _sideCommander) setDir _dir_to;" \n
-                         "			_direction_structure = (_var select 4) select 0;" \n
-                         "			_direction = 0 + ((_build select 2) select 1) + _direction_structure; //todo template defines that (0)" \n
-                         "			[format [""CTI_%1_%2"", _side, _build select 0], _side, (_build select 2), _direction] call CTI_SE_FNC_BuildStructure;" \n
+                         "			" \n
+                         "			[format [""CTI_%1_%2"", _side, _build select 0], _side, _position, _direction] call CTI_SE_FNC_BuildStructure;" \n
                          "			" \n
                          "			if (_supplyActive) then {[_side, -(_build select 1)] call CTI_CO_FNC_ChangeSideSupply} else {[_side, -(_build select 1)] call CTI_CO_FNC_ChangeFundsCommander};" \n
                          "			_score = round((_build select 1) / CTI_SCORE_BUILD_VALUE_PERPOINT);" \n
@@ -469,7 +470,14 @@ class FSM
                 {
                         name = "Update_Defenses";
                         itemno = 12;
-                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        init = /*%FSM<STATEINIT""">*/"_templates = missionNamespace getVariable format[""CTI_%1_Defense_Template"", _side];" \n
+                         "_position_commander = getPos leader(_side call CTI_CO_FNC_GetSideCommander);" \n
+                         "for [{ private _i = 0 }, { _i < count _templates }, { _i = _i + 1 }] do {" \n
+                         "	if ([_side, (_templates select _i select 0), _position_commander, 1250] call CTI_CO_FNC_HasStructure) then {" \n
+                         "		_placed = [_side, _templates select _i] call CTI_FSM_UpdateCommander_GetDefenseEmplacement;" \n
+                         "		if(_placed) then {_i = count _templates};" \n
+                         "	};" \n
+                         "};"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -603,13 +611,19 @@ class FSM
                          "				" \n
                          "					//--- The factory is alive and we're lucky enough!" \n
                          "					if (alive _factory && random 100 <= (([CTI_AI_COMMANDER_BUYTO_INFANTRY, CTI_AI_COMMANDER_BUYTO_LIGHT, CTI_AI_COMMANDER_BUYTO_HEAVY, CTI_AI_COMMANDER_BUYTO_AIR] select _id) * _modifier)) then {" \n
-                         "						_var = missionNamespace getVariable format [""CTI_SQUAD_%1_%2"", _side, _role];" \n
-                         "						_cost = _var select 1;" \n
+                         "						if !(isNil {missionNamespace getVariable format [""CTI_SQUAD_%1_%2"", _side, _role]}) then {" \n
+                         "							_var = missionNamespace getVariable format [""CTI_SQUAD_%1_%2"", _side, _role];" \n
+                         "							_cost = _var select 1;" \n
                          "					" \n
-                         "						//--- We have enough cash to purchase the template" \n
-                         "						if (_funds >= _cost) then {" \n
-                         "							_has_purchased = true;" \n
-                         "							[_x, _side, _var select 2, _factory] call CTI_SE_FNC_AI_PurchaseSquad;" \n
+                         "							//--- We have enough cash to purchase the template" \n
+                         "							if (_funds >= _cost) then {" \n
+                         "								_has_purchased = true;" \n
+                         "								[_x, _side, _var select 2, _factory] call CTI_SE_FNC_AI_PurchaseSquad;" \n
+                         "							};" \n
+                         "						} else {" \n
+                         "							if (CTI_Log_Level >= CTI_Log_Error) then {" \n
+                         "								[""VIOC_DEBUG"", ""FILE: server\FSM\Update_Commanter@UpdateTeams.sqf"", format[""CTI_SQUAD_%1_%2 not found"", _side, _role]] call CTI_CO_FNC_Log;" \n
+                         "							};" \n
                          "						};" \n
                          "					};" \n
                          "				" \n
@@ -725,13 +739,20 @@ class FSM
                          "" \n
                          "if (alive _hq) then {" \n
                          "	//--- The commander could not build in time" \n
-                         "	if (count _build > 0) then {if (time - _commander_buildorderstart > 240) then {_build = []}};" \n
+                         "	if ((count _build) > 0) then {if (time - _commander_buildorderstart > 240) then {_build = []}};" \n
                          "" \n
                          "	//--- The commander is still building something" \n
-                         "	if (count _build > 0) then {_action = ""build-structures""};" \n
+                         "	if ((count _build) > 0) then {_action = ""build-structures"";};" \n
+                         "	" \n
+                         "	if(_action == """" || _logical_static_placing_index >= 3) then {	" \n
+                         "		//--- We want to check the statics and build if needed" \n
+                         "		_action = ""build-defenses"";" \n
+                         "		_logical_static_placing_index = 0;" \n
+                         "	};" \n
+                         "	_logical_static_placing_index = _logical_static_placing_index + 1;" \n
                          "};" \n
                          "" \n
-                         "//--- We check the workers last" \n
+                         "//- We check the workers last" \n
                          "if (count (_sideLogic getVariable ""cti_workers"") < 4 && _funds >= CTI_BASE_WORKERS_PRICE) then {_action = ""hire-workers""};"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
@@ -976,7 +997,15 @@ class FSM
                         itemno = 36;
                         init = /*%FSM<STATEINIT""">*/"if ((leader _sideCommander) distance _factory_repair < 40 && unitReady (leader _sideCommander)) then {" \n
                          "	_commander_lastsalvager_addin = time;" \n
-                         "	[_side, _sideCommander, _side, format[""CTI_Salvager_Independent_%1"", _side], _factory_repair, [true, false, false, false, """", true], (time + random 10000 - random 500 + diag_frameno),1] call CTI_SE_FNC_OnClientPurchase;" \n
+                         "" \n
+                         "	_salvager_team = _sideLogic getVariable [""cti_salvager_team"", grpNull];" \n
+                         "	if (isNull _salvager_team) then {" \n
+                         "		_salvager_team = createGroup _side;" \n
+                         "		_salvager_team setGroupID [""Salvager Team""];" \n
+                         "		_salvager_team setVariable [""cti_gc_noremove"", true];" \n
+                         "		_sideLogic setVariable [""cti_salvager_team"", _salvager_team];" \n
+                         "	};" \n
+                         "	[_salvager_team, _sideCommander, _side, format[""CTI_Salvager_Independent_%1"", _side], _factory_repair, [true, false, false, false, """", true], (time + random 10000 - random 500 + diag_frameno),1] call CTI_SE_FNC_OnClientPurchase;" \n
                          "} else {" \n
                          "	if (time - _commander_lastmove > 25) then { (leader _sideCommander) commandMove ([getPos _factory_repair, 2, 15] call CTI_CO_FNC_GetRandomPosition) };" \n
                          "};"/*%FSM</STATEINIT""">*/;

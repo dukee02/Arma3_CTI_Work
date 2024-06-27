@@ -39,7 +39,7 @@
     [_req_seed, _req_classname, _req_buyer, _req_target, _factory, _req_side] spawn CTI_SE_FNC_HandleAIPurchase;
 */
 
-private ["_can_afford", "_cost", "_direction", "_distance", "_factory", "_funds", "_model", "_net", "_position", "_req_buyer", "_req_classname", "_req_seed", "_req_side", "_req_target", "_req_time_out", "_script", "_sideID", "_var", "_var_classname", "_vehicle", "_veh_infos"];
+private ["_can_afford", "_cost", "_direction", "_distance", "_factory", "_funds", "_model", "_net", "_position", "_req_buyer", "_req_classname", "_req_seed", "_req_side", "_req_target", "_req_time_out", "_script", "_sideID", "_var", "_var_classname", "_vehicle", "_veh_infos", "_vehicle_data"];
 
 _req_seed = _this select 0;
 _req_classname = _this select 1;
@@ -52,10 +52,9 @@ _veh_infos = _this select 6;
 //--- First of all, make sure that we don't go "softly" above the AI group size
 _process = true;
 if (typeName _req_target != "SIDE") then { if ((count units _req_target)+1 > CTI_AI_TEAMS_GROUPSIZE) then {_process = false} };
-if (_req_classname == format["CTI_Salvager_Independent_%1", _req_side]) then {
-} else {
+if !(_req_classname == format["CTI_Salvager_Independent_%1", _req_side] || _req_classname == format["CTI_Salvager_%1", _req_side]) then {
 	if !(isClass(configFile >> "CfgVehicles" >> _req_classname)) then {
-		if (CTI_Log_Level >= CTI_Log_Error) then {["Error", "FILE: Server\Functions\Server_HandleAIPurchasePurchase.sqf", format ["invallid classname: <%1>",  _req_classname]] call CTI_CO_FNC_Log;};
+		if (CTI_Log_Level >= CTI_Log_Error) then {["Error", "FILE: Server\Functions\Server_HandleAIPurchasePurchase.sqf", format ["invalid classname: <%1>",  _req_classname]] call CTI_CO_FNC_Log;};
 		_process = false;
 	};
 };
@@ -88,8 +87,10 @@ if !(_model isKindOf "Man") then { //--- Add the vehicle crew cost if applicable
 	if !(isNil '_var_crew_classname') then { _cost = _cost + ((count(_model call CTI_CO_FNC_GetVehicleTurrets)+1) * (_var_crew_classname select 2)) };
 };
 
-//AI will pay now less than a player (factor 100 or 10?)
-_cost = round(_cost/100);
+//AI will pay now less than a player (factor 100) it the AI is set harder than Rookie
+if(CTI_AI_SKILL_BASE < 0.40) then {
+	_cost = round(_cost/100); //_cost = round(_cost/(CTI_AI_SKILL_BASE*150));
+};
 
 _funds = [_req_buyer, _req_side] call CTI_CO_FNC_GetFunds;
 if (_funds < _cost) exitWith { [_req_seed, _req_classname, _req_target, _factory] call CTI_SE_FNC_OnClientPurchaseComplete };
@@ -97,7 +98,10 @@ if (_funds < _cost) exitWith { [_req_seed, _req_classname, _req_target, _factory
 
 _var = missionNamespace getVariable format ["CTI_%1_%2", _req_side, _factory getVariable "cti_structure_type"];
 _direction = 360 - ((_var select 4) select 0);
+_vehicle_data = missionNamespace getVariable _req_classname;
+_distance_to_factory = _vehicle_data select CTI_UNIT_DISTANCE;
 _distance = (_var select 4) select 1;
+_distance = _distance + _distance_to_factory;
 _position = _factory modelToWorld [(sin _direction * _distance), (cos _direction * _distance), 0];
 
 while { time <= _req_time_out && alive _factory } do { sleep .25 }; //--- Construction...
@@ -124,19 +128,22 @@ if (_model isKindOf "Man") then {
 	_vehicle = [_model, _req_target, _position, _sideID, _net] call CTI_CO_FNC_CreateUnit;
 } else {
 	private ["_crew", "_unit"];
-	
+		
 	//lets start a AI purchased planes, planes of AI-Squads starts in the air
 	_form_air = "FORM";
 	if (_model isKindOf "Air") then {_form_air ="FLY"};
-	_vehicle = [_model, _position, _direction + getDir _factory, _sideID, true, true, true, _form_air] call CTI_CO_FNC_CreateVehicle;
+	_vehicle = [_model, _position, _direction + getDir _factory, _sideID, CTI_AI_VEHICLE_LOCKED, true, true, _form_air] call CTI_CO_FNC_CreateVehicle;
 	//{player reveal _vehicle} forEach allUnits; // unit sometimes a long time unrecognised -> force revealing units with reveal command usually solves the problem
 	
+	//First we setup the driver/Pilot
 	_crew = switch (true) do { case (_model isKindOf "Tank"): {"Crew"}; case (_model isKindOf "Air"): {"Pilot"}; default {"Soldier"}};
 	_crew = missionNamespace getVariable format["CTI_%1_%2", _req_side, _crew];
-	
 	_unit = [_crew, _req_target, _position, _sideID, _net] call CTI_CO_FNC_CreateUnit;
 	_unit moveInDriver _vehicle;
 	
+	//Then we setup the other units (normal soldiers if its an air unit)
+	_crew = switch (true) do { case (_model isKindOf "Tank"): {"Crew"}; default {"Soldier"}};
+	_crew = missionNamespace getVariable format["CTI_%1_%2", _req_side, _crew];
 	{
 		_unit = [_crew, _req_target, _position, _sideID, _net] call CTI_CO_FNC_CreateUnit;
 		_unit moveInTurret [_vehicle, _x select 0];

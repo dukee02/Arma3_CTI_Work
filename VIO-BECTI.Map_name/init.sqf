@@ -1,12 +1,10 @@
 if (isClass(configFile >> "CfgPatches" >> "task_force_radio")) then 
 { 
-//TFAR mod is enabled
-TF_give_personal_radio_to_regular_soldier = true;
-tf_no_auto_long_range_radio = true;
-TF_give_microdagr_to_soldier = false;
-}; 
-
-//[]spawn compileFinal(preprocessFile"AFAR\init.sqf");
+	//TFAR mod is enabled
+	TFAR_givePersonalRadioToRegularSoldier = true;
+	TFAR_giveLongRangeRadioToGroupLeaders = true;
+	TFAR_giveMicroDagrToSoldier = false;
+};
 
 //--- Initial View Distance and Object View Distance for both clients and server
 setViewDistance 3000;
@@ -107,15 +105,8 @@ if (CTI_IsHeadless) then {
 //--- Set the group ID
 execVM "Common\Init\Init_GroupsID.sqf";
 
-//--- Optional Mod Stuff
-if (!isClass(configFile >> "CfgPatches" >> "ace_main")) then 
-{  
-//Start other 'plugins' if ACE is not running
-	if(CTI_FIELDREPAIR_ENABLED > 0) then {
-		[] execVM "Client\Module\zlt\zlt_fieldrepair.sqf"; 
-		//[] execVM "Client\Module\zlt\zlt_fastrope.sqf";
+if(!CTI_IsServer && !CTI_IsHeadless) then {
+	if(CTI_VAM_MODULE > 0) then {
+		[] execVM "VAM_GUI\VAM_GUI_init.sqf";
 	};
-	[player] execVM "Client\Module\earplugs\simpleEP.sqf";
-}; 
-
-//_igiload = execVM "IgiLoad\IgiLoadInit.sqf";
+};

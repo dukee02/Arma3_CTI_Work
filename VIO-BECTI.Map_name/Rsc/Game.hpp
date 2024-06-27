@@ -4,20 +4,20 @@ respawnDelay = 3;
 respawnDialog = false;
 
 //--- Require briefing.html to show up.
-onLoadName = "VIO-BECTI Cold-War V2.0";
+onLoadName = "VIO-BECTI V2.0.4";
 onLoadMissionTime = false;
-onLoadMission = "VIO-BECTI Cold-War V2.0_alpha220306";
-
-briefingName = "VIO-BECTI Cold-War V2.0";
+overviewText = "VIO-BECTI V2.0.4";
+overviewTextLocked = "VIO-BECTI V2.0.4";
+onLoadMission = "VIO-BECTI V2.0.4_240626";
+briefingName = "VIO-BECTI V2.0.4";
 
 //--- ArmA 3 Specifics
-dev = "Benny";
-author = "Benny modified by dukee";
-// overviewPicture
+dev = "dukee";
+author = "dukee, basics by Benny";
 
 //--- Properties.
 class Header {
 	gameType = CTI;
 	minPlayers = 1;
-	maxPlayers = 32;
+	maxPlayers = 35;
 };

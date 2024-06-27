@@ -11,8 +11,8 @@ link1[] = {1,2};
 link2[] = {2,1};
 link3[] = {2,4};
 link4[] = {4,3};
-globals[] = {25.000000,1,0,0,0,640,480,1,162,6316128,1,-283.496857,91.606110,114.748718,-497.565857,389,635,1};
-window[] = {0,-1,-1,-1,-1,888,242,1497,107,1,407};
+globals[] = {0.000000,0,0,0,0,640,480,1,162,6316128,1,-283.496857,91.606110,114.748718,-497.565857,389,609,1};
+window[] = {0,-1,-1,-1,-1,915,314,1569,134,1,407};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -69,7 +69,11 @@ class FSM
                          "		_winner = _x;" \n
                          "		CTI_GameOver = true;" \n
                          "	};" \n
-                         "} forEach [west, east];"/*%FSM</STATEINIT""">*/;
+                         "} forEach [west, east];" \n
+                         "if (CTI_GameOver == true && missionNamespace getvariable ""CTI_PERSISTANT"" != 0) then {" \n
+                         "	[""delete""] call CTI_SE_FNC_SAVE;" \n
+                         "	missionNamespace setvariable [""CTI_PERSISTANT"", 0];" \n
+                         "};"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -103,7 +107,10 @@ class FSM
                 {
                         name = "End_FSM";
                         itemno = 3;
-                        init = /*%FSM<STATEINIT""">*/"diag_log format [""mission ended %1"", _winner];" \n
+                        init = /*%FSM<STATEINIT""">*/"if !(missionNamespace getvariable ""CTI_PERSISTANT"" == 0) then {" \n
+                         "	[""delete""] call CTI_SE_FNC_SAVE;" \n
+                         "};" \n
+                         "diag_log format [""mission ended %1"", _winner];" \n
                          "[""CLIENT"", ""Client_OnMissionEnding"", _winner] call CTI_CO_FNC_NetSend;" \n
                          "if (isDedicated) then {endMission ""END1""};" \n
                          "//todo add some delay before ending the game (calc the client win time)"/*%FSM</STATEINIT""">*/;
