@@ -38,13 +38,18 @@ switch (_action) do {
 		((uiNamespace getVariable "cti_dialog_ui_unitscam") displayCtrl 180001) ctrlAddEventHandler ["MouseHolding", "nullReturn = _this call CTI_UI_KeyHandler_UnitsCam_MouseMoving"];
 		
 		ctrlSetFocus ((uiNamespace getVariable "cti_dialog_ui_unitscam") displayCtrl 180001);
+
+		//Add the salvager group
+		_logic = (CTI_P_SideJoined) call CTI_CO_FNC_GetSideLogic;
+		_salvager_team = _logic getVariable ["cti_salvager_team", grpNull];
 		
 		_groups = (CTI_P_SideJoined) call CTI_CO_FNC_GetSideGroups;
+		_groups pushBack _salvager_team;
 		uiNamespace setVariable ["cti_dialog_ui_unitscam_groups", _groups];
 		_origin = uiNamespace getVariable "cti_dialog_ui_unitscam_origin";
 		if (isNil '_origin') then { _origin = objNull };
 		{
-			((uiNamespace getVariable "cti_dialog_ui_unitscam") displayCtrl 180100) lbAdd format ["%1 (%2)",_x getVariable ["cti_alias",CTI_PLAYER_DEFAULT_ALIAS], if (isPlayer leader _x) then {name leader _x} else {"AI"}];
+			((uiNamespace getVariable "cti_dialog_ui_unitscam") displayCtrl 180100) lbAdd format ["%1 (%2)",if(_forEachIndex == ((count _groups) -1)) then {"Salvager"} else {_x getVariable ["cti_alias",CTI_PLAYER_DEFAULT_ALIAS]}, if (isPlayer leader _x) then {name leader _x} else {"AI"}];
 			if (isNull _origin) then {
 				if (group _track == _x) then {((uiNamespace getVariable "cti_dialog_ui_unitscam") displayCtrl 180100) lbSetCurSel _forEachIndex};
 			} else {
@@ -236,7 +241,7 @@ switch (_action) do {
 		
 		if (alive _who && call CTI_CL_FNC_IsPlayerCommander) then {
 			if !(isPlayer leader _who) then {
-				_who setDammage 1;
+				_who setDamage 1;
 			};
 		};
 	};
@@ -250,10 +255,24 @@ switch (_action) do {
 			} else {
 				if (_who in units player) then {_unflip = true};
 			};
-			
 			if (_unflip) then {
-				_who_vehicle setPos [getPos _who_vehicle select 0, getPos _who_vehicle select 1, 1];
-				_who_vehicle setVelocity [0,0,1];
+				_veh_pos = getPos _who_vehicle;
+				_unflipStuck = uiNamespace getVariable ["cti_dialog_ui_unflip_unit", 0];
+				if(_who_vehicle isKindOf "Ship") then {
+					if(serverTime < (_unflipStuck + 120)) then {
+						_veh_pos = [_veh_pos, 0, 40, 10, 2, 0, 0, [], [_veh_pos, _veh_pos]] call BIS_fnc_findSafePos;
+					};
+					_who_vehicle setDir ((getDir _who_vehicle) + 180);
+					_who_vehicle setPos [_veh_pos select 0, _veh_pos select 1, -1];
+					_who_vehicle setVelocity [0,0,1];
+				} else {
+					if(serverTime < (_unflipStuck + 120)) then {
+						_veh_pos = [_veh_pos, 0, 20, 1, 0, 0.7, 0, [], [_veh_pos, _veh_pos]] call BIS_fnc_findSafePos;
+					};
+					_who_vehicle setPos [_veh_pos select 0, _veh_pos select 1, 1];
+					_who_vehicle setVelocity [0,0,1];
+				};
+				uiNamespace setVariable ["cti_dialog_ui_unflip_unit", serverTime];
 			};
 		};
 	};
