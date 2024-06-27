@@ -8,7 +8,7 @@ class Params {
 	class CTI_PERSISTANT {
 		title = "PERSIST: Mode";
 		values[] = {-3,-2,-1,0,1,2,3};
-		texts[] = {"Reset (1 Save for each mission)","Reset (1 Save for each era VIO-BECTI)","Reset (1 Save for all VIO-BECTIs)","Disabled","Enabled (1 Save for all VIO-BECTIs)","Enabled (1 Save for each era VIO-BECTI)","Enabled (1 Save for each mission)"};
+		texts[] = {"Reset (1 Save for each mission)","Reset (1 Save for each era VIO-BECTI-WW2)","Reset (1 Save for all VIO-BECTIs)","Disabled","Enabled (1 Save for all VIO-BECTIs)","Enabled (1 Save for each era VIO-BECTI-WW2)","Enabled (1 Save for each mission)"};
 		default = 0;
 	};
 	class CTI_SAVE_PERIODE {
@@ -23,8 +23,8 @@ class Params {
 		texts[] = {"Disabled","only Information","Enabled AI disbanding"};
 		default = 1;
 	};
-	class SEPARATOR_ADDONS {
-		title = "=========================== ADDONS/DLCs ============================";
+	class SEPARATOR_STARTUP {
+		title = "========================== STARTUP ============================";
 		values[] = {1};
 		texts[] = {""};
 		default = 1;
@@ -35,11 +35,11 @@ class Params {
 		texts[] = {"Disabled","Enabled"};
 		default = 0;
 	};
-	class SEPARATOR_STARTUP {
-		title = "========================== NATIONS ============================";
-		values[] = {1};
-		texts[] = {""};
-		default = 1;
+	class CTI_CAMO_ACTIVATION {
+		title = "Main Camo";
+		values[] = {0,1,4};
+		texts[] = {"Standard", "Jungle (APEX)", "both (Main = Standard)"};
+		default = 0;
 	};
 	class CTI_GUER_TOWNS {
 		title = "INDEPENDENT Town Nation";
@@ -64,12 +64,6 @@ class Params {
 		values[] = {0,1,2,3,4,5,6,7,8,9,10};
 		texts[] = {"Standard Green","NATO","CSAT","AAF","CTRG","FIA","US","UK","UNO","LDF","Livonia"};
 		default = 0; //0
-	};
-	class CTI_CAMO_ACTIVATION {
-		title = "Main Camo";
-		values[] = {0,1,4};
-		texts[] = {"Standard", "Jungle (APEX)", "both (Main = Standard)"};
-		default = 0;
 	};
 	class CTI_ECONOMY_LEVEL_GEAR {
 		title = "UPGRADE: Max Level Gear (depends on activated stuff, gets adjust to lower)";
@@ -198,7 +192,7 @@ class Params {
 		default = 0;
 	};
 	class CTI_BASE_AREA_MAX {
-		title = "BASE: Maximum amount (Area)";
+		title = "BASE: Maximum Size (Area)";
 		values[] = {0,1,2,3,4,5,6,7,8};
 		texts[] = {"Disabled","1","2","3","4","5","6","7","8"};
 		default = 4;
@@ -434,8 +428,8 @@ class Params {
 	class CTI_ARTILLERY_TIMEOUT {
 		title = "ARTILLERY: Delay between each fire mission";
 		values[] = {0,60,120,180,240,300,600};
-		texts[] = {"Disabled","60","120","180","240","300","600"};
-		default = 300;
+		texts[] = {"Disabled","0","60","120","180","240","300","600"};
+		default = 180;
 	};
 	class CTI_GAMEPLAY_TEAMSTACK_DISABLE {
 		title = "GAMEPLAY: Kick Team Stackers";
@@ -600,8 +594,8 @@ class Params {
 	class CTI_TOWNS_VEHICLES_LOCK {
 		title = "TOWNS: Vehicle Lock";
 		values[] = {0,1,2,3};
-		texts[] = {"Unlocked","Locked (Resistance)","Locked (Occupation)","Locked (Resistance and Occupation)"};
-		default = 3;
+		texts[] = {"Unlocked","Locked (Independent)","Locked (Occupation)","Locked (Independent and Occupation)"};
+		default = 0;
 	};
 	class SEPERATOR_OTHER {
 		title = "============ Other ============";
@@ -619,7 +613,7 @@ class Params {
 		title = "UNITS: Stamina Systems";
 		values[] = {0,1,2,3};
 		texts[] = {"Enabled","Disabled Fatigue","+ disable stamina (weapon sway)","+ disabled -AimPrecision- coefficient"};
-		default = 1;
+		default = 0;
 	};
 	class CTI_VEHICLES_SALVAGE_INDEPENDENT_MAX {
 		title = "Units: Independent Salvager Limit";
@@ -646,7 +640,7 @@ class Params {
 		default = 4000;
 	};
 	class SEPARATOR_LOG {
-		title = "=========================== LOG-DEBUG-AND-TESTING ============================";
+		title = "=========================== DEBUG ============================";
 		values[] = {1};
 		texts[] = {""};
 		default = 1;
