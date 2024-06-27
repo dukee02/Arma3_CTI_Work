@@ -35,10 +35,12 @@
 	[player, _gear] call CTI_CO_FNC_EquipUnit; 
 */
 
-private ["_gear", "_item", "_magazine", "_unit"];
+private ["_gear", "_item", "_magazine", "_accessories", "_muzzles", "_unit"];
 
 _unit = _this select 0;
 _gear = _this select 1;
+
+if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: Common\Functions\Common_EquipUnit.sqf", format ["Units <%1> gear <%2>", _unit, _gear]] call CTI_CO_FNC_Log};
 
 //--- [Equipment check-in]
 _new = _gear select 1;
@@ -76,7 +78,7 @@ _item = _new select 0;
 _accessories = (_new select 1) call CTI_CO_FNC_ArrayToLower;
 // player sidechat format ["%1 %2",primaryWeapon _unit,_item];
 if (primaryWeapon _unit != _item) then { //--- Replace
-if (primaryWeapon _unit != "") then {_unit removeWeapon (primaryWeapon _unit)};
+	if (primaryWeapon _unit != "") then {_unit removeWeapon (primaryWeapon _unit)};
 	if (_item != "") then {
 		_unit addWeapon _item;
 		{if (_x != "") then {_unit addPrimaryWeaponItem _x}} forEach _accessories;
@@ -93,12 +95,16 @@ if (primaryWeapon _unit != "") then {_unit removeWeapon (primaryWeapon _unit)};
 _new = (_gear select 0) select 1;
 _item = _new select 0;
 _accessories = (_new select 1) call CTI_CO_FNC_ArrayToLower;
+_magazine = (_new select 2) call CTI_CO_FNC_ArrayToLower;
 
 if (secondaryWeapon _unit != _item) then { //--- Replace
 	if (secondaryWeapon _unit != "") then {_unit removeWeapon (secondaryWeapon _unit)};
 	if (_item != "") then {
 		_unit addWeapon _item;
 		{if (_x != "") then {_unit addSecondaryWeaponItem _x}} forEach _accessories;
+	};
+	if ((_magazine select 0) != "") then {
+		_unit addSecondaryWeaponItem (_magazine select 0);
 	};
 } else { //--- Same
 	if (_item != "") then {
@@ -140,3 +146,7 @@ if (handgunWeapon _unit != _item) then { //--- Replace
 		if !("this" in _muzzles) then {_unit selectWeapon (_muzzles select 0)} else {_unit selectWeapon _x}; 
 	};
 } forEach [primaryWeapon _unit, handgunWeapon _unit, secondaryWeapon _unit];
+
+if([_unit] call BIS_fnc_getUnitInsignia != "") then {
+	[_unit, "MANW"] call BIS_fnc_setUnitInsignia;
+};
