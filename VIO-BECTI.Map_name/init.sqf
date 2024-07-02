@@ -108,9 +108,3 @@ if (CTI_IsHeadless) then {
 
 //--- Set the group ID
 execVM "Common\Init\Init_GroupsID.sqf";
-
-if(!CTI_IsServer && !CTI_IsHeadless) then {
-	if(CTI_VAM_MODULE > 0) then {
-		[] execVM "VAM_GUI\VAM_GUI_init.sqf";
-	};
-};
