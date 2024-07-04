@@ -803,9 +803,11 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= 1) then {
 if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 0) then {
 	if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
 		if(([395180] call CTI_CO_FNC_HasDLC) && CTI_CAMO_ACTIVATION == 1) then {
+			_c pushBack format["%1O_T_Truck_02_Box_F", _sid];
 			_c pushBack format["%1O_T_Truck_02_fuel_F", _sid];
 			_c pushBack format["%1O_T_Truck_02_Ammo_F", _sid];
 		} else {
+			_c pushBack format["%1O_Truck_02_box_F", _sid];
 			_c pushBack format["%1O_Truck_02_fuel_F", _sid];
 			_c pushBack format["%1O_Truck_02_Ammo_F", _sid];
 		};
