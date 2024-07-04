@@ -87,11 +87,13 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
 
 	// List of units
 	if(([395180] call CTI_CO_FNC_HasDLC) && CTI_CAMO_ACTIVATION == 1) then {
+		_c pushBack format["%1B_T_Crew_F", _sid];
 		_c pushBack format["%1B_T_Soldier_unarmed_F", _sid];
 		_c pushBack format["%1B_T_Soldier_F", _sid];
 		_c pushBack format["%1B_T_Medic_F", _sid];
 	};
 	if(([395180] call CTI_CO_FNC_HasDLC) == false || CTI_CAMO_ACTIVATION == 0 || CTI_IsServer || CTI_IsHeadless) then {
+		_c pushBack format["%1B_crew_F", _sid];
 		_c pushBack format["%1B_Soldier_unarmed_F", _sid];
 		_c pushBack format["%1B_Soldier_F", _sid];
 		_c pushBack format["%1B_medic_F", _sid];
@@ -127,12 +129,10 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
 	_armedUnitValue=([CTI_ECONOMY_PRIZE_INFANTRY,_tech_level] call CTI_CO_FNC_GetCalculatedUnitsPrize);
 
 	if(([395180] call CTI_CO_FNC_HasDLC) && CTI_CAMO_ACTIVATION == 1) then {
-		_c pushBack format["%1B_T_Crew_F", _sid];
 		_c pushBack format["%1B_T_Helipilot_F", _sid];
 		_c pushBack format["%1B_T_Helicrew_F", _sid];
 		_c pushBack format["%1B_T_Pilot_F", _sid];
 	} else {
-		_c pushBack format["%1B_crew_F", _sid];
 		_c pushBack format["%1B_Helipilot_F", _sid];
 		_c pushBack format["%1B_helicrew_F", _sid];
 		_c pushBack format["%1B_Pilot_F", _sid];

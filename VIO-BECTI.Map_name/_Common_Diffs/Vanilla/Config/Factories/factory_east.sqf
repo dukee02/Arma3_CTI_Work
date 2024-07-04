@@ -94,10 +94,12 @@ if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;}
 if(CTI_ECONOMY_LEVEL_INFANTRY >= _level) then {
 
 	if(([395180] call CTI_CO_FNC_HasDLC) && CTI_CAMO_ACTIVATION == 1) then {
+		_c pushBack format["%1O_T_Crew_F", _sid];
 		_c pushBack format["%1O_T_Soldier_F", _sid];
 		_c pushBack format["%1O_T_Medic_F", _sid];
 		_c pushBack format["%1O_T_Soldier_unarmed_F", _sid];
 	} else {
+		_c pushBack format["%1O_crew_F", _sid];
 		_c pushBack format["%1O_Soldier_F", _sid];
 		_c pushBack format["%1O_medic_F", _sid];
 		_c pushBack format["%1O_Soldier_unarmed_F", _sid];
@@ -115,7 +117,6 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= _level) then {
 	// List of units
 	// armed units
 	if(([395180] call CTI_CO_FNC_HasDLC) && CTI_CAMO_ACTIVATION == 1) then {
-		_c pushBack format["%1O_T_Crew_F", _sid];
 		_c pushBack format["%1O_T_Soldier_GL_F", _sid];
 		_c pushBack format["%1O_T_Soldier_AR_F", _sid];
 		_c pushBack format["%1O_T_Soldier_SL_F", _sid];
@@ -124,7 +125,6 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= _level) then {
 		_c pushBack format["%1O_T_Helipilot_F", _sid];
 		_c pushBack format["%1O_T_Pilot_F", _sid];
 	} else {
-		_c pushBack format["%1O_crew_F", _sid];
 		_c pushBack format["%1O_Soldier_GL_F", _sid];
 		_c pushBack format["%1O_Soldier_AR_F", _sid];
 		_c pushBack format["%1O_Soldier_SL_F", _sid];
