@@ -1,0 +1,613 @@
+// Export of 'WS_SFIA_units.SefrouRamal' by dukee on v0.9
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// Init
+params [["_layerWhiteList",[],[[]]],["_layerBlacklist",[],[[]]],["_posCenter",[0,0,0],[[]]],["_dir",0,[0]],["_idBlacklist",[],[[]]]];
+private _allWhitelisted = _layerWhiteList isEqualTo [];
+private _layerRoot = (_allWhitelisted || {true in _layerWhiteList}) && {!(true in _layerBlackList)};
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// Markers
+private _markers = [];
+private _markerIDs = [];
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// Groups
+private _groups = [];
+private _groupIDs = [];
+
+private _item167 = grpNull;
+if (_layerRoot) then {
+	_item167 = createGroup east;
+	_this = _item167;
+	_groups pushback _this;
+	_groupIDs pushback 167;
+};
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// Objects
+private _objects = [];
+private _objectIDs = [];
+
+private _item144 = objNull;
+if (_layerRoot) then {
+	_item144 = createVehicle ["O_SFIA_Truck_02_aa_lxWS",[4540.16,5784.92,-3.8147e-006],[],0,"CAN_COLLIDE"];
+	_this = _item144;
+	_objects pushback _this;
+	_objectIDs pushback 144;
+	_this setPosWorld [4540.16,5784.94,26.3227];
+	_this setVectorDirAndUp [[0,0.999992,-0.00399675],[0,0.00399675,0.999992]];
+	[_this,"[[[[],[]],[[],[]],[[""FirstAidKit""],[4]],[[],[]]],false]"] call bis_fnc_initAmmoBox;;
+};
+
+private _item145 = objNull;
+if (_layerRoot) then {
+	_item145 = createVehicle ["O_SFIA_APC_Tracked_02_AA_lxWS",[4533.93,5784.98,3.8147e-006],[],0,"CAN_COLLIDE"];
+	_this = _item145;
+	_objects pushback _this;
+	_objectIDs pushback 145;
+	_this setPosWorld [4533.92,5784.99,26.2674];
+	_this setVectorDirAndUp [[0,0.999992,-0.00399675],[-0.00399675,0.00399671,0.999984]];
+	[_this,"[[[[""arifle_Galat_lxWS"",""arifle_SLR_lxWS"",""launch_RPG32_F""],[2,1,1]],[[""30Rnd_762x39_Mag_F"",""20Rnd_762x51_slr_reload_tracer_green_lxWS"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellRed"",""SmokeShellYellow"",""SmokeShellOrange"",""1Rnd_40mm_HE_lxWS"",""1Rnd_50mm_Smoke_lxWS"",""1Rnd_58mm_AT_lxWS"",""RPG32_F"",""RPG32_HE_F"",""Titan_AA""],[24,8,6,6,8,8,8,8,8,6,6,5,2,2]],[[""FirstAidKit""],[10]],[[],[]]],false]"] call bis_fnc_initAmmoBox;;
+	_this setVehicleReportRemoteTargets true;
+	_this setVehicleReceiveRemoteTargets true;
+};
+
+private _item146 = objNull;
+if (_layerRoot) then {
+	_item146 = createVehicle ["O_SFIA_APC_Tracked_02_cannon_lxWS",[4536.75,5809.54,-1.90735e-006],[],0,"CAN_COLLIDE"];
+	_this = _item146;
+	_objects pushback _this;
+	_objectIDs pushback 146;
+	_this setPosWorld [4536.73,5809.54,25.9698];
+	_this setVectorDirAndUp [[0,1,0],[-0.00399675,0,0.999992]];
+	[_this,"[[[[""arifle_Galat_lxWS"",""arifle_SLR_lxWS"",""launch_RPG32_F""],[2,1,1]],[[""30Rnd_762x39_Mag_F"",""20Rnd_762x51_slr_reload_tracer_green_lxWS"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellRed"",""SmokeShellYellow"",""SmokeShellOrange"",""1Rnd_40mm_HE_lxWS"",""1Rnd_50mm_Smoke_lxWS"",""1Rnd_58mm_AT_lxWS"",""RPG32_F"",""RPG32_HE_F"",""Titan_AA""],[24,8,6,6,8,8,8,8,8,6,6,5,2,2]],[[""FirstAidKit""],[10]],[[],[]]],false]"] call bis_fnc_initAmmoBox;;
+};
+
+private _item147 = objNull;
+if (_layerRoot) then {
+	_item147 = createVehicle ["O_SFIA_APC_Tracked_02_30mm_lxWS",[4531,5809.83,0],[],0,"CAN_COLLIDE"];
+	_this = _item147;
+	_objects pushback _this;
+	_objectIDs pushback 147;
+	_this setPosWorld [4530.99,5809.84,25.7861];
+	_this setVectorDirAndUp [[0,1,0],[-0.00799344,0,0.999968]];
+	[_this,"[[[[""arifle_Galat_lxWS"",""arifle_SLR_lxWS"",""launch_RPG32_F""],[2,1,1]],[[""30Rnd_762x39_Mag_F"",""20Rnd_762x51_slr_reload_tracer_green_lxWS"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellRed"",""SmokeShellYellow"",""SmokeShellOrange"",""1Rnd_40mm_HE_lxWS"",""1Rnd_50mm_Smoke_lxWS"",""1Rnd_58mm_AT_lxWS"",""RPG32_F"",""RPG32_HE_F"",""Titan_AA""],[24,8,6,6,8,8,8,8,8,6,6,5,2,2]],[[""FirstAidKit""],[10]],[[],[]]],false]"] call bis_fnc_initAmmoBox;;
+};
+
+private _item148 = objNull;
+if (_layerRoot) then {
+	_item148 = createVehicle ["O_SFIA_APC_Wheeled_02_hmg_lxWS",[4524.78,5809.84,1.90735e-006],[],0,"CAN_COLLIDE"];
+	_this = _item148;
+	_objects pushback _this;
+	_objectIDs pushback 148;
+	_this setPosWorld [4524.76,5809.85,25.9329];
+	_this setVectorDirAndUp [[0,0.999992,-0.00399675],[-0.0080009,0.00399662,0.99996]];
+	[_this,"[[[[""arifle_Galat_lxWS""],[2]],[[""30Rnd_762x39_Mag_F"",""20Rnd_762x51_slr_reload_tracer_green_lxWS"",""100Rnd_762x51_S77_Green_lxWS"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellRed"",""SmokeShellYellow"",""SmokeShellOrange"",""1Rnd_40mm_HE_lxWS"",""1Rnd_50mm_Smoke_lxWS"",""1Rnd_58mm_AT_lxWS"",""RPG32_F"",""RPG32_HE_F"",""Titan_AA""],[12,6,2,6,6,8,8,8,8,4,3,3,5,2,2]],[[""FirstAidKit""],[10]],[[],[]]],false]"] call bis_fnc_initAmmoBox;;
+};
+
+private _item149 = objNull;
+if (_layerRoot) then {
+	_item149 = createVehicle ["O_SFIA_APC_Wheeled_02_unarmed_lxWS",[4520.04,5810.15,0],[],0,"CAN_COLLIDE"];
+	_this = _item149;
+	_objects pushback _this;
+	_objectIDs pushback 149;
+	_this setPosWorld [4520.02,5810.17,25.8364];
+	_this setVectorDirAndUp [[0,0.999992,-0.00399675],[-0.0080009,0.00399662,0.99996]];
+	[_this,"[[[[""arifle_Galat_lxWS""],[2]],[[""30Rnd_762x39_Mag_F"",""20Rnd_762x51_slr_reload_tracer_green_lxWS"",""100Rnd_762x51_S77_Green_lxWS"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellRed"",""SmokeShellYellow"",""SmokeShellOrange"",""1Rnd_40mm_HE_lxWS"",""1Rnd_50mm_Smoke_lxWS"",""1Rnd_58mm_AT_lxWS"",""RPG32_F"",""RPG32_HE_F"",""Titan_AA""],[12,6,2,6,6,8,8,8,8,4,3,3,5,2,2]],[[""FirstAidKit""],[10]],[[],[]]],false]"] call bis_fnc_initAmmoBox;;
+};
+
+private _item150 = objNull;
+if (_layerRoot) then {
+	_item150 = createVehicle ["O_SFIA_Truck_02_MRL_lxWS",[4514.48,5785.88,1.90735e-006],[],0,"CAN_COLLIDE"];
+	_this = _item150;
+	_objects pushback _this;
+	_objectIDs pushback 150;
+	_this setPosWorld [4514.47,5785.91,26.0127];
+	_this setVectorDirAndUp [[0,0.999968,-0.0080009],[-0.00399675,0.00800083,0.99996]];
+	[_this,"[[[[],[]],[[],[]],[[""FirstAidKit""],[4]],[[],[]]],false]"] call bis_fnc_initAmmoBox;;
+};
+
+private _item151 = objNull;
+if (_layerRoot) then {
+	_item151 = createVehicle ["O_SFIA_Offroad_lxWS",[4531.65,5853.66,-1.90735e-006],[],0,"CAN_COLLIDE"];
+	_this = _item151;
+	_objects pushback _this;
+	_objectIDs pushback 151;
+	_this setPosWorld [4531.64,5853.66,25.3034];
+	_this setVectorDirAndUp [[0,0.999872,0.015994],[-0.00799344,-0.0159934,0.99984]];
+	[_this,"[[[[],[]],[[],[]],[[""FirstAidKit""],[4]],[[],[]]],false]"] call bis_fnc_initAmmoBox;;
+};
+
+private _item152 = objNull;
+if (_layerRoot) then {
+	_item152 = createVehicle ["O_SFIA_Offroad_AT_lxWS",[4527.98,5853.68,1.90735e-006],[],0,"CAN_COLLIDE"];
+	_this = _item152;
+	_objects pushback _this;
+	_objectIDs pushback 152;
+	_this setPosWorld [4527.96,5853.68,25.2646];
+	_this setVectorDirAndUp [[0,0.999872,0.0159977],[-0.012,-0.0159965,0.9998]];
+	[_this,"[[[[],[]],[[],[]],[[""FirstAidKit""],[4]],[[],[]]],false]"] call bis_fnc_initAmmoBox;;
+};
+
+private _item153 = objNull;
+if (_layerRoot) then {
+	_item153 = createVehicle ["O_SFIA_Offroad_armed_lxWS",[4524.47,5853.85,1.90735e-006],[],0,"CAN_COLLIDE"];
+	_this = _item153;
+	_objects pushback _this;
+	_objectIDs pushback 153;
+	_this setPosWorld [4524.43,5853.85,25.8422];
+	_this setVectorDirAndUp [[0,0.9998,0.0199947],[-0.0159977,-0.0199921,0.999672]];
+	[_this,"[[[[],[]],[[],[]],[[""FirstAidKit""],[4]],[[],[]]],false]"] call bis_fnc_initAmmoBox;;
+};
+
+private _item154 = objNull;
+if (_layerRoot) then {
+	_item154 = createVehicle ["O_SFIA_Truck_02_Ammo_lxWS",[4538.77,5839.54,-2.47955e-005],[],0,"CAN_COLLIDE"];
+	_this = _item154;
+	_objects pushback _this;
+	_objectIDs pushback 154;
+	_this setPosWorld [4538.71,5839.46,25.9636];
+	_this setVectorDirAndUp [[0,0.999353,0.0359766],[-0.0239912,-0.0359662,0.999065]];
+	[_this,"[[[[],[]],[[],[]],[[""FirstAidKit""],[4]],[[],[]]],false]"] call bis_fnc_initAmmoBox;;
+};
+
+private _item155 = objNull;
+if (_layerRoot) then {
+	_item155 = createVehicle ["O_SFIA_Truck_02_cargo_lxWS",[4534.2,5839.94,1.90735e-006],[],0,"CAN_COLLIDE"];
+	_this = _item155;
+	_objects pushback _this;
+	_objectIDs pushback 155;
+	_this setPosWorld [4534.18,5839.89,25.9004];
+	_this setVectorDirAndUp [[0,0.9998,0.0199947],[-0.012,-0.0199933,0.999728]];
+	[_this,"[[[[],[]],[[],[]],[[""FirstAidKit""],[10]],[[],[]]],false]"] call bis_fnc_initAmmoBox;;
+};
+
+private _item156 = objNull;
+if (_layerRoot) then {
+	_item156 = createVehicle ["O_SFIA_Truck_02_flatbed_lxWS",[4530.04,5839.87,1.90735e-006],[],0,"CAN_COLLIDE"];
+	_this = _item156;
+	_objects pushback _this;
+	_objectIDs pushback 156;
+	_this setPosWorld [4530.02,5839.85,25.8503];
+	_this setVectorDirAndUp [[0,0.999928,0.011995],[-0.00799344,-0.0119946,0.999896]];
+	[_this,"[[[[],[]],[[],[]],[[""FirstAidKit""],[10]],[[],[]]],false]"] call bis_fnc_initAmmoBox;;
+};
+
+private _item157 = objNull;
+if (_layerRoot) then {
+	_item157 = createVehicle ["O_SFIA_Truck_02_fuel_lxWS",[4525.49,5840.9,-3.8147e-006],[],0,"CAN_COLLIDE"];
+	_this = _item157;
+	_objects pushback _this;
+	_objectIDs pushback 157;
+	_this setPosWorld [4525.45,5840.87,25.7998];
+	_this setVectorDirAndUp [[0,0.999928,0.012],[-0.0159977,-0.0119984,0.9998]];
+	[_this,"[[[[],[]],[[],[]],[[""FirstAidKit""],[4]],[[],[]]],false]"] call bis_fnc_initAmmoBox;;
+};
+
+private _item158 = objNull;
+if (_layerRoot) then {
+	_item158 = createVehicle ["O_SFIA_Truck_02_box_lxWS",[4521.17,5841.23,1.90735e-006],[],0,"CAN_COLLIDE"];
+	_this = _item158;
+	_objects pushback _this;
+	_objectIDs pushback 158;
+	_this setPosWorld [4521.13,5841.2,25.7348];
+	_this setVectorDirAndUp [[0,0.999928,0.012],[-0.0159977,-0.0119984,0.9998]];
+	[_this,"[[[[],[]],[[],[]],[[""FirstAidKit""],[4]],[[],[]]],false]"] call bis_fnc_initAmmoBox;;
+};
+
+private _item159 = objNull;
+if (_layerRoot) then {
+	_item159 = createVehicle ["O_SFIA_Truck_02_transport_lxWS",[4516.95,5841.77,0],[],0,"CAN_COLLIDE"];
+	_this = _item159;
+	_objects pushback _this;
+	_objectIDs pushback 159;
+	_this setPosWorld [4516.91,5841.75,25.6668];
+	_this setVectorDirAndUp [[0,0.999968,0.00799344],[-0.015994,-0.00799242,0.99984]];
+	[_this,"[[[[],[]],[[],[]],[[""FirstAidKit""],[10]],[[],[]]],false]"] call bis_fnc_initAmmoBox;;
+};
+
+private _item160 = objNull;
+if (_layerRoot) then {
+	_item160 = createVehicle ["O_SFIA_Truck_02_covered_lxWS",[4512.97,5841.83,3.8147e-006],[],0,"CAN_COLLIDE"];
+	_this = _item160;
+	_objects pushback _this;
+	_objectIDs pushback 160;
+	_this setPosWorld [4512.93,5841.82,25.5863];
+	_this setVectorDirAndUp [[0,0.999992,0.00399675],[-0.0159977,-0.00399623,0.999864]];
+	[_this,"[[[[],[]],[[],[]],[[""FirstAidKit""],[10]],[[],[]]],false]"] call bis_fnc_initAmmoBox;;
+};
+
+private _item161 = objNull;
+if (_layerRoot) then {
+	_item161 = createVehicle ["O_SFIA_Heli_Attack_02_dynamicLoadout_lxWS",[4525.3,5738.24,-1.33514e-005],[],0,"CAN_COLLIDE"];
+	_this = _item161;
+	_objects pushback _this;
+	_objectIDs pushback 161;
+	_this setPosWorld [4525.35,5738.28,27.0216];
+	_this setVectorDirAndUp [[0,0.999928,-0.012],[0.0159977,0.0119984,0.9998]];
+	_this setPylonLoadout [1,"PylonRack_19Rnd_Rocket_Skyfire"];
+	_this setPylonLoadout [2,"PylonRack_19Rnd_Rocket_Skyfire"];
+	_this setPylonLoadout [3,"PylonRack_19Rnd_Rocket_Skyfire"];
+	_this setPylonLoadout [4,"PylonRack_19Rnd_Rocket_Skyfire"];
+	[_this,"[[[[""arifle_Galat_lxWS""],[2]],[[""SmokeShell"",""SmokeShellRed"",""30Rnd_762x39_Mag_F""],[2,2,4]],[[""FirstAidKit"",""ToolKit"",""ItemGPS""],[8,1,1]],[[""B_Parachute""],[8]]],false]"] call bis_fnc_initAmmoBox;;
+};
+
+private _item162 = objNull;
+if (_layerRoot) then {
+	_item162 = createVehicle ["O_SFIA_HMG_02_lxWS",[4484.21,5795.38,0],[],0,"CAN_COLLIDE"];
+	_this = _item162;
+	_objects pushback _this;
+	_objectIDs pushback 162;
+	_this setPosWorld [4484.2,5795.4,24.2519];
+	_this setVectorDirAndUp [[0,0.999872,-0.0159977],[-0.00799344,0.0159972,0.99984]];
+};
+
+private _item163 = objNull;
+if (_layerRoot) then {
+	_item163 = createVehicle ["O_SFIA_HMG_02_high_lxWS",[4483.59,5790.45,3.8147e-006],[],0,"CAN_COLLIDE"];
+	_this = _item163;
+	_objects pushback _this;
+	_objectIDs pushback 163;
+	_this setPosWorld [4483.59,5790.48,24.7748];
+	_this setVectorDirAndUp [[0,0.9998,-0.0199947],[-0.00399675,0.0199945,0.999792]];
+};
+
+private _item164 = objNull;
+if (_layerRoot) then {
+	_item164 = createVehicle ["O_SFIA_Mortar_lxWS",[4478.38,5795.76,-9.53674e-006],[],0,"CAN_COLLIDE"];
+	_this = _item164;
+	_objects pushback _this;
+	_objectIDs pushback 164;
+	_this setPosWorld [4478.38,5795.77,23.6833];
+	_this setVectorDirAndUp [[0,0.9998,-0.0199947],[-0.0080009,0.0199941,0.999768]];
+};
+
+private _item165 = objNull;
+if (_layerRoot) then {
+	_item165 = createVehicle ["O_SFIA_ZU23_lxWS",[4477.6,5791.03,-3.8147e-006],[],0,"CAN_COLLIDE"];
+	_this = _item165;
+	_objects pushback _this;
+	_objectIDs pushback 165;
+	_this setPosWorld [4477.57,5791.05,24.9938];
+	_this setVectorDirAndUp [[0,0.999928,-0.012],[-0.0159977,0.0119984,0.9998]];
+};
+
+private _item166 = objNull;
+if (_layerRoot) then {
+	_item166 = createVehicle ["O_SFIA_MBT_02_cannon_lxWS",[4508.52,5757.35,1.33514e-005],[],0,"CAN_COLLIDE"];
+	_this = _item166;
+	_objects pushback _this;
+	_objectIDs pushback 166;
+	_this setPosWorld [4508.51,5757.41,26.1174];
+	_this setVectorDirAndUp [[0,0.999712,-0.0239912],[-0.00399675,0.023991,0.999704]];
+	[_this,"[[[[""arifle_Galat_lxWS""],[2]],[[""SmokeShell"",""SmokeShellRed"",""30Rnd_762x39_Mag_F""],[2,2,2]],[[""FirstAidKit""],[10]],[[],[]]],false]"] call bis_fnc_initAmmoBox;;
+};
+
+private _item168 = objNull;
+if (_layerRoot) then {
+	_item168 = _item167 createUnit ["O_SFIA_Soldier_AAA_lxWS",[4492.27,5828.35,-1.90735e-006],[],0,"CAN_COLLIDE"];
+	_item167 selectLeader _item168;
+	_this = _item168;
+	_objects pushback _this;
+	_objectIDs pushback 168;
+	_this setPosWorld [4492.27,5828.4,22.8034];
+	_this setVectorDirAndUp [[0,1,0],[0,0,1]];
+	selectPlayer _this;
+	_this setname "Mohamed al-Harradi";;
+	_this setface "Barklem";;
+	_this setspeaker "male01fre";;
+	_this setpitch 1.00062;;
+};
+
+private _item169 = objNull;
+if (_layerRoot) then {
+	_item169 = _item167 createUnit ["O_SFIA_Soldier_AAT_lxWS",[4492.06,5827.03,1.90735e-006],[],0,"CAN_COLLIDE"];
+	_this = _item169;
+	_objects pushback _this;
+	_objectIDs pushback 169;
+	_this setPosWorld [4492.06,5827.08,22.8082];
+	_this setVectorDirAndUp [[0,1,0],[0,0,1]];
+	_this setname "Karim Ben Bourequat";;
+	_this setface "AfricanHead_01";;
+	_this setspeaker "male01fre";;
+	_this setpitch 1.02452;;
+};
+
+private _item170 = objNull;
+if (_layerRoot) then {
+	_item170 = _item167 createUnit ["O_SFIA_Soldier_AR_lxWS",[4492.1,5825.88,3.8147e-006],[],0,"CAN_COLLIDE"];
+	_this = _item170;
+	_objects pushback _this;
+	_objectIDs pushback 170;
+	_this setPosWorld [4492.1,5825.93,22.818];
+	_this setVectorDirAndUp [[0,1,0],[0,0,1]];
+	_this setname "Dirar El Meliani";;
+	_this setface "lxWS_African_Head_02";;
+	_this setspeaker "male03fre";;
+	_this setpitch 0.964084;;
+};
+
+private _item171 = objNull;
+if (_layerRoot) then {
+	_item171 = _item167 createUnit ["O_SFIA_medic_lxWS",[4492.02,5824.66,3.8147e-006],[],0,"CAN_COLLIDE"];
+	_this = _item171;
+	_objects pushback _this;
+	_objectIDs pushback 171;
+	_this setPosWorld [4492.02,5824.71,22.8251];
+	_this setVectorDirAndUp [[0,1,0],[0,0,1]];
+	_this setname "Hadir Toufiq";;
+	_this setface "Barklem";;
+	_this setspeaker "male03fre";;
+	_this setpitch 1.03878;;
+};
+
+private _item172 = objNull;
+if (_layerRoot) then {
+	_item172 = _item167 createUnit ["O_SFIA_crew_lxWS",[4492.08,5823.58,0],[],0,"CAN_COLLIDE"];
+	_this = _item172;
+	_objects pushback _this;
+	_objectIDs pushback 172;
+	_this setPosWorld [4492.08,5823.63,22.8304];
+	_this setVectorDirAndUp [[0,1,0],[0,0,1]];
+	_this setname "Isma'il Ben al-Madini";;
+	_this setface "lxWS_African_Head_05";;
+	_this setspeaker "male03fre";;
+	_this setpitch 1.0214;;
+};
+
+private _item173 = objNull;
+if (_layerRoot) then {
+	_item173 = _item167 createUnit ["O_SFIA_exp_lxWS",[4490.25,5828.41,-5.72205e-006],[],0,"CAN_COLLIDE"];
+	_this = _item173;
+	_objects pushback _this;
+	_objectIDs pushback 173;
+	_this setPosWorld [4490.25,5828.46,22.7682];
+	_this setVectorDirAndUp [[0,1,0],[0,0,1]];
+	_this setname "Hamza Siqli";;
+	_this setface "lxWS_African_Head_04";;
+	_this setspeaker "male02fre";;
+	_this setpitch 0.981489;;
+};
+
+private _item174 = objNull;
+if (_layerRoot) then {
+	_item174 = _item167 createUnit ["O_SFIA_Soldier_GL_lxWS",[4490.18,5827.1,0],[],0,"CAN_COLLIDE"];
+	_this = _item174;
+	_objects pushback _this;
+	_objectIDs pushback 174;
+	_this setPosWorld [4490.18,5827.15,22.7774];
+	_this setVectorDirAndUp [[0,1,0],[0,0,1]];
+	_this setname "Asil Akhrif";;
+	_this setface "PersianHead_A3_01";;
+	_this setspeaker "male01fre";;
+	_this setpitch 0.985694;;
+};
+
+private _item175 = objNull;
+if (_layerRoot) then {
+	_item175 = _item167 createUnit ["O_SFIA_HeavyGunner_lxWS",[4490,5826.06,7.62939e-006],[],0,"CAN_COLLIDE"];
+	_this = _item175;
+	_objects pushback _this;
+	_objectIDs pushback 175;
+	_this setPosWorld [4490,5826.1,22.783];
+	_this setVectorDirAndUp [[0,1,0],[0,0,1]];
+	_this setname "Tanan Khammar";;
+	_this setface "lxWS_African_Head_01";;
+	_this setspeaker "male01fre";;
+	_this setpitch 0.988856;;
+};
+
+private _item176 = objNull;
+if (_layerRoot) then {
+	_item176 = _item167 createUnit ["O_SFIA_soldier_aa_lxWS",[4489.94,5824.92,-1.14441e-005],[],0,"CAN_COLLIDE"];
+	_this = _item176;
+	_objects pushback _this;
+	_objectIDs pushback 176;
+	_this setPosWorld [4489.94,5824.96,22.7906];
+	_this setVectorDirAndUp [[0,1,0],[0,0,1]];
+	_this setname "Jabalah Jelloun";;
+	_this setface "lxWS_African_Head_04";;
+	_this setspeaker "male01fre";;
+	_this setpitch 0.983402;;
+};
+
+private _item177 = objNull;
+if (_layerRoot) then {
+	_item177 = _item167 createUnit ["O_SFIA_soldier_at_lxWS",[4489.86,5823.85,-1.71661e-005],[],0,"CAN_COLLIDE"];
+	_this = _item177;
+	_objects pushback _this;
+	_objectIDs pushback 177;
+	_this setPosWorld [4489.86,5823.9,22.7933];
+	_this setVectorDirAndUp [[0,1,0],[0,0,1]];
+	_this setname "Thamir Yaktine";;
+	_this setface "PersianHead_A3_01";;
+	_this setspeaker "male03fre";;
+	_this setpitch 0.982401;;
+};
+
+private _item178 = objNull;
+if (_layerRoot) then {
+	_item178 = _item167 createUnit ["O_SFIA_officer_lxWS",[4488.68,5828.67,-1.90735e-006],[],0,"CAN_COLLIDE"];
+	_this = _item178;
+	_objects pushback _this;
+	_objectIDs pushback 178;
+	_this setPosWorld [4488.68,5828.72,22.741];
+	_this setVectorDirAndUp [[0,1,0],[0,0,1]];
+	_this setname "Abdelkader Khouri";;
+	_this setface "lxWS_African_Head_05";;
+	_this setspeaker "male03fre";;
+	_this setpitch 0.998534;;
+};
+
+private _item179 = objNull;
+if (_layerRoot) then {
+	_item179 = _item167 createUnit ["O_SFIA_pilot_lxWS",[4488.47,5827.4,5.72205e-006],[],0,"CAN_COLLIDE"];
+	_this = _item179;
+	_objects pushback _this;
+	_objectIDs pushback 179;
+	_this setPosWorld [4488.47,5827.45,22.7477];
+	_this setVectorDirAndUp [[0,1,0],[0,0,1]];
+	_this setname "Mimoun al-Jabri";;
+	_this setface "lxWS_African_Head_04";;
+	_this setspeaker "male01fre";;
+	_this setpitch 0.978184;;
+};
+
+private _item180 = objNull;
+if (_layerRoot) then {
+	_item180 = _item167 createUnit ["O_SFIA_repair_lxWS",[4488.32,5826.22,-1.90735e-006],[],0,"CAN_COLLIDE"];
+	_this = _item180;
+	_objects pushback _this;
+	_objectIDs pushback 180;
+	_this setPosWorld [4488.32,5826.27,22.753];
+	_this setVectorDirAndUp [[0,1,0],[0,0,1]];
+	_this setname "Muwaffaq al-Jabri";;
+	_this setface "PersianHead_A3_02";;
+	_this setspeaker "male01fre";;
+	_this setpitch 1.0255;;
+};
+
+private _item181 = objNull;
+if (_layerRoot) then {
+	_item181 = _item167 createUnit ["O_SFIA_soldier_lxWS",[4488.16,5825.13,-3.8147e-006],[],0,"CAN_COLLIDE"];
+	_this = _item181;
+	_objects pushback _this;
+	_objectIDs pushback 181;
+	_this setPosWorld [4488.16,5825.18,22.7541];
+	_this setVectorDirAndUp [[0,1,0],[0,0,1]];
+	_this setname "Abderrahim Zniber";;
+	_this setface "PersianHead_A3_02";;
+	_this setspeaker "male02fre";;
+	_this setpitch 1.04208;;
+};
+
+private _item182 = objNull;
+if (_layerRoot) then {
+	_item182 = _item167 createUnit ["O_SFIA_soldier_lite_lxWS",[4488.09,5824.04,-3.8147e-006],[],0,"CAN_COLLIDE"];
+	_this = _item182;
+	_objects pushback _this;
+	_objectIDs pushback 182;
+	_this setPosWorld [4488.09,5824.09,22.7585];
+	_this setVectorDirAndUp [[0,1,0],[0,0,1]];
+	_this setname "Jawdah al-Madini";;
+	_this setface "AfricanHead_03";;
+	_this setspeaker "male02fre";;
+	_this setpitch 0.96005;;
+};
+
+private _item183 = objNull;
+if (_layerRoot) then {
+	_item183 = _item167 createUnit ["O_SFIA_soldier_unarmed_lxWS",[4486.9,5828.81,0],[],0,"CAN_COLLIDE"];
+	_this = _item183;
+	_objects pushback _this;
+	_objectIDs pushback 183;
+	_this setPosWorld [4486.9,5828.86,22.7138];
+	_this setVectorDirAndUp [[0,1,0],[0,0,1]];
+	_this setname "Wasim Jouahri";;
+	_this setface "PersianHead_A3_03";;
+	_this setspeaker "male01fre";;
+	_this setpitch 1.03842;;
+};
+
+private _item184 = objNull;
+if (_layerRoot) then {
+	_item184 = _item167 createUnit ["O_SFIA_sharpshooter_lxWS",[4486.77,5827.69,-3.8147e-006],[],0,"CAN_COLLIDE"];
+	_this = _item184;
+	_objects pushback _this;
+	_objectIDs pushback 184;
+	_this setPosWorld [4486.77,5827.74,22.7168];
+	_this setVectorDirAndUp [[0,1,0],[0,0,1]];
+	_this setname "Marzuq Lamrani";;
+	_this setface "lxWS_African_Head_01";;
+	_this setspeaker "male02fre";;
+	_this setpitch 0.961872;;
+};
+
+private _item185 = objNull;
+if (_layerRoot) then {
+	_item185 = _item167 createUnit ["O_SFIA_survivor_lxWS",[4486.7,5826.59,9.53674e-006],[],0,"CAN_COLLIDE"];
+	_this = _item185;
+	_objects pushback _this;
+	_objectIDs pushback 185;
+	_this setPosWorld [4486.7,5826.64,22.7191];
+	_this setVectorDirAndUp [[0,1,0],[0,0,1]];
+	_this setname "Abderrahman Mohammed";;
+	_this setface "AfricanHead_02";;
+	_this setspeaker "male02fre";;
+	_this setpitch 0.986399;;
+};
+
+private _item186 = objNull;
+if (_layerRoot) then {
+	_item186 = _item167 createUnit ["O_SFIA_Soldier_TL_lxWS",[4486.59,5825.48,-3.8147e-006],[],0,"CAN_COLLIDE"];
+	_this = _item186;
+	_objects pushback _this;
+	_objectIDs pushback 186;
+	_this setPosWorld [4486.59,5825.53,22.7231];
+	_this setVectorDirAndUp [[0,1,0],[0,0,1]];
+	_this setname "Jibran Hajuji";;
+	_this setface "PersianHead_A3_02";;
+	_this setspeaker "male01fre";;
+	_this setpitch 0.995091;;
+};
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// Triggers
+private _triggers = [];
+private _triggerIDs = [];
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// Group attributes (applied only once group units exist)
+_this = _item167;
+if !(units _this isEqualTo []) then {
+	[_this,0] setWaypointPosition [position leader _this,0];
+	_this setGroupID ["Alpha 1-1"];;
+};
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// Waypoints
+private _waypoints = [];
+private _waypointIDs = [];
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// Logics
+private _logics = [];
+private _logicIDs = [];
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// Layers
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// Crews
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// Vehicle cargo
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// Connections
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// Inits (executed only once all entities exist; isNil used to ensure non-scheduled environment)
+isNil {
+};
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// Module activations (only once everything is spawned and connected)
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+[[_objects,_groups,_triggers,_waypoints,_logics,_markers],[_objectIDs,_groupIDs,_triggerIDs,_waypointIDs,_logicIDs,_markerIDs]]

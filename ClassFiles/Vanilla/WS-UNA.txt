@@ -1,0 +1,481 @@
+// Export of 'WS_UNA_units.SefrouRamal' by dukee on v0.9
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// Init
+params [["_layerWhiteList",[],[[]]],["_layerBlacklist",[],[[]]],["_posCenter",[0,0,0],[[]]],["_dir",0,[0]],["_idBlacklist",[],[[]]]];
+private _allWhitelisted = _layerWhiteList isEqualTo [];
+private _layerRoot = (_allWhitelisted || {true in _layerWhiteList}) && {!(true in _layerBlackList)};
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// Markers
+private _markers = [];
+private _markerIDs = [];
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// Groups
+private _groups = [];
+private _groupIDs = [];
+
+private _item86 = grpNull;
+if (_layerRoot) then {
+	_item86 = createGroup west;
+	_this = _item86;
+	_groups pushback _this;
+	_groupIDs pushback 86;
+};
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// Objects
+private _objects = [];
+private _objectIDs = [];
+
+private _item70 = objNull;
+if (_layerRoot) then {
+	_item70 = createVehicle ["B_UN_APC_Wheeled_01_command_lxWS",[4544.53,5777.4,0],[],0,"CAN_COLLIDE"];
+	_this = _item70;
+	_objects pushback _this;
+	_objectIDs pushback 70;
+	_this setPosWorld [4544.53,5777.4,26.066];
+	_this setVectorDirAndUp [[0,0.999992,-0.00399675],[-0.0080009,0.00399662,0.99996]];
+	[_this,"[[[[""arifle_Velko_lxWS""],[2]],[[""35Rnd_556x45_Velko_reload_tracer_red_lxWS"",""50Rnd_556x45_Velko_reload_tracer_red_lxWS"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellGreen"",""SmokeShellOrange"",""SmokeShellBlue""],[12,6,6,6,8,8,8,8]],[[""FirstAidKit""],[10]],[[],[]]],false]"] call bis_fnc_initAmmoBox;;
+	_this setVehicleReportRemoteTargets true;
+	_this setVehicleReceiveRemoteTargets true;
+	_this setVehicleReportOwnPosition true;
+};
+
+private _item71 = objNull;
+if (_layerRoot) then {
+	_item71 = createVehicle ["B_UNA_APC_Wheeled_02_hmg_lxWS",[4538.93,5777.84,0],[],0,"CAN_COLLIDE"];
+	_this = _item71;
+	_objects pushback _this;
+	_objectIDs pushback 71;
+	_this setPosWorld [4538.92,5777.85,26.1185];
+	_this setVectorDirAndUp [[0,0.999992,-0.00399675],[-0.00399675,0.00399671,0.999984]];
+	[_this,"[[[[""arifle_VelkoR5_lxWS""],[2]],[[""35Rnd_556x45_Velko_reload_tracer_red_lxWS"",""50Rnd_556x45_Velko_reload_tracer_red_lxWS"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellRed"",""SmokeShellYellow"",""SmokeShellOrange""],[12,6,6,6,8,8,8,8]],[[""FirstAidKit""],[10]],[[],[]]],false]"] call bis_fnc_initAmmoBox;;
+};
+
+private _item72 = objNull;
+if (_layerRoot) then {
+	_item72 = createVehicle ["B_UNA_APC_Wheeled_02_unarmed_lxWS",[4534.27,5777.71,0],[],0,"CAN_COLLIDE"];
+	_this = _item72;
+	_objects pushback _this;
+	_objectIDs pushback 72;
+	_this setPosWorld [4534.27,5777.73,26.043];
+	_this setVectorDirAndUp [[0,0.999992,-0.00399675],[-0.00399675,0.00399671,0.999984]];
+	[_this,"[[[[""arifle_VelkoR5_lxWS""],[2]],[[""35Rnd_556x45_Velko_reload_tracer_red_lxWS"",""50Rnd_556x45_Velko_reload_tracer_red_lxWS"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellRed"",""SmokeShellYellow"",""SmokeShellOrange""],[12,6,6,6,8,8,8,8]],[[""FirstAidKit""],[10]],[[],[]]],false]"] call bis_fnc_initAmmoBox;;
+};
+
+private _item73 = objNull;
+if (_layerRoot) then {
+	_item73 = createVehicle ["B_UN_Truck_01_mover_lxWS",[4561.16,5807.56,0],[],0,"CAN_COLLIDE"];
+	_this = _item73;
+	_objects pushback _this;
+	_objectIDs pushback 73;
+	_this setPosWorld [4561.16,5807.56,25.4093];
+	_this setVectorDirAndUp [[0,1,0],[-0.00399675,0,0.999992]];
+	[_this,"[[[[],[]],[[],[]],[[""FirstAidKit""],[10]],[[],[]]],false]"] call bis_fnc_initAmmoBox;;
+};
+
+private _item74 = objNull;
+if (_layerRoot) then {
+	_item74 = createVehicle ["B_UN_Truck_01_ammo_lxWS",[4555.97,5808.52,3.8147e-006],[],0,"CAN_COLLIDE"];
+	_this = _item74;
+	_objects pushback _this;
+	_objectIDs pushback 74;
+	_this setPosWorld [4555.97,5808.52,25.4015];
+	_this setVectorDirAndUp [[0,0.999992,-0.00399675],[0,0.00399675,0.999992]];
+	[_this,"[[[[],[]],[[],[]],[[""FirstAidKit""],[10]],[[],[]]],false]"] call bis_fnc_initAmmoBox;;
+};
+
+private _item75 = objNull;
+if (_layerRoot) then {
+	_item75 = createVehicle ["B_UN_Truck_01_box_lxWS",[4550.42,5806.96,-1.90735e-006],[],0,"CAN_COLLIDE"];
+	_this = _item75;
+	_objects pushback _this;
+	_objectIDs pushback 75;
+	_this setPosWorld [4550.41,5806.96,25.7751];
+	_this setVectorDirAndUp [[0,1,0],[-0.00399675,0,0.999992]];
+	[_this,"[[[[],[]],[[],[]],[[""FirstAidKit""],[10]],[[],[]]],false]"] call bis_fnc_initAmmoBox;;
+};
+
+private _item76 = objNull;
+if (_layerRoot) then {
+	_item76 = createVehicle ["B_UN_Truck_01_fuel_lxWS",[4544.22,5806.81,-1.90735e-006],[],0,"CAN_COLLIDE"];
+	_this = _item76;
+	_objects pushback _this;
+	_objectIDs pushback 76;
+	_this setPosWorld [4544.21,5806.81,25.3529];
+	_this setVectorDirAndUp [[0,1,0],[-0.00399675,0,0.999992]];
+	[_this,"[[[[],[]],[[],[]],[[""FirstAidKit""],[10]],[[],[]]],false]"] call bis_fnc_initAmmoBox;;
+};
+
+private _item77 = objNull;
+if (_layerRoot) then {
+	_item77 = createVehicle ["B_UN_Truck_01_medical_lxWS",[4538.87,5806.41,-3.8147e-006],[],0,"CAN_COLLIDE"];
+	_this = _item77;
+	_objects pushback _this;
+	_objectIDs pushback 77;
+	_this setPosWorld [4538.85,5806.41,25.6235];
+	_this setVectorDirAndUp [[0,1,0],[-0.00799344,0,0.999968]];
+	[_this,"[[[[],[]],[[],[]],[[""FirstAidKit""],[10]],[[],[]]],false]"] call bis_fnc_initAmmoBox;;
+};
+
+private _item78 = objNull;
+if (_layerRoot) then {
+	_item78 = createVehicle ["B_UN_Truck_01_Repair_lxWS",[4532.93,5807.57,0],[],0,"CAN_COLLIDE"];
+	_this = _item78;
+	_objects pushback _this;
+	_objectIDs pushback 78;
+	_this setPosWorld [4532.91,5807.57,25.6868];
+	_this setVectorDirAndUp [[0,1,0],[-0.00799344,0,0.999968]];
+	[_this,"[[[[],[]],[[],[]],[[""FirstAidKit""],[10]],[[],[]]],false]"] call bis_fnc_initAmmoBox;;
+};
+
+private _item79 = objNull;
+if (_layerRoot) then {
+	_item79 = createVehicle ["B_UN_Truck_01_transport_lxWS",[4526.75,5807.99,0],[],0,"CAN_COLLIDE"];
+	_this = _item79;
+	_objects pushback _this;
+	_objectIDs pushback 79;
+	_this setPosWorld [4526.73,5808,25.5667];
+	_this setVectorDirAndUp [[0,0.999992,-0.00399675],[-0.0080009,0.00399662,0.99996]];
+	[_this,"[[[[],[]],[[],[]],[[""FirstAidKit""],[10]],[[],[]]],false]"] call bis_fnc_initAmmoBox;;
+};
+
+private _item80 = objNull;
+if (_layerRoot) then {
+	_item80 = createVehicle ["B_UN_Truck_01_covered_lxWS",[4522.19,5807.46,0],[],0,"CAN_COLLIDE"];
+	_this = _item80;
+	_objects pushback _this;
+	_objectIDs pushback 80;
+	_this setPosWorld [4522.17,5807.47,25.5324];
+	_this setVectorDirAndUp [[0,0.999992,-0.00399675],[-0.0080009,0.00399662,0.99996]];
+	[_this,"[[[[],[]],[[],[]],[[""FirstAidKit""],[10]],[[],[]]],false]"] call bis_fnc_initAmmoBox;;
+};
+
+private _item81 = objNull;
+if (_layerRoot) then {
+	_item81 = createVehicle ["B_UN_MRAP_01_lxWS",[4540.81,5835.16,0],[],0,"CAN_COLLIDE"];
+	_this = _item81;
+	_objects pushback _this;
+	_objectIDs pushback 81;
+	_this setPosWorld [4540.78,5835.11,25.6894];
+	_this setVectorDirAndUp [[0,0.999608,0.0279894],[-0.012,-0.0279874,0.999536]];
+	[_this,"[[[[""arifle_Velko_lxWS""],[2]],[[""35Rnd_556x45_Velko_reload_tracer_red_lxWS"",""50Rnd_556x45_Velko_reload_tracer_red_lxWS"",""HandGrenade"",""1Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""1Rnd_SmokeOrange_Grenade_shell"",""1Rnd_SmokeBlue_Grenade_shell"",""9Rnd_45ACP_Mag"",""SmokeShell"",""SmokeShellGreen"",""SmokeShellOrange"",""SmokeShellBlue"",""NLAW_F""],[12,6,10,10,4,4,4,4,12,4,4,4,4,2]],[[""FirstAidKit""],[10]],[[],[]]],false]"] call bis_fnc_initAmmoBox;;
+};
+
+private _item82 = objNull;
+if (_layerRoot) then {
+	_item82 = createVehicle ["B_UN_Offroad_lxWS",[4538.5,5844.94,0],[],0,"CAN_COLLIDE"];
+	_this = _item82;
+	_objects pushback _this;
+	_objectIDs pushback 82;
+	_this setPosWorld [4538.48,5844.94,25.2948];
+	_this setVectorDirAndUp [[0,0.999872,0.0159977],[-0.0239937,-0.0159931,0.999584]];
+	[_this,"[[[[],[]],[[],[]],[[""FirstAidKit""],[4]],[[],[]]],false]"] call bis_fnc_initAmmoBox;;
+};
+
+private _item83 = objNull;
+if (_layerRoot) then {
+	_item83 = createVehicle ["B_UN_Offroad_Armor_lxWS",[4535.94,5833.79,0],[],0,"CAN_COLLIDE"];
+	_this = _item83;
+	_objects pushback _this;
+	_objectIDs pushback 83;
+	_this setPosWorld [4535.93,5833.81,25.5283];
+	_this setVectorDirAndUp [[0,0.999992,0.00399675],[-0.0080009,-0.00399662,0.99996]];
+	[_this,"[[[[],[]],[[],[]],[[""FirstAidKit""],[4]],[[],[]]],false]"] call bis_fnc_initAmmoBox;;
+};
+
+private _item84 = objNull;
+if (_layerRoot) then {
+	_item84 = createVehicle ["B_UN_Heli_Transport_02_lxWS",[4579.28,5735.29,0],[],0,"CAN_COLLIDE"];
+	_this = _item84;
+	_objects pushback _this;
+	_objectIDs pushback 84;
+	_this setPosWorld [4579.28,5735.21,27.5752];
+	_this setVectorDirAndUp [[0,0.9998,0.0199977],[0,-0.0199977,0.9998]];
+	[_this,"[[[[""arifle_Velko_lxWS""],[2]],[[""SmokeShell"",""SmokeShellGreen"",""35Rnd_556x45_Velko_lxWS""],[5,5,4]],[[""FirstAidKit"",""ToolKit"",""Medikit"",""ItemGPS""],[16,1,1,1]],[[""B_Parachute""],[16]]],false]"] call bis_fnc_initAmmoBox;;
+};
+
+private _item85 = objNull;
+if (_layerRoot) then {
+	_item85 = createVehicle ["B_MBT_03_cannon_lxWS",[4537.79,5745.61,0],[],0,"CAN_COLLIDE"];
+	_this = _item85;
+	_objects pushback _this;
+	_objectIDs pushback 85;
+	_this setPosWorld [4537.79,5745.62,26.5261];
+	_this setVectorDirAndUp [[0,0.999992,-0.00399675],[0,0.00399675,0.999992]];
+	[_this,"[[[[""arifle_Velko_lxWS""],[2]],[[""SmokeShell"",""SmokeShellGreen"",""35Rnd_556x45_Velko_reload_tracer_red_lxWS""],[2,2,4]],[[""FirstAidKit""],[10]],[[],[]]],false]"] call bis_fnc_initAmmoBox;;
+};
+
+private _item87 = objNull;
+if (_layerRoot) then {
+	_item87 = _item86 createUnit ["B_UN_soldier_AR_lxWS",[4542.54,5867.18,1.33514e-005],[],0,"CAN_COLLIDE"];
+	_item86 selectLeader _item87;
+	_this = _item87;
+	_objects pushback _this;
+	_objectIDs pushback 87;
+	_this setPosWorld [4542.54,5867.23,23.7323];
+	_this setVectorDirAndUp [[0,1,0],[0,0,1]];
+	selectPlayer _this;
+	_this setname "Donnan Clarke";;
+	_this setface "WhiteHead_09";;
+	_this setspeaker "male01engfre";;
+	_this setpitch 1.03054;;
+};
+
+private _item88 = objNull;
+if (_layerRoot) then {
+	_item88 = _item86 createUnit ["B_UN_medic_lxWS",[4542.54,5866.14,1.90735e-006],[],0,"CAN_COLLIDE"];
+	_this = _item88;
+	_objects pushback _this;
+	_objectIDs pushback 88;
+	_this setPosWorld [4542.54,5866.19,23.7364];
+	_this setVectorDirAndUp [[0,1,0],[0,0,1]];
+	_this setname "Liam Morgan";;
+	_this setface "WhiteHead_07";;
+	_this setspeaker "male01engfre";;
+	_this setpitch 1.04291;;
+};
+
+private _item89 = objNull;
+if (_layerRoot) then {
+	_item89 = _item86 createUnit ["B_UN_crew_lxWS",[4542.65,5865.17,0],[],0,"CAN_COLLIDE"];
+	_this = _item89;
+	_objects pushback _this;
+	_objectIDs pushback 89;
+	_this setPosWorld [4542.65,5865.22,23.7389];
+	_this setVectorDirAndUp [[0,1,0],[0,0,1]];
+	_this setname "Jamie Cooper";;
+	_this setface "WhiteHead_03";;
+	_this setspeaker "male02engfre";;
+	_this setpitch 1.0124;;
+};
+
+private _item90 = objNull;
+if (_layerRoot) then {
+	_item90 = _item86 createUnit ["B_UN_engineer_lxWS",[4542.77,5864.2,-1.90735e-006],[],0,"CAN_COLLIDE"];
+	_this = _item90;
+	_objects pushback _this;
+	_objectIDs pushback 90;
+	_this setPosWorld [4542.77,5864.25,23.7425];
+	_this setVectorDirAndUp [[0,1,0],[0,0,1]];
+	_this setname "Jack Robertson";;
+	_this setface "TanoanHead_A3_07";;
+	_this setspeaker "male02engfre";;
+	_this setpitch 0.987947;;
+};
+
+private _item91 = objNull;
+if (_layerRoot) then {
+	_item91 = _item86 createUnit ["B_UN_Soldier_GL_lxWS",[4542.85,5863.3,-1.90735e-006],[],0,"CAN_COLLIDE"];
+	_this = _item91;
+	_objects pushback _this;
+	_objectIDs pushback 91;
+	_this setPosWorld [4542.85,5863.35,23.7454];
+	_this setVectorDirAndUp [[0,1,0],[0,0,1]];
+	_this setname "Ryan O'Sullivan";;
+	_this setface "GreekHead_A3_05";;
+	_this setspeaker "male01engfre";;
+	_this setpitch 1.00495;;
+};
+
+private _item92 = objNull;
+if (_layerRoot) then {
+	_item92 = _item86 createUnit ["B_UN_HeavyGunner_lxWS",[4541.25,5867.28,0],[],0,"CAN_COLLIDE"];
+	_this = _item92;
+	_objects pushback _this;
+	_objectIDs pushback 92;
+	_this setPosWorld [4541.25,5867.33,23.7573];
+	_this setVectorDirAndUp [[0,1,0],[0,0,1]];
+	_this setname "Liam Burr";;
+	_this setface "WhiteHead_21";;
+	_this setspeaker "male02engfre";;
+	_this setpitch 1.01005;;
+};
+
+private _item93 = objNull;
+if (_layerRoot) then {
+	_item93 = _item86 createUnit ["B_UN_Helipilot_lxWS",[4541.29,5866.23,-3.8147e-006],[],0,"CAN_COLLIDE"];
+	_this = _item93;
+	_objects pushback _this;
+	_objectIDs pushback 93;
+	_this setPosWorld [4541.29,5866.28,23.7607];
+	_this setVectorDirAndUp [[0,1,0],[0,0,1]];
+	_this setname "Greer Smith";;
+	_this setface "TanoanHead_A3_02";;
+	_this setspeaker "male02engfre";;
+	_this setpitch 0.997014;;
+};
+
+private _item94 = objNull;
+if (_layerRoot) then {
+	_item94 = _item86 createUnit ["B_UN_officer_lxWS",[4541.42,5865.29,3.8147e-006],[],0,"CAN_COLLIDE"];
+	_this = _item94;
+	_objects pushback _this;
+	_objectIDs pushback 94;
+	_this setPosWorld [4541.42,5865.34,23.7587];
+	_this setVectorDirAndUp [[0,1,0],[0,0,1]];
+	_this setname "Thomas Johnson";;
+	_this setface "TanoanHead_A3_02";;
+	_this setspeaker "male01engfre";;
+	_this setpitch 1.0089;;
+};
+
+private _item95 = objNull;
+if (_layerRoot) then {
+	_item95 = _item86 createUnit ["B_UN_soldier_repair_lxWS",[4541.46,5864.35,9.53674e-006],[],0,"CAN_COLLIDE"];
+	_this = _item95;
+	_objects pushback _this;
+	_objectIDs pushback 95;
+	_this setPosWorld [4541.46,5864.4,23.7607];
+	_this setVectorDirAndUp [[0,1,0],[0,0,1]];
+	_this setname "Jake Baker";;
+	_this setface "TanoanHead_A3_02";;
+	_this setspeaker "male02engfre";;
+	_this setpitch 1.00625;;
+};
+
+private _item96 = objNull;
+if (_layerRoot) then {
+	_item96 = _item86 createUnit ["B_UN_Soldier_lxWS",[4540.19,5867.25,-5.72205e-006],[],0,"CAN_COLLIDE"];
+	_this = _item96;
+	_objects pushback _this;
+	_objectIDs pushback 96;
+	_this setPosWorld [4540.19,5867.29,23.7784];
+	_this setVectorDirAndUp [[0,1,0],[0,0,1]];
+	_this setname "Colin Scott";;
+	_this setface "TanoanHead_A3_08";;
+	_this setspeaker "male01engfre";;
+	_this setpitch 1.03239;;
+};
+
+private _item97 = objNull;
+if (_layerRoot) then {
+	_item97 = _item86 createUnit ["B_UN_soldier_LAT2_lxWS",[4540.16,5866.4,-3.8147e-006],[],0,"CAN_COLLIDE"];
+	_this = _item97;
+	_objects pushback _this;
+	_objectIDs pushback 97;
+	_this setPosWorld [4540.16,5866.45,23.7788];
+	_this setVectorDirAndUp [[0,1,0],[0,0,1]];
+	_this setname "Toby Williams";;
+	_this setface "WhiteHead_15";;
+	_this setspeaker "male01engfre";;
+	_this setpitch 1.02212;;
+};
+
+private _item98 = objNull;
+if (_layerRoot) then {
+	_item98 = _item86 createUnit ["B_UN_Soldier_lite_lxWS",[4540.26,5865.56,0],[],0,"CAN_COLLIDE"];
+	_this = _item98;
+	_objects pushback _this;
+	_objectIDs pushback 98;
+	_this setPosWorld [4540.26,5865.61,23.7773];
+	_this setVectorDirAndUp [[0,1,0],[0,0,1]];
+	_this setname "Dylan Walker";;
+	_this setface "Sturrock";;
+	_this setspeaker "male06eng";;
+	_this setpitch 1.00963;;
+};
+
+private _item99 = objNull;
+if (_layerRoot) then {
+	_item99 = _item86 createUnit ["B_UN_Soldier_unarmed_lxWS",[4540.31,5864.67,0],[],0,"CAN_COLLIDE"];
+	_this = _item99;
+	_objects pushback _this;
+	_objectIDs pushback 99;
+	_this setPosWorld [4540.31,5864.72,23.7776];
+	_this setVectorDirAndUp [[0,1,0],[0,0,1]];
+	_this setname "Alexander Davies";;
+	_this setface "WhiteHead_10";;
+	_this setspeaker "male02engfre";;
+	_this setpitch 1.01231;;
+};
+
+private _item100 = objNull;
+if (_layerRoot) then {
+	_item100 = _item86 createUnit ["B_UN_survivor_lxWS",[4540.31,5863.72,0],[],0,"CAN_COLLIDE"];
+	_this = _item100;
+	_objects pushback _this;
+	_objectIDs pushback 100;
+	_this setPosWorld [4540.31,5863.77,23.7739];
+	_this setVectorDirAndUp [[0,1,0],[0,0,1]];
+	_this setname "David Moore";;
+	_this setface "AfricanHead_01";;
+	_this setspeaker "male02engfre";;
+	_this setpitch 1.02656;;
+};
+
+private _item101 = objNull;
+if (_layerRoot) then {
+	_item101 = _item86 createUnit ["B_UN_Soldier_TL_lxWS",[4540.39,5862.92,-1.90735e-006],[],0,"CAN_COLLIDE"];
+	_this = _item101;
+	_objects pushback _this;
+	_objectIDs pushback 101;
+	_this setPosWorld [4540.39,5862.97,23.77];
+	_this setVectorDirAndUp [[0,1,0],[0,0,1]];
+	_this setname "Geoff Johnson";;
+	_this setface "AfricanHead_03";;
+	_this setspeaker "male02engfre";;
+	_this setpitch 0.958975;;
+};
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// Triggers
+private _triggers = [];
+private _triggerIDs = [];
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// Group attributes (applied only once group units exist)
+_this = _item86;
+if !(units _this isEqualTo []) then {
+	[_this,0] setWaypointPosition [position leader _this,0];
+	_this setGroupID ["Alpha 1-1"];;
+};
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// Waypoints
+private _waypoints = [];
+private _waypointIDs = [];
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// Logics
+private _logics = [];
+private _logicIDs = [];
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// Layers
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// Crews
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// Vehicle cargo
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// Connections
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// Inits (executed only once all entities exist; isNil used to ensure non-scheduled environment)
+isNil {
+};
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// Module activations (only once everything is spawned and connected)
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+[[_objects,_groups,_triggers,_waypoints,_logics,_markers],[_objectIDs,_groupIDs,_triggerIDs,_waypointIDs,_logicIDs,_markerIDs]]

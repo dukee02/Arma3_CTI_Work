@@ -1,0 +1,316 @@
+// Export of 'WS_Tura_units.SefrouRamal' by dukee on v0.9
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// Init
+params [["_layerWhiteList",[],[[]]],["_layerBlacklist",[],[[]]],["_posCenter",[0,0,0],[[]]],["_dir",0,[0]],["_idBlacklist",[],[[]]]];
+private _allWhitelisted = _layerWhiteList isEqualTo [];
+private _layerRoot = (_allWhitelisted || {true in _layerWhiteList}) && {!(true in _layerBlackList)};
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// Markers
+private _markers = [];
+private _markerIDs = [];
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// Groups
+private _groups = [];
+private _groupIDs = [];
+
+private _item110 = grpNull;
+if (_layerRoot) then {
+	_item110 = createGroup west;
+	_this = _item110;
+	_groups pushback _this;
+	_groupIDs pushback 110;
+};
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// Objects
+private _objects = [];
+private _objectIDs = [];
+
+private _item102 = objNull;
+if (_layerRoot) then {
+	_item102 = createVehicle ["B_Tura_Truck_02_aa_lxWS",[4535.53,5799.84,0],[],0,"CAN_COLLIDE"];
+	_this = _item102;
+	_objects pushback _this;
+	_objectIDs pushback 102;
+	_this setPosWorld [4535.52,5799.86,26.2466];
+	_this setVectorDirAndUp [[0,1,0],[-0.00799344,0,0.999968]];
+	[_this,"[[[[],[]],[[],[]],[[""FirstAidKit""],[4]],[[],[]]],false]"] call bis_fnc_initAmmoBox;;
+};
+
+private _item103 = objNull;
+if (_layerRoot) then {
+	_item103 = createVehicle ["B_Tura_Offroad_armor_lxWS",[4536.79,5823.06,1.90735e-006],[],0,"CAN_COLLIDE"];
+	_this = _item103;
+	_objects pushback _this;
+	_objectIDs pushback 103;
+	_this setPosWorld [4536.78,5823.1,25.4925];
+	_this setVectorDirAndUp [[0,1,0],[-0.00399675,0,0.999992]];
+	[_this,"[[[[""arifle_Galat_lxWS""],[1]],[[""30Rnd_762x39_Mag_F"",""MiniGrenade""],[3,2]],[[""FirstAidKit""],[4]],[[],[]]],false]"] call bis_fnc_initAmmoBox;;
+};
+
+private _item104 = objNull;
+if (_layerRoot) then {
+	_item104 = createVehicle ["B_Tura_Offroad_armor_AT_lxWS",[4533.01,5823.44,-3.8147e-006],[],0,"CAN_COLLIDE"];
+	_this = _item104;
+	_objects pushback _this;
+	_objectIDs pushback 104;
+	_this setPosWorld [4532.99,5823.48,25.4677];
+	_this setVectorDirAndUp [[0,1,0],[-0.00799344,0,0.999968]];
+	[_this,"[[[[""arifle_Galat_lxWS""],[1]],[[""30Rnd_762x39_Mag_F"",""MiniGrenade""],[3,2]],[[""FirstAidKit""],[4]],[[],[]]],false]"] call bis_fnc_initAmmoBox;;
+};
+
+private _item105 = objNull;
+if (_layerRoot) then {
+	_item105 = createVehicle ["B_Tura_Offroad_armor_armed_lxWS",[4529.09,5823.36,0],[],0,"CAN_COLLIDE"];
+	_this = _item105;
+	_objects pushback _this;
+	_objectIDs pushback 105;
+	_this setPosWorld [4529.07,5823.4,25.5762];
+	_this setVectorDirAndUp [[0,1,0],[-0.00799344,0,0.999968]];
+	[_this,"[[[[""arifle_Galat_lxWS""],[1]],[[""30Rnd_762x39_Mag_F"",""MiniGrenade""],[3,2]],[[""FirstAidKit""],[4]],[[],[]]],false]"] call bis_fnc_initAmmoBox;;
+};
+
+private _item106 = objNull;
+if (_layerRoot) then {
+	_item106 = createVehicle ["B_Tura_HMG_02_lxWS",[4507.21,5816.44,-1.90735e-006],[],0,"CAN_COLLIDE"];
+	_this = _item106;
+	_objects pushback _this;
+	_objectIDs pushback 106;
+	_this setPosWorld [4507.19,5816.44,24.3198];
+	_this setVectorDirAndUp [[0,1,0],[-0.0159977,0,0.999872]];
+};
+
+private _item107 = objNull;
+if (_layerRoot) then {
+	_item107 = createVehicle ["B_Tura_HMG_02_high_lxWS",[4502.72,5817.1,-3.8147e-006],[],0,"CAN_COLLIDE"];
+	_this = _item107;
+	_objects pushback _this;
+	_objectIDs pushback 107;
+	_this setPosWorld [4502.7,5817.12,24.6954];
+	_this setVectorDirAndUp [[0,0.999968,-0.0080009],[-0.011995,0.00800032,0.999896]];
+};
+
+private _item108 = objNull;
+if (_layerRoot) then {
+	_item108 = createVehicle ["B_Tura_Mortar_lxWS",[4505.34,5812.71,-7.62939e-006],[],0,"CAN_COLLIDE"];
+	_this = _item108;
+	_objects pushback _this;
+	_objectIDs pushback 108;
+	_this setPosWorld [4505.34,5812.71,23.804];
+	_this setVectorDirAndUp [[0,0.999968,-0.0080009],[-0.012,0.00800032,0.999896]];
+};
+
+private _item109 = objNull;
+if (_layerRoot) then {
+	_item109 = createVehicle ["B_Tura_ZU23_lxWS",[4503.93,5805.21,-3.8147e-006],[],0,"CAN_COLLIDE"];
+	_this = _item109;
+	_objects pushback _this;
+	_objectIDs pushback 109;
+	_this setPosWorld [4503.9,5805.22,25.0701];
+	_this setVectorDirAndUp [[0,0.999968,-0.0080009],[-0.011995,0.00800032,0.999896]];
+};
+
+private _item111 = objNull;
+if (_layerRoot) then {
+	_item111 = _item110 createUnit ["B_Tura_defector_lxWS",[4527.67,5847,1.90735e-006],[],0,"CAN_COLLIDE"];
+	_item110 selectLeader _item111;
+	_this = _item111;
+	_objects pushback _this;
+	_objectIDs pushback 111;
+	_this setPosWorld [4527.67,5847.05,23.5375];
+	_this setVectorDirAndUp [[0,1,0],[0,0,1]];
+	selectPlayer _this;
+	_this setname "Waqqas al-Habib";;
+	_this setface "PersianHead_A3_01";;
+	_this setspeaker "male01fre";;
+	_this setpitch 1.04681;;
+};
+
+private _item112 = objNull;
+if (_layerRoot) then {
+	_item112 = _item110 createUnit ["B_Tura_deserter_lxWS",[4527.55,5845.58,-3.8147e-006],[],0,"CAN_COLLIDE"];
+	_this = _item112;
+	_objects pushback _this;
+	_objectIDs pushback 112;
+	_this setPosWorld [4527.55,5845.63,23.519];
+	_this setVectorDirAndUp [[0,1,0],[0,0,1]];
+	_this setname "Dulamah Achaari";;
+	_this setface "lxWS_African_Head_01";;
+	_this setspeaker "male02fre";;
+	_this setpitch 1.03881;;
+};
+
+private _item113 = objNull;
+if (_layerRoot) then {
+	_item113 = _item110 createUnit ["B_Tura_enforcer_lxWS",[4527.57,5844.06,-3.8147e-006],[],0,"CAN_COLLIDE"];
+	_this = _item113;
+	_objects pushback _this;
+	_objectIDs pushback 113;
+	_this setPosWorld [4527.57,5844.11,23.4976];
+	_this setVectorDirAndUp [[0,1,0],[0,0,1]];
+	_this setname "Suhaim Bourequat";;
+	_this setface "PersianHead_A3_03";;
+	_this setspeaker "male02fre";;
+	_this setpitch 1.00956;;
+};
+
+private _item114 = objNull;
+if (_layerRoot) then {
+	_item114 = _item110 createUnit ["B_Tura_hireling_lxWS",[4527.66,5842.59,-5.72205e-006],[],0,"CAN_COLLIDE"];
+	_this = _item114;
+	_objects pushback _this;
+	_objectIDs pushback 114;
+	_this setPosWorld [4527.66,5842.64,23.4754];
+	_this setVectorDirAndUp [[0,1,0],[0,0,1]];
+	_this setname "Zubayr Jouahri";;
+	_this setface "lxWS_African_Head_04";;
+	_this setspeaker "male01fre";;
+	_this setpitch 1.04815;;
+};
+
+private _item115 = objNull;
+if (_layerRoot) then {
+	_item115 = _item110 createUnit ["B_Tura_HeavyGunner_lxWS",[4527.53,5841.41,1.90735e-006],[],0,"CAN_COLLIDE"];
+	_this = _item115;
+	_objects pushback _this;
+	_objectIDs pushback 115;
+	_this setPosWorld [4527.53,5841.46,23.4588];
+	_this setVectorDirAndUp [[0,1,0],[0,0,1]];
+	_this setname "Rachid Siqli";;
+	_this setface "PersianHead_A3_03";;
+	_this setspeaker "male03fre";;
+	_this setpitch 0.997511;;
+};
+
+private _item116 = objNull;
+if (_layerRoot) then {
+	_item116 = _item110 createUnit ["B_Tura_scout_lxWS",[4525.43,5847.22,-5.72205e-006],[],0,"CAN_COLLIDE"];
+	_this = _item116;
+	_objects pushback _this;
+	_objectIDs pushback 116;
+	_this setPosWorld [4525.43,5847.27,23.505];
+	_this setVectorDirAndUp [[0,1,0],[0,0,1]];
+	_this setname "Ayoub Haddani";;
+	_this setface "lxWS_African_Head_04";;
+	_this setspeaker "male02fre";;
+	_this setpitch 1.03403;;
+};
+
+private _item117 = objNull;
+if (_layerRoot) then {
+	_item117 = _item110 createUnit ["B_Tura_medic2_lxWS",[4525.42,5845.77,-9.53674e-006],[],0,"CAN_COLLIDE"];
+	_this = _item117;
+	_objects pushback _this;
+	_objectIDs pushback 117;
+	_this setPosWorld [4525.42,5845.82,23.4874];
+	_this setVectorDirAndUp [[0,1,0],[0,0,1]];
+	_this setname "Fayaaz Haddani";;
+	_this setface "lxWS_African_Head_02";;
+	_this setspeaker "male03fre";;
+	_this setpitch 0.959589;;
+};
+
+private _item118 = objNull;
+if (_layerRoot) then {
+	_item118 = _item110 createUnit ["B_Tura_thug_lxWS",[4525.5,5844.36,-5.72205e-006],[],0,"CAN_COLLIDE"];
+	_this = _item118;
+	_objects pushback _this;
+	_objectIDs pushback 118;
+	_this setPosWorld [4525.5,5844.41,23.4692];
+	_this setVectorDirAndUp [[0,1,0],[0,0,1]];
+	_this setname "Abdelaziz Trabelsi";;
+	_this setface "lxWS_African_Head_04";;
+	_this setspeaker "male02fre";;
+	_this setpitch 1.01282;;
+};
+
+private _item119 = objNull;
+if (_layerRoot) then {
+	_item119 = _item110 createUnit ["B_Tura_soldier_UAV_lxWS",[4525.37,5842.95,-1.90735e-006],[],0,"CAN_COLLIDE"];
+	_this = _item119;
+	_objects pushback _this;
+	_objectIDs pushback 119;
+	_this setPosWorld [4525.37,5843,23.4446];
+	_this setVectorDirAndUp [[0,1,0],[0,0,1]];
+	_this setname "Abdelaziz Tobji";;
+	_this setface "lxWS_African_Head_01";;
+	_this setspeaker "male01fre";;
+	_this setpitch 0.997124;;
+};
+
+private _item120 = objNull;
+if (_layerRoot) then {
+	_item120 = _item110 createUnit ["B_Tura_watcher_lxWS",[4525.34,5841.35,7.62939e-006],[],0,"CAN_COLLIDE"];
+	_this = _item120;
+	_objects pushback _this;
+	_objectIDs pushback 120;
+	_this setPosWorld [4525.34,5841.4,23.423];
+	_this setVectorDirAndUp [[0,1,0],[0,0,1]];
+	_this setname "Wasim al-Mokhtar";;
+	_this setface "PersianHead_A3_03";;
+	_this setspeaker "male02fre";;
+	_this setpitch 0.977619;;
+};
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// Triggers
+private _triggers = [];
+private _triggerIDs = [];
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// Group attributes (applied only once group units exist)
+_this = _item110;
+if !(units _this isEqualTo []) then {
+	[_this,0] setWaypointPosition [position leader _this,0];
+	_this setGroupID ["Alpha 1-1"];;
+};
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// Waypoints
+private _waypoints = [];
+private _waypointIDs = [];
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// Logics
+private _logics = [];
+private _logicIDs = [];
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// Layers
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// Crews
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// Vehicle cargo
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// Connections
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// Inits (executed only once all entities exist; isNil used to ensure non-scheduled environment)
+isNil {
+};
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// Module activations (only once everything is spawned and connected)
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+[[_objects,_groups,_triggers,_waypoints,_logics,_markers],[_objectIDs,_groupIDs,_triggerIDs,_waypointIDs,_logicIDs,_markerIDs]]

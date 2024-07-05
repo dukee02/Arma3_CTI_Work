@@ -1,7 +1,7 @@
 @echo off
 title VIO-BECTI.Altis Mission gets created
 
-set "gitpath=F:\GitReps\Arma3_CTI_SciFi"
+set "gitpath=F:\GitReps\Arma3_CTI_Work"
 set "buildpath=F:\GitReps\Arma3_CTI_WW2"
 
 set "mapname=Map_name"
