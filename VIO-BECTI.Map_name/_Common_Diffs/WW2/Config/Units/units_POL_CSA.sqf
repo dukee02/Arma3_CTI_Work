@@ -53,7 +53,7 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= 0) then {
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_BARRACKS;
 	_s pushBack "";
-	_d pushBack 0;
+	_d pushBack 5;
 
 };
 
@@ -76,7 +76,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_LIGHT;
 	_s pushBack "";
-	_d pushBack 0;
+	_d pushBack 5;
 	
 };*/
 
@@ -98,7 +98,7 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= 1) then {
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_HEAVY;
 	_s pushBack "";
-	_d pushBack 0;
+	_d pushBack 5;
 		
 };
 if(CTI_ECONOMY_LEVEL_TRACKED >= 3) then {
@@ -112,7 +112,7 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= 3) then {
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_HEAVY;
 	_s pushBack "";
-	_d pushBack 0;
+	_d pushBack 5;
 		
 	_c pushBack format["%1csa38_cromwell_CPL2", _sid];	
 	_p pushBack '';
@@ -122,7 +122,7 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= 3) then {
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_HEAVY;
 	_s pushBack "";
-	_d pushBack 0;
+	_d pushBack 5;
 		
 	_c pushBack format["%1csa38_cromwell_CPLHELA", _sid];	
 	_p pushBack '';
@@ -132,7 +132,7 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= 3) then {
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_HEAVY;
 	_s pushBack "";
-	_d pushBack 0;
+	_d pushBack 5;
 		
 	_c pushBack format["%1csa38_cromwell_DPL", _sid];	
 	_p pushBack '';
@@ -142,7 +142,7 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= 3) then {
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_HEAVY;
 	_s pushBack "";
-	_d pushBack 0;
+	_d pushBack 5;
 		
 	_c pushBack format["%1csa38_cromwell_PL", _sid];	
 	_p pushBack '';
@@ -152,7 +152,7 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= 3) then {
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_HEAVY;
 	_s pushBack "";
-	_d pushBack 0;
+	_d pushBack 5;
 		
 };
 

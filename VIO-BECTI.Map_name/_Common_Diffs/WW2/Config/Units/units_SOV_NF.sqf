@@ -137,7 +137,7 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_BARRACKS;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -228,7 +228,7 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_BARRACKS;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -283,7 +283,7 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_BARRACKS;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -322,7 +322,7 @@ if (isClass(configFile >> "CfgVehicles" >> format["%1LIB_SdKfz_7", _sid])) then 
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_LIGHT;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
@@ -348,7 +348,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_LIGHT;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 	
 	if(CTI_STREAM_BLOCK > 0) then {}
@@ -388,7 +388,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_LIGHT;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -428,7 +428,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_LIGHT;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -478,7 +478,7 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_HEAVY;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -516,7 +516,7 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_HEAVY;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -560,7 +560,7 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_HEAVY;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -590,7 +590,7 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_HEAVY;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 
 	switch(CTI_CAMO_ACTIVATION) do {
@@ -614,7 +614,7 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_HEAVY;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -646,7 +646,7 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_HEAVY;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -681,7 +681,7 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_HEAVY;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -712,7 +712,7 @@ if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_AIR;
 	_s pushBack "";
-	_d pushBack 0;
+	_d pushBack 5;
 	
 	_tech_level = _tech_level + 1;
 };
@@ -741,7 +741,7 @@ switch(CTI_CAMO_ACTIVATION) do {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_REPAIR;
 		_s pushBack "service-repairtruck";
-		_d pushBack 0;
+		_d pushBack 5;
 		if(_setupBaseUnits) then {
 			_c pushBack format["CTI_Salvager_%1", _faction];
 			_p pushBack '';
@@ -751,7 +751,7 @@ switch(CTI_CAMO_ACTIVATION) do {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_REPAIR;
 			_s pushBack [format["%1NORTH_SOV_W_41_ZIS5_Open", _sid],"salvager"];
-			_d pushBack 0;
+			_d pushBack 5;
 				
 			_c pushBack format["CTI_Salvager_Independent_%1", _faction];
 			_p pushBack '';
@@ -761,7 +761,7 @@ switch(CTI_CAMO_ACTIVATION) do {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_REPAIR;
 			_s pushBack [format["%1NORTH_SOV_W_41_ZIS5_Open", _sid],"salvager-independent"];
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 	};
 	case 2: {//Summer camo active
@@ -773,7 +773,7 @@ switch(CTI_CAMO_ACTIVATION) do {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_REPAIR;
 		_s pushBack "service-repairtruck";
-		_d pushBack 0;
+		_d pushBack 5;
 
 		if(_setupBaseUnits) then {
 			_c pushBack format["CTI_Salvager_%1", _faction];
@@ -784,7 +784,7 @@ switch(CTI_CAMO_ACTIVATION) do {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_REPAIR;
 			_s pushBack [format["%1NORTH_SOV_41_ZIS5_Open", _sid],"salvager"];
-			_d pushBack 0;
+			_d pushBack 5;
 				
 			_c pushBack format["CTI_Salvager_Independent_%1", _faction];
 			_p pushBack '';
@@ -794,7 +794,7 @@ switch(CTI_CAMO_ACTIVATION) do {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_REPAIR;
 			_s pushBack [format["%1NORTH_SOV_41_ZIS5_Open", _sid],"salvager-independent"];
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 	};
 	default {
@@ -806,7 +806,7 @@ switch(CTI_CAMO_ACTIVATION) do {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_REPAIR;
 		_s pushBack "service-repairtruck";
-		_d pushBack 0;
+		_d pushBack 5;
 
 		if(_setupBaseUnits) then {
 			_c pushBack format["CTI_Salvager_%1", _faction];
@@ -817,7 +817,7 @@ switch(CTI_CAMO_ACTIVATION) do {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_REPAIR;
 			_s pushBack [format["%1NORTH_SOV_ZIS5_Open", _sid],"salvager"];
-			_d pushBack 0;
+			_d pushBack 5;
 				
 			_c pushBack format["CTI_Salvager_Independent_%1", _faction];
 			_p pushBack '';
@@ -827,7 +827,7 @@ switch(CTI_CAMO_ACTIVATION) do {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_REPAIR;
 			_s pushBack [format["%1NORTH_SOV_ZIS5_Open", _sid],"salvager-independent"];
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 	};
 };
@@ -847,7 +847,7 @@ switch(CTI_CAMO_ACTIVATION) do {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_AMMO;
 		_s pushBack "service-ammotruck";
-		_d pushBack 0;
+		_d pushBack 5;
 
 		_c pushBack format["%1NORTH_SOV_W_41_ZIS5_Fuel", _sid];			//fueltruck
 		_p pushBack '';
@@ -857,7 +857,7 @@ switch(CTI_CAMO_ACTIVATION) do {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_AMMO;
 		_s pushBack "service-fueltruck";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 	case 2: {//Summer camo active
 		_c pushBack format["%1NORTH_SOV_41_ZIS5_Ammo", _sid];			//ammotruck
@@ -868,7 +868,7 @@ switch(CTI_CAMO_ACTIVATION) do {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_AMMO;
 		_s pushBack "service-ammotruck";
-		_d pushBack 0;
+		_d pushBack 5;
 
 		_c pushBack format["%1NORTH_SOV_41_ZIS5_Fuel", _sid];			//fueltruck
 		_p pushBack '';
@@ -878,7 +878,7 @@ switch(CTI_CAMO_ACTIVATION) do {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_AMMO;
 		_s pushBack "service-fueltruck";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 	default {
 		_c pushBack format["%1NORTH_SOV_ZIS5_Ammo", _sid];				//ammotruck
@@ -889,7 +889,7 @@ switch(CTI_CAMO_ACTIVATION) do {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_AMMO;
 		_s pushBack "service-ammotruck";
-		_d pushBack 0;
+		_d pushBack 5;
 		
 		_c pushBack format["%1NORTH_SOV_ZIS5_Fuel", _sid];				//fueltruck
 		_p pushBack '';
@@ -899,7 +899,7 @@ switch(CTI_CAMO_ACTIVATION) do {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_AMMO;
 		_s pushBack "service-fueltruck";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 

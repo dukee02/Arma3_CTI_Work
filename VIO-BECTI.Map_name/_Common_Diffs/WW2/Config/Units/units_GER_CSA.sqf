@@ -82,7 +82,7 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_BARRACKS;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -118,7 +118,7 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_BARRACKS;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -145,7 +145,7 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= 2) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_BARRACKS;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -175,7 +175,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_LIGHT;
 	_s pushBack "";
-	_d pushBack 0;
+	_d pushBack 5;
 };
 
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -229,7 +229,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_LIGHT;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -271,7 +271,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_LIGHT;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -328,7 +328,7 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_HEAVY;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -377,7 +377,7 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_HEAVY;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -437,7 +437,7 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_HEAVY;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};	
 	
 	if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 3) then {		//Winter camo active
@@ -461,7 +461,7 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_LIGHT;
 		_s pushBack "service-medic";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -510,7 +510,7 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_HEAVY;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -545,7 +545,7 @@ if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_AIR;
 	_s pushBack "";
-	_d pushBack 0;
+	_d pushBack 5;
 	
 	_tech_level = _tech_level + 1;
 };*/
@@ -570,7 +570,7 @@ _t pushBack _building_time;
 _u pushBack _tech_level;
 _f pushBack CTI_FACTORY_REPAIR;
 _s pushBack "service-repairtruck";
-_d pushBack 0;
+_d pushBack 5;
 
 _setupBaseUnits = false;
 _isThisMain = missionNamespace getVariable [format ["CTI_%1_MAINNATIONS", _side], []];
@@ -590,7 +590,7 @@ if(_setupBaseUnits) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_REPAIR;
 			_s pushBack [format["%1CSA38_opelblitz3_W", _sid],"salvager"];
-			_d pushBack 0;
+			_d pushBack 5;
 				
 			_c pushBack format["CTI_Salvager_Independent_%1", _faction];
 			_p pushBack '';
@@ -600,7 +600,7 @@ if(_setupBaseUnits) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_REPAIR;
 			_s pushBack [format["%1CSA38_opelblitz3_W", _sid],"salvager-independent"];
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 		case 2: {
 			_c pushBack format["CTI_Salvager_%1", _faction];
@@ -611,7 +611,7 @@ if(_setupBaseUnits) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_REPAIR;
 			_s pushBack [format["%1CSA38_opelblitz3_DE", _sid],"salvager"];
-			_d pushBack 0;
+			_d pushBack 5;
 				
 			_c pushBack format["CTI_Salvager_Independent_%1", _faction];
 			_p pushBack '';
@@ -621,7 +621,7 @@ if(_setupBaseUnits) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_REPAIR;
 			_s pushBack [format["%1CSA38_opelblitz3_DE", _sid],"salvager-independent"];
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 		default {
 			_c pushBack format["CTI_Salvager_%1", _faction];
@@ -632,7 +632,7 @@ if(_setupBaseUnits) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_REPAIR;
 			_s pushBack [format["%1CSA38_opelblitz3", _sid],"salvager"];
-			_d pushBack 0;
+			_d pushBack 5;
 				
 			_c pushBack format["CTI_Salvager_Independent_%1", _faction];
 			_p pushBack '';
@@ -642,7 +642,7 @@ if(_setupBaseUnits) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_REPAIR;
 			_s pushBack [format["%1CSA38_opelblitz3", _sid],"salvager-independent"];
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 	};
 };
@@ -661,7 +661,7 @@ if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 3) then {		//Winter camo a
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_AMMO;
 	_s pushBack "service-ammotruck";
-	_d pushBack 0;	
+	_d pushBack 5;	
 
 	_c pushBack format["%1CSA38_opelblitz5_W", _sid];//fuel
 	_p pushBack '';
@@ -671,7 +671,7 @@ if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 3) then {		//Winter camo a
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_AMMO;
 	_s pushBack "service-fueltruck";
-	_d pushBack 0;	
+	_d pushBack 5;	
 
 };
 if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
@@ -683,7 +683,7 @@ if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo a
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_AMMO;
 	_s pushBack "service-ammotruck";
-	_d pushBack 0;	
+	_d pushBack 5;	
 
 	_c pushBack format["%1CSA38_opelblitz5_DE", _sid];//fuel
 	_p pushBack '';
@@ -693,7 +693,7 @@ if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo a
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_AMMO;
 	_s pushBack "service-fueltruck";
-	_d pushBack 0;	
+	_d pushBack 5;	
 
 };
 if(CTI_CAMO_ACTIVATION < 1 || CTI_CAMO_ACTIVATION > 2) then {		//default camo active
@@ -705,7 +705,7 @@ if(CTI_CAMO_ACTIVATION < 1 || CTI_CAMO_ACTIVATION > 2) then {		//default camo ac
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_AMMO;
 	_s pushBack "service-ammotruck";
-	_d pushBack 0;	
+	_d pushBack 5;	
 
 	_c pushBack format["%1CSA38_opelblitz5", _sid];//fuel
 	_p pushBack '';
@@ -715,7 +715,7 @@ if(CTI_CAMO_ACTIVATION < 1 || CTI_CAMO_ACTIVATION > 2) then {		//default camo ac
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_AMMO;
 	_s pushBack "service-fueltruck";
-	_d pushBack 0;	
+	_d pushBack 5;	
 };
 if(CTI_CAMO_ACTIVATION > 3) then {		//all camo active
 	_c pushBack format["%1CSA38_opelblitz4_LATE", _sid];//ammo
@@ -726,7 +726,7 @@ if(CTI_CAMO_ACTIVATION > 3) then {		//all camo active
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_AMMO;
 	_s pushBack "service-ammotruck";
-	_d pushBack 0;	
+	_d pushBack 5;	
 
 	_c pushBack format["%1CSA38_opelblitz5_LATE", _sid];//fuel
 	_p pushBack '';
@@ -736,7 +736,7 @@ if(CTI_CAMO_ACTIVATION > 3) then {		//all camo active
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_AMMO;
 	_s pushBack "service-fueltruck";
-	_d pushBack 0;	
+	_d pushBack 5;	
 
 	_c pushBack format["%1CSA38_opelblitz4_LATE2", _sid];//ammo
 	_p pushBack '';
@@ -746,7 +746,7 @@ if(CTI_CAMO_ACTIVATION > 3) then {		//all camo active
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_AMMO;
 	_s pushBack "service-ammotruck";
-	_d pushBack 0;	
+	_d pushBack 5;	
 
 	_c pushBack format["%1CSA38_opelblitz5_LATE2", _sid];//fuel
 	_p pushBack '';
@@ -756,7 +756,7 @@ if(CTI_CAMO_ACTIVATION > 3) then {		//all camo active
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_AMMO;
 	_s pushBack "service-fueltruck";
-	_d pushBack 0;	
+	_d pushBack 5;	
 };
 
 

@@ -63,7 +63,7 @@ if (isClass(configFile >> "CfgVehicles" >> "LIB_UK_LCA")) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_NAVAL;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 			_c pushBack format["%1LIB_LCVP", _sid];
 			_p pushBack '';
 			_n pushBack '';
@@ -72,7 +72,7 @@ if (isClass(configFile >> "CfgVehicles" >> "LIB_UK_LCA")) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_NAVAL;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 		_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 		if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
@@ -87,7 +87,7 @@ if (isClass(configFile >> "CfgVehicles" >> "LIB_UK_LCA")) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_NAVAL;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 			_c pushBack format["%1LIB_LCM3_Armed", _sid];
 			_p pushBack '';
 			_n pushBack '';
@@ -96,7 +96,7 @@ if (isClass(configFile >> "CfgVehicles" >> "LIB_UK_LCA")) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_NAVAL;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 	};
 	if(_side == east) then {
@@ -113,7 +113,7 @@ if (isClass(configFile >> "CfgVehicles" >> "LIB_UK_LCA")) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_NAVAL;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 			_c pushBack format["%1LIB_LCVP", _sid];
 			_p pushBack '';
 			_n pushBack '';
@@ -122,7 +122,7 @@ if (isClass(configFile >> "CfgVehicles" >> "LIB_UK_LCA")) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_NAVAL;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 		_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 		if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
@@ -137,7 +137,7 @@ if (isClass(configFile >> "CfgVehicles" >> "LIB_UK_LCA")) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_NAVAL;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 			_c pushBack format["%1LIB_LCM3_Armed", _sid];
 			_p pushBack '';
 			_n pushBack '';
@@ -146,7 +146,7 @@ if (isClass(configFile >> "CfgVehicles" >> "LIB_UK_LCA")) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_NAVAL;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 	};
 

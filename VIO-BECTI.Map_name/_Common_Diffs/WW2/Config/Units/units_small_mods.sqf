@@ -56,7 +56,7 @@ if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\un
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_BARRACKS;
 		_s pushBack "";
-		_d pushBack 0;
+		_d pushBack 5;
 	};
 	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
 		_c pushBack format["%1LIB_UK_DR_Tank_Commander", _sid];
@@ -67,7 +67,7 @@ if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\un
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_BARRACKS;
 		_s pushBack "";
-		_d pushBack 0;
+		_d pushBack 5;
 	};
 	_c pushBack format["%1LIB_UK_Sniper", _sid];
 	_p pushBack '';
@@ -77,7 +77,7 @@ if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\un
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_BARRACKS;
 	_s pushBack "";
-	_d pushBack 0;
+	_d pushBack 5;
 };
 
 //Update the calculatetd max upgrade level
@@ -112,7 +112,7 @@ if(CTI_UK_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_LIGHT;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 		_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 		if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
@@ -125,7 +125,7 @@ if(CTI_UK_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_LIGHT;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 	};
 };
@@ -149,7 +149,7 @@ if(CTI_SOV_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_LIGHT;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 		_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 		if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
@@ -164,7 +164,7 @@ if(CTI_SOV_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_LIGHT;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 	};
 };
@@ -187,7 +187,7 @@ if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_LIGHT;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 		_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 		if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
@@ -202,7 +202,7 @@ if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_LIGHT;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 		_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 		if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
@@ -217,7 +217,7 @@ if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_LIGHT;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 
 			_c pushBack format["%1FA_Sdkfz234_4", _sid];
 			_p pushBack '';
@@ -227,7 +227,7 @@ if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_LIGHT;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 		_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 		if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
@@ -242,7 +242,7 @@ if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_LIGHT;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 	};
 };
@@ -277,7 +277,7 @@ if(CTI_UK_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_HEAVY;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 	};
 };
@@ -300,7 +300,7 @@ if(CTI_US_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_HEAVY;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 	};
 };
@@ -330,7 +330,7 @@ if (isClass(configFile >> "CfgVehicles" >> "SOV_BT_BT7A")) then {
 				_u pushBack _tech_level;
 				_f pushBack CTI_FACTORY_HEAVY;
 				_s pushBack "";
-				_d pushBack 0;	
+				_d pushBack 5;	
 			};
 		};
 	};
@@ -352,7 +352,7 @@ if (isClass(configFile >> "CfgVehicles" >> "SOV_BT_BT7A")) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_HEAVY;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 		_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 		if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
@@ -367,7 +367,7 @@ if (isClass(configFile >> "CfgVehicles" >> "SOV_BT_BT7A")) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_HEAVY;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 		_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 		if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
@@ -382,7 +382,7 @@ if (isClass(configFile >> "CfgVehicles" >> "SOV_BT_BT7A")) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_HEAVY;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 	};
 };
@@ -405,7 +405,7 @@ if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_HEAVY;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 		_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 		if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
@@ -420,7 +420,7 @@ if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_HEAVY;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 
 			_c pushBack format["%1FA_Panzer2", _sid];
 			_p pushBack '';
@@ -430,7 +430,7 @@ if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_HEAVY;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 	};
 };
@@ -464,7 +464,7 @@ if(CTI_UK_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 		
 		_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -480,7 +480,7 @@ if(CTI_UK_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 		
 		_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -496,7 +496,7 @@ if(CTI_UK_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 		
 		_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -512,7 +512,7 @@ if(CTI_UK_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 		
 		//Update the calculatetd max upgrade level
@@ -538,7 +538,7 @@ if(CTI_UK_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 		
 		_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -554,7 +554,7 @@ if(CTI_UK_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 		
 		_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -570,7 +570,7 @@ if(CTI_UK_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 		
 		_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -586,7 +586,7 @@ if(CTI_UK_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 		
 		if(CTI_SABRL_ADDON > 0) then {
@@ -607,7 +607,7 @@ if(CTI_UK_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 				_u pushBack _tech_level;
 				_f pushBack CTI_FACTORY_AIR;
 				_s pushBack "";
-				_d pushBack 0;
+				_d pushBack 5;
 			};
 		};
 		
@@ -637,7 +637,7 @@ if(CTI_US_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 			_c pushBack format["%1sab_p26", _sid];
 			_p pushBack '';
 			_n pushBack '';
@@ -646,7 +646,7 @@ if(CTI_US_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 			_c pushBack format["%1sab_ryanpt", _sid];
 			_p pushBack '';
 			_n pushBack '';
@@ -655,7 +655,7 @@ if(CTI_US_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 		
 		_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -671,7 +671,7 @@ if(CTI_US_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 			_c pushBack format["%1sab_dauntless", _sid];
 			_p pushBack '';
 			_n pushBack '';
@@ -680,7 +680,7 @@ if(CTI_US_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 			_c pushBack format["%1sab_avenger", _sid];
 			_p pushBack '';
 			_n pushBack '';
@@ -689,7 +689,7 @@ if(CTI_US_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 		
 		_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -705,7 +705,7 @@ if(CTI_US_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 			_c pushBack format["%1sab_corsair", _sid];
 			_p pushBack '';
 			_n pushBack '';
@@ -714,7 +714,7 @@ if(CTI_US_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 		
 		_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -730,7 +730,7 @@ if(CTI_US_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 			_c pushBack format["%1sab_p51b", _sid];
 			_p pushBack '';
 			_n pushBack '';
@@ -739,7 +739,7 @@ if(CTI_US_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 			_c pushBack format["%1sab_a26", _sid];
 			_p pushBack '';
 			_n pushBack '';
@@ -748,7 +748,7 @@ if(CTI_US_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 			_c pushBack format["%1sab_b25", _sid];
 			_p pushBack '';
 			_n pushBack '';
@@ -757,7 +757,7 @@ if(CTI_US_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 		
 		_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -773,7 +773,7 @@ if(CTI_US_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 			_c pushBack format["%1sab_f6f", _sid];
 			_p pushBack '';
 			_n pushBack '';
@@ -782,7 +782,7 @@ if(CTI_US_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 			_c pushBack format["%1sab_b24", _sid];
 			_p pushBack '';
 			_n pushBack '';
@@ -791,7 +791,7 @@ if(CTI_US_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 		
 		_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -807,7 +807,7 @@ if(CTI_US_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 			_c pushBack format["%1sab_b17", _sid];
 			_p pushBack '';
 			_n pushBack '';
@@ -816,7 +816,7 @@ if(CTI_US_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 		
 		//Update the calculatetd max upgrade level
@@ -842,7 +842,7 @@ if(CTI_US_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 		if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
 			_building_time = [CTI_FACTORY_AIR,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
@@ -855,7 +855,7 @@ if(CTI_US_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 		
 		_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -871,7 +871,7 @@ if(CTI_US_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 		
 		_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -887,7 +887,7 @@ if(CTI_US_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 		
 		if(CTI_SABRL_ADDON > 0) then {
@@ -908,7 +908,7 @@ if(CTI_US_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 				_u pushBack _tech_level;
 				_f pushBack CTI_FACTORY_AIR;
 				_s pushBack "";
-				_d pushBack 0;
+				_d pushBack 5;
 			};
 			
 			_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -924,7 +924,7 @@ if(CTI_US_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 				_u pushBack _tech_level;
 				_f pushBack CTI_FACTORY_AIR;
 				_s pushBack "";
-				_d pushBack 0;
+				_d pushBack 5;
 			};
 			if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
 				_building_time = [CTI_FACTORY_AIR,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
@@ -937,7 +937,7 @@ if(CTI_US_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 				_u pushBack _tech_level;
 				_f pushBack CTI_FACTORY_AIR;
 				_s pushBack "";
-				_d pushBack 0;
+				_d pushBack 5;
 			};
 			
 			_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -953,7 +953,7 @@ if(CTI_US_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 				_u pushBack _tech_level;
 				_f pushBack CTI_FACTORY_AIR;
 				_s pushBack "";
-				_d pushBack 0;
+				_d pushBack 5;
 			};
 			
 			_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -969,7 +969,7 @@ if(CTI_US_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 				_u pushBack _tech_level;
 				_f pushBack CTI_FACTORY_AIR;
 				_s pushBack "";
-				_d pushBack 0;
+				_d pushBack 5;
 			};
 		};
 		
@@ -998,7 +998,7 @@ if(CTI_SOV_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 		
 		_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -1014,7 +1014,7 @@ if(CTI_SOV_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 			_c pushBack format["%1sab_la5_2", _sid];
 			_p pushBack '';
 			_n pushBack '';
@@ -1023,7 +1023,7 @@ if(CTI_SOV_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 		
 		_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -1039,7 +1039,7 @@ if(CTI_SOV_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 		
 		_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -1055,7 +1055,7 @@ if(CTI_SOV_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 		
 		_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -1071,7 +1071,7 @@ if(CTI_SOV_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 		
 		//Update the calculatetd max upgrade level
@@ -1097,7 +1097,7 @@ if(CTI_SOV_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 		
 		if(CTI_SABRL_ADDON > 0) then {
@@ -1117,7 +1117,7 @@ if(CTI_SOV_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 				_u pushBack _tech_level;
 				_f pushBack CTI_FACTORY_AIR;
 				_s pushBack "";
-				_d pushBack 0;
+				_d pushBack 5;
 			};
 			
 			_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -1133,7 +1133,7 @@ if(CTI_SOV_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 				_u pushBack _tech_level;
 				_f pushBack CTI_FACTORY_AIR;
 				_s pushBack "";
-				_d pushBack 0;
+				_d pushBack 5;
 				
 				_c pushBack format["%1sab_sw_il2_2", _sid];
 				_p pushBack '';
@@ -1143,7 +1143,7 @@ if(CTI_SOV_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 				_u pushBack _tech_level;
 				_f pushBack CTI_FACTORY_AIR;
 				_s pushBack "";
-				_d pushBack 0;
+				_d pushBack 5;
 			};
 		};
 		
@@ -1172,7 +1172,7 @@ if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 			_c pushBack format["%1sab_bu131", _sid];
 			_p pushBack '';
 			_n pushBack '';
@@ -1181,7 +1181,7 @@ if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 			_c pushBack format["%1sab_avia_2", _sid];
 			_p pushBack '';
 			_n pushBack '';
@@ -1190,7 +1190,7 @@ if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 			_c pushBack format["%1sab_w34", _sid];
 			_p pushBack '';
 			_n pushBack '';
@@ -1199,7 +1199,7 @@ if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 			_c pushBack format["%1sab_w34f", _sid];
 			_p pushBack '';
 			_n pushBack '';
@@ -1208,7 +1208,7 @@ if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 		
 		_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -1224,7 +1224,7 @@ if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 			_c pushBack format["%1sab_ju87", _sid];
 			_p pushBack '';
 			_n pushBack '';
@@ -1233,7 +1233,7 @@ if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 			_c pushBack format["%1sab_bf110", _sid];
 			_p pushBack '';
 			_n pushBack '';
@@ -1242,7 +1242,7 @@ if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 			_c pushBack format["%1sab_bf110_2", _sid];
 			_p pushBack '';
 			_n pushBack '';
@@ -1251,7 +1251,7 @@ if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 		
 		_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -1267,7 +1267,7 @@ if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 			_c pushBack format["%1sab_ju88_2", _sid];
 			_p pushBack '';
 			_n pushBack '';
@@ -1276,7 +1276,7 @@ if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 		
 		_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -1292,7 +1292,7 @@ if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 			_c pushBack format["%1sab_fw190_2", _sid];
 			_p pushBack '';
 			_n pushBack '';
@@ -1301,7 +1301,7 @@ if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 			_c pushBack format["%1sab_he111", _sid];
 			_p pushBack '';
 			_n pushBack '';
@@ -1310,7 +1310,7 @@ if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 		
 		_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -1326,7 +1326,7 @@ if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 			_c pushBack format["%1sab_do335", _sid];
 			_p pushBack '';
 			_n pushBack '';
@@ -1335,7 +1335,7 @@ if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 			_c pushBack format["%1sab_ta152c", _sid];
 			_p pushBack '';
 			_n pushBack '';
@@ -1344,7 +1344,7 @@ if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 		
 		_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -1360,7 +1360,7 @@ if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 			_c pushBack format["%1sab_hix", _sid];
 			_p pushBack '';
 			_n pushBack '';
@@ -1369,7 +1369,7 @@ if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 			_c pushBack format["%1sab_me262", _sid];
 			_p pushBack '';
 			_n pushBack '';
@@ -1378,7 +1378,7 @@ if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 			_c pushBack format["%1sab_me262_2", _sid];
 			_p pushBack '';
 			_n pushBack '';
@@ -1387,7 +1387,7 @@ if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 		
 		//Update the calculatetd max upgrade level
@@ -1413,7 +1413,7 @@ if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 		
 		_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -1429,7 +1429,7 @@ if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 			_c pushBack format["%1sab_fl_ju88a", _sid];
 			_p pushBack '';
 			_n pushBack '';
@@ -1438,7 +1438,7 @@ if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 		
 		_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -1454,7 +1454,7 @@ if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 		
 		_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -1470,7 +1470,7 @@ if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 			_c pushBack format["%1sab_fl_fw190a", _sid];
 			_p pushBack '';
 			_n pushBack '';
@@ -1479,7 +1479,7 @@ if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 		
 		_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -1495,7 +1495,7 @@ if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 		
 		if(CTI_SABRL_ADDON > 0) then {
@@ -1516,7 +1516,7 @@ if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 				_u pushBack _tech_level;
 				_f pushBack CTI_FACTORY_AIR;
 				_s pushBack "";
-				_d pushBack 0;
+				_d pushBack 5;
 				
 				_c pushBack format["%1sab_sw_bf110_2", _sid];
 				_p pushBack '';
@@ -1526,7 +1526,7 @@ if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 				_u pushBack _tech_level;
 				_f pushBack CTI_FACTORY_AIR;
 				_s pushBack "";
-				_d pushBack 0;
+				_d pushBack 5;
 			};
 			
 			_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -1542,7 +1542,7 @@ if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 				_u pushBack _tech_level;
 				_f pushBack CTI_FACTORY_AIR;
 				_s pushBack "";
-				_d pushBack 0;
+				_d pushBack 5;
 				
 				_c pushBack format["%1sab_sw_ju87_2", _sid];
 				_p pushBack '';
@@ -1552,7 +1552,7 @@ if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 				_u pushBack _tech_level;
 				_f pushBack CTI_FACTORY_AIR;
 				_s pushBack "";
-				_d pushBack 0;
+				_d pushBack 5;
 			};
 			
 			_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -1568,7 +1568,7 @@ if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 				_u pushBack _tech_level;
 				_f pushBack CTI_FACTORY_AIR;
 				_s pushBack "";
-				_d pushBack 0;
+				_d pushBack 5;
 			};
 			if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
 				_building_time = [CTI_FACTORY_AIR,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
@@ -1581,7 +1581,7 @@ if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 				_u pushBack _tech_level;
 				_f pushBack CTI_FACTORY_AIR;
 				_s pushBack "";
-				_d pushBack 0;
+				_d pushBack 5;
 			};
 			
 			_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -1597,7 +1597,7 @@ if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 				_u pushBack _tech_level;
 				_f pushBack CTI_FACTORY_AIR;
 				_s pushBack "";
-				_d pushBack 0;
+				_d pushBack 5;
 			};
 		};
 		
@@ -1626,7 +1626,7 @@ if(CTI_JPN_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 			_c pushBack format["%1sab_m6av2", _sid];
 			_p pushBack '';
 			_n pushBack '';
@@ -1635,7 +1635,7 @@ if(CTI_JPN_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 		
 		_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -1651,7 +1651,7 @@ if(CTI_JPN_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 		
 		_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -1667,7 +1667,7 @@ if(CTI_JPN_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 			_c pushBack format["%1sab_kate", _sid];
 			_p pushBack '';
 			_n pushBack '';
@@ -1676,7 +1676,7 @@ if(CTI_JPN_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 		
 		_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -1692,7 +1692,7 @@ if(CTI_JPN_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 			_c pushBack format["%1sab_zero", _sid];
 			_p pushBack '';
 			_n pushBack '';
@@ -1701,7 +1701,7 @@ if(CTI_JPN_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 		
 		_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -1717,7 +1717,7 @@ if(CTI_JPN_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 		
 		//Update the calculatetd max upgrade level
@@ -1744,7 +1744,7 @@ if(CTI_JPN_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 	};
 };
@@ -1768,7 +1768,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= 1) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_REPAIR;
 		_s pushBack [format["%1LIB_US6_Open_Cargo", _sid],"salvager"];
-		_d pushBack 0;
+		_d pushBack 5;
 			
 		_c pushBack format["CTI_Salvager_Independent_%1", _faction];
 		_p pushBack '';
@@ -1778,7 +1778,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= 1) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_REPAIR;
 		_s pushBack [format["%1LIB_US6_Open_Cargo", _sid],"salvager-independent"];
-		_d pushBack 0;
+		_d pushBack 5;
 	};
 };
 */
@@ -1796,7 +1796,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= 1) then {
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_AMMO;
 	_s pushBack "service-ammotruck";
-	_d pushBack 0;		
+	_d pushBack 5;		
 
 };*/
 
@@ -1832,7 +1832,7 @@ if(CTI_UK_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_NAVAL;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 			_c pushBack format["%1sab_boat_subchaser_rn", _sid];
 			_p pushBack '';
 			_n pushBack '';
@@ -1841,7 +1841,7 @@ if(CTI_UK_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_NAVAL;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 		
 		_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -2011,7 +2011,7 @@ if(CTI_US_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_NAVAL;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 			_c pushBack format["%1sab_boat_torpedo", _sid];
 			_p pushBack '';
 			_n pushBack '';
@@ -2020,7 +2020,7 @@ if(CTI_US_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_NAVAL;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 			_c pushBack format["%1sab_boat_sreighter", _sid];
 			_p pushBack '';
 			_n pushBack '';
@@ -2029,7 +2029,7 @@ if(CTI_US_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_NAVAL;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 			_c pushBack format["%1sab_boat_subchaser", _sid];
 			_p pushBack '';
 			_n pushBack '';
@@ -2038,7 +2038,7 @@ if(CTI_US_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_NAVAL;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 		
 		_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -2130,7 +2130,7 @@ if(CTI_US_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_NAVAL;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 			_c pushBack format["%1sab_nl_liberty", _sid];
 			_p pushBack '';
 			_n pushBack '';
@@ -2233,7 +2233,7 @@ if(CTI_SOV_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_NAVAL;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 			_c pushBack format["%1sab_boat_torpedo_i", _sid];
 			_p pushBack '';
 			_n pushBack '';
@@ -2242,7 +2242,7 @@ if(CTI_SOV_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_NAVAL;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 			_c pushBack format["%1sab_boat_sreighter_i", _sid];
 			_p pushBack '';
 			_n pushBack '';
@@ -2251,7 +2251,7 @@ if(CTI_SOV_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_NAVAL;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 			_c pushBack format["%1sab_boat_subchaser_i", _sid];
 			_p pushBack '';
 			_n pushBack '';
@@ -2260,7 +2260,7 @@ if(CTI_SOV_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_NAVAL;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 		
 		_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -2364,7 +2364,7 @@ if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_NAVAL;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 			_c pushBack format["%1sab_boat_s38_o", _sid];
 			_p pushBack '';
 			_n pushBack '';
@@ -2373,7 +2373,7 @@ if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_NAVAL;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 			_c pushBack format["%1sab_boat_sreighter_o", _sid];
 			_p pushBack '';
 			_n pushBack '';
@@ -2382,7 +2382,7 @@ if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_NAVAL;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 		
 		_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -2561,7 +2561,7 @@ if(CTI_JPN_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_NAVAL;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 			_c pushBack format["%1sab_boat_rubberboat2", _sid];
 			_p pushBack '';
 			_n pushBack '';
@@ -2570,7 +2570,7 @@ if(CTI_JPN_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_NAVAL;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 			_c pushBack format["%1sab_boat_subchaser_o_x", _sid];
 			_p pushBack '';
 			_n pushBack '';
@@ -2579,7 +2579,7 @@ if(CTI_JPN_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_NAVAL;
 			_s pushBack "";
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 		
 		_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;

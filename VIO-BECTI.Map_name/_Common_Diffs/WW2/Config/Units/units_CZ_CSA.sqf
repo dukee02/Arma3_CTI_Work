@@ -87,7 +87,7 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_BARRACKS;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -120,7 +120,7 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_BARRACKS;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -153,7 +153,7 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_BARRACKS;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -183,7 +183,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_LIGHT;
 	_s pushBack "";
-	_d pushBack 0;
+	_d pushBack 5;
 };
 if (isClass(configFile >> "CfgVehicles" >> format["%1LIB_SdKfz_7", _sid])) then {
 	_time = (5*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
@@ -207,7 +207,7 @@ if (isClass(configFile >> "CfgVehicles" >> format["%1LIB_SdKfz_7", _sid])) then 
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_LIGHT;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -225,7 +225,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_LIGHT;
 	_s pushBack "";
-	_d pushBack 0;
+	_d pushBack 5;
 	
 	_c pushBack format["%1CSA38_pragaRV4", _sid];
 	_p pushBack '';
@@ -235,7 +235,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_LIGHT;
 	_s pushBack "";
-	_d pushBack 0;
+	_d pushBack 5;
 };
 
 //Update the calculatetd max upgrade level
@@ -264,7 +264,7 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_HEAVY;
 	_s pushBack "";
-	_d pushBack 0;
+	_d pushBack 5;
 	
 	_c pushBack format["%1CSA38_ltvz34", _sid];	
 	_c pushBack format["%1CSA38_pzkpfwIAvcz", _sid];	
@@ -281,7 +281,7 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_HEAVY;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -304,7 +304,7 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_HEAVY;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -330,7 +330,7 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_HEAVY;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -361,7 +361,7 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_HEAVY;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -385,7 +385,7 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_HEAVY;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -420,7 +420,7 @@ if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_AIR;
 	_s pushBack "";
-	_d pushBack 0;
+	_d pushBack 5;
 };*/
 
 //Update the calculatetd max upgrade level
@@ -448,7 +448,7 @@ _t pushBack (30*(_tech_level+1));
 _u pushBack _tech_level;
 _f pushBack CTI_FACTORY_REPAIR;
 _s pushBack "service-repairtruck";
-_d pushBack 0;
+_d pushBack 5;
 
 if(_setupBaseUnits && (CTI_IFA_ADDON < 0 || CTI_CSA_ADDON > 1)) then {		
 	_c pushBack format["CTI_Salvager_%1", _faction];
@@ -461,7 +461,7 @@ if(_setupBaseUnits && (CTI_IFA_ADDON < 0 || CTI_CSA_ADDON > 1)) then {
 	if(CTI_IFA_ADDON < 0) then {
 		_s pushBack [format["%1CSA38_pragaRV", _sid],"salvager"]; } else {
 		_s pushBack [format["%1LIB_US6_Open_Cargo", _sid],"salvager"];};
-	_d pushBack 0;
+	_d pushBack 5;
 		
 	_c pushBack format["CTI_Salvager_Independent_%1", _faction];
 	_p pushBack '';
@@ -473,7 +473,7 @@ if(_setupBaseUnits && (CTI_IFA_ADDON < 0 || CTI_CSA_ADDON > 1)) then {
 	if(CTI_IFA_ADDON < 0) then {
 		_s pushBack [format["%1CSA38_pragaRV", _sid],"salvager-independent"];} else {
 		_s pushBack [format["%1LIB_US6_Open_Cargo", _sid],"salvager-independent"];};
-	_d pushBack 0;
+	_d pushBack 5;
 };
 
 //***************************************************************************************************************************************
@@ -489,7 +489,7 @@ _t pushBack (30*(_tech_level+1));
 _u pushBack _tech_level;
 _f pushBack CTI_FACTORY_AMMO;
 _s pushBack "service-ammotruck";
-_d pushBack 0;	
+_d pushBack 5;	
 
 /*_c pushBack format["%1fow_v_sdkfz_251_camo_foliage_ger_heer", _sid];				//fueltruck
 _p pushBack '';
@@ -499,7 +499,7 @@ _t pushBack (30*(_tech_level+1));
 _u pushBack _tech_level;
 _f pushBack CTI_FACTORY_AMMO;
 _s pushBack "service-fueltruck";
-_d pushBack 0;	*/
+_d pushBack 5;	*/
 
 //***************************************************************************************************************************************
 //														Naval Factory																	*

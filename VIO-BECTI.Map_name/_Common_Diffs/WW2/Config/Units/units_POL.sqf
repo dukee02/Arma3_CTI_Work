@@ -60,7 +60,7 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= 0) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_BARRACKS;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -89,7 +89,7 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= 1) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_BARRACKS;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -116,7 +116,7 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= 2) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_BARRACKS;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 

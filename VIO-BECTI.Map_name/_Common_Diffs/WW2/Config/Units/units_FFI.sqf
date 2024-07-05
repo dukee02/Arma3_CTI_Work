@@ -57,7 +57,7 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= 0) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_LIGHT;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 //Level 1
@@ -79,7 +79,7 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= 1 && _sid != "") then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_LIGHT;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 //Level 2
@@ -102,7 +102,7 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= 2 && _sid != "") then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_LIGHT;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 

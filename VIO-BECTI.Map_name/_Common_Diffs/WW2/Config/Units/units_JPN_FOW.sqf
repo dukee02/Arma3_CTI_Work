@@ -80,7 +80,7 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_BARRACKS;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -116,7 +116,7 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_BARRACKS;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -144,7 +144,7 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_BARRACKS;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -173,7 +173,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_LIGHT;
 	_s pushBack "";
-	_d pushBack 0;
+	_d pushBack 5;
 	
 	_c pushBack format["%1fow_v_type97_truck_ija", _sid];
 	_p pushBack '';
@@ -183,7 +183,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_LIGHT;
 	_s pushBack "";
-	_d pushBack 0;
+	_d pushBack 5;
 	
 	//_c pushBack format["%1fow_v_type97_truck_fuel_ija", _sid];				//fueltruck
 	//_c pushBack format["%1fow_v_type97_truck_utility_ija", _sid];				//repairtruck
@@ -215,7 +215,7 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_HEAVY;
 	_s pushBack "";
-	_d pushBack 0;
+	_d pushBack 5;
 	_c pushBack format["%1fow_ija_type95_HaGo_2_ija", _sid];
 	_p pushBack '';
 	_n pushBack '';
@@ -224,7 +224,7 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_HEAVY;
 	_s pushBack "";
-	_d pushBack 0;
+	_d pushBack 5;
 	_c pushBack format["%1fow_ija_type95_HaGo_3_ija", _sid];
 	_p pushBack '';
 	_n pushBack '';
@@ -233,7 +233,7 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_HEAVY;
 	_s pushBack "";
-	_d pushBack 0;
+	_d pushBack 5;
 };
 
 //Update the calculatetd max upgrade level
@@ -262,7 +262,7 @@ if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_AIR;
 	_s pushBack "";
-	_d pushBack 0;
+	_d pushBack 5;
 	
 	_c pushBack format["%1fow_va_a6m_white", _sid];
 	_p pushBack '';
@@ -272,7 +272,7 @@ if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_AIR;
 	_s pushBack "";
-	_d pushBack 0;
+	_d pushBack 5;
 };
 
 //Update the calculatetd max upgrade level
@@ -297,7 +297,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= 1) then {
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_REPAIR;
 	_s pushBack "service-repairtruck";
-	_d pushBack 0;
+	_d pushBack 5;
 
 	_isThisMain = missionNamespace getVariable [format ["CTI_%1_MAINNATIONS", _side], []];
 	if(count _isThisMain > 0) then {
@@ -314,7 +314,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= 1) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_REPAIR;
 		_s pushBack [format["%1fow_v_type97_truck_ija", _sid],"salvager"];
-		_d pushBack 0;
+		_d pushBack 5;
 			
 		_c pushBack format["CTI_Salvager_Independent_%1", _faction];
 		_p pushBack '';
@@ -324,7 +324,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= 1) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_REPAIR;
 		_s pushBack [format["%1fow_v_type97_truck_ija", _sid],"salvager-independent"];
-		_d pushBack 0;
+		_d pushBack 5;
 	};
 };
 
@@ -342,7 +342,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= 1) then {
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_AMMO;
 	_s pushBack "service-ammotruck";
-	_d pushBack 0;*/
+	_d pushBack 5;*/
 	
 	_c pushBack format["%1fow_v_type97_truck_fuel_ija", _sid];						//fueltruck
 	_p pushBack '';
@@ -352,7 +352,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= 1) then {
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_AMMO;
 	_s pushBack "service-fueltruck";
-	_d pushBack 0;
+	_d pushBack 5;
 
 };
 

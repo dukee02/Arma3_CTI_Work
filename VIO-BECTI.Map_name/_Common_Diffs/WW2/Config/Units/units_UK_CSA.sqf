@@ -67,7 +67,7 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_BARRACKS;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -95,7 +95,7 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_BARRACKS;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -119,7 +119,7 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_BARRACKS;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -151,7 +151,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_LIGHT;
 		_s pushBack "";
-		_d pushBack 0;		
+		_d pushBack 5;		
 	};
 	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
 	};
@@ -163,7 +163,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_LIGHT;
 	_s pushBack "";
-	_d pushBack 0;
+	_d pushBack 5;
 	_tech_level = _tech_level + 1;
 };*/
 
@@ -255,7 +255,7 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_HEAVY;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -310,7 +310,7 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_HEAVY;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -430,7 +430,7 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_HEAVY;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -460,7 +460,7 @@ if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_AIR;
 	_s pushBack "";
-	_d pushBack 0;
+	_d pushBack 5;
 };*/
 
 //Update the calculatetd max upgrade level
@@ -484,7 +484,7 @@ if(CTI_US_SIDE != CTI_UK_SIDE) then {
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_REPAIR;
 	_s pushBack [format["%1CSA38_pragaRV", _sid],"salvager"];
-	_d pushBack 0;
+	_d pushBack 5;
 			
 	_c pushBack format["CTI_Salvager_Independent_%1", _faction];
 	_p pushBack '';
@@ -494,7 +494,7 @@ if(CTI_US_SIDE != CTI_UK_SIDE) then {
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_REPAIR;
 	_s pushBack [format["%1CSA38_pragaRV", _sid],"salvager-independent"];
-	_d pushBack 0;
+	_d pushBack 5;
 };
 
 //***************************************************************************************************************************************
@@ -510,7 +510,7 @@ if(CTI_US_SIDE != CTI_UK_SIDE) then {
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_AMMO;
 	_s pushBack "service-ammotruck";
-	_d pushBack 0;	
+	_d pushBack 5;	
 
 	_c pushBack format["%1fow_v_universalCarrier", _sid];				//fueltruck
 	_p pushBack '';
@@ -520,7 +520,7 @@ if(CTI_US_SIDE != CTI_UK_SIDE) then {
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_AMMO;
 	_s pushBack "service-fueltruck";
-	_d pushBack 0;	
+	_d pushBack 5;	
 
 };*/
 
