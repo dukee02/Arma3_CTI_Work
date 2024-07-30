@@ -27,7 +27,7 @@ class EditorData
 	};
 };
 binarizationWanted=0;
-sourceName="VIO-BECTI-CW V2.0";
+sourceName="VIO-BECTI-CW V2.0.5";
 addons[]=
 {
 	"A3_Characters_F",
@@ -146,8 +146,8 @@ class Mission
 	assetType="Free";
 	class Intel
 	{
-		briefingName="VIO-BECTI-CW V2.0";
-		overviewText="VIO-BECTI-CW V2.0";
+		briefingName="VIO-BECTI-CW V2.0.5";
+		overviewText="VIO-BECTI-CW V2.0.5";
 		resistanceWest=0;
 		timeOfChanges=1800.0002;
 		startWeather=0.30000001;
