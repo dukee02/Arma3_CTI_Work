@@ -229,7 +229,7 @@ _tech_matrix =
 			//IFA
 			[true,true,true,true,true,false],
 			//SPE
-			[false,true,true,true,false,false],
+			[true,true,true,false,false,false],
 			//FOW
 			[true,true,true,true,true,false],
 			//CSA
@@ -310,7 +310,7 @@ _tech_matrix =
 			//IFA
 			[true,true,true,true,true,false],
 			//SPE
-			[false,false,true,true,true,false],
+			[true,true,true,true,false,false],
 			//FOW
 			[true,true,false,false,false,false],
 			//CSA
@@ -418,7 +418,7 @@ _tech_matrix =
 			//IFA
 			[false,false,false,false,false,false],
 			//SPE
-			[true,true,true,false,false,false],
+			[true,true,true,true,false,false],
 			//FOW
 			[false,false,false,false,false,false],
 			//CSA
@@ -448,7 +448,7 @@ _tech_matrix =
 			//IFA
 			[false,false,true,true,true,true,true,true],
 			//SPE
-			[false,false,true,true,true,true,false,false],
+			[false,false,true,true,true,true,false,true],
 			//FOW
 			[false,false,false,false,false,false,true,false],
 			//CSA
@@ -527,9 +527,9 @@ _tech_matrix =
 		//US
 		[
 			//IFA
-			[false,true,true,true,false,false,true,false],
+			[false,true,true,false,false,true,true,true],
 			//SPE
-			[false,false,true,true,true,false,true,false],
+			[false,false,true,true,true,true,false,true],
 			//FOW
 			[true,false,true,true,false,false,false,false],
 			//CSA
@@ -637,7 +637,7 @@ _tech_matrix =
 			//IFA
 			[false,false,false,false,false,false,false,false],
 			//SPE
-			[false,false,true,true,true,true,false,false],
+			[false,false,true,true,true,true,false,true],
 			//FOW
 			[false,false,false,false,false,false,false,false],
 			//CSA
