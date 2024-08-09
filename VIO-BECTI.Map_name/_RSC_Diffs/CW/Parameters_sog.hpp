@@ -90,7 +90,7 @@ class Params {
 		default = 1;
 	};
 	class CTI_US_SIDE {
-		title = "US Side [CUP, RHS or CWR3 needed]";
+		title = "US Side [SOG, CUP, RHS or CWR3 needed]";
 		values[] = {-1,0};
 		texts[] = {"deactivated", "BLUFOR (West)"};
 		//values[] = {-1,0,1,2};
