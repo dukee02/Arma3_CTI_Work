@@ -4,17 +4,14 @@ respawnDelay = 3;
 respawnDialog = false;
 
 //--- Require briefing.html to show up.
-onLoadName = "VIO-BECTI-WW2 V2.0.2";
+onLoadName = "VIO-BECTI-WW2 V2.0.5beta";
 onLoadMissionTime = false;
-onLoadMission = "VIO-BECTI-WW2 V2.0.2_beta240513";
-loadScreen = "vio_becti.jpg";
-
-briefingName = "VIO-BECTI-WW2 V2.0.2";
+overviewText="VIO-BECTI-WW2 V2.0.5beta";
+overviewTextLocked="VIO-BECTI-WW2 V2.0.5beta";
+onLoadMission = "VIO-BECTI-WW2 V2.0.5_beta240920";
+briefingName = "VIO-BECTI-WW2 V2.0.5beta";
 
 //--- ArmA 3 Specifics
 dev = "Benny, dukee";
 author = "Benny, dukee";
-overviewPicture = "vio_becti.jpg";
-overViewPictureLocked="vio_becti.jpg";
-overviewText="VIO-BECTI-WW2 V2.0.2";
-overviewTextLocked="VIO-BECTI-WW2 V2.0.2";
+overviewPicture = "VIO_BECTI.jpg";
