@@ -110,8 +110,126 @@ CTI_CO_CustomIterator = 0;
 
 //calculate the main mod depends on the given parameters
 _mainmod = -1;
+
+//geather the possible main mods first 
+_fixed_main = [];
+_loaded_main = [];
+if(CTI_SPE_DLC > 1 && [1175380] call CTI_CO_FNC_HasDLC) then {};
+if([1175380] call CTI_CO_FNC_HasDLC) then {
+	if(CTI_SPE_DLC > 0) then {_loaded_main pushBack CTI_SPE_ID};
+	if(CTI_SPE_DLC > 1) then {_fixed_main pushBack CTI_SPE_ID};
+};
+if(CTI_IFA_ADDON > 0) then {_loaded_main pushBack CTI_IFA_ID};
+if(CTI_IFA_ADDON > 1) then {_fixed_main pushBack CTI_IFA_ID};
+if(CTI_CSA_ADDON > 0) then {_loaded_main pushBack CTI_CSA_ID};
+if(CTI_CSA_ADDON > 1) then {_fixed_main pushBack CTI_CSA_ID};
+if(CTI_NF_ADDON > 0) then {_loaded_main pushBack CTI_NF_ID};
+if(CTI_NF_ADDON > 1) then {_fixed_main pushBack CTI_NF_ID};
+if(CTI_FOW_ADDON > 0) then {_loaded_main pushBack CTI_FOW_ID};
+if(CTI_FOW_ADDON > 1) then {_fixed_main pushBack CTI_FOW_ID};
+
+["TEST", "FILE: Common\Init\Init_Common.sqf", format ["Main Mod: _fixed_main <%1> --- _loaded_main <%2>", _fixed_main, _loaded_main]] call CTI_CO_FNC_Log;
+//now search for the best main mod
+if(count _fixed_main > 0) then {
+	_mainmod = _fixed_main select 0;
+	["TEST", "FILE: Common\Init\Init_Common.sqf", format ["Main Mod found: _fixed_main <%1> ", _mainmod]] call CTI_CO_FNC_Log;
+};
+if(_mainmod == -1) then {
+	_mainmod = _loaded_main select 0;
+	["TEST", "FILE: Common\Init\Init_Common.sqf", format ["No fixed mod found, first loaded: _loaded_main <%1> ", _mainmod]] call CTI_CO_FNC_Log;
+};
+
+//now with the mainmod known, we gather all possible nations
+_nations = [];
+
+if(CTI_SPE_DLC > 0) then {
+	_nations pushBackUnique CTI_GER_ID;	//CTI_GER_SIDE;
+	_nations pushBackUnique CTI_US_ID;	//CTI_US_SIDE;
+	_nations pushBackUnique CTI_FR_ID;	//CTI_FR_SIDE;
+};
+if(CTI_IFA_ADDON > 0) then {
+	_nations pushBackUnique CTI_GER_ID;	//CTI_GER_SIDE;
+	_nations pushBackUnique CTI_SOV_ID;	//CTI_SOV_SIDE;
+	_nations pushBackUnique CTI_US_ID;	//CTI_US_SIDE;
+	_nations pushBackUnique CTI_UK_ID;	//CTI_UK_SIDE;
+};
+if(CTI_CSA_ADDON > 0) then {
+	_nations pushBackUnique CTI_GER_ID;	//CTI_GER_SIDE;
+	_nations pushBackUnique CTI_CZ_ID;	//CTI_CZ_SIDE;
+	_nations pushBackUnique CTI_UK_ID;	//CTI_UK_SIDE;
+};
+if(CTI_NF_ADDON > 0) then {
+	_nations pushBackUnique CTI_FIN_ID;	//CTI_FIN_SIDE;
+	_nations pushBackUnique CTI_SOV_ID;	//CTI_SOV_SIDE;
+};
+if(CTI_FOW_ADDON > 0) then {
+	_nations pushBackUnique CTI_US_ID;	//CTI_US_SIDE;
+	_nations pushBackUnique CTI_JPN_ID;	//CTI_JPN_SIDE;
+	_nations pushBackUnique CTI_GER_ID;	//CTI_GER_SIDE;
+	_nations pushBackUnique CTI_UK_ID;	//CTI_UK_SIDE;
+};
+["TEST", "FILE: Common\Init\Init_Common.sqf", format ["gathered _nations: <%1>", _nations]] call CTI_CO_FNC_Log;
+
+_nations_east = [];
+_nations_west = [];
+_nations_guer = [];
+{
+	nation_param = -1;
+	switch(_x) do {
+		case CTI_GER_ID: {nation_param = CTI_GER_SIDE};
+		case CTI_SOV_ID: {nation_param = CTI_SOV_SIDE};
+		case CTI_UK_ID: {nation_param = CTI_UK_SIDE};
+		case CTI_US_ID: {nation_param = CTI_US_SIDE};
+		case CTI_JPN_ID: {nation_param = CTI_JPN_SIDE};
+		case CTI_CZ_ID: {nation_param = CTI_CZ_SIDE};
+		case CTI_FIN_ID: {nation_param = CTI_FIN_SIDE};
+		case CTI_FR_ID: {nation_param = CTI_FR_SIDE};
+		default {};
+	};
+	["TEST", "FILE: Common\Init\Init_Common.sqf", format ["sorting nations: <%1> <%2>", nation_param, _x]] call CTI_CO_FNC_Log;
+	switch(nation_param) do {
+		case 0: {_nations_west pushBack _x};
+		case 1: {_nations_east pushBack _x};
+		case 2: {_nations_guer pushBack _x};
+		default {};
+	};
+} forEach _nations;
+["TEST", "FILE: Common\Init\Init_Common.sqf", format ["gathered _nations per side: east<%1> west<%2> guer<%3>", _nations_east, _nations_west, _nations_guer]] call CTI_CO_FNC_Log;
+
 _nation = -1;
 {
+	_nation = -1;
+	switch(_x select 2) do {
+		case 0: {if(CTI_GER_ID in (_x select 1)) then {_nation = CTI_GER_ID}};	//Germany [IFA3]
+		case 1: {if(CTI_SOV_ID in (_x select 1)) then {_nation = CTI_SOV_ID}};	//Soviet Red Army [IFA3]
+		case 2: {if(CTI_US_ID in (_x select 1)) then {_nation = CTI_US_ID}};	//US Army [IFA3]
+		case 3: {if(CTI_UK_ID in (_x select 1)) then {_nation = CTI_UK_ID}};	//UK Army [IFA3]
+		case 4: {if(CTI_GER_ID in (_x select 1)) then {_nation = CTI_GER_ID}};	//Germany [FoW]
+		case 5: {if(CTI_JPN_ID in (_x select 1)) then {_nation = CTI_JPN_ID}};	//Japain [FoW]
+		case 6: {if(CTI_US_ID in (_x select 1)) then {_nation = CTI_US_ID}};	//US [FoW]
+		case 7: {if(CTI_UK_ID in (_x select 1)) then {_nation = CTI_UK_ID}};	//UK [FoW]
+		case 8: {if(CTI_GER_ID in (_x select 1)) then {_nation = CTI_GER_ID}};	//Germany [CSA]
+		case 9: {if(CTI_CZ_ID in (_x select 1)) then {_nation = CTI_CZ_ID}};	//Czech [CSA]
+		case 10: {if(CTI_UK_ID in (_x select 1)) then {_nation = CTI_UK_ID}};	//UK [CSA]
+		case 11: {if(CTI_FIN_ID in (_x select 1)) then {_nation = CTI_FIN_ID}};	//Finnish Army [FN]
+		case 12: {if(CTI_SOV_ID in (_x select 1)) then {_nation = CTI_SOV_ID}};	//Soviet Red Army [FN]
+		case 13: {if(CTI_FR_ID in (_x select 1)) then {_nation = CTI_FR_ID}};	//FR Army [SPE]
+		case 14: {if(CTI_GER_ID in (_x select 1)) then {_nation = CTI_GER_ID}};	//Germany [SPE]
+		case 15: {if(CTI_US_ID in (_x select 1)) then {_nation = CTI_US_ID}};	//US Army [SPE]
+		default {};
+	};
+	["TEST", "FILE: Common\Init\Init_Common.sqf", format ["first try to set the nation: %1 <%2>", _x select 0, _nation]] call CTI_CO_FNC_Log;
+	if(_nation == -1) then {
+		_nation = (_x select 1) select 0;
+	};
+	["TEST", "FILE: Common\Init\Init_Common.sqf", format ["second try to set the nation: %1 <%2> <%3>", _x select 0, _nation, ((_x select 1) select 0)]] call CTI_CO_FNC_Log;
+
+	missionNamespace setVariable [format ["CTI_%1_MAINNATIONS", _x select 0], [_nation, _mainmod]];
+	["TEST", "FILE: Common\Init\Init_Common.sqf", format ["Final found setup: nation <%1> --- mainmod <%2>", _nation, _mainmod]] call CTI_CO_FNC_Log;
+	[_x select 0, _nation, _mainmod] call compile preprocessFileLineNumbers "Common\Config\Gear\gear_start_config.sqf";
+} forEach [[west,_nations_west,CTI_WEST_AI],[east,_nations_east,CTI_EAST_AI]];
+
+/*{
 	switch true do {
 		case (((CTI_GER_SIDE) call CTI_CO_FNC_GetSideFromID) == _x): {
 			_nation = CTI_GER_ID;
@@ -213,7 +331,7 @@ _nation = -1;
 	missionNamespace setVariable [format ["CTI_%1_MAINNATIONS", _x], [_nation, _mainmod]];
 	[_x, _nation, _mainmod] call compile preprocessFileLineNumbers "Common\Config\Gear\gear_start_config.sqf";
 } forEach [west,east];
-missionNamespace getVariable format ["CTI_%1_MAINNATIONS", west];
+missionNamespace getVariable format ["CTI_%1_MAINNATIONS", west];*/
 
 call compile preprocessFileLineNumbers "Common\Config\Units\Techmatrix.sqf";
 
@@ -231,12 +349,18 @@ if(CTI_FR_SIDE >= 0) then {
 	if(CTI_SPE_DLC >= 1) then {
 		((CTI_FR_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Units\units_FR_SPE.sqf";
 		((CTI_FR_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Factories\factory_FR_SPE.sqf";
-		if((CTI_FR_SIDE == 0 && CTI_WEST_AI < 0) || (CTI_FR_SIDE == 1 && CTI_EAST_AI < 0)) then {
-			((CTI_FR_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Squads\squad_FR_SPE.sqf";
-		};
-		if((CTI_FR_SIDE == 0 && CTI_WEST_TOWNS < 0) || (CTI_FR_SIDE == 1 && CTI_EAST_TOWNS < 0) || (CTI_FR_SIDE == 2 && CTI_GUER_TOWNS == 2)) then {
-			((CTI_FR_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_FR_SPE.sqf";
-		};
+		//_skip = false;
+		//if(CTI_IFA_ADDON == 2 || CTI_SPE_DLC == 2 || CTI_FOW_ADDON == 2 || CTI_CSA_ADDON == 2 || CTI_NF_ADDON == 2) then {
+		//	if!(CTI_SPE_DLC == 2) exitWith {_skip = true;["VIOC_DEBUG", "FILE: common\init\Init_Common.sqf", "Town Squad preparation skipped"] call CTI_CO_FNC_Log;};
+		//};
+		//if(_skip == false) then {
+			if((CTI_FR_SIDE == 0 && CTI_WEST_AI < 0) || (CTI_FR_SIDE == 1 && CTI_EAST_AI < 0)) then {
+				((CTI_FR_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Squads\squad_FR_SPE.sqf";
+			};
+			if((CTI_FR_SIDE == 0 && CTI_WEST_TOWNS < 0) || (CTI_FR_SIDE == 1 && CTI_EAST_TOWNS < 0) || (CTI_FR_SIDE == 2 && CTI_GUER_TOWNS == 2)) then {
+				((CTI_FR_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_FR_SPE.sqf";
+			};
+		//};
 		((CTI_FR_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_FR_SPE.sqf";
 	};
 };
@@ -512,6 +636,16 @@ switch(CTI_GUER_TOWNS) do {
 					((CTI_US_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_FR_SPE.sqf";
 				};
 			};
+			case 14: {
+				if(CTI_SPE_DLC >= 1) then {
+					((CTI_US_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_GER_SPE.sqf";
+				};
+			};
+			case 15: {
+				if(CTI_SPE_DLC >= 1) then {
+					((CTI_US_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_US_SPE.sqf";
+				};
+			};
 			default {};
 		};
 	};
@@ -561,6 +695,16 @@ switch(CTI_GUER_TOWNS) do {
 			case 13: {
 				if(CTI_SPE_DLC >= 1) then {
 					((CTI_US_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Squads\squad_FR_SPE.sqf";
+				};
+			};
+			case 14: {
+				if(CTI_SPE_DLC >= 1) then {
+					((CTI_US_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Squads\squad_GER_SPE.sqf";
+				};
+			};
+			case 15: {
+				if(CTI_SPE_DLC >= 1) then {
+					((CTI_US_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Squads\squad_US_SPE.sqf";
 				};
 			};
 			default {};

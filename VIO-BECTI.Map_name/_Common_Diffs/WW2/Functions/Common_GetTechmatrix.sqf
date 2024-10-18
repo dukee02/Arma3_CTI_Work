@@ -87,6 +87,12 @@ if(_mod >= 0) then {
 		if(CTI_SABRL_ADDON > 0) then {
 			_tech = [_tech, _tech_matrix select _factory select _nation select CTI_SABRL_ID] call CTI_CO_FNC_MergeMatrixArray;
 		};
+		if (isClass(configFile >> "CfgVehicles" >> "FA_BA64_Captured")) then {
+			_tech = [_tech, _tech_matrix select _factory select _nation select CTI_CARS_ID] call CTI_CO_FNC_MergeMatrixArray;
+		};
+		if (isClass(configFile >> "CfgVehicles" >> "FA_T26_Captured")) then {
+			_tech = [_tech, _tech_matrix select _factory select _nation select CTI_TANKS_ID] call CTI_CO_FNC_MergeMatrixArray;
+		};
 	} else {
 		//combine the tech tree
 		{
@@ -129,6 +135,14 @@ if(_mod >= 0) then {
 				};
 				if(CTI_SABRL_ADDON > 0) then {
 					_tech = [_tech, _tech_matrix select _factory select _forEachIndex select CTI_SABRL_ID] call CTI_CO_FNC_MergeMatrixArray;
+					//if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\functions\Common_GetTechmatrix.sqf", format["CTI_SABRL_ADDON: [%1,%2] <%3>", _factory, _forEachIndex, _tech]] call CTI_CO_FNC_Log;};
+				};
+				if (isClass(configFile >> "CfgVehicles" >> "FA_BA64_Captured")) then {
+					_tech = [_tech, _tech_matrix select _factory select _forEachIndex select CTI_CARS_ID] call CTI_CO_FNC_MergeMatrixArray;
+					//if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\functions\Common_GetTechmatrix.sqf", format["CTI_SABRL_ADDON: [%1,%2] <%3>", _factory, _forEachIndex, _tech]] call CTI_CO_FNC_Log;};
+				};
+				if (isClass(configFile >> "CfgVehicles" >> "FA_T26_Captured")) then {
+					_tech = [_tech, _tech_matrix select _factory select _forEachIndex select CTI_TANKS_ID] call CTI_CO_FNC_MergeMatrixArray;
 					//if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\functions\Common_GetTechmatrix.sqf", format["CTI_SABRL_ADDON: [%1,%2] <%3>", _factory, _forEachIndex, _tech]] call CTI_CO_FNC_Log;};
 				};
 			};	

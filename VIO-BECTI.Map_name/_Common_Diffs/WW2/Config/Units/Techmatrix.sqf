@@ -446,218 +446,218 @@ _tech_matrix =
 		//GER
 		[
 			//IFA
-			[false,false,true,true,true,true,true,true],
+			[false,false,false,true,true,true,true,true,true],
 			//SPE
-			[false,false,true,true,true,true,false,true],
+			[false,false,true,true,true,true,false,true,false],
 			//FOW
-			[false,false,false,false,false,false,true,false],
+			[false,false,false,false,false,false,true,false,false],
 			//CSA
-			[true,true,true,true,false,false,false,false],
+			[true,true,true,true,false,false,false,false,false],
 			//NF
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//SABFL
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//SABNL
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//SAB
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//BT
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//SAB reloaded
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//WW2 Cars
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//WW2 Tanks
-			[true,true,false,false,false,false,false,false]
+			[true,true,false,false,false,false,false,false,false]
 		],
 		//SOV
 		[
 			//IFA
-			[false,false,false,true,true,false,true,true],
+			[false,false,false,true,true,false,true,true,false],
 			//SPE
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//FOW
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//CSA
-			[false,true,true,true,false,false,false,false],
+			[false,true,true,true,false,false,false,false,false],
 			//NF
-			[true,true,true,true,true,true,false,false],
+			[true,true,true,true,true,true,false,false,false],
 			//SABFL
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//SABNL
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//SAB
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//BT
-			[false,true,false,false,false,false,false,false],
+			[false,true,false,false,false,false,false,false,false],
 			//SAB reloaded
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//WW2 Cars
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//WW2 Tanks
-			[true,false,false,false,true,false,true,false]
+			[true,false,false,false,true,false,true,false,false]
 		],
 		//UK
 		[
 			//IFA
-			[true,true,false,true,true,false,true,false],
+			[true,true,false,true,true,false,true,false,false],
 			//SPE
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//FOW
-			[true,false,false,false,true,false,false,false],
+			[true,false,false,false,true,false,false,false,false],
 			//CSA
-			[false,true,true,false,true,false,false,false],
+			[false,true,true,false,true,false,false,false,false],
 			//NF
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//SABFL
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//SABNL
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//SAB
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//BT
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//SAB reloaded
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//WW2 Cars
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//WW2 Tanks
-			[false,false,true,false,false,false,false,false]
+			[false,false,true,false,false,false,false,false,false]
 		],
 		//US
 		[
 			//IFA
-			[false,true,true,false,false,true,true,true],
+			[false,true,true,false,false,true,true,true,false],
 			//SPE
-			[false,false,true,true,true,true,false,true],
+			[false,false,true,true,true,true,false,true,false],
 			//FOW
-			[true,false,true,true,false,false,false,false],
+			[true,false,true,true,false,false,false,false,false],
 			//CSA
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//NF
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//SABFL
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//SABNL
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//SAB
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//BT
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//SAB reloaded
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//WW2 Cars
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//WW2 Tanks
-			[false,false,false,false,false,false,true,false]
+			[false,false,false,false,false,false,true,false,false]
 		],
 		//JPN
 		[
 			//IFA
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//SPE
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//FOW
-			[true,false,false,false,false,false,false,false],
+			[true,false,false,false,false,false,false,false,false],
 			//CSA
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//NF
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//SABFL
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//SABNL
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//SAB
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//BT
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//SAB reloaded
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//WW2 Cars
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//WW2 Tanks
-			[false,false,false,false,false,false,false,false]
+			[false,false,false,false,false,false,false,false,false]
 		],
 		//CZ
 		[
 			//IFA
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//SPE
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//FOW
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//CSA
-			[true,true,true,true,true,false,false,false],
+			[true,true,true,true,true,false,false,false,false],
 			//NF
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//SABFL
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//SABNL
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//SAB
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//BT
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//SAB reloaded
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//WW2 Cars
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//WW2 Tanks
-			[false,false,false,false,false,false,false,false]
+			[false,false,false,false,false,false,false,false,false]
 		],
 		//FIN
 		[
 			//IFA
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//SPE
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//FOW
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//CSA
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//NF
-			[true,true,true,true,true,true,false,false],
+			[true,true,true,true,true,true,false,false,false],
 			//SABFL
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//SABNL
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//SAB
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//BT
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//SAB reloaded
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//WW2 Cars
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//WW2 Tanks
-			[false,false,false,false,false,false,false,false]
+			[false,false,false,false,false,false,false,false,false]
 		],
 		//FR
 		[
 			//IFA
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//SPE
-			[false,false,true,true,true,true,false,true],
+			[false,false,true,true,true,true,false,true,false],
 			//FOW
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//CSA
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//NF
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//SABFL
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//SABNL
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//SAB
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//BT
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//SAB reloaded
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//WW2 Cars
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,false,false,false,false],
 			//WW2 Tanks
-			[false,false,false,false,false,false,false,false]
+			[false,false,false,false,false,false,false,false,false]
 		]
 	],
 	//CTI_UPGRADE_AIR

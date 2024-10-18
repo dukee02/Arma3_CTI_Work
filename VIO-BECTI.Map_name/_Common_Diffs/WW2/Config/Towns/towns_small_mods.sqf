@@ -4,19 +4,17 @@ _sid_base = "";
 _tag = "";
 _level = -1;
 
-if(_side == west) then {
-	_sid = "VIOC_B_";
-	_tag = "WEST_";
-} 
-else {
-	if(_side == east) then {
-		_sid = "VIOC_O_";
-		_tag = "EAST_";
-	} 
-	else {
-		_sid = "VIOC_I_";
-		_tag = "GUER_";
+switch (_side) do {
+	case west: {
+		_sid_base = "VIOC_B_";_tag = "WEST_";
 	};
+	case east: {
+		_sid_base = "VIOC_O_";_tag = "EAST_";
+	};
+	case resistance: {
+		_sid_base = "VIOC_I_";_tag = "GUER_";
+	};
+	default {_sid_base = "";};
 };
 //if !(("sab_nl_mutsuki") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = ""} else {_sid = _sid_base};
 

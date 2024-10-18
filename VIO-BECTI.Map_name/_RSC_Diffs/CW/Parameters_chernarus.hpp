@@ -799,8 +799,8 @@ class Params {
 	};
 	class CTI_AI_TEAMS_ENABLED {
 		title = "AI: Teams (Coop disables AI on player side)";
-		values[] = {0,1,2,3,4,5,6,7,8};
-		texts[] = {"Disabled", "1 Slot", "2 Slots", "3 Slots", "4 Slots", "5 Slots", "6 Slots", "7 Slots", "8 Slots"};
+		values[] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15};
+		texts[] = {"Disabled", "1 Slot", "2 Slots", "3 Slots", "4 Slots", "5 Slots", "6 Slots", "7 Slots", "8 Slots", "9 Slot", "10 Slots", "11 Slots", "12 Slots", "13 Slots", "14 Slots", "15 Slots"};
 		default = 0;
 	};
 	class CTI_AI_TEAMS_GROUPSIZE {

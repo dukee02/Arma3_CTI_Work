@@ -91,26 +91,26 @@ class Params {
 	};
 	class CTI_WEST_TOWNS {
 		title = "BLUFOR (West) Town Nation (change the defending Town Units | only needed if 2 nations at one side)";
-		values[] = {-1,0,1,2,3,4,5,6,7,8,9,10,11,12,13};
-		texts[] = {"no changes","Germany","Soviet Red Army","US Army","UK Army","Germany FoW","Japain FoW", "US FoW", "UK FoW", "Germany CSA", "Czech CSA", "UK CSA", "Finnish Army FN", "Soviet Red Army FN", "FR Army"};
+		values[] = {-1,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15};
+		texts[] = {"no changes","Germany [IFA3]","Soviet Red Army [IFA3]","US Army [IFA3]","UK Army [IFA3]","Germany [FoW]","Japain [FoW]", "US [FoW]", "UK [FoW]", "Germany [CSA]", "Czech [CSA]", "UK [CSA]", "Finnish Army [FN]", "Soviet Red Army [FN]", "FR Army [SPE]", "Germany [SPE]", "US Army [SPE]"};
 		default = -1;
 	};
 	class CTI_EAST_TOWNS {
 		title = "OPFOR (East) Town Nation (change the defending Town Units | only needed if 2 nations at one side)";
-		values[] = {-1,0,1,2,3,4,5,6,7,8,9,10,11,12,13};
-		texts[] = {"no changes","Germany","Soviet Red Army","US Army","UK Army","Germany FoW","Japain FoW", "US FoW", "UK FoW", "Germany CSA", "Czech CSA", "UK CSA", "Finnish Army FN", "Soviet Red Army FN", "FR Army"};
+		values[] = {-1,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15};
+		texts[] = {"no changes","Germany [IFA3]","Soviet Red Army [IFA3]","US Army [IFA3]","UK Army [IFA3]","Germany [FoW]","Japain [FoW]", "US [FoW]", "UK [FoW]", "Germany [CSA]", "Czech [CSA]", "UK [CSA]", "Finnish Army [FN]", "Soviet Red Army [FN]", "FR Army [SPE]", "Germany [SPE]", "US Army [SPE]"};
 		default = -1;
 	};
 	class CTI_WEST_AI {
 		title = "BLUFOR (West) Player+AI Nation (change the startup Loadout and AI Units | only needed if 2 nations at one side)";
-		values[] = {-1,0,1,2,3,4,5,6,7,8,9,10,11,12,13};
-		texts[] = {"no changes","Germany","Soviet Red Army","US Army","UK Army","Germany FoW","Japain FoW", "US FoW", "UK FoW", "Germany CSA", "Czech CSA", "UK CSA", "Finnish Army FN", "Soviet Red Army FN", "FR Army"};
+		values[] = {-1,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15};
+		texts[] = {"no changes","Germany [IFA3]","Soviet Red Army [IFA3]","US Army [IFA3]","UK Army [IFA3]","Germany [FoW]","Japain [FoW]", "US [FoW]", "UK [FoW]", "Germany [CSA]", "Czech [CSA]", "UK [CSA]", "Finnish Army [FN]", "Soviet Red Army [FN]", "FR Army [SPE]", "Germany [SPE]", "US Army [SPE]"};
 		default = -1;
 	};
 	class CTI_EAST_AI {
 		title = "OPFOR (East) Player+AI Nation (change the startup Loadout and AI Units | only needed if 2 nations at one side)";
-		values[] = {-1,0,1,2,3,4,5,6,7,8,9,10,11,12,13};
-		texts[] = {"no changes","Germany","Soviet Red Army","US Army","UK Army","Germany FoW","Japain FoW", "US FoW", "UK FoW", "Germany CSA", "Czech CSA", "UK CSA", "Finnish Army FN", "Soviet Red Army FN", "FR Army"};
+		values[] = {-1,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15};
+		texts[] = {"no changes","Germany [IFA3]","Soviet Red Army [IFA3]","US Army [IFA3]","UK Army [IFA3]","Germany [FoW]","Japain [FoW]", "US [FoW]", "UK [FoW]", "Germany [CSA]", "Czech [CSA]", "UK [CSA]", "Finnish Army [FN]", "Soviet Red Army [FN]", "FR Army [SPE]", "Germany [SPE]", "US Army [SPE]"};
 		default = -1;
 	};
 	class CTI_CAMO_ACTIVATION {
