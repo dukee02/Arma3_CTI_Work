@@ -117,22 +117,38 @@ if(CTI_GUER_TOWNS == 0) then {
 (west) call compile preprocessFileLineNumbers "Common\Config\Units\Units_West.sqf";
 (east) call compile preprocessFileLineNumbers "Common\Config\Units\Units_East.sqf";
 
-if(CTI_GUER_TOWNS == 0) then {
-	(resistance) call compile preprocessFileLineNumbers "Common\Config\Factories\Factory_Resistance.sqf";
-} else {
-	(resistance) call compile preprocessFileLineNumbers "Common\Config\Factories\Factory_LDF.sqf";
-};
 (west) call compile preprocessFileLineNumbers "Common\Config\Factories\Factory_West.sqf";
 (east) call compile preprocessFileLineNumbers "Common\Config\Factories\Factory_East.sqf";
 
 (west) call compile preprocessFileLineNumbers "Common\Config\Squads\Squad_West.sqf";
 (east) call compile preprocessFileLineNumbers "Common\Config\Squads\Squad_East.sqf";
 
-if(CTI_GUER_TOWNS == 0) then {
-	(resistance) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_resistance.sqf";
-} else {
-	(resistance) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_LDF.sqf";
+switch(CTI_GUER_TOWNS) do {
+	case 0: {
+		(resistance) call compile preprocessFileLineNumbers "Common\Config\Units\Units_Resistance.sqf";
+		(resistance) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_resistance.sqf";
+	};
+	case 1: {
+		(resistance) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_WBK_IFA_Zombies.sqf";
+		(resistance) call compile preprocessFileLineNumbers "Common\Config\Factories\Factory_LDF.sqf";
+	};
+	case 2: {
+		if (isClass(configFile >> "CfgVehicles" >> "Zombie_Special_GREENFOR_Boomer")) then {
+			((resistance) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Units\units_WBK_Zombies.sqf";
+			((resistance) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_WBK_Zombies.sqf";
+		};
+		if (isClass(configFile >> "CfgVehicles" >> "RyanZombieC_man_1slow")) then {
+			((resistance) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Units\units_Ryan_Zombies.sqf";
+			((resistance) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_Ryan_Zombies.sqf";
+		};
+		if (isClass(configFile >> "CfgVehicles" >> "Max_zombie")) then {
+			((resistance) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Units\units_Max_Zombies.sqf";
+			((resistance) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_Max_Zombies.sqf";
+		};
+	};
+	default {};
 };
+
 (west) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_west.sqf";
 (east) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_east.sqf";
 

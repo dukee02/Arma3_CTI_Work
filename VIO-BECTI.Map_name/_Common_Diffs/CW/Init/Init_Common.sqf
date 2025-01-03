@@ -455,6 +455,20 @@ switch(CTI_GUER_TOWNS) do {
 		(resistance) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_FIA_CWr3.sqf";
 		[resistance,"GUER_",""] call compile preprocessFileLineNumbers "Common\Config\Units\UnitsBase\ubase_FIA_CWr3.sqf";
 	};
+	case 2: {
+		if (isClass(configFile >> "CfgVehicles" >> "Zombie_Special_GREENFOR_Boomer")) then {
+			((resistance) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Units\units_WBK_Zombies.sqf";
+			((resistance) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_WBK_Zombies.sqf";
+		};
+		if (isClass(configFile >> "CfgVehicles" >> "RyanZombieC_man_1slow")) then {
+			((resistance) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Units\units_Ryan_Zombies.sqf";
+			((resistance) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_Ryan_Zombies.sqf";
+		};
+		if (isClass(configFile >> "CfgVehicles" >> "Max_zombie")) then {
+			((resistance) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Units\units_Max_Zombies.sqf";
+			((resistance) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_Max_Zombies.sqf";
+		};
+	};
 	default {};
 };
 
