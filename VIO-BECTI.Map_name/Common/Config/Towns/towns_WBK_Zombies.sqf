@@ -69,30 +69,44 @@ INFANTRY pushBack [format["%1Zombie%2Walker_NATO_P", _sid, _ntag],1];
 INFANTRY pushBack [format["%1Zombie%2Walker_NATO_W", _sid, _ntag],1];
 INFANTRY pushBack [format["%1Zombie%2Walker_NATO", _sid, _ntag],1];
 
-INFANTRY_MG pushBack [format["%1Zombie%2Shooter_AAF", _sid, _ntag],1];
-INFANTRY_MG pushBack [format["%1Zombie%2Shooter_CSAT_P", _sid, _ntag],1];
-INFANTRY_MG pushBack [format["%1Zombie%2Shooter_CSAT", _sid, _ntag],1];
-INFANTRY_MG pushBack [format["%1Zombie%2Shooter_FIA", _sid, _ntag],1];
-INFANTRY_MG pushBack [format["%1Zombie%2Shooter_LDF", _sid, _ntag],1];
-INFANTRY_MG pushBack [format["%1Zombie%2Shooter_NATO_P", _sid, _ntag],1];
-INFANTRY_MG pushBack [format["%1Zombie%2Shooter_NATO_W", _sid, _ntag],1];
-INFANTRY_MG pushBack [format["%1Zombie%2Shooter_NATO", _sid, _ntag],1];
+INFANTRY pushBack [format["%1Zombie%2Shooter_AAF", _sid, _ntag],1];
+INFANTRY pushBack [format["%1Zombie%2Shooter_CSAT_P", _sid, _ntag],1];
+INFANTRY pushBack [format["%1Zombie%2Shooter_CSAT", _sid, _ntag],1];
+INFANTRY pushBack [format["%1Zombie%2Shooter_FIA", _sid, _ntag],1];
+INFANTRY pushBack [format["%1Zombie%2Shooter_LDF", _sid, _ntag],1];
+INFANTRY pushBack [format["%1Zombie%2Shooter_NATO_P", _sid, _ntag],1];
+INFANTRY pushBack [format["%1Zombie%2Shooter_NATO_W", _sid, _ntag],1];
+INFANTRY pushBack [format["%1Zombie%2Shooter_NATO", _sid, _ntag],1];
+
+INFANTRY_MG pushBack [format["%1Zombie%2RA_AAF", _sid, _ntag],1];
+INFANTRY_MG pushBack [format["%1Zombie%2RA_Civ", _sid, _ntag],1];
+INFANTRY_MG pushBack [format["%1Zombie%2RA_CSAT_P", _sid, _ntag],1];
+INFANTRY_MG pushBack [format["%1Zombie%2RA_CSAT", _sid, _ntag],1];
+INFANTRY_MG pushBack [format["%1Zombie%2RA_FIA", _sid, _ntag],1];
+INFANTRY_MG pushBack [format["%1Zombie%2RA_LDF", _sid, _ntag],1];
+INFANTRY_MG pushBack [format["%1Zombie%2RA_NATO_P", _sid, _ntag],1];
+INFANTRY_MG pushBack [format["%1Zombie%2RA_NATO_W", _sid, _ntag],1];
+INFANTRY_MG pushBack [format["%1Zombie%2RA_NATO", _sid, _ntag],1];
+
+INFANTRY_MG pushBack [format["%1Zombie%2RC_AAF", _sid, _ntag],1];
+INFANTRY_MG pushBack [format["%1Zombie%2RC_Civ", _sid, _ntag],1];
+INFANTRY_MG pushBack [format["%1Zombie%2RC_CSAT_P", _sid, _ntag],1];
+INFANTRY_MG pushBack [format["%1Zombie%2RC_CSAT", _sid, _ntag],1];
+INFANTRY_MG pushBack [format["%1Zombie%2RC_FIA", _sid, _ntag],1];
+INFANTRY_MG pushBack [format["%1Zombie%2RC_LDF", _sid, _ntag],1];
+INFANTRY_MG pushBack [format["%1Zombie%2RC_NATO_P", _sid, _ntag],1];
+INFANTRY_MG pushBack [format["%1Zombie%2RC_NATO_W", _sid, _ntag],1];
+INFANTRY_MG pushBack [format["%1Zombie%2RC_NATO", _sid, _ntag],1];
 
 switch (_side) do {
 	case west: {
-		INFANTRY_MG pushBack [format["%1WBK_SpecialZombie_Corrupted_2", _sid],1];
-		INFANTRY_AT pushBack [format["%1Zombie_Special_BLUFOR_Boomer", _sid],1];
-		INFANTRY_AT pushBack [format["%1Zombie_Special_BLUFOR_Screamer", _sid],1];
+		INFANTRY_AT pushBack [format["%1WBK_SpecialZombie_Corrupted_2", _sid],1];
 	};
 	case east: {
-		INFANTRY_MG pushBack [format["%1WBK_SpecialZombie_Corrupted_3", _sid],1];
-		INFANTRY_AT pushBack [format["%1Zombie_Special_OPFOR_Boomer", _sid],1];
-		INFANTRY_AT pushBack [format["%1Zombie_Special_OPFOR_Screamer", _sid],1];
+		INFANTRY_AT pushBack [format["%1WBK_SpecialZombie_Corrupted_3", _sid],1];
 	};
 	default {
-		INFANTRY_MG pushBack [format["%1WBK_SpecialZombie_Corrupted_1", _sid],1];
-		INFANTRY_AT pushBack [format["%1Zombie_Special_GREENFOR_Boomer", _sid],1];
-		INFANTRY_AT pushBack [format["%1Zombie_Special_GREENFOR_Screamer", _sid],1];
+		INFANTRY_AT pushBack [format["%1WBK_SpecialZombie_Corrupted_1", _sid],1];
 	};
 };
 
@@ -117,37 +131,17 @@ if (CTI_Log_Level >= CTI_Log_Debug) then {
 WHEELED_LIGHT = [];
 WHEELED_HEAVY = [];
 
-WHEELED_LIGHT pushBack [format["%1Zombie%2RA_AAF", _sid, _ntag],1];
-WHEELED_LIGHT pushBack [format["%1Zombie%2RA_Civ", _sid, _ntag],1];
-WHEELED_LIGHT pushBack [format["%1Zombie%2RA_CSAT_P", _sid, _ntag],1];
-WHEELED_LIGHT pushBack [format["%1Zombie%2RA_CSAT", _sid, _ntag],1];
-WHEELED_LIGHT pushBack [format["%1Zombie%2RA_FIA", _sid, _ntag],1];
-WHEELED_LIGHT pushBack [format["%1Zombie%2RA_LDF", _sid, _ntag],1];
-WHEELED_LIGHT pushBack [format["%1Zombie%2RA_NATO_P", _sid, _ntag],1];
-WHEELED_LIGHT pushBack [format["%1Zombie%2RA_NATO_W", _sid, _ntag],1];
-WHEELED_LIGHT pushBack [format["%1Zombie%2RA_NATO", _sid, _ntag],1];
-
-WHEELED_LIGHT pushBack [format["%1Zombie%2RC_AAF", _sid, _ntag],1];
-WHEELED_LIGHT pushBack [format["%1Zombie%2RC_Civ", _sid, _ntag],1];
-WHEELED_LIGHT pushBack [format["%1Zombie%2RC_CSAT_P", _sid, _ntag],1];
-WHEELED_LIGHT pushBack [format["%1Zombie%2RC_CSAT", _sid, _ntag],1];
-WHEELED_LIGHT pushBack [format["%1Zombie%2RC_FIA", _sid, _ntag],1];
-WHEELED_LIGHT pushBack [format["%1Zombie%2RC_LDF", _sid, _ntag],1];
-WHEELED_LIGHT pushBack [format["%1Zombie%2RC_NATO_P", _sid, _ntag],1];
-WHEELED_LIGHT pushBack [format["%1Zombie%2RC_NATO_W", _sid, _ntag],1];
-WHEELED_LIGHT pushBack [format["%1Zombie%2RC_NATO", _sid, _ntag],1];
-
 switch (_side) do {
 	case west: {
-		WHEELED_HEAVY pushBack [format["%1Zombie_Special_BLUFOR_Leaper_1", _sid],1];
+		WHEELED_LIGHT pushBack [format["%1Zombie_Special_BLUFOR_Leaper_1", _sid],1];
 		WHEELED_HEAVY pushBack [format["%1Zombie_Special_BLUFOR_Leaper_2", _sid],1];
 	};
 	case east: {
-		WHEELED_HEAVY pushBack [format["%1Zombie_Special_OPFOR_Leaper_1", _sid],1];
+		WHEELED_LIGHT pushBack [format["%1Zombie_Special_OPFOR_Leaper_1", _sid],1];
 		WHEELED_HEAVY pushBack [format["%1Zombie_Special_OPFOR_Leaper_2", _sid],1];
 	};
 	default {
-		WHEELED_HEAVY pushBack [format["%1Zombie_Special_GREENFOR_Leaper_1", _sid],1];
+		WHEELED_LIGHT pushBack [format["%1Zombie_Special_GREENFOR_Leaper_1", _sid],1];
 		WHEELED_HEAVY pushBack [format["%1Zombie_Special_GREENFOR_Leaper_2", _sid],1];
 	};
 };
@@ -171,23 +165,19 @@ TRACKED_LIGHT = [];
 TRACKED_MEDIUM = [];
 TRACKED_HEAVY = [];
 
-TRACKED_LIGHT = INFANTRY;
-TRACKED_MEDIUM = WHEELED_LIGHT;
+TRACKED_LIGHT = INFANTRY_AT;
 switch (_side) do {
 	case west: {
-		TRACKED_HEAVY pushBack [format["%1WBK_SpecialZombie_Smasher_2", _sid],1];
-		TRACKED_HEAVY pushBack [format["%1WBK_SpecialZombie_Smasher_Acid_2", _sid],1];
-		TRACKED_HEAVY pushBack [format["%1WBK_SpecialZombie_Smasher_Acid_2", _sid],1];
+		TRACKED_MEDIUM pushBack [format["%1Zombie_Special_BLUFOR_Boomer", _sid],1];
+		TRACKED_HEAVY pushBack [format["%1Zombie_Special_BLUFOR_Screamer", _sid],1];
 	};
 	case east: {
-		TRACKED_HEAVY pushBack [format["%1WBK_SpecialZombie_Smasher_3", _sid],1];
-		TRACKED_HEAVY pushBack [format["%1WBK_SpecialZombie_Smasher_Acid_3", _sid],1];
-		TRACKED_HEAVY pushBack [format["%1WBK_SpecialZombie_Smasher_Acid_3", _sid],1];
+		TRACKED_MEDIUM pushBack [format["%1Zombie_Special_OPFOR_Boomer", _sid],1];
+		TRACKED_HEAVY pushBack [format["%1Zombie_Special_OPFOR_Screamer", _sid],1];
 	};
 	default {
-		TRACKED_HEAVY pushBack [format["%1WBK_SpecialZombie_Smasher_1", _sid],1];
-		TRACKED_HEAVY pushBack [format["%1WBK_SpecialZombie_Smasher_Acid_1", _sid],1];
-		TRACKED_HEAVY pushBack [format["%1WBK_SpecialZombie_Smasher_Acid_1", _sid],1];
+		TRACKED_MEDIUM pushBack [format["%1Zombie_Special_GREENFOR_Boomer", _sid],1];
+		TRACKED_HEAVY pushBack [format["%1Zombie_Special_GREENFOR_Screamer", _sid],1];
 	};
 };
 
@@ -212,17 +202,28 @@ if (CTI_Log_Level >= CTI_Log_Debug) then {
 AIR_FIGHTER = [];
 AIR_BOMBER = [];
 
-AIR_FIGHTER = WHEELED_LIGHTM;
 switch (_side) do {
 	case west: {
+		AIR_FIGHTER pushBack [format["%1WBK_SpecialZombie_Smasher_2", _sid],1];
+		AIR_FIGHTER pushBack [format["%1WBK_SpecialZombie_Smasher_Acid_2", _sid],1];
+		AIR_FIGHTER pushBack [format["%1WBK_SpecialZombie_Smasher_Acid_2", _sid],1];
+
 		AIR_BOMBER pushBack [format["%1WBK_SpecialZombie_Smasher_Hellbeast_2", _sid],1];
 		AIR_BOMBER pushBack [format["%1WBK_Goliaph_1", _sid],1];
 	};
 	case east: {
+		AIR_FIGHTER pushBack [format["%1WBK_SpecialZombie_Smasher_3", _sid],1];
+		AIR_FIGHTER pushBack [format["%1WBK_SpecialZombie_Smasher_Acid_3", _sid],1];
+		AIR_FIGHTER pushBack [format["%1WBK_SpecialZombie_Smasher_Acid_3", _sid],1];
+
 		AIR_BOMBER pushBack [format["%1WBK_SpecialZombie_Smasher_Hellbeast_3", _sid],1];
 		AIR_BOMBER pushBack [format["%1WBK_Goliaph_3", _sid],1];
 	};
 	default {
+		AIR_FIGHTER pushBack [format["%1WBK_SpecialZombie_Smasher_1", _sid],1];
+		AIR_FIGHTER pushBack [format["%1WBK_SpecialZombie_Smasher_Acid_1", _sid],1];
+		AIR_FIGHTER pushBack [format["%1WBK_SpecialZombie_Smasher_Acid_1", _sid],1];
+
 		AIR_BOMBER pushBack [format["%1WBK_SpecialZombie_Smasher_Hellbeast_1", _sid],1];
 		AIR_BOMBER pushBack [format["%1WBK_Goliaph_2", _sid],1];
 	};
@@ -245,6 +246,7 @@ if (CTI_Log_Level >= CTI_Log_Debug) then {
 //***************************************************************************************************************************************
 ANTI_AIR = [];
 
+ANTI_AIR = INFANTRY_AT;
 if (isNil {missionNamespace getVariable format["%1SQ_ANTI_AIR", _tag]}) then {
 	missionNamespace setVariable [format["%1SQ_ANTI_AIR", _tag], ANTI_AIR];
 } else {

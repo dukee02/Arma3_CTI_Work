@@ -68,25 +68,30 @@ if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;}
 	_c pushBack format["%1Zombie%2Walker_LIB_GER", _sid, _ntag];
 	_c pushBack format["%1Zombie%2Walker_LIB_SOV", _sid, _ntag];
 	_c pushBack format["%1Zombie%2Walker_LIB_US", _sid, _ntag];
+
+	_c pushBack format["%1Zombie%2RA_LIB_CIV", _sid, _ntag];
+	_c pushBack format["%1Zombie%2RA_LIB_GER", _sid, _ntag];
+	_c pushBack format["%1Zombie%2RA_LIB_SOV", _sid, _ntag];
+	_c pushBack format["%1Zombie%2RA_LIB_US", _sid, _ntag];
+
+	_c pushBack format["%1Zombie%2RC_LIB_CIV", _sid, _ntag];
+	_c pushBack format["%1Zombie%2RC_LIB_GER", _sid, _ntag];
+	_c pushBack format["%1Zombie%2RC_LIB_SOV", _sid, _ntag];
+	_c pushBack format["%1Zombie%2RC_LIB_US", _sid, _ntag];
+	
+	switch (_side) do {
+		case west: {
+			_c pushBack format["%1WBK_SpecialZombie_Corrupted_2", _sid];
+		};
+		case east: {
+			_c pushBack format["%1WBK_SpecialZombie_Corrupted_3", _sid];
+		};
+		default {
+			_c pushBack format["%1WBK_SpecialZombie_Corrupted_1", _sid];
+		};
+	};
 //};
 
-switch (_side) do {
-	case west: {
-		_c pushBack format["%1WBK_SpecialZombie_Corrupted_2", _sid];
-		_c pushBack format["%1Zombie_Special_BLUFOR_Boomer", _sid];
-		_c pushBack format["%1Zombie_Special_BLUFOR_Screamer", _sid];
-	};
-	case east: {
-		_c pushBack format["%1WBK_SpecialZombie_Corrupted_3", _sid];
-		_c pushBack format["%1Zombie_Special_OPFOR_Boomer", _sid];
-		_c pushBack format["%1Zombie_Special_OPFOR_Screamer", _sid];
-	};
-	default {
-		_c pushBack format["%1WBK_SpecialZombie_Corrupted_1", _sid];
-		_c pushBack format["%1Zombie_Special_GREENFOR_Boomer", _sid];
-		_c pushBack format["%1Zombie_Special_GREENFOR_Screamer", _sid];
-	};
-};
 
 _priorUnits = missionNamespace getVariable format ["CTI_%1_%2Units", _side, CTI_BARRACKS];
 if (isNil "_priorUnits") then { 
@@ -112,31 +117,23 @@ if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;}
 	//};
 	//if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
 	//};
-	_c pushBack format["%1Zombie%2RA_LIB_CIV", _sid, _ntag];
-	_c pushBack format["%1Zombie%2RA_LIB_GER", _sid, _ntag];
-	_c pushBack format["%1Zombie%2RA_LIB_SOV", _sid, _ntag];
-	_c pushBack format["%1Zombie%2RA_LIB_US", _sid, _ntag];
-
-	_c pushBack format["%1Zombie%2RC_LIB_CIV", _sid, _ntag];
-	_c pushBack format["%1Zombie%2RC_LIB_GER", _sid, _ntag];
-	_c pushBack format["%1Zombie%2RC_LIB_SOV", _sid, _ntag];
-	_c pushBack format["%1Zombie%2RC_LIB_US", _sid, _ntag];
 //};
 
 switch (_side) do {
 	case west: {
-		_c pushBack format["%1Zombie_Special_BLUFOR_Leaper_1", _sid];
-		_c pushBack format["%1Zombie_Special_BLUFOR_Leaper_2", _sid];
+		_c pushBack format["%1Zombie_Special_BLUFOR_Boomer", _sid];
+		_c pushBack format["%1Zombie_Special_BLUFOR_Screamer", _sid];
 	};
 	case east: {
-		_c pushBack format["%1Zombie_Special_OPFOR_Leaper_1", _sid];
-		_c pushBack format["%1Zombie_Special_OPFOR_Leaper_2", _sid];
+		_c pushBack format["%1Zombie_Special_OPFOR_Boomer", _sid];
+		_c pushBack format["%1Zombie_Special_OPFOR_Screamer", _sid];
 	};
 	default {
-		_c pushBack format["%1Zombie_Special_GREENFOR_Leaper_1", _sid];
-		_c pushBack format["%1Zombie_Special_GREENFOR_Leaper_2", _sid];
+		_c pushBack format["%1Zombie_Special_GREENFOR_Boomer", _sid];
+		_c pushBack format["%1Zombie_Special_GREENFOR_Screamer", _sid];
 	};
 };
+
 _priorUnits = missionNamespace getVariable format ["CTI_%1_%2Units", _side, CTI_LIGHT];
 if (isNil "_priorUnits") then { 
 	_priorUnits = []; 
@@ -161,18 +158,19 @@ if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;}
 
 switch (_side) do {
 	case west: {
-		_c pushBack format["%1WBK_SpecialZombie_Smasher_2", _sid];
-		_c pushBack format["%1WBK_SpecialZombie_Smasher_Acid_2", _sid];
+		_c pushBack format["%1Zombie_Special_BLUFOR_Boomer", _sid];
+		_c pushBack format["%1Zombie_Special_BLUFOR_Screamer", _sid];
 	};
 	case east: {
-		_c pushBack format["%1WBK_SpecialZombie_Smasher_3", _sid];
-		_c pushBack format["%1WBK_SpecialZombie_Smasher_Acid_3", _sid];
+		_c pushBack format["%1Zombie_Special_OPFOR_Boomer", _sid];
+		_c pushBack format["%1Zombie_Special_OPFOR_Screamer", _sid];
 	};
 	default {
-		_c pushBack format["%1WBK_SpecialZombie_Smasher_1", _sid];
-		_c pushBack format["%1WBK_SpecialZombie_Smasher_Acid_1", _sid];
+		_c pushBack format["%1Zombie_Special_GREENFOR_Boomer", _sid];
+		_c pushBack format["%1Zombie_Special_GREENFOR_Screamer", _sid];
 	};
 };
+
 _priorUnits = missionNamespace getVariable format ["CTI_%1_%2Units", _side, CTI_HEAVY];
 if (isNil "_priorUnits") then { 
 	_priorUnits = []; 
@@ -197,18 +195,25 @@ if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;}
 
 switch (_side) do {
 	case west: {
+		_c pushBack format["%1WBK_SpecialZombie_Smasher_2", _sid];
+		_c pushBack format["%1WBK_SpecialZombie_Smasher_Acid_2", _sid];
 		_c pushBack format["%1WBK_SpecialZombie_Smasher_Hellbeast_2", _sid];
 		_c pushBack format["%1WBK_Goliaph_1", _sid];
 	};
 	case east: {
+		_c pushBack format["%1WBK_SpecialZombie_Smasher_3", _sid];
+		_c pushBack format["%1WBK_SpecialZombie_Smasher_Acid_3", _sid];
 		_c pushBack format["%1WBK_SpecialZombie_Smasher_Hellbeast_3", _sid];
 		_c pushBack format["%1WBK_Goliaph_3", _sid];
 	};
 	default {
+		_c pushBack format["%1WBK_SpecialZombie_Smasher_1", _sid];
+		_c pushBack format["%1WBK_SpecialZombie_Smasher_Acid_1", _sid];
 		_c pushBack format["%1WBK_SpecialZombie_Smasher_Hellbeast_1", _sid];
 		_c pushBack format["%1WBK_Goliaph_2", _sid];
 	};
 };
+
 _priorUnits = missionNamespace getVariable format ["CTI_%1_%2Units", _side, CTI_AIR];
 if (isNil "_priorUnits") then { 
 	_priorUnits = []; 

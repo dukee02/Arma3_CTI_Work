@@ -101,11 +101,23 @@ _pool = [];
 	_unit = _x select 0;
 	_presence = _x select 1;
 	_units = missionNamespace getVariable _unit;
+
+	if!("INFANTRY" in _unit) then {
+		if(count _units > 7) then {
+			_units = _units call CTI_CO_FNC_ArrayShuffle;
+			_units deleteRange [6, count _units];
+		};
+	} else {
+		if(count _units > 11) then {
+			_units = _units call CTI_CO_FNC_ArrayShuffle;
+			_units deleteRange [10, count _units];
+		};
+	};
 	//check if there units in, if not set infantry as default
 	if(count _units == 0) then {
 		_units = missionNamespace getVariable "GUER_INFANTRY_SQ_LIGHT";
 	};
-	_u_one = _units select 0;
+	//_u_one = _units select 0;
 	
 	if(count (_units select 0) > 1) then {
 		_cleanup = [];
@@ -120,7 +132,9 @@ _pool = [];
 			_probability = if (count _x > 2) then {_x select 2} else {100};
 					
 			_pool pushBack ([_units, _probability]);
-			if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: Server\Functions\Server_SpawnTownResistance.sqf", format ["Resistance Pool: <%1,%2>",  _units, _probability]] call CTI_CO_FNC_Log;};
+			if (CTI_Log_Level >= CTI_Log_Debug) then {
+				["VIOC_DEBUG", "FILE: Server\Functions\Server_SpawnTownResistance.sqf", format ["Resistance Pool: <%1,%2>",  _units, _probability]] call CTI_CO_FNC_Log;
+			};
 		};
 	};
 } forEach _pool_units;
@@ -150,9 +164,25 @@ for '_i' from 1 to _totalGroups do {
 				if !(_unit isKindOf "Man") then {
 					if(_pool_vehicle_count >= _maxVehicles) then { 
 						_can_use = false;
-						if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: Server\Functions\Server_SpawnTownResistance.sqf", format ["cant use unit <%1> vehicle count: <%2>", _unit, _pool_vehicle_count]] call CTI_CO_FNC_Log};
+						if (CTI_Log_Level >= CTI_Log_Debug) then {
+							["VIOC_DEBUG", "FILE: Server\Functions\Server_SpawnTownResistance.sqf", format ["cant use unit <%1> vehicle count: <%2>", _unit, _pool_vehicle_count]] call CTI_CO_FNC_Log;
+						};
 					} else {
 						_pool_vehicle_count = _pool_vehicle_count + 1;
+					};
+				} else {
+					if(CTI_GUER_TOWNS == 2) then {
+						//Zombiemode is on!
+						if!(_unit in [missionNamespace getVariable "GUER_INFANTRY_SQ_LIGHT"] || _unit in [missionNamespace getVariable "GUER_INFANTRY_SQ_MG"] || _unit in [missionNamespace getVariable "GUER_INFANTRY_SQ_AT"]) then {
+							if(_pool_vehicle_count >= _maxVehicles) then { 
+								_can_use = false;
+								if (CTI_Log_Level >= CTI_Log_Debug) then {
+									["VIOC_DEBUG", "FILE: Server\Functions\Server_SpawnTownResistance.sqf", format ["cant use unit <%1> sppecial count: <%2>", _unit, _pool_vehicle_count]] call CTI_CO_FNC_Log;
+								};
+							} else {
+								_pool_vehicle_count = _pool_vehicle_count + 1;
+							};
+						};
 					};
 				};
 			};

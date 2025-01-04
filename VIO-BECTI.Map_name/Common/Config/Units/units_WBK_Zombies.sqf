@@ -79,53 +79,6 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= 0) then {
 	_c pushBack format["%1Zombie%2Walker_NATO_W", _sid, _ntag];
 	_c pushBack format["%1Zombie%2Walker_NATO", _sid, _ntag];
 
-	switch (_side) do {
-		case west: {
-			_c pushBack format["%1WBK_SpecialZombie_Corrupted_2", _sid];
-			_c pushBack format["%1Zombie_Special_BLUFOR_Boomer", _sid];
-			_c pushBack format["%1Zombie_Special_BLUFOR_Screamer", _sid];
-		};
-		case east: {
-			_c pushBack format["%1WBK_SpecialZombie_Corrupted_3", _sid];
-			_c pushBack format["%1Zombie_Special_OPFOR_Boomer", _sid];
-			_c pushBack format["%1Zombie_Special_OPFOR_Screamer", _sid];
-		};
-		default {
-			_c pushBack format["%1WBK_SpecialZombie_Corrupted_1", _sid];
-			_c pushBack format["%1Zombie_Special_GREENFOR_Boomer", _sid];
-			_c pushBack format["%1Zombie_Special_GREENFOR_Screamer", _sid];
-		};
-	};
-	
-	//set all other vars in a slope
-	_cntstart = count _c;
-	_cntend = count _p;
-	for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do { 
-		_p pushBack '';
-		_n pushBack '';
-		_o pushBack ([CTI_ECONOMY_PRIZE_INFANTRY,_tech_level] call CTI_CO_FNC_GetCalculatedUnitsPrize);
-		_t pushBack _building_time;
-		_u pushBack _tech_level;
-		_f pushBack CTI_FACTORY_LIGHT;
-		_s pushBack "";
-		_d pushBack 5;	
-	};
-};
-
-
-
-//***************************************************************************************************************************************
-//														Light Factory																	*
-//***************************************************************************************************************************************
-//--- Below is classnames for Units and AI avaiable to puchase from Light Factory.
-_matrix_full = [_side, CTI_UPGRADE_LIGHT] call CTI_CO_FNC_GetTechmatrix;
-_matrix_nation = [_side, CTI_UPGRADE_LIGHT, CTI_US_ID, CTI_IFA_ID] call CTI_CO_FNC_GetTechmatrix;
-
-_matrix_cnt = [0, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
-if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
-if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
-	_building_time = [CTI_FACTORY_LIGHT,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
-
 	_c pushBack format["%1Zombie%2RA_AAF", _sid, _ntag];
 	_c pushBack format["%1Zombie%2RA_Civ", _sid, _ntag];
 	_c pushBack format["%1Zombie%2RA_CSAT_P", _sid, _ntag];
@@ -145,19 +98,58 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 	_c pushBack format["%1Zombie%2RC_NATO_P", _sid, _ntag];
 	_c pushBack format["%1Zombie%2RC_NATO_W", _sid, _ntag];
 	_c pushBack format["%1Zombie%2RC_NATO", _sid, _ntag];
-
+	
 	switch (_side) do {
 		case west: {
-			_c pushBack format["%1Zombie_Special_BLUFOR_Leaper_1", _sid];
-			_c pushBack format["%1Zombie_Special_BLUFOR_Leaper_2", _sid];
+			_c pushBack format["%1WBK_SpecialZombie_Corrupted_2", _sid];
 		};
 		case east: {
-			_c pushBack format["%1Zombie_Special_OPFOR_Leaper_1", _sid];
-			_c pushBack format["%1Zombie_Special_OPFOR_Leaper_2", _sid];
+			_c pushBack format["%1WBK_SpecialZombie_Corrupted_3", _sid];
 		};
 		default {
-			_c pushBack format["%1Zombie_Special_GREENFOR_Leaper_1", _sid];
-			_c pushBack format["%1Zombie_Special_GREENFOR_Leaper_2", _sid];
+			_c pushBack format["%1WBK_SpecialZombie_Corrupted_1", _sid];
+		};
+	};
+
+	//set all other vars in a slope
+	_cntstart = count _c;
+	_cntend = count _p;
+	for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do { 
+		_p pushBack '';
+		_n pushBack '';
+		_o pushBack ([CTI_ECONOMY_PRIZE_INFANTRY,_tech_level] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		_t pushBack _building_time;
+		_u pushBack _tech_level;
+		_f pushBack CTI_FACTORY_LIGHT;
+		_s pushBack "";
+		_d pushBack 5;	
+	};
+};
+
+//***************************************************************************************************************************************
+//														Light Factory																	*
+//***************************************************************************************************************************************
+//--- Below is classnames for Units and AI avaiable to puchase from Light Factory.
+_matrix_full = [_side, CTI_UPGRADE_LIGHT] call CTI_CO_FNC_GetTechmatrix;
+_matrix_nation = [_side, CTI_UPGRADE_LIGHT, CTI_US_ID, CTI_IFA_ID] call CTI_CO_FNC_GetTechmatrix;
+
+_matrix_cnt = [0, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
+	_building_time = [CTI_FACTORY_LIGHT,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
+	
+	switch (_side) do {
+		case west: {
+			_c pushBack format["%1Zombie_Special_BLUFOR_Boomer", _sid];
+			_c pushBack format["%1Zombie_Special_BLUFOR_Screamer", _sid];
+		};
+		case east: {
+			_c pushBack format["%1Zombie_Special_OPFOR_Boomer", _sid];
+			_c pushBack format["%1Zombie_Special_OPFOR_Screamer", _sid];
+		};
+		default {
+			_c pushBack format["%1Zombie_Special_GREENFOR_Boomer", _sid];
+			_c pushBack format["%1Zombie_Special_GREENFOR_Screamer", _sid];
 		};
 	};
 
@@ -191,16 +183,16 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 	
 	switch (_side) do {
 		case west: {
-			_c pushBack format["%1WBK_SpecialZombie_Smasher_2", _sid];
-			_c pushBack format["%1WBK_SpecialZombie_Smasher_Acid_2", _sid];
+			_c pushBack format["%1Zombie_Special_BLUFOR_Boomer", _sid];
+			_c pushBack format["%1Zombie_Special_BLUFOR_Screamer", _sid];
 		};
 		case east: {
-			_c pushBack format["%1WBK_SpecialZombie_Smasher_3", _sid];
-			_c pushBack format["%1WBK_SpecialZombie_Smasher_Acid_3", _sid];
+			_c pushBack format["%1Zombie_Special_OPFOR_Boomer", _sid];
+			_c pushBack format["%1Zombie_Special_OPFOR_Screamer", _sid];
 		};
 		default {
-			_c pushBack format["%1WBK_SpecialZombie_Smasher_1", _sid];
-			_c pushBack format["%1WBK_SpecialZombie_Smasher_Acid_1", _sid];
+			_c pushBack format["%1Zombie_Special_GREENFOR_Boomer", _sid];
+			_c pushBack format["%1Zombie_Special_GREENFOR_Screamer", _sid];
 		};
 	};
 	
@@ -210,10 +202,10 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 	for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do { 
 		_p pushBack '';
 		_n pushBack '';
-		_o pushBack ([CTI_ECONOMY_PRIZE_TRACKED,_tech_level] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		_o pushBack ([CTI_ECONOMY_PRIZE_AIR,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
 		_t pushBack _building_time;
 		_u pushBack _tech_level;
-		_f pushBack CTI_FACTORY_HEAVY;
+		_f pushBack CTI_FACTORY_AIR;
 		_s pushBack "";
 		_d pushBack 5;	
 	};
@@ -231,6 +223,34 @@ _matrix_cnt = [0, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
 	_building_time = [CTI_FACTORY_AIR,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
+
+	switch (_side) do {
+		case west: {
+			_c pushBack format["%1WBK_SpecialZombie_Smasher_2", _sid];
+			_c pushBack format["%1WBK_SpecialZombie_Smasher_Acid_2", _sid];
+		};
+		case east: {
+			_c pushBack format["%1WBK_SpecialZombie_Smasher_3", _sid];
+			_c pushBack format["%1WBK_SpecialZombie_Smasher_Acid_3", _sid];
+		};
+		default {
+			_c pushBack format["%1WBK_SpecialZombie_Smasher_1", _sid];
+			_c pushBack format["%1WBK_SpecialZombie_Smasher_Acid_1", _sid];
+		};
+	};
+	//set all other vars in a slope
+	_cntstart = count _c;
+	_cntend = count _p;
+	for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do { 
+		_p pushBack '';
+		_n pushBack '';
+		_o pushBack ([CTI_ECONOMY_PRIZE_AIR,_tech_level] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		_t pushBack _building_time;
+		_u pushBack _tech_level;
+		_f pushBack CTI_FACTORY_AIR;
+		_s pushBack "";
+		_d pushBack 5;	
+	};
 
 	switch (_side) do {
 		case west: {
@@ -253,7 +273,7 @@ if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
 	for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do { 
 		_p pushBack '';
 		_n pushBack '';
-		_o pushBack ([CTI_ECONOMY_PRIZE_AIR,_tech_level] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		_o pushBack ([CTI_ECONOMY_PRIZE_AIR,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
 		_t pushBack _building_time;
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_AIR;
