@@ -22,14 +22,14 @@ if (CTI_Log_Level >= CTI_Log_Debug) then {
 
 //needed for townvehicles
 if(CTI_IFA_ADDON >= 1 && CTI_SPE_DLC <= 1) then {
-	missionNamespace setVariable [format["CTI_%1Commander", _tag], format["%1Zombie%2Walker_FIA", _sid, _ntag]];
-	missionNamespace setVariable [format["CTI_%1Soldier", _tag], format["%1Zombie%2Walker_NATO", _sid, _ntag]];
-	missionNamespace setVariable [format["CTI_%1Crew", _tag], format["%1Zombie%2Shambler_CSAT", _sid, _ntag]];
-	missionNamespace setVariable [format["CTI_%1Pilot", _tag], format["%1Zombie%2Walker_NATO", _sid, _ntag]];
+	missionNamespace setVariable [format["CTI_%1Commander", _tag], format["%1RyanZombie20walker%2", _sid, _ntag]];
+	missionNamespace setVariable [format["CTI_%1Soldier", _tag], format["%1RyanZombie31walker%2", _sid, _ntag]];
+	missionNamespace setVariable [format["CTI_%1Crew", _tag], format["%1RyanZombie15walker%2", _sid, _ntag]];
+	missionNamespace setVariable [format["CTI_%1Pilot", _tag], format["%1RyanZombie20walker%2", _sid, _ntag]];
 
-	missionNamespace setVariable [format["CTI_%1TownLeader", _tag], format["%1Zombie%2Shambler_CSAT", _sid, _ntag]];
-	missionNamespace setVariable [format["CTI_%1TownSoldier", _tag], format["%1Zombie%2Walker_NATO", _sid, _ntag]];
-	missionNamespace setVariable [format["CTI_%1TownCrew", _tag], format["%1Zombie%2Shambler_CSAT", _sid, _ntag]];
+	missionNamespace setVariable [format["CTI_%1TownLeader", _tag], format["%1RyanZombie20walker%2", _sid, _ntag]];
+	missionNamespace setVariable [format["CTI_%1TownSoldier", _tag], format["%1RyanZombie15walker%2", _sid, _ntag]];
+	missionNamespace setVariable [format["CTI_%1TownCrew", _tag], format["%1RyanZombie31walker%2", _sid, _ntag]];
 };
 
 //***************************************************************************************************************************************

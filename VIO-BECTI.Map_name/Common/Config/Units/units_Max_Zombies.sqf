@@ -3,16 +3,15 @@ private ["_side", "_faction", "_sid", "_time", "_building_time", "_tech_level", 
 _side = _this;
 _faction = "";
 _sid = "";
-_ntag = "_G_";
 _building_time = 10;
 
 switch (_side) do {
 	case west: {
-		_ntag = "_B_";_faction = "West";
+		_faction = "West";
 		if(CTI_WEST_AI == CTI_GER_ID || CTI_WEST_TOWNS == CTI_GER_ID) then {_setupBaseUnits = true};
 	};
 	case east: {
-		_ntag = "_O_";_faction = "East";
+		_faction = "East";
 		if(CTI_EAST_AI == CTI_GER_ID || CTI_EAST_TOWNS == CTI_GER_ID) then {_setupBaseUnits = true};
 	};
 	case resistance: {
