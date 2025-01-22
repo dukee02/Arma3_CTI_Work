@@ -20,7 +20,6 @@ if (CTI_Log_Level >= CTI_Log_Debug) then {
 (_tag) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_SetTownFlag.sqf";
 
 //needed for townvehicles
-if(CTI_IFA_ADDON >= 1 && CTI_SPE_DLC <= 1) then {
 	missionNamespace setVariable [format["CTI_%1Commander", _tag], format["%1Max_zombie", _sid]];
 	missionNamespace setVariable [format["CTI_%1Soldier", _tag], format["%1Max_zombie1", _sid]];
 	missionNamespace setVariable [format["CTI_%1Crew", _tag], format["%1Max_zombie3", _sid]];
@@ -29,7 +28,6 @@ if(CTI_IFA_ADDON >= 1 && CTI_SPE_DLC <= 1) then {
 	missionNamespace setVariable [format["CTI_%1TownLeader", _tag], format["%1Max_zombie_female1", _sid]];
 	missionNamespace setVariable [format["CTI_%1TownSoldier", _tag], format["%1Max_zombie_female1", _sid]];
 	missionNamespace setVariable [format["CTI_%1TownCrew", _tag], format["%1Max_zombie_female2", _sid]];
-};
 
 //***************************************************************************************************************************************
 //														Town infantry setup																*

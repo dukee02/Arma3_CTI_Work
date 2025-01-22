@@ -86,7 +86,7 @@ class ScenarioData
 	{
 		gameType="CTI";
 		minPlayers=1;
-		maxPlayers=32;
+		maxPlayers=35;
 	};
 	wreckManagerMode=1;
 	wreckLimit=20;

@@ -102,17 +102,19 @@ _pool = [];
 	_presence = _x select 1;
 	_units = missionNamespace getVariable _unit;
 
-	if!("INFANTRY" in _unit) then {
-		if(count _units > 7) then {
-			_units = _units call CTI_CO_FNC_ArrayShuffle;
-			_units deleteRange [6, count _units];
+	/*if(CTI_GUER_TOWNS == 2) then {
+		if!("INFANTRY" in _unit) then {
+			if(count _units > 7) then {
+				_units = _units call CTI_CO_FNC_ArrayShuffle;
+				_units deleteRange [7, count _units];
+			};
+		} else {
+			if(count _units > 5) then {
+				_units = _units call CTI_CO_FNC_ArrayShuffle;
+				_units deleteRange [5, count _units];
+			};
 		};
-	} else {
-		if(count _units > 11) then {
-			_units = _units call CTI_CO_FNC_ArrayShuffle;
-			_units deleteRange [10, count _units];
-		};
-	};
+	};*/
 	//check if there units in, if not set infantry as default
 	if(count _units == 0) then {
 		_units = missionNamespace getVariable "GUER_INFANTRY_SQ_LIGHT";
@@ -146,56 +148,66 @@ if (CTI_Log_Level >= CTI_Log_Information) then {
 //--- Shuffle!
 _pool = _pool call CTI_CO_FNC_ArrayShuffle;
 
+//--- Create infantry filter
+_infantry_filter = [];
+{
+	_units = missionNamespace getVariable _x;
+	for '_a' from 0 to (count _units) -1 do {
+		_unit = _units select _a;
+		if (typeName _unit == "ARRAY") then {
+			_infantry_filter pushBackUnique (_unit select 0);
+		};
+	};
+} forEach ["GUER_INFANTRY_SQ_LIGHT", "GUER_INFANTRY_SQ_MG", "GUER_INFANTRY_SQ_AT"];
+_infantry_filter;
+
 //--- Compose the pools.
 _teams = [];
 for '_i' from 1 to _totalGroups do {
 	_units = [missionNamespace getVariable "CTI_GUER_Commander"];
 	_pool_group_size_current = _pool_group_size-1;
 	_pool_vehicle_count = 0;
+
 	while {_pool_group_size_current > 0} do {
 		_picked = _pool select floor(random count _pool);
 		_unit = _picked select 0;
 		_probability = _picked select 1;
-		if (typeName _unit == "ARRAY") then { _unit = _unit select floor(random count _unit) };
-		
+		_arraycnt = 1;
+		if (typeName _unit == "ARRAY") then {
+			_arraycnt = count _unit;
+			_unit = _unit select floor(random count _unit);
+		};
+
 		_can_use = true;
-		if (_probability != 100) then {
-			if (random 100 > _probability) then { _can_use = false } else {
-				if !(_unit isKindOf "Man") then {
-					if(_pool_vehicle_count >= _maxVehicles) then { 
-						_can_use = false;
-						if (CTI_Log_Level >= CTI_Log_Debug) then {
-							["VIOC_DEBUG", "FILE: Server\Functions\Server_SpawnTownResistance.sqf", format ["cant use unit <%1> vehicle count: <%2>", _unit, _pool_vehicle_count]] call CTI_CO_FNC_Log;
-						};
-					} else {
-						_pool_vehicle_count = _pool_vehicle_count + 1;
-					};
+		for '_g' from 1 to _arraycnt do {
+			if(_unit in _infantry_filter) then {
+
+			} else {
+				if(_pool_vehicle_count >= _maxVehicles) then {
+					_can_use = false;
+					if (CTI_Log_Level >= CTI_Log_Debug) then {
+						["VIOC_DEBUG", "FILE: Server\Functions\Server_SpawnTownResistance.sqf", format ["cant use unit <%1> vehicle count: <%2>", _unit, _pool_vehicle_count]] call CTI_CO_FNC_Log;
+					};			
 				} else {
-					if(CTI_GUER_TOWNS == 2) then {
-						//Zombiemode is on!
-						if!(_unit in [missionNamespace getVariable "GUER_INFANTRY_SQ_LIGHT"] || _unit in [missionNamespace getVariable "GUER_INFANTRY_SQ_MG"] || _unit in [missionNamespace getVariable "GUER_INFANTRY_SQ_AT"]) then {
-							if(_pool_vehicle_count >= _maxVehicles) then { 
-								_can_use = false;
-								if (CTI_Log_Level >= CTI_Log_Debug) then {
-									["VIOC_DEBUG", "FILE: Server\Functions\Server_SpawnTownResistance.sqf", format ["cant use unit <%1> sppecial count: <%2>", _unit, _pool_vehicle_count]] call CTI_CO_FNC_Log;
-								};
-							} else {
-								_pool_vehicle_count = _pool_vehicle_count + 1;
-							};
-						};
-					};
+					_pool_vehicle_count = _pool_vehicle_count + 1;
 				};
 			};
-		};
-		if(isNil _unit) then { _can_use = false };
-		
-		if (_can_use) then {
-			if (typeName _unit == "ARRAY") then { _unit = _unit select floor(random count _unit) };
-			_units pushBack _unit;
-			_pool_group_size_current = _pool_group_size_current - 1;
+
+			if (_probability != 100 && random 100 > _probability) then { _can_use = false };
+				
+			if(isNil _unit) then { _can_use = false };
+			if (_can_use) then {
+				if (typeName _unit == "ARRAY") then { _unit = _unit select floor(random count _unit) };
+				_units pushBack _unit;
+				_pool_group_size_current = _pool_group_size_current - 1;
+				
+				if (CTI_Log_Level >= CTI_Log_Debug) then {
+					["VIOC_DEBUG", "FILE: Server\Functions\Server_SpawnTownResistance.sqf", format ["unit <%1> vehicle count: <%2>/<%3> unit count: <%4>/<%5>", _unit, _pool_vehicle_count, _maxVehicles, _pool_group_size_current, _pool_group_size]] call CTI_CO_FNC_Log;
+				};	
+			};	
 		};
 	};
-	
+
 	_teams pushBack _units;
 	if (CTI_Log_Level >= CTI_Log_Debug) then { 
 		["VIOC_DEBUG", "FILE: Server\Functions\Server_SpawnTownResistance.sqf", format ["Resistance team units: <%1>", _units]] call CTI_CO_FNC_Log;

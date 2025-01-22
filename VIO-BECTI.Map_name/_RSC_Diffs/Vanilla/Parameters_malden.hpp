@@ -29,7 +29,7 @@ class Params {
 		texts[] = {""};
 		default = 1;
 	};
-	class CTI_ADD_MODULE {
+	class CTI_VAM_MODULE {
 		title = "Module: VAM (Vehicle Appearance Manager)";
 		values[] = {0,1};
 		texts[] = {"Disabled","Enabled"};

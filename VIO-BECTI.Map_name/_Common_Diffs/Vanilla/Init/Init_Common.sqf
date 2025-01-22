@@ -109,11 +109,6 @@ call compile preprocessFileLineNumbers "Common\Config\Artillery\Artillery.sqf";
 (west) call compile preprocessFileLineNumbers "Common\Config\Base\Base.sqf";
 (east) call compile preprocessFileLineNumbers "Common\Config\Base\Base.sqf";
 
-if(CTI_GUER_TOWNS == 0) then {
-	(resistance) call compile preprocessFileLineNumbers "Common\Config\Units\Units_Resistance.sqf";
-} else {
-	(resistance) call compile preprocessFileLineNumbers "Common\Config\Units\Units_LDF.sqf";
-};
 (west) call compile preprocessFileLineNumbers "Common\Config\Units\Units_West.sqf";
 (east) call compile preprocessFileLineNumbers "Common\Config\Units\Units_East.sqf";
 
