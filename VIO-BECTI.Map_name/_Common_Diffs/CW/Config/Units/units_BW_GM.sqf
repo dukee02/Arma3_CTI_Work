@@ -689,7 +689,7 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 	_c pushBack format["%1gm_ge_army_m113a1g_medic", _sid];				//medic
 	_p pushBack '';
 	_n pushBack 'Sanitäter (Mobile Respawn)';
-	_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,(_tech_level-1),true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+	_o pushBack ([CTI_ECONOMY_PRIZE_TRACKED,(_tech_level-1),true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
 	_t pushBack _building_time;
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_LIGHT;
