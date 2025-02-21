@@ -199,7 +199,7 @@ for '_i' from 1 to _totalGroups do {
 		};
 
 		_can_use = true;
-		for '_g' from 1 to _arraycnt do {
+		//for '_g' from 1 to _arraycnt do {
 			if(_unit in _infantry_filter) then {
 
 			} else {
@@ -225,7 +225,7 @@ for '_i' from 1 to _totalGroups do {
 					["VIOC_DEBUG", "FILE: Server\Functions\Server_SpawnTownOccupation.sqf", format ["unit <%1> vehicle count: <%2>/<%3> unit count: <%4>/<%5>", _unit, _pool_vehicle_count, _maxVehicles, _pool_group_size_current, _pool_group_size]] call CTI_CO_FNC_Log;
 				};	
 			};	
-		};
+		//};
 	};
 
 	_teams pushBack _units;
