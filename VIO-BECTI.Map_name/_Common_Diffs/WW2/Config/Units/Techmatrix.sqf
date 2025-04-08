@@ -710,7 +710,7 @@ _tech_matrix =
 			//BT
 			[false,false,false,false,false,false],
 			//SAB reloaded
-			[true,false,false,false,true,false],
+			[true,false,false,false,true,true],
 			//WW2 Cars
 			[false,false,false,false,false,false],
 			//WW2 Tanks
