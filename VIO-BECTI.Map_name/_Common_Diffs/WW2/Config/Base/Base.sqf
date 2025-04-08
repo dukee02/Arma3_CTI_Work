@@ -15,33 +15,33 @@ switch (_side) do {
 	default {_sid_base = "";};
 };
 _sid = _sid_base;
-if !(("SPE_GER_rifleman") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";};
 
 _nation = missionNamespace getVariable [format ["CTI_%1_MAINNATIONS", _side], []];
 switch (_nation select 0) do {
 	case CTI_GER_ID: {
 		switch (_nation select 1) do {
 			case CTI_IFA_ID: {
+				if !(("LIB_OpelBlitz_Parm") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";} else {_sid = _sid_base;};
 				switch(CTI_CAMO_ACTIVATION) do {
 					case 1: {
-						if !(("LIB_OpelBlitz_Parm_w") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";};
+						if !(("LIB_OpelBlitz_Parm_w") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";} else {_sid = _sid_base;};
 						missionNamespace setVariable [format["CTI_%1_HQ", _side], format["%1LIB_OpelBlitz_Parm_w", _sid]];};		//Winter camo
 					case 2: {
-						if !(("LIB_DAK_OpelBlitz_Parm") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";};
+						if !(("LIB_DAK_OpelBlitz_Parm") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";} else {_sid = _sid_base;};
 						missionNamespace setVariable [format["CTI_%1_HQ", _side], format["%1LIB_DAK_OpelBlitz_Parm", _sid]];};		//Desert camo
 					default {
-						if !(("LIB_OpelBlitz_Parm") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";};
+						if !(("LIB_OpelBlitz_Parm") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";} else {_sid = _sid_base;};
 						missionNamespace setVariable [format["CTI_%1_HQ", _side], format["%1LIB_OpelBlitz_Parm", _sid]];};		//default/woodland camo
 				};
 			};
 			case CTI_SPE_ID: {
-				if !(("SPE_OpelBlitz_Repair") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";};
+				if !(("SPE_OpelBlitz_Repair") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";} else {_sid = _sid_base;};
 				missionNamespace setVariable [format["CTI_%1_HQ", _side], format["%1SPE_OpelBlitz_Repair", _sid]]};
 			case CTI_FOW_ID: {
-				if !(("fow_v_sdkfz_222_camo_foliage_ger_ss") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";};
+				if !(("fow_v_sdkfz_222_camo_foliage_ger_ss") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";} else {_sid = _sid_base;};
 				missionNamespace setVariable [format["CTI_%1_HQ", _side], format["%1fow_v_sdkfz_222_camo_foliage_ger_ss", _sid]]};
 			case CTI_CSA_ID: {
-				if !(("CSA38_opelblitz6") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";};
+				if !(("CSA38_opelblitz6") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";} else {_sid = _sid_base;};
 				missionNamespace setVariable [format["CTI_%1_HQ", _side], format["%1CSA38_opelblitz6", _sid]]};
 			//case CTI_NF_ID: {};
 			default { };
@@ -52,10 +52,10 @@ switch (_nation select 0) do {
 			case CTI_IFA_ID: {
 				switch(CTI_CAMO_ACTIVATION) do {
 					case 1: {
-						if !(("LIB_Zis6_parm_w") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";};
+						if !(("LIB_Zis6_parm_w") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";} else {_sid = _sid_base;};
 						missionNamespace setVariable [format["CTI_%1_HQ", _side], format["%1LIB_Zis6_parm_w", _sid]];};		//Winter camo
 					default {
-						if !(("LIB_Zis6_Parm") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";};
+						if !(("LIB_Zis6_Parm") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";} else {_sid = _sid_base;};
 						missionNamespace setVariable [format["CTI_%1_HQ", _side], format["%1LIB_Zis6_Parm", _sid]];};		//default/woodland camo
 				};
 			};
@@ -63,7 +63,7 @@ switch (_nation select 0) do {
 			//case CTI_FOW_ID: {};
 			//case CTI_CSA_ID: {};
 			case CTI_NF_ID: {
-				if !(("NORTH_SOV_ZIS5_Repair") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";};
+				if !(("NORTH_SOV_ZIS5_Repair") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";} else {_sid = _sid_base;};
 				missionNamespace setVariable [format["CTI_%1_HQ", _side], format["%1NORTH_SOV_ZIS5_Repair", _sid]];};		//default
 			default {};
 		};
@@ -73,16 +73,16 @@ switch (_nation select 0) do {
 			case CTI_IFA_ID: {
 				switch(CTI_CAMO_ACTIVATION) do {
 					case 1: {
-						if !(("LIB_US_GMC_Parm_w") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";};
+						if !(("LIB_US_GMC_Parm_w") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";} else {_sid = _sid_base;};
 						missionNamespace setVariable [format["CTI_%1_HQ", _side], format["%1LIB_US_GMC_Parm_w", _sid]];};		//Winter camo
 					default {
-						if !(("LIB_US_GMC_Tent") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";};
+						if !(("LIB_US_GMC_Tent") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";} else {_sid = _sid_base;};
 						missionNamespace setVariable [format["CTI_%1_HQ", _side], format["%1LIB_US_GMC_Tent", _sid]];};		//default/woodland camo
 				};
 			};
 			//case CTI_SPE_ID: {};
 			case CTI_FOW_ID: {
-				if !(("fow_v_universalCarrier") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";};
+				if !(("fow_v_universalCarrier") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";} else {_sid = _sid_base;};
 				missionNamespace setVariable [format["CTI_%1_HQ", _side], format["%1fow_v_universalCarrier", _sid]]};
 			//case CTI_CSA_ID: {};
 			//case CTI_NF_ID: {};
@@ -94,18 +94,18 @@ switch (_nation select 0) do {
 			case CTI_IFA_ID: {
 				switch(CTI_CAMO_ACTIVATION) do {
 					case 1: {
-						if !(("LIB_US_GMC_Parm_w") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";};
+						if !(("LIB_US_GMC_Parm_w") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";} else {_sid = _sid_base;};
 						missionNamespace setVariable [format["CTI_%1_HQ", _side], format["%1LIB_US_GMC_Parm_w", _sid]];};		//Winter camo
 					default {
-						if !(("LIB_US_GMC_Tent") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";};
+						if !(("LIB_US_GMC_Tent") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";} else {_sid = _sid_base;};
 						missionNamespace setVariable [format["CTI_%1_HQ", _side], format["%1LIB_US_GMC_Tent", _sid]];};		//default/woodland camo
 				};
 			};
 			case CTI_SPE_ID: {
-				if !(("SPE_US_M3_Halftrack_Repair") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";};
+				if !(("SPE_US_M3_Halftrack_Repair") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";} else {_sid = _sid_base;};
 				missionNamespace setVariable [format["CTI_%1_HQ", _side], format["%1SPE_US_M3_Halftrack_Repair", _sid]]};
 			case CTI_FOW_ID: {
-				if !(("fow_v_gmc_usmc") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";};
+				if !(("fow_v_gmc_usmc") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";} else {_sid = _sid_base;};
 				missionNamespace setVariable [format["CTI_%1_HQ", _side], format["%1fow_v_gmc_usmc", _sid]];};
 			//case CTI_CSA_ID: {};
 			//case CTI_NF_ID: {};
@@ -117,7 +117,7 @@ switch (_nation select 0) do {
 			//case CTI_IFA_ID: {};
 			//case CTI_SPE_ID: {};
 			case CTI_FOW_ID: {
-				if !(("fow_v_type97_truck_ija") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";};
+				if !(("fow_v_type97_truck_ija") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";} else {_sid = _sid_base;};
 				missionNamespace setVariable [format["CTI_%1_HQ", _side], format["%1fow_v_type97_truck_ija", _sid]]};
 			//case CTI_CSA_ID: {};
 			//case CTI_NF_ID: {};
@@ -130,7 +130,7 @@ switch (_nation select 0) do {
 			//case CTI_SPE_ID: {};
 			//case CTI_FOW_ID: {};
 			case CTI_CSA_ID: {
-				if !(("CSA38_pragaRV7") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";};
+				if !(("CSA38_pragaRV7") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";} else {_sid = _sid_base;};
 				missionNamespace setVariable [format["CTI_%1_HQ", _side], format["%1CSA38_pragaRV7", _sid]]};
 			//case CTI_NF_ID: {};
 			default { };
@@ -139,13 +139,13 @@ switch (_nation select 0) do {
 	case CTI_FIN_ID: {
 		switch (_nation select 1) do {
 			case CTI_IFA_ID: {
-				if !(("LIB_OpelBlitz_Parm") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";};
+				if !(("LIB_OpelBlitz_Parm") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";} else {_sid = _sid_base;};
 				missionNamespace setVariable [format["CTI_%1_HQ", _side], format["%1LIB_OpelBlitz_Parm", _sid]]};
 			//case CTI_SPE_ID: {};
 			//case CTI_FOW_ID: {};
 			//case CTI_CSA_ID: {};
 			case CTI_NF_ID: {
-				if !(("NORTH_FIN_FordV8_Repair") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";};
+				if !(("NORTH_FIN_FordV8_Repair") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";} else {_sid = _sid_base;};
 				missionNamespace setVariable [format["CTI_%1_HQ", _side], format["%1NORTH_FIN_FordV8_Repair", _sid]]};
 			default { };
 		};
@@ -153,7 +153,7 @@ switch (_nation select 0) do {
 	case CTI_FR_ID: {
 		switch (_nation select 1) do {
 			case CTI_SPE_ID: {
-				if !(("SPE_FR_M3_Halftrack_Repair") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";};
+				if !(("SPE_FR_M3_Halftrack_Repair") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";} else {_sid = _sid_base;};
 				missionNamespace setVariable [format["CTI_%1_HQ", _side], format["%1SPE_FR_M3_Halftrack_Repair", _sid]]};
 			default { };
 		};
@@ -384,104 +384,113 @@ _priceGun = [CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,false,5] call CTI_CO_FNC_GetC
 _priceAA = [CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,false,4] call CTI_CO_FNC_GetCalculatedUnitsPrize;
 
 //Defense Guns
-if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {	
-	if(CTI_SPE_DLC >= 1 || CTI_IFA_ADDON >= 1) then {
-		if !(("SPE_GER_SearchLight") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";};
-		if !(("LIB_GER_SearchLight") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";};
-		_headers pushBack 		"SearchLight";
-		if(CTI_SPE_DLC >= 1) then {
-			_classes pushBack format["%1SPE_GER_SearchLight", _sid];
-		} else {
-			_classes pushBack format["%1LIB_GER_SearchLight", _sid];
-		};
+if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
+	if(CTI_SPE_DLC >= 1) then {	
+		if !(("SPE_GER_SearchLight") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";} else {_sid = _sid_base;};
+		_headers pushBack 		"[SPE] SearchLight";
+		_classes pushBack 		format["%1SPE_GER_SearchLight", _sid];
 		_prices pushBack 		200;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
-			
-		_headers pushBack 		"MG34";
-		if(CTI_SPE_DLC >= 1) then {
-			_classes pushBack format["%1SPE_MG34_Lafette_Deployed", _sid];
-		} else {
-			_classes pushBack format["%1LIB_MG34_Lafette_Deployed", _sid];
-		};
-		_prices pushBack 		500;
-		_placements pushBack 	[180, 5];
-		_categories pushBack 	"Defense";
-		_tiers pushBack 		_tech_level;
-			
-		_headers pushBack 		"MG34 low";
-		if(CTI_SPE_DLC >= 1) then {
-			_classes pushBack format["%1SPE_MG34_Lafette_low_Deployed", _sid];
-		} else {
-			_classes pushBack format["%1LIB_MG34_Lafette_low_Deployed", _sid];
-		};
+
+		_headers pushBack 		"[SPE] MG34";
+		_classes pushBack 		format["%1SPE_MG34_Lafette_Deployed", _sid];
 		_prices pushBack 		500;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 
-		if(CTI_SPE_DLC >= 1) then {	
-			_headers pushBack 		"MG34 Bipod";
-			_classes pushBack 		format["%1SPE_MG34_Bipod", _sid];
-			_prices pushBack 		500;
-			_placements pushBack 	[180, 5];
-			_categories pushBack 	"Defense";
-			_tiers pushBack 		_tech_level;
+		_headers pushBack 		"[SPE] MG34 low";
+		_classes pushBack 		format["%1SPE_MG34_Lafette_low_Deployed", _sid];
+		_prices pushBack 		500;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Defense";
+		_tiers pushBack 		_tech_level;
+
+		_headers pushBack 		"[SPE] MG34 Bipod";
+		_classes pushBack 		format["%1SPE_MG34_Bipod", _sid];
+		_prices pushBack 		500;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Defense";
+		_tiers pushBack 		_tech_level;
 				
-			_headers pushBack 		"MG34 Trench";
-			_classes pushBack 		format["%1SPE_MG34_Lafette_Trench_Deployed", _sid];
-			_prices pushBack 		500;
-			_placements pushBack 	[180, 5];
-			_categories pushBack 	"Defense";
-			_tiers pushBack 		_tech_level;
-		};
+		_headers pushBack 		"[SPE] MG34 Trench";
+		_classes pushBack 		format["%1SPE_MG34_Lafette_Trench_Deployed", _sid];
+		_prices pushBack 		500;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Defense";
+		_tiers pushBack 		_tech_level;
 
-		_headers pushBack 		"GrWr34";
-		if(CTI_SPE_DLC >= 1) then {
-			_classes pushBack format["%1SPE_GrW278_1", _sid];
-		} else {
-			_classes pushBack format["%1LIB_GrWr34", _sid];
-		};
+		_headers pushBack 		"[SPE] GrWr34";
+		_classes pushBack format["%1SPE_GrW278_1", _sid];
 		_prices pushBack 		2000;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 		
-		if(CTI_SPE_DLC <= 0) then {	
-			_headers pushBack 		"GrWr34 grau";
-			_classes pushBack 		format["%1LIB_GrWr34_g", _sid];
-			_prices pushBack 		2000;
-			_placements pushBack 	[180, 5];
-			_categories pushBack 	"Defense";
-			_tiers pushBack 		_tech_level;
-		};
+		_headers pushBack 		"[SPE] GrWr34 grau";
+		_classes pushBack 		format["%1LIB_GrWr34_g", _sid];
+		_prices pushBack 		2000;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Defense";
+		_tiers pushBack 		_tech_level;
+	};
+
+	if(CTI_IFA_ADDON >= 1) then {
+		if !(("LIB_GER_SearchLight") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";} else {_sid = _sid_base;};
+		_headers pushBack 		"[IFA] SearchLight";
+		_classes pushBack format["%1LIB_GER_SearchLight", _sid];
+		_prices pushBack 		200;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Defense";
+		_tiers pushBack 		_tech_level;
+			
+		_headers pushBack 		"[IFA] MG34";
+		_classes pushBack format["%1LIB_MG34_Lafette_Deployed", _sid];
+		_prices pushBack 		500;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Defense";
+		_tiers pushBack 		_tech_level;
+			
+		_headers pushBack 		"[IFA] MG34 low";
+		_prices pushBack 		500;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Defense";
+		_tiers pushBack 		_tech_level;
+		
+		_headers pushBack 		"[IFA] GrWr34";
+		_classes pushBack format["%1LIB_GrWr34", _sid];
+		_prices pushBack 		2000;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Defense";
+		_tiers pushBack 		_tech_level;
 	};
 		
 	if(CTI_FOW_ADDON > 0) then {
-		if !(("VIOC_I_fow_w_mg42_deployed_high_ger_heer") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";};
-		_headers pushBack 		"MG43 high";
+		if !(("VIOC_I_fow_w_mg42_deployed_high_ger_heer") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";} else {_sid = _sid_base;};
+		_headers pushBack 		"[FoW] MG43 high";
 		_classes pushBack 		format["%1fow_w_mg42_deployed_high_ger_heer", _sid];
 		_prices pushBack 		_priceMG;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 		
-		_headers pushBack 		"MG42";
+		_headers pushBack 		"[FoW] MG42";
 		_classes pushBack 		format["%1fow_w_mg42_deployed_ger_heer", _sid];
 		_prices pushBack 		_priceMG;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 		
-		_headers pushBack 		"MG42 s";
+		_headers pushBack 		"[FoW] MG42 s";
 		_classes pushBack 		format["%1fow_w_mg42_deployed_s_ger_heer", _sid];
 		_prices pushBack 		_priceMG;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 		
-		_headers pushBack 		"MG42 middle";
+		_headers pushBack 		"[FoW] MG42 middle";
 		_classes pushBack 		format["%1fow_w_mg42_deployed_middle_ger_heer", _sid];
 		_prices pushBack 		_priceMG;
 		_placements pushBack 	[180, 5];
@@ -490,43 +499,43 @@ if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 	};
 	
 	if(CTI_CSA_ADDON > 0) then {
-		if !(("CSA38_MG34t") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";};
-		_headers pushBack 		"MG34 tripod";
+		if !(("CSA38_MG34t") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";} else {_sid = _sid_base;};
+		_headers pushBack 		"[CSA] MG34 tripod";
 		_classes pushBack 		format["%1CSA38_MG34t", _sid];
 		_prices pushBack 		_priceMG;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 			
-		_headers pushBack 		"MG34 1";
+		_headers pushBack 		"[CSA] MG34 1";
 		_classes pushBack 		format["%1CSA38_MG34t4", _sid];
 		_prices pushBack 		_priceMG;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 			
-		_headers pushBack 		"MG34 2";
+		_headers pushBack 		"[CSA] MG34 2";
 		_classes pushBack 		format["%1CSA38_MG34t3", _sid];
 		_prices pushBack 		_priceMG;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 			
-		_headers pushBack 		"MG34 3";
+		_headers pushBack 		"[CSA] MG34 3";
 		_classes pushBack 		format["%1CSA38_MG34t2", _sid];
 		_prices pushBack 		_priceMG;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 			
-		_headers pushBack 		"ZB30 tripod";
+		_headers pushBack 		"[CSA] ZB30 tripod";
 		_classes pushBack 		format["%1CSA38_zb30jt", _sid];
 		_prices pushBack 		_priceMG;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 			
-		_headers pushBack 		"GrWr34";
+		_headers pushBack 		"[CSA] GrWr34";
 		_classes pushBack 		format["%1csa38_GrW34", _sid];
 		_prices pushBack 		_priceArty;
 		_placements pushBack 	[180, 5];
@@ -536,29 +545,29 @@ if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 };
 if(CTI_SOV_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 	if(CTI_IFA_ADDON >= 1) then {
-		if !(("LIB_Maxim_M30_base") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";};
-		_headers pushBack 		"Maxim base";
+		if !(("LIB_Maxim_M30_base") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";} else {_sid = _sid_base;};
+		_headers pushBack 		"[IFA] Maxim base";
 		_classes pushBack 		format["%1LIB_Maxim_M30_base", _sid];
 		_prices pushBack 		1000;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 			
-		_headers pushBack 		"Maxim Trench";
+		_headers pushBack 		"[IFA] Maxim Trench";
 		_classes pushBack 		format["%1LIB_Maxim_M30_Trench", _sid];
 		_prices pushBack 		1000;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 		
-		_headers pushBack 		"SearchLight";
+		_headers pushBack 		"[IFA] SearchLight";
 		_classes pushBack 		format["%1LIB_SU_SearchLight", _sid];
 		_prices pushBack 		200;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 		
-		_headers pushBack 		"BM37";
+		_headers pushBack 		"[IFA] BM37";
 		_classes pushBack 		format["%1LIB_BM37", _sid];
 		_prices pushBack 		2000;
 		_placements pushBack 	[180, 5];
@@ -569,50 +578,50 @@ if(CTI_SOV_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 if(CTI_JPN_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 	
 	if(CTI_FOW_ADDON > 0) then {
-		if !(("VIOC_I_fow_w_type92_tripod_ija") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";};
-		_headers pushBack 		"Type 92 MG";
+		if !(("VIOC_I_fow_w_type92_tripod_ija") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";} else {_sid = _sid_base;};
+		_headers pushBack 		"[FoW] Type 92 MG";
 		_classes pushBack 		format["%1fow_w_type92_tripod_ija", _sid];
 		_prices pushBack 		_priceMG;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 		
-		_headers pushBack 		"Type 92 MG high";
+		_headers pushBack 		"[FoW] Type 92 MG high";
 		_classes pushBack 		format["%1fow_w_type92_tripod_high_ija", _sid];
 		_prices pushBack 		_priceMG;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 		
-		_headers pushBack 		"Type 92 MG low s";
+		_headers pushBack 		"[FoW] Type 92 MG low s";
 		_classes pushBack 		format["%1fow_w_type92_tripod_low_s_ija", _sid];
 		_prices pushBack 		_priceMG;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 		
-		_headers pushBack 		"Type 92 MG low";
+		_headers pushBack 		"[FoW] Type 92 MG low";
 		_classes pushBack 		format["%1fow_w_type92_tripod_low_ija", _sid];
 		_prices pushBack 		_priceMG;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 		
-		_headers pushBack 		"Type 92 MG middle";
+		_headers pushBack 		"[FoW] Type 92 MG middle";
 		_classes pushBack 		format["%1fow_w_type92_tripod_middle_ija", _sid];
 		_prices pushBack 		_priceMG;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 		
-		_headers pushBack 		"Type 97 (Mortar)";
+		_headers pushBack 		"[FoW] Type 97 (Mortar)";
 		_classes pushBack 		format["%1fow_w_type97_mortar_ija", _sid];
 		_prices pushBack 		_priceArty;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 		
-		_headers pushBack 		"Type 97 (Mortar) adv";
+		_headers pushBack 		"[FoW] Type 97 (Mortar) adv";
 		_classes pushBack 		format["%1fow_w_type97_mortar_adv_ija", _sid];
 		_prices pushBack 		_priceArty;
 		_placements pushBack 	[180, 5];
@@ -621,107 +630,113 @@ if(CTI_JPN_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 	};
 };
 if(CTI_US_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
-	if(CTI_SPE_DLC >= 1 || CTI_IFA_ADDON >= 1) then {
-		if !(("SPE_M1919_M2") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";};
-		if !(("LIB_M1919_M2") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";};
-		_headers pushBack 		"M1919 M2 MG";
-		if(CTI_SPE_DLC >= 1) then {
-			_classes pushBack 		format["%1SPE_M1919_M2", _sid];
-		} else {
-			_classes pushBack 		format["%1LIB_M1919_M2", _sid];
-		};
+	if(CTI_SPE_DLC >= 1) then {
+		if !(("SPE_M1919_M2") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";} else {_sid = _sid_base;};
+		_headers pushBack 		"[SPE] M1919 M2 MG";
+		_classes pushBack 		format["%1SPE_M1919_M2", _sid];
 		_prices pushBack 		500;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 		
-		if(CTI_SPE_DLC >= 1) then {
-			_headers pushBack 		"M1 81 (Mortar)";
-			_classes pushBack 		format["%1SPE_M1_81", _sid];
-		} else {
-			_headers pushBack 		"M2 60 (Mortar)";
-			_classes pushBack 		format["%1LIB_M2_60", _sid];
-		};
+		_headers pushBack 		"[SPE] M1 81 (Mortar)";
+		_classes pushBack 		format["%1SPE_M1_81", _sid];
 		_prices pushBack 		2000;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
-		
-		if(CTI_SPE_DLC >= 1) then {
-			_headers pushBack 		"M1919 M2 MG Trench";
-			_classes pushBack 		format["%1SPE_M1919_M2_Trench_Deployed", _sid];
-			_prices pushBack 		500;
-			_placements pushBack 	[180, 5];
-			_categories pushBack 	"Defense";
-			_tiers pushBack 		_tech_level;
 
-			_headers pushBack 		"M1919A6 MG";
-			_classes pushBack 		format["%1SPE_M1919A6_Bipod", _sid];
-			_prices pushBack 		500;
-			_placements pushBack 	[180, 5];
-			_categories pushBack 	"Defense";
-			_tiers pushBack 		_tech_level;
-		};
+		_headers pushBack 		"[SPE] M1919 M2 MG Trench";
+		_classes pushBack 		format["%1SPE_M1919_M2_Trench_Deployed", _sid];
+		_prices pushBack 		500;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Defense";
+		_tiers pushBack 		_tech_level;
+
+		_headers pushBack 		"[SPE] M1919A6 MG";
+		_classes pushBack 		format["%1SPE_M1919A6_Bipod", _sid];
+		_prices pushBack 		500;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Defense";
+		_tiers pushBack 		_tech_level;
 	};
+
+	if(CTI_IFA_ADDON >= 1) then {
+		if !(("LIB_M1919_M2") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";} else {_sid = _sid_base;};
+		_headers pushBack 		"[IFA] M1919 M2 MG";
+		_classes pushBack 		format["%1LIB_M1919_M2", _sid];
+		_prices pushBack 		500;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Defense";
+		_tiers pushBack 		_tech_level;
+		
+		_headers pushBack 		"[IFA] M2 60 (Mortar)";
+		_classes pushBack 		format["%1LIB_M2_60", _sid];
+		_prices pushBack 		2000;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Defense";
+		_tiers pushBack 		_tech_level;
+	};
+	
 	if(CTI_FOW_ADDON > 0) then {
-		if !(("VIOC_I_fow_w_m1919_tripod_usa_m37") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";};
-		_headers pushBack 		"M1919 MG tripod m37";
+		if !(("VIOC_I_fow_w_m1919_tripod_usa_m37") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";} else {_sid = _sid_base;};
+		_headers pushBack 		"[FoW] M1919 MG tripod m37";
 		_classes pushBack 		format["%1fow_w_m1919_tripod_usa_m37", _sid];
 		_prices pushBack 		_priceMG;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 		
-		_headers pushBack 		"M1919 MG tripod m41";
+		_headers pushBack 		"[FoW] M1919 MG tripod m41";
 		_classes pushBack 		format["%1fow_w_m1919_tripod_usa_m41", _sid];
 		_prices pushBack 		_priceMG;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 		
-		_headers pushBack 		"M1919 MG high m41";
+		_headers pushBack 		"[FoW] M1919 MG high m41";
 		_classes pushBack 		format["%1fow_w_m1919a6_deployed_high_usa_m41", _sid];
 		_prices pushBack 		_priceMG;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 		
-		_headers pushBack 		"M1919 MG high m37";
+		_headers pushBack 		"[FoW] M1919 MG high m37";
 		_classes pushBack 		format["%1fow_w_m1919a6_deployed_high_usa_m37", _sid];
 		_prices pushBack 		_priceMG;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 		
-		_headers pushBack 		"M1919 MG m37";
+		_headers pushBack 		"[FoW] M1919 MG m37";
 		_classes pushBack 		format["%1fow_w_m1919a6_deployed_usa_m37", _sid];
 		_prices pushBack 		_priceMG;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 		
-		_headers pushBack 		"M1919 MG m41";
+		_headers pushBack 		"[FoW] M1919 MG m41";
 		_classes pushBack 		format["%1fow_w_m1919a6_deployed_usa_m41", _sid];
 		_prices pushBack 		_priceMG;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 		
-		_headers pushBack 		"M1919 MG middle m37";
+		_headers pushBack 		"[FoW] M1919 MG middle m37";
 		_classes pushBack 		format["%1fow_w_m1919a6_deployed_middle_usa_m37", _sid];
 		_prices pushBack 		_priceMG;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 		
-		_headers pushBack 		"M1919 MG middle m41";
+		_headers pushBack 		"[FoW] M1919 MG middle m41";
 		_classes pushBack 		format["%1fow_w_m1919a6_deployed_middle_usa_m41", _sid];
 		_prices pushBack 		_priceMG;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 		
-		_headers pushBack 		"M2 (Mortar)";
+		_headers pushBack 		"[FoW] M2 (Mortar)";
 		_classes pushBack 		format["%1fow_w_m2_mortar_usa", _sid];
 		_prices pushBack 		_priceArty;
 		_placements pushBack 	[180, 5];
@@ -756,7 +771,8 @@ if(CTI_US_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 if(CTI_UK_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 	
 	if(CTI_IFA_ADDON >= 1) then {
-		_headers pushBack 		"M2 60 (Mortar)";
+		if !(("LIB_M2_60") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";} else {_sid = _sid_base;};
+		_headers pushBack 		"[IFA] M2 60 (Mortar)";
 		_classes pushBack 		format["%1LIB_M2_60", _sid];
 		_prices pushBack 		_priceArty;
 		_placements pushBack 	[180, 5];
@@ -764,8 +780,8 @@ if(CTI_UK_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 		_tiers pushBack 		_tech_level;
 	};
 	if(CTI_FOW_ADDON > 0) then {
-		if !(("VIOC_I_fow_w_vickers_uk") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";};
-		_headers pushBack 		"Vickers MG";
+		if !(("VIOC_I_fow_w_vickers_uk") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";} else {_sid = _sid_base;};
+		_headers pushBack 		"[FoW] Vickers MG";
 		_classes pushBack 		format["%1fow_w_vickers_uk", _sid];
 		_prices pushBack 		_priceMG;
 		_placements pushBack 	[180, 5];
@@ -774,22 +790,22 @@ if(CTI_UK_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 	};	
 	
 	if(CTI_CSA_ADDON > 0) then {
-		if !(("CSA38_brenmkiit") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";};
-		_headers pushBack 		"Bren MK2 1 tripod";
+		if !(("CSA38_brenmkiit") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";} else {_sid = _sid_base;};
+		_headers pushBack 		"[CSA] Bren MK2 1 tripod";
 		_classes pushBack 		format["%1CSA38_brenmkiit", _sid];
 		_prices pushBack 		_priceMG;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 			
-		_headers pushBack 		"Bren MK2 2 tripod";
+		_headers pushBack 		"[CSA] Bren MK2 2 tripod";
 		_classes pushBack 		format["%1CSA38_brenmkiit2", _sid];
 		_prices pushBack 		_priceMG;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 		
-		_headers pushBack 		"2inch (Mortar)";
+		_headers pushBack 		"[CSA] 2inch (Mortar)";
 		_classes pushBack 		format["%1CSA38_2inch_vehicle", _sid];
 		_prices pushBack 		_priceArty;
 		_placements pushBack 	[180, 5];
@@ -800,71 +816,71 @@ if(CTI_UK_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 
 if(CTI_CZ_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 	if(CTI_CSA_ADDON > 0) then {
-		if !(("CSA38_TKVZ24mg") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";};
-		_headers pushBack 		"VZ 24 tripod";
+		if !(("CSA38_TKVZ24mg") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";} else {_sid = _sid_base;};
+		_headers pushBack 		"[CSA] VZ 24 tripod";
 		_classes pushBack 		format["%1CSA38_TKVZ24mg", _sid];
 		_prices pushBack 		_priceMG;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 		
-		_headers pushBack 		"VZ 37 tripod";
+		_headers pushBack 		"[CSA] VZ 37 tripod";
 		_classes pushBack 		format["%1CSA38_TKVZ37MG", _sid];
 		_prices pushBack 		_priceMG;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 		
-		_headers pushBack 		"VZ 37 high";
+		_headers pushBack 		"[CSA] VZ 37 high";
 		_classes pushBack 		format["%1CSA38_tkvz37mg3", _sid];
 		_prices pushBack 		_priceMG;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 		
-		_headers pushBack 		"VZ 27 high";
+		_headers pushBack 		"[CSA] VZ 27 high";
 		_classes pushBack 		format["%1CSA38_tkvz24mg2", _sid];
 		_prices pushBack 		_priceMG;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 		
-		_headers pushBack 		"VZ 27 2 high";
+		_headers pushBack 		"[CSA] VZ 27 2 high";
 		_classes pushBack 		format["%1CSA38_tkvz24mg3", _sid];
 		_prices pushBack 		_priceMG;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 		
-		_headers pushBack 		"VZ 26 high";
+		_headers pushBack 		"[CSA] VZ 26 high";
 		_classes pushBack 		format["%1CSA38_zb26t", _sid];
 		_prices pushBack 		_priceMG;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 		
-		_headers pushBack 		"VB 26 high";
+		_headers pushBack 		"[CSA] VB 26 high";
 		_classes pushBack 		format["%1CSA38_zb26t2", _sid];
 		_prices pushBack 		_priceMG;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 		
-		_headers pushBack 		"mvz17 (Mortar)";
+		_headers pushBack 		"[CSA] mvz17 (Mortar)";
 		_classes pushBack 		format["%1CSA38_mvz17", _sid];
 		_prices pushBack 		_priceArty;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 		
-		_headers pushBack 		"mvz36 (Mortar)";
+		_headers pushBack 		"[CSA] mvz36 (Mortar)";
 		_classes pushBack 		format["%1CSA38_mvz36", _sid];
 		_prices pushBack 		_priceArty;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 		
-		_headers pushBack 		"KPUV37 AT";
+		_headers pushBack 		"[CSA] KPUV37 AT";
 		_classes pushBack 		format["%1csa38_KPUV37", _sid];
 		_prices pushBack 		3000;
 		_placements pushBack 	[180, 5];
@@ -875,128 +891,128 @@ if(CTI_CZ_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 
 if(CTI_FIN_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 	if(CTI_NF_ADDON > 0) then {
-		if !(("NORTH_FIN_W_Maxim") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";};
+		if !(("NORTH_FIN_W_Maxim") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";} else {_sid = _sid_base;};
 		if(CTI_CAMO_ACTIVATION == 1) then {		//Winter camo active
-			_headers pushBack 		"Maxim MG (w)";
+			_headers pushBack 		"[NF] Maxim MG (w)";
 			_classes pushBack 		format["%1NORTH_FIN_W_Maxim", _sid];
 			_prices pushBack 		_priceMG;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"Maxim MG medium (w)";
+			_headers pushBack 		"[NF] Maxim MG medium (w)";
 			_classes pushBack 		format["%1NORTH_FIN_W_Maxim_Medium", _sid];
 			_prices pushBack 		_priceMG;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"Maxim MG high (w)";
+			_headers pushBack 		"[NF] Maxim MG high (w)";
 			_classes pushBack 		format["%1NORTH_FIN_W_Maxim_High", _sid];
 			_prices pushBack 		_priceMG;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 
-			_headers pushBack 		"Maxim (SOV)";
+			_headers pushBack 		"[NF] Maxim (SOV)";
 			_classes pushBack 		format["%1NORTH_FIN_W_Maxim_SOV", _sid];
 			_prices pushBack 		_priceMG;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"Maxim Medium (SOV)";
+			_headers pushBack 		"[NF] Maxim Medium (SOV)";
 			_classes pushBack 		format["%1NORTH_FIN_W_Maxim_SOV_Medium", _sid];
 			_prices pushBack 		_priceMG;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"Maxim High (SOV)";
+			_headers pushBack 		"[NF] Maxim High (SOV)";
 			_classes pushBack 		format["%1NORTH_FIN_W_Maxim_SOV_High", _sid];
 			_prices pushBack 		_priceMG;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"50krh38 light mortar (w)";
+			_headers pushBack 		"[NF] 50krh38 light mortar (w)";
 			_classes pushBack 		format["%1NORTH_FIN_W_50krh38", _sid];
 			_prices pushBack 		_priceArty;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"76k02 light cannon (w)";
+			_headers pushBack 		"[NF] 76k02 light cannon (w)";
 			_classes pushBack 		format["%1NORTH_FIN_W_76k02", _sid];
 			_prices pushBack 		_priceGun;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"Maxim Maxim Quad (AA)";
+			_headers pushBack 		"[NF] Maxim Maxim Quad (AA)";
 			_classes pushBack 		format["%1NORTH_FIN_W_Maxim_Quad", _sid];
 			_prices pushBack 		_priceAA;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"AA";
 			_tiers pushBack 		_tech_level;
 		} else {
-			_headers pushBack 		"Maxim MG";
+			_headers pushBack 		"[NF] Maxim MG";
 			_classes pushBack 		format["%1NORTH_FIN_S_Maxim_41", _sid];
 			_prices pushBack 		_priceMG;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"Maxim MG medium";
+			_headers pushBack 		"[NF] Maxim MG medium";
 			_classes pushBack 		format["%1NORTH_FIN_S_41_Maxim_Medium", _sid];
 			_prices pushBack 		_priceMG;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"Maxim MG high";
+			_headers pushBack 		"[NF] Maxim MG high";
 			_classes pushBack 		format["%1NORTH_FIN_S_Maxim_High_41", _sid];
 			_prices pushBack 		_priceMG;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 
-			_headers pushBack 		"Maxim";
+			_headers pushBack 		"[NF] Maxim";
 			_classes pushBack 		format["%1NORTH_FIN_S_41_Maxim_SOV", _sid];
 			_prices pushBack 		_priceMG;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"Maxim Medium";
+			_headers pushBack 		"[NF] Maxim Medium";
 			_classes pushBack 		format["%1NORTH_FIN_S_41_Maxim_SOV_Medium", _sid];
 			_prices pushBack 		_priceMG;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"Maxim High";
+			_headers pushBack 		"[NF] Maxim High";
 			_classes pushBack 		format["%1NORTH_FIN_S_41_Maxim_SOV_High", _sid];
 			_prices pushBack 		_priceMG;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"Maxim Maxim Quad (AA)";
+			_headers pushBack 		"[NF] Maxim Maxim Quad (AA)";
 			_classes pushBack 		format["%1NORTH_FIN_S_41_Maxim_Quad", _sid];
 			_prices pushBack 		_priceAA;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"AA";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"50krh38 light mortar";
+			_headers pushBack 		"[NF] 50krh38 light mortar";
 			_classes pushBack 		format["%1NORTH_FIN_S_41_50krh38", _sid];
 			_prices pushBack 		_priceArty;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"76k02 light cannon";
+			_headers pushBack 		"[NF] 76k02 light cannon";
 			_classes pushBack 		format["%1NORTH_FIN_S_41_76RK27", _sid];
 			_prices pushBack 		_priceGun;
 			_placements pushBack 	[180, 5];
@@ -1004,63 +1020,63 @@ if(CTI_FIN_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_tiers pushBack 		_tech_level;
 			
 			//camo
-			_headers pushBack 		"Maxim MG camo";
+			_headers pushBack 		"[NF] Maxim MG camo";
 			_classes pushBack 		format["%1NORTH_FIN_Maxim", _sid];
 			_prices pushBack 		_priceMG;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"Maxim MG medium camo";
+			_headers pushBack 		"[NF] Maxim MG medium camo";
 			_classes pushBack 		format["%1NORTH_FIN_Maxim_Medium", _sid];
 			_prices pushBack 		_priceMG;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"Maxim MG high camo";
+			_headers pushBack 		"[NF] Maxim MG high camo";
 			_classes pushBack 		format["%1NORTH_FIN_Maxim_High", _sid];
 			_prices pushBack 		_priceMG;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 
-			_headers pushBack 		"Maxim camo";
+			_headers pushBack 		"[NF] Maxim camo";
 			_classes pushBack 		format["%1NORTH_FIN_Maxim_SOV", _sid];
 			_prices pushBack 		_priceMG;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"Maxim Medium camo";
+			_headers pushBack 		"[NF] Maxim Medium camo";
 			_classes pushBack 		format["%1NORTH_FIN_Maxim_SOV_Medium", _sid];
 			_prices pushBack 		_priceMG;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"Maxim High camo";
+			_headers pushBack 		"[NF] Maxim High camo";
 			_classes pushBack 		format["%1NORTH_FIN_Maxim_SOV_High", _sid];
 			_prices pushBack 		_priceMG;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"Maxim Maxim Quad (AA) camo";
+			_headers pushBack 		"[NF] Maxim Maxim Quad (AA) camo";
 			_classes pushBack 		format["%1NORTH_FIN_Maxim_Quad", _sid];
 			_prices pushBack 		_priceAA;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"AA";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"50krh38 light mortar camo";
+			_headers pushBack 		"[NF] 50krh38 light mortar camo";
 			_classes pushBack 		format["%1NORTH_FIN_50krh38", _sid];
 			_prices pushBack 		_priceArty;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"76k02 light cannon camo";
+			_headers pushBack 		"[NF] 76k02 light cannon camo";
 			_classes pushBack 		format["%1NORTH_FIN_76RK27", _sid];
 			_prices pushBack 		_priceGun;
 			_placements pushBack 	[180, 5];
@@ -1072,80 +1088,80 @@ if(CTI_FIN_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 
 if(CTI_SOV_SIDE == (_side) call CTI_CO_FNC_GetSideID || (CTI_GER_SIDE != (_side) call CTI_CO_FNC_GetSideID && CTI_FIN_SIDE != (_side) call CTI_CO_FNC_GetSideID && CTI_SOV_SIDE != (_side) call CTI_CO_FNC_GetSideID)) then {
 	if(CTI_NF_ADDON > 0) then {
-		if !(("NORTH_FIN_W_Maxim") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";};
+		if !(("NORTH_FIN_W_Maxim") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";} else {_sid = _sid_base;};
 		if(CTI_CAMO_ACTIVATION == 1) then {		//Winter camo active
 
-			_headers pushBack 		"Maxim";
+			_headers pushBack 		"[NF] Maxim";
 			_classes pushBack 		format["%1NORTH_SOV_W_39_Maxim", _sid];
 			_prices pushBack 		_priceMG;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"Maxim High";
+			_headers pushBack 		"[NF] Maxim High";
 			_classes pushBack 		format["%1NORTH_SOV_W_39_Maxim_High", _sid];
 			_prices pushBack 		_priceMG;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"Maxim Medium";
+			_headers pushBack 		"[NF] Maxim Medium";
 			_classes pushBack 		format["%1NORTH_SOV_W_39_Maxim_Medium", _sid];
 			_prices pushBack 		_priceMG;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"Maxim Maxim Quad (AA)";
+			_headers pushBack 		"[NF] Maxim Maxim Quad (AA)";
 			_classes pushBack 		format["%1NORTH_SOV_W_39_Maxim_Quad", _sid];
 			_prices pushBack 		_priceAA;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"AA";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"50rm38 light mortar (w)";
+			_headers pushBack 		"[NF] 50rm38 light mortar (w)";
 			_classes pushBack 		format["%1NORTH_SOV_W_39_50rm38", _sid];
 			_prices pushBack 		_priceArty;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"76mm1927 light cannon (w)";
+			_headers pushBack 		"[NF] 76mm1927 light cannon (w)";
 			_classes pushBack 		format["%1NORTH_SOV_W_39_76mm1927", _sid];
 			_prices pushBack 		_priceGun;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 		} else {
-			_headers pushBack 		"Maxim";
+			_headers pushBack 		"[NF] Maxim";
 			_classes pushBack 		format["%1NORTH_SOV_Maxim", _sid];
 			_prices pushBack 		_priceMG;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"Maxim High";
+			_headers pushBack 		"[NF] Maxim High";
 			_classes pushBack 		format["%1NORTH_SOV_Maxim_High", _sid];
 			_prices pushBack 		_priceMG;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"Maxim Maxim Quad (AA)";
+			_headers pushBack 		"[NF] Maxim Maxim Quad (AA)";
 			_classes pushBack 		format["%1NORTH_SOV_Maxim_Quad", _sid];
 			_prices pushBack 		_priceAA;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"AA";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"50rm38 light mortar";
+			_headers pushBack 		"[NF] 50rm38 light mortar";
 			_classes pushBack 		format["%1NORTH_SOV_50rm38", _sid];
 			_prices pushBack 		_priceArty;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"76mm1927 light cannon";
+			_headers pushBack 		"[NF] 76mm1927 light cannon";
 			_classes pushBack 		format["%1NORTH_SOV_76mm1927", _sid];
 			_prices pushBack 		_priceGun;
 			_placements pushBack 	[180, 5];
@@ -1157,29 +1173,29 @@ if(CTI_SOV_SIDE == (_side) call CTI_CO_FNC_GetSideID || (CTI_GER_SIDE != (_side)
 
 if(CTI_FR_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 	if(CTI_SPE_DLC >= 1) then {
-		if !(("SPE_FR_M1919_M2") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";};
-		_headers pushBack 		"M1919 M2 MG";
+		if !(("SPE_FR_M1919_M2") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";} else {_sid = _sid_base;};
+		_headers pushBack 		"[SPE] M1919 M2 MG";
 		_classes pushBack 		format["%1SPE_FR_M1919_M2", _sid];
 		_prices pushBack 		_priceMG;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 
-		_headers pushBack 		"M1919 M2 MG Trench";
+		_headers pushBack 		"[SPE] M1919 M2 MG Trench";
 		_classes pushBack 		format["%1SPE_FR_M1919_M2_Trench_Deployed", _sid];
 		_prices pushBack 		_priceMG;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 
-		_headers pushBack 		"M1919A6 MG";
+		_headers pushBack 		"[SPE] M1919A6 MG";
 		_classes pushBack 		format["%1SPE_FR_M1919A6_Bipod", _sid];
 		_prices pushBack 		_priceMG;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 		
-		_headers pushBack 		"MLE 27 31 (Mortar)";
+		_headers pushBack 		"[SPE] MLE 27 31 (Mortar)";
 		_classes pushBack 		format["%SPE_MLE_27_31", _sid];
 		_prices pushBack 		_priceArty;
 		_placements pushBack 	[180, 5];
@@ -1201,132 +1217,150 @@ _priceAA = [CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,false,4] call CTI_CO_FNC_GetCa
 _priceMG = [CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,false,2.5] call CTI_CO_FNC_GetCalculatedUnitsPrize;
 
 if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
-	if(CTI_IFA_ADDON >= 1) then {
-		if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 3) then {		//Winter camo active
-			_headers pushBack 		"FlaK 30 (winter)";
-			_classes pushBack 		format["%1LIB_FlaK_30_w", _sid];
-			_prices pushBack 		2000;
-			_placements pushBack 	[180, 5];
-			_categories pushBack 	"AA";
-			_tiers pushBack 		_tech_level;
-		};
-	};
-	if(CTI_IFA_ADDON >= 1 && CTI_SPE_DLC >= 1) then {
-		_headers pushBack 		"FlaK 30";
-		if(CTI_SPE_DLC >= 1) then {
-			_classes pushBack 		format["%1SPE_FlaK_30", _sid];
-		} else {
-			_classes pushBack 		format["%1LIB_FlaK_30", _sid];
-		};
-		_prices pushBack 		2000;
-		_placements pushBack 	[180, 5];
-		_categories pushBack 	"AA";
-		_tiers pushBack 		_tech_level;
-	};
-	
 	if(CTI_SPE_DLC >= 1) then {
-		_headers pushBack 		"FM24 MG";
+		if !(("SPE_FM24_M24_Bipod") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";} else {_sid = _sid_base;};
+		_headers pushBack 		"[SPE] FM24 MG";
 		_classes pushBack 		format["%1SPE_FM24_M24_Bipod", _sid];
 		_prices pushBack 		_priceMG;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 
-		_headers pushBack 		"leFH18";
+		_headers pushBack 		"[SPE] leFH18";
 		_classes pushBack 		format["%1SPE_leFH18", _sid];
 		_prices pushBack 		2000;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 
-		_headers pushBack 		"leFH18 AT";
+		_headers pushBack 		"[SPE] leFH18 AT";
 		_classes pushBack 		format["%1SPE_leFH18_AT", _sid];
 		_prices pushBack 		2000;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Defense";
+		_tiers pushBack 		_tech_level;
+		
+		_headers pushBack 		"[SPE] FlaK 30";
+		_classes pushBack 		format["%1SPE_FlaK_30", _sid];
+		_prices pushBack 		2000;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"AA";
+		_tiers pushBack 		_tech_level;
+	};
+
+	if(CTI_IFA_ADDON >= 1) then {
+	if !(("LIB_FlaK_30") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";} else {_sid = _sid_base;};
+		if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 3) then {		//Winter camo active
+			_headers pushBack 		"[IFA] FlaK 30 (winter)";
+			_classes pushBack 		format["%1LIB_FlaK_30_w", _sid];
+			_prices pushBack 		2000;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"AA";
+			_tiers pushBack 		_tech_level;
+		};
+		
+		_headers pushBack 		"[IFA] FlaK 30";
+		_classes pushBack 		format["%1LIB_FlaK_30", _sid];
+		_prices pushBack 		2000;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"AA";
+		_tiers pushBack 		_tech_level;
+
+		_headers pushBack 		"[IFA] leFH18";
+		_classes pushBack 		format["%1LIB_leFH18", _sid];
+		_prices pushBack 		_priceArty;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Defense";
+		_tiers pushBack 		_tech_level;
+			
+		_headers pushBack 		"[IFA] leFH18 AT";
+		_classes pushBack 		format["%1LIB_leFH18_AT", _sid];
+		_prices pushBack 		_priceGun;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 	};
 };
 if(CTI_GER_SIDE != (_side) call CTI_CO_FNC_GetSideID) then {
+	if !(("LIB_61k") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";} else {_sid = _sid_base;};
 	if(CTI_IFA_ADDON > 0) then {
-		_headers pushBack 		"61k (AA)";
+		_headers pushBack 		"[IFA] 61k (AA)";
 		_classes pushBack 		format["%1LIB_61k", _sid];
 		_prices pushBack 		_priceAA;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"AA";
 		_tiers pushBack 		_tech_level;
 		
-		if(CTI_SPE_DLC < 1) then {
-			//for balance the statics
-			_headers pushBack 		"leFH18";
-			_classes pushBack 		format["%1LIB_leFH18", _sid];
-			_prices pushBack 		_priceArty;
-			_placements pushBack 	[180, 5];
-			_categories pushBack 	"Defense";
-			_tiers pushBack 		_tech_level;
+		//for balance the statics
+		_headers pushBack 		"[IFA] leFH18";
+		_classes pushBack 		format["%1LIB_leFH18", _sid];
+		_prices pushBack 		_priceArty;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Defense";
+		_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"leFH18 AT";
-			_classes pushBack 		format["%1LIB_leFH18_AT", _sid];
-			_prices pushBack 		_priceGun;
-			_placements pushBack 	[180, 5];
-			_categories pushBack 	"Defense";
-			_tiers pushBack 		_tech_level;
-		};
+		_headers pushBack 		"[IFA] leFH18 AT";
+		_classes pushBack 		format["%1LIB_leFH18_AT", _sid];
+		_prices pushBack 		_priceGun;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Defense";
+		_tiers pushBack 		_tech_level;
 	};
 };
 if(CTI_FIN_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 	if(CTI_NF_ADDON > 0) then {
+		if !(("NORTH_FIN_W_81krh32") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";} else {_sid = _sid_base;};
 		if(CTI_CAMO_ACTIVATION == 1) then {		//Winter camo active
-			_headers pushBack 		"81krh32 mortar (w)";
+			_headers pushBack 		"[NF] 81krh32 mortar (w)";
 			_classes pushBack 		format["%1NORTH_FIN_W_81krh32", _sid];
 			_prices pushBack 		_priceArty;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 
-			_headers pushBack 		"37 PSTK 36 light AT (w)";
+			_headers pushBack 		"[NF] 37 PSTK 36 light AT (w)";
 			_classes pushBack 		format["%1NORTH_FIN_W_37PSTK36", _sid];
 			_prices pushBack 		_priceGun;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"76RK27 cannon (w)";
+			_headers pushBack 		"[NF] 76RK27 cannon (w)";
 			_classes pushBack 		format["%1NORTH_FIN_W_76RK27", _sid];
 			_prices pushBack 		_priceGun;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"76mm1927 light Arty (w)";
+			_headers pushBack 		"[NF] 76mm1927 light Arty (w)";
 			_classes pushBack 		format["%1NORTH_FIN_W_76RK27art", _sid];
 			_prices pushBack 		_priceArty;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 		} else {
-			_headers pushBack 		"37 PSTK 36 light AT";
+			_headers pushBack 		"[NF] 37 PSTK 36 light AT";
 			_classes pushBack 		format["%1NORTH_FIN_S_41_37PSTK36", _sid];
 			_prices pushBack 		_priceGun;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"81krh32 mortar";
+			_headers pushBack 		"[NF] 81krh32 mortar";
 			_classes pushBack 		format["%1NORTH_FIN_S_41_81krh32", _sid];
 			_prices pushBack 		_priceArty;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"76RK27 cannon";
+			_headers pushBack 		"[NF] 76RK27 cannon";
 			_classes pushBack 		format["%1NORTH_FIN_41_S_76k02", _sid];
 			_prices pushBack 		_priceGun;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"76mm1927 light Arty (w)";
+			_headers pushBack 		"[NF] 76mm1927 light Arty (w)";
 			_classes pushBack 		format["%1NORTH_FIN_S_41_76RK27art", _sid];
 			_prices pushBack 		_priceArty;
 			_placements pushBack 	[180, 5];
@@ -1334,28 +1368,28 @@ if(CTI_FIN_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_tiers pushBack 		_tech_level;
 			
 			//camo
-			_headers pushBack 		"37 PSTK 36 light AT camo";
+			_headers pushBack 		"[NF] 37 PSTK 36 light AT camo";
 			_classes pushBack 		format["%1NORTH_FIN_37PSTK36", _sid];
 			_prices pushBack 		_priceGun;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"81krh32 mortar camo";
+			_headers pushBack 		"[NF] 81krh32 mortar camo";
 			_classes pushBack 		format["%1NORTH_FIN_81krh32", _sid];
 			_prices pushBack 		_priceArty;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"76mm1927 light Arty (w) camo";
+			_headers pushBack 		"[NF] 76mm1927 light Arty (w) camo";
 			_classes pushBack 		format["%1NORTH_FIN_76RK27art", _sid];
 			_prices pushBack 		_priceArty;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"76RK27 cannon camo";
+			_headers pushBack 		"[NF] 76RK27 cannon camo";
 			_classes pushBack 		format["%1NORTH_FIN_76k02", _sid];
 			_prices pushBack 		_priceGun;
 			_placements pushBack 	[180, 5];
@@ -1367,43 +1401,44 @@ if(CTI_FIN_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 
 if(CTI_SOV_SIDE == (_side) call CTI_CO_FNC_GetSideID || (CTI_GER_SIDE != (_side) call CTI_CO_FNC_GetSideID && CTI_FIN_SIDE != (_side) call CTI_CO_FNC_GetSideID && CTI_SOV_SIDE != (_side) call CTI_CO_FNC_GetSideID)) then {
 	if(CTI_NF_ADDON > 0) then {
+		if !(("NORTH_SOV_W_39_45mm1937") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";} else {_sid = _sid_base;};
 		if(CTI_CAMO_ACTIVATION == 1) then {		//Winter camo active
-			_headers pushBack 		"45mm1937 light AT (w)";
+			_headers pushBack 		"[NF] 45mm1937 light AT (w)";
 			_classes pushBack 		format["%1NORTH_SOV_W_39_45mm1937", _sid];
 			_prices pushBack 		_priceGun;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 
-			_headers pushBack 		"76mm1927 light Arty (w)";
+			_headers pushBack 		"[NF] 76mm1927 light Arty (w)";
 			_classes pushBack 		format["%1NORTH_SOV_W_39_76mm1927art", _sid];
 			_prices pushBack 		_priceArty;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"76mm1902 cannon (w)";
+			_headers pushBack 		"[NF] 76mm1902 cannon (w)";
 			_classes pushBack 		format["%1NORTH_SOV_W_39_76mm1902", _sid];
 			_prices pushBack 		_priceGun;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 		} else {
-			_headers pushBack 		"45mm1937 light AT";
+			_headers pushBack 		"[NF] 45mm1937 light AT";
 			_classes pushBack 		format["%1NORTH_SOV_45mm1937", _sid];
 			_prices pushBack 		_priceGun;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 
-			_headers pushBack 		"76mm1927 light Arty";
+			_headers pushBack 		"[NF] 76mm1927 light Arty";
 			_classes pushBack 		format["%1NORTH_SOV_76mm1927art", _sid];
 			_prices pushBack 		_priceArty;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"76mm1902 cannon";
+			_headers pushBack 		"[NF] 76mm1902 cannon";
 			_classes pushBack 		format["%1NORTH_SOV_76mm1902", _sid];
 			_prices pushBack 		_priceGun;
 			_placements pushBack 	[180, 5];
@@ -1415,21 +1450,22 @@ if(CTI_SOV_SIDE == (_side) call CTI_CO_FNC_GetSideID || (CTI_GER_SIDE != (_side)
 
 if(CTI_US_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 	if(CTI_SPE_DLC >= 1) then {
-		_headers pushBack 		"M2 M3 MG";
+		if !(("SPE_M2_M3") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";} else {_sid = _sid_base;};
+		_headers pushBack 		"[SPE] M2 M3 MG";
 		_classes pushBack 		format["%1SPE_M2_M3", _sid];
 		_prices pushBack 		_priceMG;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 
-		_headers pushBack 		"M2 M3 MG (Trench)";
+		_headers pushBack 		"[SPE] M2 M3 MG (Trench)";
 		_classes pushBack 		format["%1SPE_M2_M3_Trench", _sid];
 		_prices pushBack 		_priceMG;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 
-		_headers pushBack 		"AT 57mm M1";
+		_headers pushBack 		"[SPE] AT 57mm M1";
 		_classes pushBack 		format["%1SPE_57mm_M1", _sid];
 		_prices pushBack 		_priceGun;
 		_placements pushBack 	[180, 5];
@@ -1440,7 +1476,8 @@ if(CTI_US_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 
 if(CTI_FR_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 	if(CTI_SPE_DLC >= 1) then {
-		_headers pushBack 		"AT 57mm M1";
+		if !(("SPE_FR_57mm_M1") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";} else {_sid = _sid_base;};
+		_headers pushBack 		"[SPE] AT 57mm M1";
 		_classes pushBack 		format["%1SPE_FR_57mm_M1", _sid];
 		_prices pushBack 		_priceGun;
 		_placements pushBack 	[180, 5];
@@ -1463,29 +1500,30 @@ _priceAA = [CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,false,4] call CTI_CO_FNC_GetCa
 
 if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 	if(CTI_IFA_ADDON >= 1) then {
+		if !(("LIB_FlaK_36") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";} else {_sid = _sid_base;};
 		if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 3) then {		//Winter camo active
-			_headers pushBack 		"FlaK 36 (winter)";
+			_headers pushBack 		"[IFA] FlaK 36 (winter)";
 			_classes pushBack 		format["%1LIB_FlaK_36_w", _sid];
 			_prices pushBack 		4000;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"FlaK 36 AA (winter)";
+			_headers pushBack 		"[IFA] FlaK 36 AA (winter)";
 			_classes pushBack 		format["%1LIB_FlaK_36_AA_w", _sid];
 			_prices pushBack 		4000;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"AA";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"FlaK 36 ARTY (winter)";
+			_headers pushBack 		"[IFA] FlaK 36 ARTY (winter)";
 			_classes pushBack 		format["%1LIB_FlaK_36_ARTY_w", _sid];
 			_prices pushBack 		4000;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"FlaK 38 (winter)";
+			_headers pushBack 		"[IFA] FlaK 38 (winter)";
 			_classes pushBack 		format["%1LIB_FlaK_38_w", _sid];
 			_prices pushBack 		3000;
 			_placements pushBack 	[180, 5];
@@ -1493,21 +1531,21 @@ if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_tiers pushBack 		_tech_level;
 		};
 		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
-			_headers pushBack 		"FlaK 36 (Desert)";
+			_headers pushBack 		"[IFA] FlaK 36 (Desert)";
 			_classes pushBack 		format["%1LIB_DAK_FlaK_36", _sid];
 			_prices pushBack 		4000;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"FlaK 36 AA (Desert)";
+			_headers pushBack 		"[IFA] FlaK 36 AA (Desert)";
 			_classes pushBack 		format["%1LIB_DAK_FlaK_36_AA", _sid];
 			_prices pushBack 		4000;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"AA";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"FlaK 36 ARTY (Desert)";
+			_headers pushBack 		"[IFA] FlaK 36 ARTY (Desert)";
 			_classes pushBack 		format["%1LIB_DAK_FlaK_36_ARTY", _sid];
 			_prices pushBack 		4000;
 			_placements pushBack 	[180, 5];
@@ -1515,65 +1553,43 @@ if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_tiers pushBack 		_tech_level;
 		};
 		
-		_headers pushBack 		"FlaK 36 ARTY";
+		_headers pushBack 		"[IFA] FlaK 36 ARTY";
 		_classes pushBack 		format["%1LIB_FlaK_36_ARTY", _sid];
 		_prices pushBack 		4000;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
-	};
-
-	if(CTI_IFA_ADDON >= 1 || CTI_SPE_DLC >= 1) then {
-		_headers pushBack 		"FlaK 36";
-		if(CTI_SPE_DLC >= 1) then {
-			_classes pushBack 		format["%1SPE_FlaK_36", _sid];
-		} else {
-			_classes pushBack 		format["%1LIB_FlaK_36", _sid];
-		};
+		
+		_headers pushBack 		"[IFA] FlaK 36";
+		_classes pushBack 		format["%1LIB_FlaK_36", _sid];
 		_prices pushBack 		4000;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 		
-		_headers pushBack 		"FlaK 36 AA";
-		if(CTI_SPE_DLC >= 1) then {
-			_classes pushBack 		format["%1SPE_FlaK_36_AA", _sid];
-		} else {
-			_classes pushBack 		format["%1LIB_FlaK_36_AA", _sid];
-		};
+		_headers pushBack 		"[IFA] FlaK 36 AA";
+		_classes pushBack 		format["%1LIB_FlaK_36_AA", _sid];
 		_prices pushBack 		4000;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"AA";
 		_tiers pushBack 		_tech_level;
 
-		_headers pushBack 		"MG42";
-		if(CTI_SPE_DLC >= 1) then {
-			_classes pushBack 		format["%1SPE_MG42_Lafette_Deployed", _sid];
-		} else {
-			_classes pushBack 		format["%1LIB_MG42_Lafette_Deployed", _sid];
-		};
+		_headers pushBack 		"[IFA] MG42";
+		_classes pushBack 		format["%1LIB_MG42_Lafette_Deployed", _sid];
 		_prices pushBack 		2000;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 		
-		_headers pushBack 		"MG42 low";
-		if(CTI_SPE_DLC >= 1) then {
-			_classes pushBack 		format["%1SPE_MG42_Lafette_low_Deployed", _sid];
-		} else {
-			_classes pushBack 		format["%1LIB_MG42_Lafette_low_Deployed", _sid];
-		};
+		_headers pushBack 		"[IFA] MG42 low";
+		_classes pushBack 		format["%1LIB_MG42_Lafette_low_Deployed", _sid];
 		_prices pushBack 		2000;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 			
-		_headers pushBack 		"FlaK 38";
-		if(CTI_SPE_DLC >= 1) then {
-			_classes pushBack 		format["%1SPE_FlaK_38", _sid];
-		} else {
-			_classes pushBack 		format["%1LIB_FlaK_38", _sid];
-		};
+		_headers pushBack 		"[IFA] FlaK 38";
+		_classes pushBack 		format["%1LIB_FlaK_38", _sid];
 		_prices pushBack 		3000;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"AA";
@@ -1581,14 +1597,50 @@ if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 	};
 
 	if(CTI_SPE_DLC >= 1) then {
-		_headers pushBack 		"MG42 low";
+		if !(("SPE_FlaK_36") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";} else {_sid = _sid_base;};
+		_headers pushBack 		"[SPE] FlaK 36";
+		_classes pushBack 		format["%1SPE_FlaK_36", _sid];
+		_prices pushBack 		4000;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Defense";
+		_tiers pushBack 		_tech_level;
+		
+		_headers pushBack 		"[SPE] FlaK 36 AA";
+		_classes pushBack 		format["%1SPE_FlaK_36_AA", _sid];
+		_prices pushBack 		4000;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"AA";
+		_tiers pushBack 		_tech_level;
+
+		_headers pushBack 		"[SPE] MG42";
+		_classes pushBack 		format["%1SPE_MG42_Lafette_Deployed", _sid];
+		_prices pushBack 		2000;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Defense";
+		_tiers pushBack 		_tech_level;
+		
+		_headers pushBack 		"[SPE] MG42 low";
+		_classes pushBack 		format["%1SPE_MG42_Lafette_low_Deployed", _sid];
+		_prices pushBack 		2000;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Defense";
+		_tiers pushBack 		_tech_level;
+			
+		_headers pushBack 		"[SPE] FlaK 38";
+		_classes pushBack 		format["%1SPE_FlaK_38", _sid];
+		_prices pushBack 		3000;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"AA";
+		_tiers pushBack 		_tech_level;
+
+		_headers pushBack 		"[SPE] MG42 low";
 		_classes pushBack 		format["%SPE_MG42_Bipod", _sid];
 		_prices pushBack 		2000;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 			
-		_headers pushBack 		"MG42 low";
+		_headers pushBack 		"[SPE] MG42 low";
 		_classes pushBack 		format["%SPE_MG42_Lafette_trench_Deployed", _sid];
 		_prices pushBack 		2000;
 		_placements pushBack 	[180, 5];
@@ -1597,35 +1649,36 @@ if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 	};
 
 	if(CTI_CSA_ADDON > 0) then {
-		_headers pushBack 		"Pak 35";
+		if !(("csa38_pak35") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";} else {_sid = _sid_base;};
+		_headers pushBack 		"[CSA] Pak 35";
 		_classes pushBack 		format["%1csa38_pak35", _sid];
 		_prices pushBack 		_priceGun;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 		
-		_headers pushBack 		"Pak 35 fr";
+		_headers pushBack 		"[CSA] Pak 35 fr";
 		_classes pushBack 		format["%1csa38_pak35_FR", _sid];
 		_prices pushBack 		_priceGun;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 		
-		_headers pushBack 		"Pak 35 late";
+		_headers pushBack 		"[CSA] Pak 35 late";
 		_classes pushBack 		format["%1csa38_pak35_late", _sid];
 		_prices pushBack 		_priceGun;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 		
-		_headers pushBack 		"Pak 35 winter";
+		_headers pushBack 		"[CSA] Pak 35 winter";
 		_classes pushBack 		format["%1csa38_pak35_W", _sid];
 		_prices pushBack 		_priceGun;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 		
-		_headers pushBack 		"Pak 35 desert";
+		_headers pushBack 		"[CSA] Pak 35 desert";
 		_classes pushBack 		format["%1csa38_pak35_DE", _sid];
 		_prices pushBack 		_priceGun;
 		_placements pushBack 	[180, 5];
@@ -1636,71 +1689,72 @@ if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 
 if(CTI_FIN_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 	if(CTI_NF_ADDON > 0) then {
+		if !(("NORTH_FIN_W_Lahti_L39") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";} else {_sid = _sid_base;};
 		if(CTI_CAMO_ACTIVATION == 1) then {		//Winter camo active
-			_headers pushBack 		"Lahti HMG (w)";
+			_headers pushBack 		"[NF] Lahti HMG (w)";
 			_classes pushBack 		format["%1NORTH_FIN_W_Lahti_L39", _sid];
 			_prices pushBack 		_priceMG;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"Lahti L39 (AA)";
+			_headers pushBack 		"[NF] Lahti L39 (AA)";
 			_classes pushBack 		format["%1NORTH_FIN_W_Lahti_L39AA", _sid];
 			_prices pushBack 		_priceAA;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"AA";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"45 PSTK 37 medium AT (w)";
+			_headers pushBack 		"[NF] 45 PSTK 37 medium AT (w)";
 			_classes pushBack 		format["%1NORTH_FIN_W_45PSTK37", _sid];
 			_prices pushBack 		_priceGun;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 
-			_headers pushBack 		"76mm1902 Arty (w)";
+			_headers pushBack 		"[NF] 76mm1902 Arty (w)";
 			_classes pushBack 		format["%1NORTH_FIN_W_76k02art", _sid];
 			_prices pushBack 		_priceArty;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"76mm1936 Arty (w)";
+			_headers pushBack 		"[NF] 76mm1936 Arty (w)";
 			_classes pushBack 		format["%1NORTH_FIN_W_76k36art", _sid];
 			_prices pushBack 		_priceArty;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 		} else {
-			_headers pushBack 		"Lahti HMG";
+			_headers pushBack 		"[NF] Lahti HMG";
 			_classes pushBack 		format["%1NORTH_FIN_S_41_Lahti_L39", _sid];
 			_prices pushBack 		_priceMG;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"Lahti L39 (AA)";
+			_headers pushBack 		"[NF] Lahti L39 (AA)";
 			_classes pushBack 		format["%1NORTH_FIN_S_41_Lahti_L39AA", _sid];
 			_prices pushBack 		_priceAA;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"AA";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"45 PSTK 37 medium AT";
+			_headers pushBack 		"[NF] 45 PSTK 37 medium AT";
 			_classes pushBack 		format["%1NORTH_FIN_S_41_45PSTK37", _sid];
 			_prices pushBack 		_priceGun;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"76mm1902 Arty (w)";
+			_headers pushBack 		"[NF] 76mm1902 Arty (w)";
 			_classes pushBack 		format["%1NORTH_FIN_41_S_76k02art", _sid];
 			_prices pushBack 		_priceArty;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"76mm1936 Arty (w)";
+			_headers pushBack 		"[NF] 76mm1936 Arty (w)";
 			_classes pushBack 		format["%1NORTH_FIN_S_41_76k36art", _sid];
 			_prices pushBack 		_priceArty;
 			_placements pushBack 	[180, 5];
@@ -1708,35 +1762,35 @@ if(CTI_FIN_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_tiers pushBack 		_tech_level;
 
 			//camo
-			_headers pushBack 		"Lahti HMG camo";
+			_headers pushBack 		"[NF] Lahti HMG camo";
 			_classes pushBack 		format["%1NORTH_FIN_Lahti_L39", _sid];
 			_prices pushBack 		_priceMG;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"Lahti L39 (AA) camo";
+			_headers pushBack 		"[NF] Lahti L39 (AA) camo";
 			_classes pushBack 		format["%1NORTH_FIN_Lahti_L39AA", _sid];
 			_prices pushBack 		_priceAA;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"AA";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"45 PSTK 37 medium AT camo";
+			_headers pushBack 		"[NF] 45 PSTK 37 medium AT camo";
 			_classes pushBack 		format["%1NORTH_FIN_45PSTK37", _sid];
 			_prices pushBack 		_priceGun;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"76mm1902 Arty (w) camo";
+			_headers pushBack 		"[NF] 76mm1902 Arty (w) camo";
 			_classes pushBack 		format["%1NORTH_FIN_76k02art", _sid];
 			_prices pushBack 		_priceArty;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"76mm1936 Arty (w) camo";
+			_headers pushBack 		"[NF] 76mm1936 Arty (w) camo";
 			_classes pushBack 		format["%1NORTH_FIN_76k36art", _sid];
 			_prices pushBack 		_priceArty;
 			_placements pushBack 	[180, 5];
@@ -1748,29 +1802,30 @@ if(CTI_FIN_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 
 if(CTI_SOV_SIDE == (_side) call CTI_CO_FNC_GetSideID || (CTI_GER_SIDE != (_side) call CTI_CO_FNC_GetSideID && CTI_FIN_SIDE != (_side) call CTI_CO_FNC_GetSideID && CTI_SOV_SIDE != (_side) call CTI_CO_FNC_GetSideID)) then {
 	if(CTI_NF_ADDON > 0) then {
+		if !(("NORTH_SOV_W_39_76mm1902art") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";} else {_sid = _sid_base;};
 		if(CTI_CAMO_ACTIVATION == 1) then {		//Winter camo active
-			_headers pushBack 		"76mm1902 Arty (w)";
+			_headers pushBack 		"[NF] 76mm1902 Arty (w)";
 			_classes pushBack 		format["%1NORTH_SOV_W_39_76mm1902art", _sid];
 			_prices pushBack 		_priceArty;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"76mm1936 Arty (w)";
+			_headers pushBack 		"[NF] 76mm1936 Arty (w)";
 			_classes pushBack 		format["%1NORTH_SOV_W_39_76mm1936art", _sid];
 			_prices pushBack 		_priceArty;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 		} else {
-			_headers pushBack 		"76mm1902 Arty";
+			_headers pushBack 		"[NF] 76mm1902 Arty";
 			_classes pushBack 		format["%1NORTH_SOV_76mm1902art", _sid];
 			_prices pushBack 		_priceArty;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"76mm1936 Arty";
+			_headers pushBack 		"[NF] 76mm1936 Arty";
 			_classes pushBack 		format["%1NORTH_SOV_76mm1936art", _sid];
 			_prices pushBack 		_priceArty;
 			_placements pushBack 	[180, 5];
@@ -1782,14 +1837,15 @@ if(CTI_SOV_SIDE == (_side) call CTI_CO_FNC_GetSideID || (CTI_GER_SIDE != (_side)
 
 if(CTI_SPE_DLC >= 1) then {
 	if(CTI_US_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
-		_headers pushBack 		"105mm M3";
+		if !(("SPE_105mm_M3") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";} else {_sid = _sid_base;};
+		_headers pushBack 		"[SPE] 105mm M3";
 		_classes pushBack 		format["%1SPE_105mm_M3_Direct", _sid];
 		_prices pushBack 		_priceGun;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"AT";
 		_tiers pushBack 		_tech_level;
 		
-		_headers pushBack 		"105mm M3 (Arty)";
+		_headers pushBack 		"[SPE] 105mm M3 (Arty)";
 		_classes pushBack 		format["%1SPE_105mm_M3", _sid];
 		_prices pushBack 		_priceArty;
 		_placements pushBack 	[180, 5];
@@ -1809,29 +1865,10 @@ _priceArty = [CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,false,10] call CTI_CO_FNC_Ge
 _priceGun = [CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,false,5] call CTI_CO_FNC_GetCalculatedUnitsPrize;
 _priceAA = [CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,false,4] call CTI_CO_FNC_GetCalculatedUnitsPrize;
 
-//Flak 38 Vierling for ALL if IFA3 is active
-if(CTI_IFA_ADDON > 0) then {
-	if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 3) then {		//Winter camo active
-		_headers pushBack 		"Flak 38 Vierling (Winter)";
-		_classes pushBack 		format["%1LIB_Flakvierling_38_w", _sid];
-		_prices pushBack 		_priceAA;
-		_placements pushBack 	[180, 5];
-		_categories pushBack 	"AA";
-		_tiers pushBack 		_tech_level;
-	};
-	if(CTI_CAMO_ACTIVATION < 1 || CTI_CAMO_ACTIVATION > 1) then {
-		_headers pushBack 		"Flak 38 Vierling";
-		_classes pushBack 		format["%1LIB_Flakvierling_38", _sid];
-		_prices pushBack 		_priceAA;
-		_placements pushBack 	[180, 5];
-		_categories pushBack 	"AA";
-		_tiers pushBack 		_tech_level;
-	};
-};
-
 if(CTI_SPE_DLC >= 1) then {
+	if !(("SPE_M45_Quadmount") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";} else {_sid = _sid_base;};
 	if(CTI_US_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
-		_headers pushBack 		"M45 Quadmount (AA)";
+		_headers pushBack 		"[SPE] M45 Quadmount (AA)";
 		_classes pushBack 		format["%1SPE_M45_Quadmount", _sid];
 		_prices pushBack 		5000;
 		_placements pushBack 	[180, 5];
@@ -1839,7 +1876,7 @@ if(CTI_SPE_DLC >= 1) then {
 		_tiers pushBack 		_tech_level;
 	};
 	if(CTI_FR_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
-		_headers pushBack 		"M45 Quadmount (AA)";
+		_headers pushBack 		"[SPE] M45 Quadmount (AA)";
 		_classes pushBack 		format["%1SPE_FR_M45_Quadmount", _sid];
 		_prices pushBack 		_priceAA;
 		_placements pushBack 	[180, 5];
@@ -1847,20 +1884,21 @@ if(CTI_SPE_DLC >= 1) then {
 		_tiers pushBack 		_tech_level;
 	};
 };
-if(CTI_IFA_ADDON >= 1 && CTI_SPE_DLC < 1) then {
-	//Flak 38 Vierling for ALL
+//Flak 38 Vierling for ALL if IFA3 is active
+if(CTI_IFA_ADDON > 0) then {
+	if !(("LIB_Flakvierling_38") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";} else {_sid = _sid_base;};
 	if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 3) then {		//Winter camo active
-		_headers pushBack 		"Flak 38 Vierling (Winter)";
+		_headers pushBack 		"[IFA] Flak 38 Vierling (Winter)";
 		_classes pushBack 		format["%1LIB_Flakvierling_38_w", _sid];
-		_prices pushBack 		5000;
+		_prices pushBack 		_priceAA;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"AA";
 		_tiers pushBack 		_tech_level;
 	};
 	if(CTI_CAMO_ACTIVATION < 1 || CTI_CAMO_ACTIVATION > 1) then {
-		_headers pushBack 		"Flak 38 Vierling";
+		_headers pushBack 		"[IFA] Flak 38 Vierling";
 		_classes pushBack 		format["%1LIB_Flakvierling_38", _sid];
-		_prices pushBack 		5000;
+		_prices pushBack 		_priceAA;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"AA";
 		_tiers pushBack 		_tech_level;
@@ -1869,29 +1907,30 @@ if(CTI_IFA_ADDON >= 1 && CTI_SPE_DLC < 1) then {
 
 if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 	if(CTI_IFA_ADDON >= 1) then {
+		if !(("LIB_Pak40") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";} else {_sid = _sid_base;};
 		if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 3) then {		//Winter camo active
-			_headers pushBack 		"Pak 40 (Winter)";
+			_headers pushBack 		"[IFA] Pak 40 (Winter)";
 			_classes pushBack 		format["%1LIB_Pak40_w", _sid];
 			_prices pushBack 		_priceGun;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 
-			_headers pushBack 		"FlaK 36 (winter)";
+			_headers pushBack 		"[IFA] FlaK 36 (winter)";
 			_classes pushBack 		format["%1LIB_FlaK_36_w", _sid];
 			_prices pushBack 		_priceGun;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"AA";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"FlaK 36 AA (winter)";
+			_headers pushBack 		"[IFA] FlaK 36 AA (winter)";
 			_classes pushBack 		format["%1LIB_FlaK_36_AA_w", _sid];
 			_prices pushBack 		_priceAA;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"AA";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"FlaK 36 ARTY (winter)";
+			_headers pushBack 		"[IFA] FlaK 36 ARTY (winter)";
 			_classes pushBack 		format["%1LIB_FlaK_36_ARTY_w", _sid];
 			_prices pushBack 		_priceArty;
 			_placements pushBack 	[180, 5];
@@ -1899,50 +1938,57 @@ if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_tiers pushBack 		_tech_level;
 		};
 		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
-			_headers pushBack 		"Pak 40 (Desert)";
+			_headers pushBack 		"[IFA] Pak 40 (Desert)";
 			_classes pushBack 		format["%1LIB_DAK_Pak40", _sid];
 			_prices pushBack 		_priceGun;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 
-			_headers pushBack 		"FlaK 36 (Desert)";
+			_headers pushBack 		"[IFA] FlaK 36 (Desert)";
 			_classes pushBack 		format["%1LIB_DAK_FlaK_36", _sid];
 			_prices pushBack 		_priceGun;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"FlaK 36 AA (Desert)";
+			_headers pushBack 		"[IFA] FlaK 36 AA (Desert)";
 			_classes pushBack 		format["%1LIB_DAK_FlaK_36_AA", _sid];
 			_prices pushBack 		_priceAA;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"AA";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"FlaK 36 ARTY (Desert)";
+			_headers pushBack 		"[IFA] FlaK 36 ARTY (Desert)";
 			_classes pushBack 		format["%1LIB_DAK_FlaK_36_ARTY", _sid];
 			_prices pushBack 		_priceArty;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 		};
+
+		_headers pushBack 		"[IFA] Pak 40";
+		_classes pushBack 		format["%1LIB_Pak40", _sid];
+		_prices pushBack 		5000;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Defense";
+		_tiers pushBack 		_tech_level;
 				
-		_headers pushBack 		"FlaK 36";
+		_headers pushBack 		"[IFA] FlaK 36";
 		_classes pushBack 		format["%1LIB_FlaK_36", _sid];
 		_prices pushBack 		_priceGun;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 		
-		_headers pushBack 		"FlaK 36 AA";
+		_headers pushBack 		"[IFA] FlaK 36 AA";
 		_classes pushBack 		format["%1LIB_FlaK_36_AA", _sid];
 		_prices pushBack 		_priceAA;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"AA";
 		_tiers pushBack 		_tech_level;
 		
-		_headers pushBack 		"FlaK 36 ARTY";
+		_headers pushBack 		"[IFA] FlaK 36 ARTY";
 		_classes pushBack 		format["%1LIB_FlaK_36_ARTY", _sid];
 		_prices pushBack 		_priceArty;
 		_placements pushBack 	[180, 5];
@@ -1950,13 +1996,10 @@ if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 		_tiers pushBack 		_tech_level;
 	};
 
-	if(CTI_IFA_ADDON >= 1 && CTI_SPE_DLC >= 1) then {
-		_headers pushBack 		"Pak 40";
-		if(CTI_SPE_DLC >= 1) then {
-			_classes pushBack 		format["%1SPE_Pak40", _sid];
-		} else {
-			_classes pushBack 		format["%1LIB_Pak40", _sid];
-		};
+	if(CTI_SPE_DLC >= 1) then {
+		if !(("SPE_Pak40") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";} else {_sid = _sid_base;};
+		_headers pushBack 		"[SPE] Pak 40";
+		_classes pushBack 		format["%1SPE_Pak40", _sid];
 		_prices pushBack 		5000;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
@@ -1964,57 +2007,57 @@ if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 	};
 
 	if(CTI_FOW_ADDON > 0) then {
-		if !(("VIOC_I_fow_w_flak36_gray_ger_heer") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";};
-		_headers pushBack 		"FlaK 36 gray";
+		if !(("VIOC_I_fow_w_flak36_gray_ger_heer") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";} else {_sid = _sid_base;};
+		_headers pushBack 		"[FoW] FlaK 36 gray";
 		_classes pushBack 		format["%1fow_w_flak36_gray_ger_heer", _sid];
 		_prices pushBack 		_priceArty;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 		
-		_headers pushBack 		"FlaK 36 green";
+		_headers pushBack 		"[FoW] FlaK 36 green";
 		_classes pushBack 		format["%1fow_w_flak36_green_ger_heer", _sid];
 		_prices pushBack 		_priceArty;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 		
-		_headers pushBack 		"FlaK 36 camo";
+		_headers pushBack 		"[FoW] FlaK 36 camo";
 		_classes pushBack 		format["%1fow_w_flak36_camo_ger_heer", _sid];
 		_prices pushBack 		_priceArty;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 		
-		_headers pushBack 		"FlaK 36 tan";
+		_headers pushBack 		"[FoW] FlaK 36 tan";
 		_classes pushBack 		format["%1fow_w_flak36_tan_ger_heer", _sid];
 		_prices pushBack 		_priceArty;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 
-		_headers pushBack 		"Pak 40 yellow";
+		_headers pushBack 		"[FoW] Pak 40 yellow";
 		_classes pushBack 		format["%1fow_w_pak40_yellow_ger_heer", _sid];
 		_prices pushBack 		_priceGun;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 		
-		_headers pushBack 		"Pak 40 grey";
+		_headers pushBack 		"[FoW] Pak 40 grey";
 		_classes pushBack 		format["%1fow_w_pak40_gray_ger_heer", _sid];
 		_prices pushBack 		_priceGun;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 		
-		_headers pushBack 		"Pak 40 camo";
+		_headers pushBack 		"[FoW] Pak 40 camo";
 		_classes pushBack 		format["%1fow_w_pak40_camo_ger_heer", _sid];
 		_prices pushBack 		_priceGun;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 		
-		_headers pushBack 		"Pak 40 camo fol";
+		_headers pushBack 		"[FoW] Pak 40 camo fol";
 		_classes pushBack 		format["%1fow_w_pak40_camo_foliage_ger_heer", _sid];
 		_prices pushBack 		_priceGun;
 		_placements pushBack 	[180, 5];
@@ -2024,8 +2067,8 @@ if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 };
 if(CTI_JPN_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 	if(CTI_FOW_ADDON > 0) then {
-		if !(("VIOC_I_fow_w_6Pounder_ija") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";};
-		_headers pushBack 		"6 Pounder";
+		if !(("VIOC_I_fow_w_6Pounder_ija") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";} else {_sid = _sid_base;};
+		_headers pushBack 		"[FoW] 6 Pounder";
 		_classes pushBack 		format["%1fow_w_6Pounder_ija", _sid];
 		_prices pushBack 		_priceGun;
 		_placements pushBack 	[180, 5];
@@ -2035,15 +2078,16 @@ if(CTI_JPN_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 };
 if(CTI_SOV_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 	if(CTI_IFA_ADDON > 0) then {
+		if !(("LIB_Zis3") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";} else {_sid = _sid_base;};
 		if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 3) then {		//Winter camo active
-			_headers pushBack 		"Zis3 (Winter)";
+			_headers pushBack 		"[IFA] Zis3 (Winter)";
 			_classes pushBack 		format["%1LIB_Zis3_w", _sid];
 			_prices pushBack 		_priceGun;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 		};
-		_headers pushBack 		"Zis3";
+		_headers pushBack 		"[IFA] Zis3";
 		_classes pushBack 		format["%1LIB_Zis3", _sid];
 		_prices pushBack 		_priceGun;
 		_placements pushBack 	[180, 5];
@@ -2053,7 +2097,8 @@ if(CTI_SOV_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 };
 if(CTI_US_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 	if(CTI_IFA_ADDON > 0 && CTI_SPE_DLC < 1) then {
-		_headers pushBack 		"Zis3";
+		if !(("LIB_Zis3") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";} else {_sid = _sid_base;};
+		_headers pushBack 		"[IFA] Zis3";
 		_classes pushBack 		format["%1LIB_Zis3", _sid];
 		_prices pushBack 		_priceGun;
 		_placements pushBack 	[180, 5];
@@ -2061,8 +2106,8 @@ if(CTI_US_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 		_tiers pushBack 		_tech_level;
 	};
 	if(CTI_FOW_ADDON > 0) then {
-		if !(("VIOC_I_fow_w_6Pounder_uk") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";};
-		_headers pushBack 		"6 Pounder";
+		if !(("VIOC_I_fow_w_6Pounder_uk") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";} else {_sid = _sid_base;};
+		_headers pushBack 		"[FoW] 6 Pounder";
 		_classes pushBack 		format["%1fow_w_6Pounder_uk", _sid];
 		_prices pushBack 		_priceGun;
 		_placements pushBack 	[180, 5];
@@ -2072,7 +2117,8 @@ if(CTI_US_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 };
 if(CTI_UK_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 	if(CTI_IFA_ADDON > 0 && CTI_SPE_DLC < 1) then {
-		_headers pushBack 		"Zis3";
+		if !(("LIB_Zis3") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";} else {_sid = _sid_base;};
+		_headers pushBack 		"[IFA] Zis3";
 		_classes pushBack 		format["%1LIB_Zis3", _sid];
 		_prices pushBack 		_priceGun;
 		_placements pushBack 	[180, 5];
@@ -2080,15 +2126,15 @@ if(CTI_UK_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 		_tiers pushBack 		_tech_level;
 	};
 	if(CTI_FOW_ADDON > 0) then {
-		if !(("VIOC_I_fow_w_6Pounder_usa") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";};
-		_headers pushBack 		"6 Pounder";
+		if !(("VIOC_I_fow_w_6Pounder_usa") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";} else {_sid = _sid_base;};
+		_headers pushBack 		"[FoW] 6 Pounder";
 		_classes pushBack 		format["%1fow_w_6Pounder_usa", _sid];
 		_prices pushBack 		_priceGun;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 		
-		_headers pushBack 		"6 Pounder USMC";
+		_headers pushBack 		"[FoW] 6 Pounder USMC";
 		_classes pushBack 		format["%1fow_w_6Pounder_usmc", _sid];
 		_prices pushBack 		_priceGun;
 		_placements pushBack 	[180, 5];
@@ -2099,29 +2145,30 @@ if(CTI_UK_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 
 if(CTI_FIN_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 	if(CTI_NF_ADDON > 0) then {
+		if !(("NORTH_FIN_W_76k36") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";} else {_sid = _sid_base;};
 		if(CTI_CAMO_ACTIVATION == 1) then {		//Winter camo active
-			_headers pushBack 		"76k36 heavy AT (w)";
+			_headers pushBack 		"[NF] 76k36 heavy AT (w)";
 			_classes pushBack 		format["%1NORTH_FIN_W_76k36", _sid];
 			_prices pushBack 		_priceGun;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"152H38 Arty (w)";
+			_headers pushBack 		"[NF] 152H38 Arty (w)";
 			_classes pushBack 		format["%1NORTH_FIN_W_152H38", _sid];
 			_prices pushBack 		_priceArty;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 		} else {
-			_headers pushBack 		"76k36 heavy AT";
+			_headers pushBack 		"[NF] 76k36 heavy AT";
 			_classes pushBack 		format["%1NORTH_FIN_S_41_76k36", _sid];
 			_prices pushBack 		_priceGun;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"152H38 Arty";
+			_headers pushBack 		"[NF] 152H38 Arty";
 			_classes pushBack 		format["%1NORTH_FIN_S_41_152H38", _sid];
 			_prices pushBack 		_priceArty;
 			_placements pushBack 	[180, 5];
@@ -2129,14 +2176,14 @@ if(CTI_FIN_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_tiers pushBack 		_tech_level;
 			
 			//camo
-			_headers pushBack 		"76k36 heavy AT camo";
+			_headers pushBack 		"[NF] 76k36 heavy AT camo";
 			_classes pushBack 		format["%1NORTH_FIN_76k36", _sid];
 			_prices pushBack 		_priceGun;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"152H38 Arty camo";
+			_headers pushBack 		"[NF] 152H38 Arty camo";
 			_classes pushBack 		format["%1NORTH_FIN_152H38", _sid];
 			_prices pushBack 		_priceArty;
 			_placements pushBack 	[180, 5];
@@ -2149,28 +2196,28 @@ if(CTI_FIN_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 if(CTI_SOV_SIDE == (_side) call CTI_CO_FNC_GetSideID || (CTI_GER_SIDE != (_side) call CTI_CO_FNC_GetSideID && CTI_FIN_SIDE != (_side) call CTI_CO_FNC_GetSideID && CTI_SOV_SIDE != (_side) call CTI_CO_FNC_GetSideID)) then {
 	if(CTI_NF_ADDON > 0) then {
 		if(CTI_CAMO_ACTIVATION == 1) then {		//Winter camo active
-			_headers pushBack 		"76mm1936 heavy AT (w)";
+			_headers pushBack 		"[NF] 76mm1936 heavy AT (w)";
 			_classes pushBack 		format["%1NORTH_SOV_W_39_76mm1936", _sid];
 			_prices pushBack 		_priceGun;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"152mm1938 Arty (w)";
+			_headers pushBack 		"[NF] 152mm1938 Arty (w)";
 			_classes pushBack 		format["%1NORTH_SOV_W_39_152mm1938", _sid];
 			_prices pushBack 		_priceArty;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 		} else {
-			_headers pushBack 		"76mm1936 heavy AT";
+			_headers pushBack 		"[NF] 76mm1936 heavy AT";
 			_classes pushBack 		format["%1NORTH_SOV_76mm1936", _sid];
 			_prices pushBack 		_priceGun;
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"152mm1938 Arty";
+			_headers pushBack 		"[NF] 152mm1938 Arty";
 			_classes pushBack 		format["%1NORTH_SOV_152mm1938", _sid];
 			_prices pushBack 		_priceArty;
 			_placements pushBack 	[180, 5];
