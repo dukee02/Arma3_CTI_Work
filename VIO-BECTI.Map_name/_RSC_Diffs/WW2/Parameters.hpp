@@ -29,6 +29,42 @@ class Params {
 		texts[] = {"Disabled","Igiload","Vehicle Appearance Module","Igiload + VAM"};
 		default = 0;
 	};
+	class SEPARATOR_ADDONS {
+		title = "=========================== ADDONS ============================";
+		values[] = {1};
+		texts[] = {""};
+		default = 1;
+	};
+	class CTI_IFA_ADDON {
+		title = "ADDON: IFA";
+		values[] = {0,1,2};
+		texts[] = {"Disabled","Enabled","Set as Main"};
+		default = 0;
+	};
+	class CTI_SPE_DLC {
+		title = "ADDON: Spearhead cDLC (SPE)";
+		values[] = {0,1,2};
+		texts[] = {"Disabled","Enabled","Set as Main"};
+		default = 0;
+	};
+	class CTI_FOW_ADDON {
+		title = "ADDON: FOW";
+		values[] = {0,1,2};
+		texts[] = {"Disabled","Enabled","Set as Main"};
+		default = 0;
+	};
+	class CTI_CSA_ADDON {
+		title = "ADDON: CSA38";
+		values[] = {0,1,2};
+		texts[] = {"Disabled","Enabled","Set as Main"};
+		default = 1;
+	};
+	class CTI_NF_ADDON {
+		title = "ADDON: Northern Fronts";
+		values[] = {0,1,2};
+		texts[] = {"Disabled","Enabled","Set as Main"};
+		default = 0;
+	};
 	class SEPARATOR_STARTUP {
 		title = "========================== STARTUP ============================";
 		values[] = {1};
@@ -710,42 +746,6 @@ class Params {
 		values[] = {1000,1500,2000,2500,3000,3500,4000,4500,5000};
 		texts[] = {"1 KM","1.5 KM","2 KM","2.5 KM","3 KM","3.5 KM","4 KM","4.5 KM","5 KM"};
 		default = 2500;
-	};
-	class SEPARATOR_ADDONS {
-		title = "=========================== ADDONS ============================";
-		values[] = {1};
-		texts[] = {""};
-		default = 1;
-	};
-	class CTI_IFA_ADDON {
-		title = "ADDON: IFA3";
-		values[] = {0,1,2};
-		texts[] = {"Disabled","Enabled","Set as Main"};
-		default = 1;
-	};
-	class CTI_SPE_DLC {
-		title = "ADDON: Spearhead cDLC (SPE)";
-		values[] = {0,1,2};
-		texts[] = {"Disabled","Enabled","Set as Main"};
-		default = 0;
-	};
-	class CTI_FOW_ADDON {
-		title = "ADDON: Faces of War (FOW)";
-		values[] = {0,1,2};
-		texts[] = {"Disabled","Enabled","Set as Main"};
-		default = 0;
-	};
-	class CTI_CSA_ADDON {
-		title = "ADDON: CSA38";
-		values[] = {0,1,2};
-		texts[] = {"Disabled","Enabled","Set as Main"};
-		default = 0;
-	};
-	class CTI_NF_ADDON {
-		title = "ADDON: Northern Fronts (NF)";
-		values[] = {0,1,2};
-		texts[] = {"Disabled","Enabled","Set as Main"};
-		default = 0;
 	};
 	class SEPARATOR_LOG {
 		title = "=========================== LOG-DEBUG-AND-TESTING ============================";
