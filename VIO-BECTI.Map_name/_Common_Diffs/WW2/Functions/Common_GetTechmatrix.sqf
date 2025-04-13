@@ -139,14 +139,14 @@ if(_mod >= 0) then {
 				};
 				if (isClass(configFile >> "CfgVehicles" >> "FA_BA64_Captured")) then {
 					_tech = [_tech, _tech_matrix select _factory select _forEachIndex select CTI_CARS_ID] call CTI_CO_FNC_MergeMatrixArray;
-					//if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\functions\Common_GetTechmatrix.sqf", format["CTI_SABRL_ADDON: [%1,%2] <%3>", _factory, _forEachIndex, _tech]] call CTI_CO_FNC_Log;};
+					//if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\functions\Common_GetTechmatrix.sqf", format["Cars Addon: [%1,%2] <%3>", _factory, _forEachIndex, _tech]] call CTI_CO_FNC_Log;};
 				};
 				if (isClass(configFile >> "CfgVehicles" >> "FA_T26_Captured")) then {
 					_tech = [_tech, _tech_matrix select _factory select _forEachIndex select CTI_TANKS_ID] call CTI_CO_FNC_MergeMatrixArray;
-					//if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\functions\Common_GetTechmatrix.sqf", format["CTI_SABRL_ADDON: [%1,%2] <%3>", _factory, _forEachIndex, _tech]] call CTI_CO_FNC_Log;};
+					//if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\functions\Common_GetTechmatrix.sqf", format["Tanks Addon: [%1,%2] <%3>", _factory, _forEachIndex, _tech]] call CTI_CO_FNC_Log;};
 				};
 			};	
-		} forEach [CTI_GER_SIDE, CTI_SOV_SIDE, CTI_UK_SIDE, CTI_US_SIDE, CTI_JPN_SIDE, CTI_CZ_SIDE, CTI_FIN_SIDE];
+		} forEach [CTI_GER_SIDE, CTI_SOV_SIDE, CTI_UK_SIDE, CTI_US_SIDE, CTI_JPN_SIDE, CTI_CZ_SIDE, CTI_FIN_SIDE, CTI_FR_ID, CTI_POL_ID];
 	};
 };
 
