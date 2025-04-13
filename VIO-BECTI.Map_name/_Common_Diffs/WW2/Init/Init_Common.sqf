@@ -114,15 +114,15 @@ _mainmod = -1;
 //geather the possible main mods first 
 _fixed_main = [];
 _loaded_main = [];
+if(CTI_IFA_ADDON > 0) then {_loaded_main pushBack CTI_IFA_ID};
+if(CTI_IFA_ADDON > 1) then {_fixed_main pushBack CTI_IFA_ID};
+if(CTI_CSA_ADDON > 0) then {_loaded_main pushBack CTI_CSA_ID};
+if(CTI_CSA_ADDON > 1) then {_fixed_main pushBack CTI_CSA_ID};
 if(CTI_SPE_DLC > 1 && [1175380] call CTI_CO_FNC_HasDLC) then {};
 if([1175380] call CTI_CO_FNC_HasDLC) then {
 	if(CTI_SPE_DLC > 0) then {_loaded_main pushBack CTI_SPE_ID};
 	if(CTI_SPE_DLC > 1) then {_fixed_main pushBack CTI_SPE_ID};
 };
-if(CTI_IFA_ADDON > 0) then {_loaded_main pushBack CTI_IFA_ID};
-if(CTI_IFA_ADDON > 1) then {_fixed_main pushBack CTI_IFA_ID};
-if(CTI_CSA_ADDON > 0) then {_loaded_main pushBack CTI_CSA_ID};
-if(CTI_CSA_ADDON > 1) then {_fixed_main pushBack CTI_CSA_ID};
 if(CTI_NF_ADDON > 0) then {_loaded_main pushBack CTI_NF_ID};
 if(CTI_NF_ADDON > 1) then {_fixed_main pushBack CTI_NF_ID};
 if(CTI_FOW_ADDON > 0) then {_loaded_main pushBack CTI_FOW_ID};

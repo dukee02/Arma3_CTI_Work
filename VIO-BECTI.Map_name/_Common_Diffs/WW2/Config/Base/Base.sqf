@@ -454,6 +454,7 @@ if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 		_tiers pushBack 		_tech_level;
 			
 		_headers pushBack 		"[IFA] MG34 low";
+		_classes pushBack format["%1LIB_MG34_Lafette_low_Deployed", _sid];
 		_prices pushBack 		500;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
