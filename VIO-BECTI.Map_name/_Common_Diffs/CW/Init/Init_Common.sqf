@@ -187,11 +187,6 @@ call compile preprocessFileLineNumbers "Common\Config\Artillery\Artillery.sqf";
 (east) call compile preprocessFileLineNumbers "Common\Config\Base\Town_Defenses.sqf";
 (resistance) call compile preprocessFileLineNumbers "Common\Config\Base\Town_Defenses.sqf";
 
-if(CTI_CUP_ADDON > 0 || CTI_RHS_ADDON > 0 || CTI_BW_ADDON > 0) then {
-	{ 
-		(_x) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_Basic.sqf";
-	} forEach [west, east];
-};
 //CTI_US_SIDE declaration
 if(CTI_US_SIDE >= 0) then {
 	if(CTI_SOG_DLC > 0) then {
@@ -440,6 +435,13 @@ if(CTI_UKRAIN_SIDE >= 0) then {
 		};
 		((CTI_UKRAIN_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_CUP_UKR.sqf";
 	};
+};
+
+//All other Gera got declared, we can now add the basic stuff if needed
+if(CTI_CUP_ADDON > 0 || CTI_RHS_ADDON > 0 || CTI_BW_ADDON > 0) then {
+	{ 
+		(_x) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_Basic.sqf";
+	} forEach [west, east];
 };
 
 switch(CTI_GUER_TOWNS) do {
