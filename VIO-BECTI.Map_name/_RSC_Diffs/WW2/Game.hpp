@@ -8,7 +8,7 @@ onLoadName = "VIO-BECTI-WW2 V2.0.6beta";
 onLoadMissionTime = false;
 overviewText="VIO-BECTI-WW2 V2.0.6beta";
 overviewTextLocked="VIO-BECTI-WW2 V2.0.6beta";
-onLoadMission = "VIO-BECTI-WW2 V2.0.6beta_250103";
+onLoadMission = "VIO-BECTI-WW2 V2.0.6beta_250608";
 briefingName = "VIO-BECTI-WW2 V2.0.6beta";
 
 //--- ArmA 3 Specifics

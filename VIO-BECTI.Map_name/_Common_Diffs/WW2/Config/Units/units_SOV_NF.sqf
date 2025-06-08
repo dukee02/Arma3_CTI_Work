@@ -359,21 +359,18 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 				_c pushBack format["%1NORTH_SOV_W_41_ZIS5_Empty", _sid];
 				_c pushBack format["%1NORTH_SOV_W_41_ZIS5_Open", _sid];
 				_c pushBack format["%1NORTH_SOV_W_41_ZIS5_Maxim_Quad", _sid];
-				_c pushBack format["%1NORTH_SOV_W_41_ZIS5_Medical", _sid];
 			};
 			case 2: {//Summer camo active
 				_c pushBack format["%1NORTH_SOV_41_ZIS5", _sid];
 				_c pushBack format["%1NORTH_SOV_41_ZIS5_Empty", _sid];
 				_c pushBack format["%1NORTH_SOV_41_ZIS5_Open", _sid];
 				_c pushBack format["%1NORTH_SOV_41_ZIS5_Maxim_Quad", _sid];
-				_c pushBack format["%1NORTH_SOV_41_ZIS5_Medical", _sid];
 			};
 			default {
 				_c pushBack format["%1NORTH_SOV_ZIS5", _sid];
 				_c pushBack format["%1NORTH_SOV_ZIS5_Empty", _sid];
 				_c pushBack format["%1NORTH_SOV_ZIS5_Open", _sid];
 				_c pushBack format["%1NORTH_SOV_ZIS5_Maxim_Quad", _sid];
-				_c pushBack format["%1NORTH_SOV_ZIS5_Medical", _sid];
 			};
 		};
 	};
@@ -389,6 +386,39 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 		_f pushBack CTI_FACTORY_LIGHT;
 		_s pushBack "";
 		_d pushBack 5;	
+	};
+
+	if(CTI_STREAM_BLOCK > 0) then {}
+	else {
+		switch(CTI_CAMO_ACTIVATION) do {
+			case 1: {//Winter camo active
+				_c pushBack format["%1NORTH_SOV_W_41_ZIS5_Medical", _sid];
+			};
+			case 2: {//Summer camo active
+				_c pushBack format["%1NORTH_SOV_41_ZIS5_Medical", _sid];
+			};
+			default {
+				_c pushBack format["%1NORTH_SOV_ZIS5_Medical", _sid];
+			};
+		};
+	};
+	//set all other vars in a slope
+	_cntstart = count _c;
+	_cntend = count _p;
+	for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do { 
+		_p pushBack '';
+		if(CTI_RESPAWN_MOBILE <= 0) then {
+			_n pushBack 'ZIS5 Medic (Heal only)';
+			_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,false] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		} else {
+			_n pushBack 'ZIS5 Medic (Mobile Respawn)';
+			_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		};
+		_t pushBack _building_time;
+		_u pushBack _tech_level;
+		_f pushBack CTI_FACTORY_LIGHT;
+		_s pushBack "service-medic";
+		_d pushBack 10;		
 	};
 };
 

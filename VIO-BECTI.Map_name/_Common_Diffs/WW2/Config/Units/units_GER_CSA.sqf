@@ -387,7 +387,6 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 	_building_time = [CTI_FACTORY_HEAVY,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
 	
 	if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 3) then {		//Winter camo active
-		_c pushBack format["%1CSA38_pzbfwIamb_W", _sid];// medic?
 		//_c pushBack format["%1CSA38_mzm35t_W", _sid];//nazi, ammo?
 		_c pushBack format["%1CSA38_ltm38_W", _sid];
 		//_c pushBack format["%1CSA38_ltm38_FR2_W", _sid];//nazi
@@ -396,7 +395,6 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 		_c pushBack format["%1CSA38_pzIIID_W", _sid];
 	};
 	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
-		_c pushBack format["%1CSA38_pzbfwIamb_DE", _sid];// medic?
 		_c pushBack format["%1CSA38_pzIIID_DAK", _sid];
 		_c pushBack format["%1CSA38_pzIIID_DAK2", _sid];
 	};
@@ -410,7 +408,6 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 		//_c pushBack format["%1CSA38_pzIIIB_PL", _sid];
 		//_c pushBack format["%1CSA38_pzIIIC_PL", _sid];
 		//_c pushBack format["%1CSA38_pzIIID_PL", _sid];
-		_c pushBack format["%1CSA38_pzbfwIamb", _sid];// medic?
 		//_c pushBack format["%1CSA38_mzm35t", _sid];//nazi, ammo?
 		
 		/*_c pushBack format["%1CSA38_ltm38_FR", _sid];
@@ -455,8 +452,13 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 	_cntend = count _p;
 	for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do { 
 		_p pushBack '';
-		_n pushBack 'PzBfwI Mobile Respawn';
-		_o pushBack ([CTI_ECONOMY_PRIZE_TRACKED,_tech_level] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		if(CTI_RESPAWN_MOBILE <= 0) then {
+			_n pushBack 'PzBfwI Medic (Heal only)';
+			_o pushBack ([CTI_ECONOMY_PRIZE_TRACKED,_tech_level,false] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		} else {
+			_n pushBack 'PzBfwI Medic (Mobile Respawn)';
+			_o pushBack ([CTI_ECONOMY_PRIZE_TRACKED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		};
 		_t pushBack _building_time;
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_LIGHT;
