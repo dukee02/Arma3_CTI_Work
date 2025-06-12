@@ -254,7 +254,7 @@ missionNamespace setVariable [format ["CTI_%1_%2Units", _side, CTI_AIR], _c];
 //***************************************************************************************************************************************
 //--- Below is classnames for Units and AI avaiable to puchase from Reapir Factory.
 _c = [];
-if(CTI_IFA_ADDON < 1 && CTI_ECONOMY_LEVEL_WHEELED >= 1) then {
+if(CTI_IFA_ADDON < 1 && CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
 	_c pushBack format["%1fow_v_gmc_usmc", _sid];						//repairtruck
 	_c pushBack format["CTI_Salvager_%1", _side];
 };
@@ -274,7 +274,7 @@ missionNamespace setVariable [format ["CTI_%1_%2Units", _side, CTI_REPAIR], _c];
 //***************************************************************************************************************************************
 //--- Below is classnames for Units and AI avaiable to puchase from Ammo Factory.
 _c = [];
-if(CTI_IFA_ADDON < 1 && CTI_ECONOMY_LEVEL_WHEELED >= 1) then {
+if(CTI_IFA_ADDON < 1 && CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
 	_c pushBack format["%1fow_v_lvta2_usmc", _sid];						//ammotruck
 	_c pushBack format["%1fow_v_gmc_open_usmc", _sid];						//fueltruck
 };
@@ -296,10 +296,20 @@ missionNamespace setVariable [format ["CTI_%1_%2Units", _side, CTI_AMMO], _c];
 _c = [];
 
 if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 0) then {
+	if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
+		_c pushBack format["%1fow_v_willys_usa", _sid];
+		_c pushBack format["%1fow_v_willys_usmc", _sid];
+	};
+};
+if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 1) then {
+	if(CTI_IFA_ADDON < 1 && CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
+		_c pushBack format["%1fow_v_gmc_usmc", _sid];						//repairtruck
+		_c pushBack format["%1fow_v_lvta2_usmc", _sid];						//ammotruck
+		_c pushBack format["%1fow_v_gmc_open_usmc", _sid];					//fueltruck
+	};
+};
+if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 2) then {
 	if(CTI_ECONOMY_LEVEL_INFANTRY >= 0) then {
-		//if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 3) then {		//Winter camo active
-		//	_c pushBack format["%1", _sid];
-		//};
 		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
 			_c pushBack format["%1fow_s_us_m37_medic", _sid];
 			_c pushBack format["%1fow_s_us_m37_rifleman", _sid];
@@ -308,22 +318,7 @@ if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 0) then {
 		_c pushBack format["%1fow_s_us_rifleman", _sid];
 	};
 };
-if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
-	_c pushBack format["%1fow_v_willys_usa", _sid];
-	_c pushBack format["%1fow_v_willys_usmc", _sid];
-};
-/*if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 0) then {
-	if(CTI_ECONOMY_LEVEL_WHEELED >= 1) then {
-		if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 3) then {		//Winter camo active
-			_c pushBack format["%1LIB_US_GMC_Ammo_w", _sid];				//ammotruck
-			_c pushBack format["%1LIB_US_GMC_Fuel_w", _sid];				//fueltruck
-			_c pushBack format["%1LIB_US_GMC_Parm_w", _sid];				//repairtruck
-		};
-		_c pushBack format["%1LIB_US_GMC_Ammo", _sid];						//ammotruck
-		_c pushBack format["%1LIB_US_GMC_Fuel", _sid];						//fueltruck
-		_c pushBack format["%1LIB_US_GMC_Parm", _sid];						//repairtruck
-	};
-};*/
+
 _priorUnits = missionNamespace getVariable format ["CTI_%1_%2Units", _side, CTI_DEPOT];
 if (isNil "_priorUnits") then { 
 	_priorUnits = []; 

@@ -287,7 +287,7 @@ if(_tech_level > _upgrade_levels select CTI_UPGRADE_AIR) then {
 _tech_level = 0;
 _building_time = [CTI_FACTORY_REPAIR,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
 
-if(CTI_ECONOMY_LEVEL_WHEELED >= 1) then {
+if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
 	
 	_c pushBack format["%1fow_v_type97_truck_utility_ija", _sid];						//repairtruck
 	_p pushBack '';
@@ -333,7 +333,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= 1) then {
 //														Ammo Factory																	*
 //***************************************************************************************************************************************
 //--- Below is classnames for Units and AI avaiable to puchase from Ammo Factory.
-if(CTI_ECONOMY_LEVEL_WHEELED >= 1) then {
+if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
 	/*_c pushBack format["%1fow_v_type97_truck_ija", _sid];						//ammotruck
 	_p pushBack '';
 	_n pushBack 'Ammo Truck';

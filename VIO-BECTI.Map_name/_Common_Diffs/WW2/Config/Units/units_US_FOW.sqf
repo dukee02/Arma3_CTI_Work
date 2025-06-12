@@ -416,7 +416,7 @@ if(count _isThisMain > 0) then {
 	_setupBaseUnits = true;
 };
 if(_setupBaseUnits && CTI_IFA_ADDON < 1) then {
-	if(CTI_ECONOMY_LEVEL_WHEELED >= 1) then {
+	if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
 				
 		_c pushBack format["%1fow_v_gmc_usmc", _sid];						//repairtruck
 		_p pushBack '';
@@ -454,7 +454,7 @@ if(_setupBaseUnits && CTI_IFA_ADDON < 1) then {
 //														Ammo Factory																	*
 //***************************************************************************************************************************************
 //--- Below is classnames for Units and AI avaiable to puchase from Ammo Factory.
-if(CTI_IFA_ADDON < 0 && CTI_ECONOMY_LEVEL_WHEELED >= 1) then {
+if(CTI_IFA_ADDON < 0 && CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
 	_c pushBack format["%1fow_v_lvta2_usmc", _sid];						//ammotruck
 	_p pushBack '';
 	_n pushBack 'Ammo Truck';

@@ -460,30 +460,46 @@ missionNamespace setVariable [format ["CTI_%1_%2Units", _side, CTI_AMMO], _c];
 //***************************************************************************************************************************************
 //--- Below is classnames for Units and AI avaiable to puchase from Town Depot.
 _c = [];
+
 if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 0) then {
-	if(CTI_ECONOMY_LEVEL_INFANTRY >= 0) then {
-		_c pushBack format["%11CSA38_WH1B", _sid];
-		_c pushBack format["%1CSA38_WH13", _sid];
+	if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
+		_c pushBack format["%1CSA38_pragaRV6", _sid];
+		if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 3) then {		//Winter camo active
+			_c pushBack format["%1CSA38_opelblitz_W", _sid];
+		};
+		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
+			_c pushBack format["%1CSA38_opelblitz_DE", _sid];
+		};
+		if(CTI_CAMO_ACTIVATION < 1 || CTI_CAMO_ACTIVATION > 2) then {		//default camo active
+			_c pushBack format["%1CSA38_opelblitz2", _sid];
+		};
 	};
 };
-if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
-	if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 3) then {		//Winter camo active
-		_c pushBack format["%1CSA38_opelblitz_W", _sid];
-		_c pushBack format["%1CSA38_opelblitz4_W", _sid];//ammo
-		_c pushBack format["%1CSA38_opelblitz5_W", _sid];//fuel
-	};
-	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
-		_c pushBack format["%1CSA38_opelblitz_DE", _sid];
-		_c pushBack format["%1CSA38_opelblitz4_DE", _sid];//ammo
-		_c pushBack format["%1CSA38_opelblitz5_DE", _sid];//fuel
-	};
-	if(CTI_CAMO_ACTIVATION < 1 || CTI_CAMO_ACTIVATION > 2) then {		//default camo active
-		_c pushBack format["%1CSA38_opelblitz2", _sid];
+if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 1) then {
+	if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
+		if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 3) then {		//Winter camo active
+			_c pushBack format["%1CSA38_opelblitz4_W", _sid];//ammo
+			_c pushBack format["%1CSA38_opelblitz5_W", _sid];//fuel
+		};
+		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
+			_c pushBack format["%1CSA38_opelblitz4_DE", _sid];//ammo
+			_c pushBack format["%1CSA38_opelblitz5_DE", _sid];//fuel
+		};
+		if(CTI_CAMO_ACTIVATION < 1 || CTI_CAMO_ACTIVATION > 2) then {		//default camo active
+			_c pushBack format["%1CSA38_opelblitz4", _sid];//ammo
+			_c pushBack format["%1CSA38_opelblitz5", _sid];//fuel
+		};
 		_c pushBack format["%1CSA38_opelblitz6", _sid];//repair
-		_c pushBack format["%1CSA38_opelblitz4", _sid];//ammo
-		_c pushBack format["%1CSA38_opelblitz5", _sid];//fuel
 	};
 };
+if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 2) then {
+	if(CTI_ECONOMY_LEVEL_INFANTRY >= 0) then {
+		_c pushBack format["%1CSA38_Gcrew", _sid];
+		_c pushBack format["%1CSA38_WH2Bi", _sid];//recruits
+		_c pushBack format["%1CSA38_WH13", _sid];//Medic
+	};
+};
+
 _priorUnits = missionNamespace getVariable format ["CTI_%1_%2Units", _side, CTI_DEPOT];
 if (isNil "_priorUnits") then { 
 	_priorUnits = []; 

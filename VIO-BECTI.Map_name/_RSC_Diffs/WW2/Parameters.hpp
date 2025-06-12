@@ -682,9 +682,9 @@ class Params {
 		default = 3;
 	};
 	class CTI_UNITS_TOWN_PURCHASE {
-		title = "TOWNS: Purchase Infantry";
-		values[] = {0,1};
-		texts[] = {"Disabled","Enabled"};
+		title = "TOWNS: Purchase Units";
+		values[] = {0,1,2,3};
+		texts[] = {"Disabled","Unarmed cars only","Cars and support trucks","Cars, basic infantry and support trucks"};
 		default = 0;
 	};
 	class CTI_TOWNS_CAPTURED_DISTANCE {

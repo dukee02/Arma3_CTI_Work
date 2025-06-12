@@ -256,20 +256,13 @@ missionNamespace setVariable [format ["CTI_%1_%2Units", _side, CTI_AMMO], _c];
 //***************************************************************************************************************************************
 //--- Below is classnames for Units and AI avaiable to puchase from Town Depot.
 _c = [];
+
 if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 0) then {
-	if(CTI_ECONOMY_LEVEL_INFANTRY >= 0) then {
-		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
-			_c pushBack format["%1fow_s_uk_seac_medic_l", _sid];
-			_c pushBack format["%1fow_s_uk_seac_rifleman_l", _sid];
-		};
-		_c pushBack format["%1fow_s_uk_para_medic", _sid];
-		_c pushBack format["%1fow_s_uk_para_rifleman", _sid];
+	if(CTI_ECONOMY_LEVEL_TRACKED >= 0) then {
+		_c pushBack format["%1fow_v_universalCarrier", _sid];	
 	};
 };
-if(CTI_ECONOMY_LEVEL_TRACKED >= 0) then {
-	_c pushBack format["%1fow_v_universalCarrier", _sid];	
-};
-/*if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 0) then {
+/*if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 1) then {
 	if(CTI_ECONOMY_LEVEL_WHEELED >= 1) then {
 		//if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
 			//_c pushBack format["%1LIB_AustinK5_DR_Ammo", _sid];					//ammotruck
@@ -279,6 +272,17 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= 0) then {
 		_c pushBack format["%1LIB_US6_Ammo", _sid];							//ammotruck
 	};
 };*/
+if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 2) then {
+	if(CTI_ECONOMY_LEVEL_INFANTRY >= 0) then {
+		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
+			_c pushBack format["%1fow_s_uk_seac_medic_l", _sid];
+			_c pushBack format["%1fow_s_uk_seac_rifleman_l", _sid];
+		};
+		_c pushBack format["%1fow_s_uk_para_medic", _sid];
+		_c pushBack format["%1fow_s_uk_para_rifleman", _sid];
+	};
+};
+
 _priorUnits = missionNamespace getVariable format ["CTI_%1_%2Units", _side, CTI_DEPOT];
 if (isNil "_priorUnits") then { 
 	_priorUnits = []; 
