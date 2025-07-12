@@ -118,7 +118,6 @@ if(CTI_ADDON_CHARLIECO > 0) then {
 //											AIR - Choppers and Planes																		  *
 //*********************************************************************************************************************************************
 //--- Below is classnames for Units and AI avaiable to puchase from Air Factory.
-_c = [];
 _matrix_full = [_side, CTI_UPGRADE_AIR] call CTI_CO_FNC_GetTechmatrix;
 //_matrix_nation = [_side, CTI_UPGRADE_AIR, CTI_BW_ID, CTI_GM_ID] call CTI_CO_FNC_GetTechmatrix;
 
