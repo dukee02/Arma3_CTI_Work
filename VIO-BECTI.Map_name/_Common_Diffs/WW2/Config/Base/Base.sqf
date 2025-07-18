@@ -1530,6 +1530,13 @@ if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"AA";
 			_tiers pushBack 		_tech_level;
+			
+			_headers pushBack 		"Nebelwerfer 41";
+			_classes pushBack 		format["%1LIB_Nebelwerfer41", _sid];
+			_prices pushBack 		_priceArty;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"Defense";
+			_tiers pushBack 		_tech_level;
 		};
 		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
 			_headers pushBack 		"[IFA] FlaK 36 (Desert)";
@@ -1552,8 +1559,15 @@ if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Defense";
 			_tiers pushBack 		_tech_level;
+
+			_headers pushBack 		"Nebelwerfer 41 bg";
+			_classes pushBack 		format["%1LIB_Nebelwerfer41_Gelbbraun", _sid];
+			_prices pushBack 		_priceArty;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"Defense";
+			_tiers pushBack 		_tech_level;
 		};
-		
+
 		_headers pushBack 		"[IFA] FlaK 36 ARTY";
 		_classes pushBack 		format["%1LIB_FlaK_36_ARTY", _sid];
 		_prices pushBack 		4000;
@@ -1594,6 +1608,13 @@ if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 		_prices pushBack 		3000;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"AA";
+		_tiers pushBack 		_tech_level;
+		
+		_headers pushBack 		"Nebelwerfer 41 Camo";
+		_classes pushBack 		format["%1LIB_Nebelwerfer41_Camo", _sid];
+		_prices pushBack 		_priceArty;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 	};
 
