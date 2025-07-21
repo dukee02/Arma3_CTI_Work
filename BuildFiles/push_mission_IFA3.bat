@@ -48,4 +48,4 @@ xcopy "%gitpath%\VIO-BECTI.Map_name\XMissions_IFA3" "%buildpath%\%missionfolder%
 
 ::copy "%gitpath%\Thumbnails\IFA3\VanillaCTI_%mapname%_small.jpg" "%buildpath%\%missionfolder%\VIO_BECTI.jpg" /y
 
-pause
+::pause
