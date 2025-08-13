@@ -158,7 +158,20 @@ if ((_obj_type in IL_Supported_Vehicles_LCM3) && (_doors == "B")) then
 	_slot_num = _v getVariable "slots_num";
 };
 // Liberty Ship
-if ((_obj_type in IL_Supported_Vehicles_Cargo_Ship) && (_doors == "B")) then
+if ((_obj_type in IL_Supported_Vehicles_CargoShip) && (_doors == "B")) then
+{
+	if (IL_DevMod) then
+	{
+		Player globalChat Format ["IgiLoad ""%1"". Do_load vehicle type: ""%2"" and doors: ""%3""", IL_Script_Inst, _obj_type, _doors];
+	};
+	_sdist = 50;	//IL_SDistL;
+	_spoint = _v modelToWorld [0,(_v getVariable "load_offset"),0];
+	//_spoint = _v modelToWorld [0,6,0];
+	_box_num = _v getVariable "box_num";
+	_slot_num = _v getVariable "slots_num";
+};
+// Aircraft Carrier
+if ((_obj_type in IL_Supported_Vehicles_Carrier) && (_doors == "B")) then
 {
 	if (IL_DevMod) then
 	{
@@ -186,7 +199,8 @@ if ((_obj_type in IL_Supported_Vehicles_C47) && (_doors == "B")) then
 if !(_force) then
 {
 	//nearestObjects [position, types, radius, 2Dmode]
-	_obj_lst = nearestObjects[ _spoint, _supported_cargo, _sdist];
+	//_obj_lst = nearestObjects[ _spoint, _supported_cargo, _sdist];
+	_obj_lst = [_v, 100] call IL_Select_Attach;
 }
 else
 {
@@ -292,67 +306,84 @@ if (count (_obj_lst) > 0) then
 				// Gaz
 				if ((_obj_type in IL_Supported_Vehicles_Gaz) && (_doors == "B")) then
 				{
-					//[_v, _x, [_x_cargo_offset,-4.5,_zload], [_x_cargo_offset,_counter + 0.25 - _cargo_offset,_zload], 1, _turn] call IL_Move_Attach;
-					[_v, _x, [_x_cargo_offset,-4.5,_zload], [_x_cargo_offset,_counter + 0.85 - _cargo_offset,_zload], 1, _turn] call IL_Move_Attach;
+					//[_v, _x, [_x_cargo_offset,-4.5,_zload], [_x_cargo_offset,_counter + 0.85 - _cargo_offset,_zload], 1, _turn] call IL_Move_Attach;
+					[_v, _x, [_x_cargo_offset,_counter + 0.85 - _cargo_offset,_zload], _turn] call IL_Attach;
 				};
 				// Praga
 				if ((_obj_type in IL_Supported_Vehicles_Praga) && (_doors == "B")) then
 				{
-					[_v, _x, [_x_cargo_offset,-5 - _cargo_offset,_zload], [_x_cargo_offset,_counter + 0.25 - _cargo_offset,_zload], 1, _turn] call IL_Move_Attach;
+					//[_v, _x, [_x_cargo_offset,-5 - _cargo_offset,_zload], [_x_cargo_offset,_counter + 0.25 - _cargo_offset,_zload], 1, _turn] call IL_Move_Attach;
+					[_v, _x, [_x_cargo_offset,_counter + 0.25 - _cargo_offset,_zload], _turn] call IL_Attach;
 				};
 				// Blitz
 				if ((_obj_type in IL_Supported_Vehicles_Blitz) && (_doors == "B")) then
 				{
-					[_v, _x, [_x_cargo_offset,-6 - _cargo_offset,_zload], [_x_cargo_offset,_counter + 0.25 - _cargo_offset,_zload], 1, _turn] call IL_Move_Attach;
+					//[_v, _x, [_x_cargo_offset,-6 - _cargo_offset,_zload], [_x_cargo_offset,_counter + 0.25 - _cargo_offset,_zload], 1, _turn] call IL_Move_Attach;
+					[_v, _x, [_x_cargo_offset,_counter + 0.25 - _cargo_offset,_zload], _turn] call IL_Attach;
 				};
 				// Blitz
 				if ((_obj_type in IL_Supported_Vehicles_BlitzCSA) && (_doors == "B")) then
 				{
-					[_v, _x, [_x_cargo_offset,-5 - _cargo_offset,_zload], [_x_cargo_offset,_counter + 0.25 - _cargo_offset,_zload], 1, _turn] call IL_Move_Attach;
+					//[_v, _x, [_x_cargo_offset,-5 - _cargo_offset,_zload], [_x_cargo_offset,_counter + 0.25 - _cargo_offset,_zload], 1, _turn] call IL_Move_Attach;
+					[_v, _x, [_x_cargo_offset,_counter + 0.25 - _cargo_offset,_zload], _turn] call IL_Attach;
 				};
 				// US6
 				if ((_obj_type in IL_Supported_Vehicles_US6) && (_doors == "B")) then
 				{
-					[_v, _x, [_x_cargo_offset,-6 - _cargo_offset,_zload], [_x_cargo_offset,_counter + 0.25 - _cargo_offset,_zload], 1, _turn] call IL_Move_Attach;
+					//[_v, _x, [_x_cargo_offset,-6 - _cargo_offset,_zload], [_x_cargo_offset,_counter + 0.25 - _cargo_offset,_zload], 1, _turn] call IL_Move_Attach;
+					[_v, _x, [_x_cargo_offset,_counter + 0.25 - _cargo_offset,_zload], _turn] call IL_Attach;
 				};
 				// GMC
 				if ((_obj_type in IL_Supported_Vehicles_GMC) && (_doors == "B")) then
 				{
-					[_v, _x, [_x_cargo_offset,-6 - _cargo_offset,_zload], [_x_cargo_offset,_counter + 0.25 - _cargo_offset,_zload], 1, _turn] call IL_Move_Attach;
+					//[_v, _x, [_x_cargo_offset,-6 - _cargo_offset,_zload], [_x_cargo_offset,_counter + 0.25 - _cargo_offset,_zload], 1, _turn] call IL_Move_Attach;
+					[_v, _x, [_x_cargo_offset,_counter + 0.25 - _cargo_offset,_zload], _turn] call IL_Attach;
 				};
 				// GMC FoW
 				if ((_obj_type in IL_Supported_Vehicles_GMCFOW) && (_doors == "B")) then
 				{
-					[_v, _x, [_x_cargo_offset,-6 - _cargo_offset,_zload], [_x_cargo_offset,_counter + 0.25 - _cargo_offset,_zload], 1, _turn] call IL_Move_Attach;
+					//[_v, _x, [_x_cargo_offset,-6 - _cargo_offset,_zload], [_x_cargo_offset,_counter + 0.25 - _cargo_offset,_zload], 1, _turn] call IL_Move_Attach;
+					[_v, _x, [_x_cargo_offset,_counter + 0.25 - _cargo_offset,_zload], _turn] call IL_Attach;
 				};
 				// SdKfz7
 				if ((_obj_type in IL_Supported_Vehicles_SdKfz7) && (_doors == "B")) then
 				{
-					[_v, _x, [_x_cargo_offset,-1 - _cargo_offset,_zload], [_x_cargo_offset,_counter + 0.25 - _cargo_offset,_zload], 1, _turn] call IL_Move_Attach;
+					//[_v, _x, [_x_cargo_offset,-1 - _cargo_offset,_zload], [_x_cargo_offset,_counter + 0.25 - _cargo_offset,_zload], 1, _turn] call IL_Move_Attach;
+					[_v, _x, [_x_cargo_offset,_counter + 0.25 - _cargo_offset,_zload], _turn] call IL_Attach;
 				};
 				// LCVP
 				if ((_obj_type in IL_Supported_Vehicles_LCVP) && (_doors == "B")) then
 				{
-					//[_v, _x, [_x_cargo_offset,-6 - _cargo_offset,_zload], [_x_cargo_offset,_counter + 0.25 - _cargo_offset,_zload], 1, _turn] call IL_Move_Attach;
-					[_v, _x, [_x_cargo_offset,8,_zload], [_x_cargo_offset,_counter + 0.25 - _cargo_offset,_zload], 1, _turn] call IL_Move_Attach;
+					//[_v, _x, [_x_cargo_offset,8,_zload], [_x_cargo_offset,_counter + 0.25 - _cargo_offset,_zload], 1, _turn] call IL_Move_Attach;
+					[_v, _x, [_x_cargo_offset,_counter + 0.25 - _cargo_offset,_zload], _turn] call IL_Attach;
 				};
 				// LCM3
 				if ((_obj_type in IL_Supported_Vehicles_LCM3) && (_doors == "B")) then
 				{
-					//[_v, _x, [_x_cargo_offset,-6 - _cargo_offset,_zload], [_x_cargo_offset,_counter + 0.25 - _cargo_offset,_zload], 1, _turn] call IL_Move_Attach;
-					[_v, _x, [_x_cargo_offset,10,_zload], [_x_cargo_offset,_counter + 0.25 - _cargo_offset,_zload], 1, _turn] call IL_Move_Attach;
+					//[_v, _x, [_x_cargo_offset,10,_zload], [_x_cargo_offset,_counter + 0.25 - _cargo_offset,_zload], 1, _turn] call IL_Move_Attach;
+					[_v, _x, [_x_cargo_offset,_counter + 0.25 - _cargo_offset,_zload], _turn] call IL_Attach;
 				};
 				// Liberty Ship
-				if ((_obj_type in IL_Supported_Vehicles_Cargo_Ship) && (_doors == "B")) then
+				if ((_obj_type in IL_Supported_Vehicles_CargoShip) && (_doors == "B")) then
 				{
-					[_v, _x, [_x_cargo_offset,_cargo_offset,_zload], [_x_cargo_offset,_counter + 0.25 + 50,_zload_offset], 1, _turn] call IL_Move_Attach;
+					//[_v, _x, [_x_cargo_offset,_cargo_offset,_zload], [_x_cargo_offset,_counter + 0.25 + 50,_zload_offset], 1, _turn] call IL_Move_Attach;
+					[_v, _x, [_x_cargo_offset,_counter + 0.25 + 50,_zload_offset], _turn] call IL_Attach;
+				};
+				// Aircraft Carrier
+				if ((_obj_type in IL_Supported_Vehicles_Carrier) && (_doors == "B")) then
+				{
+					//[_v, _x, [_x_cargo_offset,_cargo_offset,_zload], [_x_cargo_offset,_counter + 0.25 + 50,_zload_offset], 1, _turn] call IL_Move_Attach;
+					[_v, _x, [_x_cargo_offset,_counter + 0.25 + 50,_zload_offset], _turn] call IL_Attach;
 				};
 				//C47
 				if ((_obj_type in IL_Supported_Vehicles_C130J)  && (_doors == "B")) then
 				{
-					[_v, _x, [_x_cargo_offset,-9,-0.93 + _zload], [_x_cargo_offset,-8,-0.93 + _zload], 1, _turn] call IL_Move_Attach;
-					[_v, _x, [_x_cargo_offset,-7,-0.93 + _zload], [_x_cargo_offset,-3.5,_zload], 1, _turn] call IL_Move_Attach;
-					[_v, _x, [_x_cargo_offset,-2.5,_zload], [_x_cargo_offset,_counter + 17 - _cargo_offset,_zload], 1, _turn] call IL_Move_Attach;
+					//[_v, _x, [_x_cargo_offset,-9,-0.93 + _zload], [_x_cargo_offset,-8,-0.93 + _zload], 1, _turn] call IL_Move_Attach;
+					[_v, _x, [_x_cargo_offset,-8,-0.93 + _zload], _turn] call IL_Attach;
+					//[_v, _x, [_x_cargo_offset,-7,-0.93 + _zload], [_x_cargo_offset,-3.5,_zload], 1, _turn] call IL_Move_Attach;
+					[_v, _x, [_x_cargo_offset,-3.5,_zload], _turn] call IL_Attach;
+					//[_v, _x, [_x_cargo_offset,-2.5,_zload], [_x_cargo_offset,_counter + 17 - _cargo_offset,_zload], 1, _turn] call IL_Move_Attach;
+					[_v, _x, [_x_cargo_offset,_counter + 17 - _cargo_offset,_zload], _turn] call IL_Attach;
 				};
 				_counter = _counter - (_x getVariable "slots");
 				if (_doors == "B") then

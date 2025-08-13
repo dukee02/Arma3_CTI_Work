@@ -43,6 +43,8 @@ if (_obj_type in (missionNamespace getVariable "IL_Supported_Vehicles_Gaz")) the
 	if ((isNil {_obj getVariable "can_outside"}) || (_force)) then {_obj setVariable["can_outside", IL_Can_Outside, true];};
 	if ((isNil {_obj getVariable "zload"}) || (_force)) then {_obj setVariable["zload", -0.5, true];};	//-0.65
 	if ((isNil {_obj getVariable "load_offset"}) || (_force)) then {_obj setVariable["load_offset", 1, true];};
+	if ((isNil {_obj getVariable "load_range"}) || (_force)) then {_obj setVariable["load_range", 10, true];};
+	if ((isNil {_obj getVariable "supported_cargo"}) || (_force)) then {_obj setVariable["supported_cargo", "Gaz", true];};
 };
 // Praga
 if (_obj_type in (missionNamespace getVariable "IL_Supported_Vehicles_Praga")) then
@@ -53,6 +55,8 @@ if (_obj_type in (missionNamespace getVariable "IL_Supported_Vehicles_Praga")) t
 	if ((isNil {_obj getVariable "can_outside"}) || (_force)) then {_obj setVariable["can_outside", IL_Can_Outside, true];};
 	if ((isNil {_obj getVariable "zload"}) || (_force)) then {_obj setVariable["zload", -0.6, true];};  // how high the container animates to load
 	if ((isNil {_obj getVariable "load_offset"}) || (_force)) then {_obj setVariable["load_offset", 0.3, true];};  // how far the container animates to load
+	if ((isNil {_obj getVariable "load_range"}) || (_force)) then {_obj setVariable["load_range", 10, true];};
+	if ((isNil {_obj getVariable "supported_cargo"}) || (_force)) then {_obj setVariable["supported_cargo", "Praga", true];};
 };
 // Blitz
 if (_obj_type in (missionNamespace getVariable "IL_Supported_Vehicles_Blitz")) then
@@ -63,6 +67,8 @@ if (_obj_type in (missionNamespace getVariable "IL_Supported_Vehicles_Blitz")) t
 	if ((isNil {_obj getVariable "can_outside"}) || (_force)) then {_obj setVariable["can_outside", IL_Can_Outside, true];};
 	if ((isNil {_obj getVariable "zload"}) || (_force)) then {_obj setVariable["zload", -0.1, true];};  // how high the container animates to load
 	if ((isNil {_obj getVariable "load_offset"}) || (_force)) then {_obj setVariable["load_offset", 0.3, true];};  // how far the container animates to load
+	if ((isNil {_obj getVariable "load_range"}) || (_force)) then {_obj setVariable["load_range", 10, true];};
+	if ((isNil {_obj getVariable "supported_cargo"}) || (_force)) then {_obj setVariable["supported_cargo", "Blitz", true];};
 };
 // Blitz
 if (_obj_type in (missionNamespace getVariable "IL_Supported_Vehicles_BlitzCSA")) then
@@ -73,6 +79,8 @@ if (_obj_type in (missionNamespace getVariable "IL_Supported_Vehicles_BlitzCSA")
 	if ((isNil {_obj getVariable "can_outside"}) || (_force)) then {_obj setVariable["can_outside", IL_Can_Outside, true];};
 	if ((isNil {_obj getVariable "zload"}) || (_force)) then {_obj setVariable["zload", -0.6, true];};  // how high the container animates to load
 	if ((isNil {_obj getVariable "load_offset"}) || (_force)) then {_obj setVariable["load_offset", 0.3, true];};  // how far the container animates to load
+	if ((isNil {_obj getVariable "load_range"}) || (_force)) then {_obj setVariable["load_range", 10, true];};
+	if ((isNil {_obj getVariable "supported_cargo"}) || (_force)) then {_obj setVariable["supported_cargo", "BlitzCSA", true];};
 };
 // US6
 if (_obj_type in (missionNamespace getVariable "IL_Supported_Vehicles_US6")) then
@@ -83,6 +91,8 @@ if (_obj_type in (missionNamespace getVariable "IL_Supported_Vehicles_US6")) the
 	if ((isNil {_obj getVariable "can_outside"}) || (_force)) then {_obj setVariable["can_outside", IL_Can_Outside, true];};
 	if ((isNil {_obj getVariable "zload"}) || (_force)) then {_obj setVariable["zload", 0.15, true];};  // how high the container animates to load
 	if ((isNil {_obj getVariable "load_offset"}) || (_force)) then {_obj setVariable["load_offset", 0.3, true];};  // how far the container animates to load
+	if ((isNil {_obj getVariable "load_range"}) || (_force)) then {_obj setVariable["load_range", 10, true];};
+	if ((isNil {_obj getVariable "supported_cargo"}) || (_force)) then {_obj setVariable["supported_cargo", "US6", true];};
 };
 // GMC
 if (_obj_type in (missionNamespace getVariable "IL_Supported_Vehicles_GMC")) then
@@ -93,6 +103,8 @@ if (_obj_type in (missionNamespace getVariable "IL_Supported_Vehicles_GMC")) the
 	if ((isNil {_obj getVariable "can_outside"}) || (_force)) then {_obj setVariable["can_outside", IL_Can_Outside, true];};
 	if ((isNil {_obj getVariable "zload"}) || (_force)) then {_obj setVariable["zload", -0.6, true];};  // how high the container animates to load
 	if ((isNil {_obj getVariable "load_offset"}) || (_force)) then {_obj setVariable["load_offset", 0.5, true];};  // how far the container animates to load
+	if ((isNil {_obj getVariable "load_range"}) || (_force)) then {_obj setVariable["load_range", 10, true];};
+	if ((isNil {_obj getVariable "supported_cargo"}) || (_force)) then {_obj setVariable["supported_cargo", "GMC", true];};
 };
 // GMC FoW
 if (_obj_type in (missionNamespace getVariable "IL_Supported_Vehicles_GMCFOW")) then
@@ -103,6 +115,8 @@ if (_obj_type in (missionNamespace getVariable "IL_Supported_Vehicles_GMCFOW")) 
 	if ((isNil {_obj getVariable "can_outside"}) || (_force)) then {_obj setVariable["can_outside", IL_Can_Outside, true];};
 	if ((isNil {_obj getVariable "zload"}) || (_force)) then {_obj setVariable["zload", 1.1, true];};  // how high the container animates to load
 	if ((isNil {_obj getVariable "load_offset"}) || (_force)) then {_obj setVariable["load_offset", 0.5, true];};  // how far the container animates to load
+	if ((isNil {_obj getVariable "load_range"}) || (_force)) then {_obj setVariable["load_range", 10, true];};
+	if ((isNil {_obj getVariable "supported_cargo"}) || (_force)) then {_obj setVariable["supported_cargo", "GMCFOW", true];};
 };
 // SdKfz7
 if (_obj_type in (missionNamespace getVariable "IL_Supported_Vehicles_SdKfz7")) then
@@ -113,6 +127,8 @@ if (_obj_type in (missionNamespace getVariable "IL_Supported_Vehicles_SdKfz7")) 
 	if ((isNil {_obj getVariable "can_outside"}) || (_force)) then {_obj setVariable["can_outside", IL_Can_Outside, true];};
 	if ((isNil {_obj getVariable "zload"}) || (_force)) then {_obj setVariable["zload", -0.8, true];};  // how high the container animates to load
 	if ((isNil {_obj getVariable "load_offset"}) || (_force)) then {_obj setVariable["load_offset", 0, true];};  // how far the container animates to load
+	if ((isNil {_obj getVariable "load_range"}) || (_force)) then {_obj setVariable["load_range", 10, true];};
+	if ((isNil {_obj getVariable "supported_cargo"}) || (_force)) then {_obj setVariable["supported_cargo", "SdKfz7", true];};
 };
 // LCVP
 if (_obj_type in (missionNamespace getVariable "IL_Supported_Vehicles_LCVP")) then
@@ -123,6 +139,8 @@ if (_obj_type in (missionNamespace getVariable "IL_Supported_Vehicles_LCVP")) th
 	if ((isNil {_obj getVariable "can_outside"}) || (_force)) then {_obj setVariable["can_outside", IL_Can_Outside, true];};
 	if ((isNil {_obj getVariable "zload"}) || (_force)) then {_obj setVariable["zload", -0.8, true];};  // how high the container animates to load
 	if ((isNil {_obj getVariable "load_offset"}) || (_force)) then {_obj setVariable["load_offset", -3, true];};  // how far the container animates to load
+	if ((isNil {_obj getVariable "load_range"}) || (_force)) then {_obj setVariable["load_range", 20, true];};
+	if ((isNil {_obj getVariable "supported_cargo"}) || (_force)) then {_obj setVariable["supported_cargo", "LCVP", true];};
 };
 // LCM3
 if (_obj_type in (missionNamespace getVariable "IL_Supported_Vehicles_LCM3")) then
@@ -133,17 +151,34 @@ if (_obj_type in (missionNamespace getVariable "IL_Supported_Vehicles_LCM3")) th
 	if ((isNil {_obj getVariable "can_outside"}) || (_force)) then {_obj setVariable["can_outside", IL_Can_Outside, true];};
 	if ((isNil {_obj getVariable "zload"}) || (_force)) then {_obj setVariable["zload", -1.5, true];};  // how high the container animates to load
 	if ((isNil {_obj getVariable "load_offset"}) || (_force)) then {_obj setVariable["load_offset", -3, true];};  // how far the container animates to load
+	if ((isNil {_obj getVariable "load_range"}) || (_force)) then {_obj setVariable["load_range", 20, true];};
+	if ((isNil {_obj getVariable "supported_cargo"}) || (_force)) then {_obj setVariable["supported_cargo", "LCM3", true];};
 };
 // Liberty Ship
-if (_obj_type in (missionNamespace getVariable "IL_Supported_Vehicles_Cargo_Ship")) then
+if (_obj_type in (missionNamespace getVariable "IL_Supported_Vehicles_CargoShip")) then
 {
 	if ((isNil {_obj getVariable "box_num"}) || (_force)) then {_obj setVariable["box_num", 0, true];};
-	if ((isNil {_obj getVariable "slots_num"}) || (_force)) then {_obj setVariable["slots_num", IL_Num_Slots_Liberty, true];};
+	if ((isNil {_obj getVariable "slots_num"}) || (_force)) then {_obj setVariable["slots_num", IL_Num_Slots_CargoShip, true];};
 	if ((isNil {_obj getVariable "can_load"}) || (_force)) then {_obj setVariable["can_load", true, true];};
 	if ((isNil {_obj getVariable "can_outside"}) || (_force)) then {_obj setVariable["can_outside", IL_Can_Outside, true];};
 	if ((isNil {_obj getVariable "zload"}) || (_force)) then {_obj setVariable["zload", -2, true];};  // how high the container animates to load
 	if ((isNil {_obj getVariable "zload_offset"}) || (_force)) then {_obj setVariable["zload_offset", -5, true];};  // how high the container ends to load
 	if ((isNil {_obj getVariable "load_offset"}) || (_force)) then {_obj setVariable["load_offset", 90, true];};  // how far the container animates to load
+	if ((isNil {_obj getVariable "load_range"}) || (_force)) then {_obj setVariable["load_range", 100, true];};
+	if ((isNil {_obj getVariable "supported_cargo"}) || (_force)) then {_obj setVariable["supported_cargo", "CargoShip", true];};
+};
+// Carrier
+if (_obj_type in (missionNamespace getVariable "IL_Supported_Vehicles_Carrier")) then
+{
+	if ((isNil {_obj getVariable "box_num"}) || (_force)) then {_obj setVariable["box_num", 0, true];};
+	if ((isNil {_obj getVariable "slots_num"}) || (_force)) then {_obj setVariable["slots_num", IL_Num_Slots_CargoShip, true];};
+	if ((isNil {_obj getVariable "can_load"}) || (_force)) then {_obj setVariable["can_load", true, true];};
+	if ((isNil {_obj getVariable "can_outside"}) || (_force)) then {_obj setVariable["can_outside", IL_Can_Outside, true];};
+	if ((isNil {_obj getVariable "zload"}) || (_force)) then {_obj setVariable["zload", -2, true];};  // how high the container animates to load
+	if ((isNil {_obj getVariable "zload_offset"}) || (_force)) then {_obj setVariable["zload_offset", -8, true];};  // how high the container ends to load
+	if ((isNil {_obj getVariable "load_offset"}) || (_force)) then {_obj setVariable["load_offset", 90, true];};  // how far the container animates to load
+	if ((isNil {_obj getVariable "load_range"}) || (_force)) then {_obj setVariable["load_range", 150, true];};
+	if ((isNil {_obj getVariable "supported_cargo"}) || (_force)) then {_obj setVariable["supported_cargo", "Carrier", true];};
 };
 
 if (_obj_type in (missionNamespace getVariable "IL_Supported_Vehicles_C47")) then
@@ -164,4 +199,6 @@ if (_obj_type in (missionNamespace getVariable "IL_Supported_Vehicles_C47")) the
 		//if ((isNil {_obj getVariable "slots_num"}) || (_force)) then {_obj setVariable["slots_num", (IL_Num_Slots_C47 / 2) - 1, true];};
 		//if ((isNil {_obj getVariable "load_offset"}) || (_force)) then {_obj setVariable["load_offset", 13.5, true];};
 	//};
+	if ((isNil {_obj getVariable "load_range"}) || (_force)) then {_obj setVariable["load_range", 50, true];};
+	if ((isNil {_obj getVariable "supported_cargo"}) || (_force)) then {_obj setVariable["supported_cargo", "C47", true];};
 };

@@ -52,7 +52,7 @@ if (isnil "IL_Variables") then
 		IL_Num_Slots_SdKfz7 = -4; 
 		IL_Num_Slots_LCVP = -4; 
 		IL_Num_Slots_LCM3 = -6;
-		IL_Num_Slots_Liberty = -100;
+		IL_Num_Slots_CargoShip = -100;
 		IL_Num_Slots_C47 = -12;
 
 		//Player addScore after loading and unloading
@@ -103,7 +103,7 @@ if (isnil "IL_Variables") then
 		IL_Ramp = false;
 
 		//Enable change of vehicle mass
-		IL_Mass = true;
+		IL_Mass = false;
 
 		// Supported vehicles
 		//#include "OriginalVehicles.cpp"
@@ -202,7 +202,8 @@ if (isnil "IL_Variables") then
 	IL_Supported_Vehicles_LCVP =  [];
 	IL_Supported_Vehicles_LCM3 =  [];
 	IL_Supported_Vehicles_C47 =  [];
-	IL_Supported_Vehicles_Cargo_Ship =  [];
+	IL_Supported_Vehicles_CargoShip =  [];
+	IL_Supported_Vehicles_Carrier =  [];
 	
 	{
 		//IL_Supported_Vehicles_Praga pushBack format["%1", _x];
@@ -297,12 +298,18 @@ if (isnil "IL_Variables") then
 		};
 
 		if (isClass(configFile >> "CfgVehicles" >> format["%1sab_nl_liberty", _x])) then {
-			IL_Supported_Vehicles_Cargo_Ship pushBack format["%1sab_nl_liberty", _x];
+			IL_Supported_Vehicles_CargoShip pushBack format["%1sab_nl_liberty", _x];
 		};
+
+		if (isClass(configFile >> "CfgVehicles" >> format["%1sab_nl_enterprise", _x])) then {
+			IL_Supported_Vehicles_Carrier pushBack format["%1sab_nl_enterprise", _x];
+			IL_Supported_Vehicles_Carrier pushBack format["%1sab_nl_akagi", _x];
+		};
+
 	} forEach _sid;
 	
 	//IL_Supported_Vehicles_All = IL_Supported_Vehicles_APC + IL_Supported_Vehicles_Dingo + IL_Supported_Vehicles_HMMWV + IL_Supported_Vehicles_Ural + IL_Supported_Vehicles_Zamak + IL_Supported_Vehicles_C130J + IL_Supported_Vehicles_C17 + IL_Supported_Vehicles_MH9 + IL_Supported_Vehicles_MOHAWK + IL_Supported_Vehicles_TEMPEST + IL_Supported_Vehicles_HEMTT + IL_Supported_Vehicles_VAN + IL_Supported_Vehicles_OFFROAD + IL_Supported_Vehicles_CHINOOK + IL_Supported_Vehicles_US6 + IL_Supported_Vehicles_SdKfz7 + IL_Supported_Vehicles_LCVP + IL_Supported_Vehicles_LCM3;
-	IL_Supported_Vehicles_All = IL_Supported_Vehicles_C130J + IL_Supported_Vehicles_C47 + IL_Supported_Vehicles_Praga + IL_Supported_Vehicles_Blitz + IL_Supported_Vehicles_BlitzCSA + IL_Supported_Vehicles_US6 + IL_Supported_Vehicles_GMC + IL_Supported_Vehicles_GMCFOW + IL_Supported_Vehicles_SdKfz7 + IL_Supported_Vehicles_LCVP + IL_Supported_Vehicles_LCM3 + IL_Supported_Vehicles_Cargo_Ship;
+	IL_Supported_Vehicles_All = IL_Supported_Vehicles_C130J + IL_Supported_Vehicles_C47 + IL_Supported_Vehicles_Praga + IL_Supported_Vehicles_Blitz + IL_Supported_Vehicles_BlitzCSA + IL_Supported_Vehicles_US6 + IL_Supported_Vehicles_GMC + IL_Supported_Vehicles_GMCFOW + IL_Supported_Vehicles_SdKfz7 + IL_Supported_Vehicles_LCVP + IL_Supported_Vehicles_LCM3 + IL_Supported_Vehicles_CargoShip + IL_Supported_Vehicles_Carrier;
 
 	// Vehicles with the ability to dropping the load on the parachute
 	//IL_Para_Drop_Vehicles = IL_Supported_Vehicles_MH9 + IL_Supported_Vehicles_MOHAWK + IL_Supported_Vehicles_C130J + IL_Supported_Vehicles_C17 + IL_Supported_Vehicles_CHINOOK;
@@ -507,6 +514,7 @@ if (isnil "IL_Variables") then
 	IL_Supported_Large_Tank_Cargo = [];
 	IL_Supported_Landing_Ship_Cargo = [];
 	IL_Supported_L_Landing_Ship_Cargo = [];
+	IL_Supported_Plane_Cargo = [];
 	
 	
 	
@@ -1563,6 +1571,67 @@ if (isnil "IL_Variables") then
 			IL_Supported_Large_Tank_Cargo pushBack format["%1FA_M26", _x];
 			IL_Supported_Large_Tank_Cargo pushBack format["%1FA_KV1", _x];
 		};
+
+		if (isClass(configFile >> "CfgVehicles" >> format["%1sab_fl_hurricane", _x])) then {
+			IL_Supported_Plane_Cargo pushBack format["%1sab_fl_hurricane", _x];
+			IL_Supported_Plane_Cargo pushBack format["%1sab_fl_hurricane_trop", _x];
+			IL_Supported_Plane_Cargo pushBack format["%1sab_fl_hurricane_2", _x];
+			IL_Supported_Plane_Cargo pushBack format["%1sab_fl_f4f", _x];
+			IL_Supported_Plane_Cargo pushBack format["%1sab_fl_sbd", _x];
+			IL_Supported_Plane_Cargo pushBack format["%1sab_fl_f4u", _x];
+			IL_Supported_Plane_Cargo pushBack format["%1sab_fl_p51d", _x];
+			IL_Supported_Plane_Cargo pushBack format["%1sab_fl_yak3", _x];
+			IL_Supported_Plane_Cargo pushBack format["%1sab_fl_bf109e", _x];
+			IL_Supported_Plane_Cargo pushBack format["%1sab_fl_bf109f", _x];
+			IL_Supported_Plane_Cargo pushBack format["%1sab_fl_bf109g", _x];
+			IL_Supported_Plane_Cargo pushBack format["%1sab_fl_bf109k", _x];
+			IL_Supported_Plane_Cargo pushBack format["%1sab_fl_fw190a", _x];
+			IL_Supported_Plane_Cargo pushBack format["%1sab_fl_a6m", _x];
+		};
+
+		if (isClass(configFile >> "CfgVehicles" >> format["%1sab_sw_tbf", _x])) then {
+			IL_Supported_Plane_Cargo pushBack format["%1sab_sw_tbf", _x];
+			IL_Supported_Plane_Cargo pushBack format["%1sab_sw_p40", _x];
+			IL_Supported_Plane_Cargo pushBack format["%1sab_sw_i16", _x];
+			IL_Supported_Plane_Cargo pushBack format["%1sab_sw_il2", _x];
+			IL_Supported_Plane_Cargo pushBack format["%1sab_sw_il2_2", _x];
+			IL_Supported_Plane_Cargo pushBack format["%1sab_sw_ju87", _x];
+			IL_Supported_Plane_Cargo pushBack format["%1sab_sw_ju87_2", _x];
+			IL_Supported_Plane_Cargo pushBack format["%1sab_sw_do335", _x];
+		};
+		
+		if (isClass(configFile >> "CfgVehicles" >> format["%1", _x])) then {
+			IL_Supported_Plane_Cargo pushBack format["%1fow_va_a6m_green", _x];
+			IL_Supported_Plane_Cargo pushBack format["%1fow_va_a6m_white", _x];
+			IL_Supported_Plane_Cargo pushBack format["%1fow_va_f6f_faa", _x];
+			IL_Supported_Plane_Cargo pushBack format["%1fow_va_f6f_c_faa", _x];
+			IL_Supported_Plane_Cargo pushBack format["%1fow_va_f6f", _x];
+			IL_Supported_Plane_Cargo pushBack format["%1fow_va_f6f_kick", _x];
+			IL_Supported_Plane_Cargo pushBack format["%1fow_va_f6f_sweet", _x];
+			IL_Supported_Plane_Cargo pushBack format["%1fow_va_f6f_c", _x];
+			IL_Supported_Plane_Cargo pushBack format["%1fow_va_f6f_c_death", _x];
+			IL_Supported_Plane_Cargo pushBack format["%1fow_va_f6f_c_kick", _x];
+			IL_Supported_Plane_Cargo pushBack format["%1fow_va_f6f_c_sweet", _x];
+		};
+		
+		if (isClass(configFile >> "CfgVehicles" >> format["%1", _x])) then {
+			IL_Supported_Plane_Cargo pushBack format["%1SPE_FW190F8", _x];
+			IL_Supported_Plane_Cargo pushBack format["%1SPE_P47", _x];
+		};
+
+		if (isClass(configFile >> "CfgVehicles" >> format["%1", _x])) then {
+			IL_Supported_Plane_Cargo pushBack format["%1LIB_Ju87_w", _x];
+			IL_Supported_Plane_Cargo pushBack format["%1LIB_DAK_Ju87_2", _x];
+			IL_Supported_Plane_Cargo pushBack format["%1LIB_Ju87", _x];
+			IL_Supported_Plane_Cargo pushBack format["%1LIB_FW190F8_w", _x];
+			IL_Supported_Plane_Cargo pushBack format["%1LIB_DAK_FW190F8", _x];
+			IL_Supported_Plane_Cargo pushBack format["%1LIB_FW190F8", _x];
+			IL_Supported_Plane_Cargo pushBack format["%1LIB_P39_w", _x];
+			IL_Supported_Plane_Cargo pushBack format["%1LIB_P39", _x];
+			IL_Supported_Plane_Cargo pushBack format["%1LIB_RAF_P39", _x];
+			IL_Supported_Plane_Cargo pushBack format["%1LIB_US_NAC_P39", _x];
+			IL_Supported_Plane_Cargo pushBack format["%1LIB_US_P39", _x];
+		};
 	} forEach _sid;
 	
 	missionNamespace setVariable ["IL_Supported_Small_Crates", IL_Supported_Small_Crates];
@@ -1585,6 +1654,7 @@ if (isnil "IL_Variables") then
 	missionNamespace setVariable ["IL_Supported_Large_Tank_Cargo", IL_Supported_Large_Tank_Cargo];
 	missionNamespace setVariable ["IL_Supported_Landing_Ship_Cargo", IL_Supported_Landing_Ship_Cargo];
 	missionNamespace setVariable ["IL_Supported_L_Landing_Ship_Cargo", IL_Supported_L_Landing_Ship_Cargo];
+	missionNamespace setVariable ["IL_Supported_Plane_Cargo", IL_Supported_Plane_Cargo];
 	
 	/*
 	IL_Supported_Cargo_Veh_C17 = IL_Supported_Cargo_Veh_C130J;
@@ -1614,9 +1684,9 @@ if (isnil "IL_Variables") then
 	IL_Supported_Cargo_NonVeh_Blitz = IL_Supported_Cargo_NonVeh_Gaz + IL_Supported_Stacket_Crates + IL_Supported_Barrel + IL_Supported_Tank + IL_Supported_Medium_Static_Cargo;
 	IL_Supported_Cargo_Blitz = IL_Supported_Cargo_Veh_Blitz + IL_Supported_Cargo_NonVeh_Blitz;
 	
-	IL_Supported_Cargo_Veh_BlitzCSA = IL_Supported_Cargo_Veh_Blitz;
-	IL_Supported_Cargo_NonVeh_BlitzCSA = IL_Supported_Cargo_NonVeh_Blitz;
-	IL_Supported_Cargo_BlitzCSA = IL_Supported_Cargo_Blitz;
+	//IL_Supported_Cargo_Veh_BlitzCSA = IL_Supported_Cargo_Veh_Blitz;
+	//IL_Supported_Cargo_NonVeh_BlitzCSA = IL_Supported_Cargo_NonVeh_Blitz;
+	//IL_Supported_Cargo_BlitzCSA = IL_Supported_Cargo_Blitz;
 	
 	IL_Supported_Cargo_Veh_US6 = IL_Supported_Motorcicle_Cargo;
 	IL_Supported_Cargo_NonVeh_US6 = IL_Supported_Cargo_NonVeh_Gaz + IL_Supported_Stacket_Crates + IL_Supported_Barrel + IL_Supported_Tank + IL_Supported_Medium_Static_Cargo;
@@ -1626,9 +1696,9 @@ if (isnil "IL_Variables") then
 	IL_Supported_Cargo_NonVeh_GMC = IL_Supported_Cargo_NonVeh_Gaz + IL_Supported_Stacket_Crates + IL_Supported_Barrel + IL_Supported_Tank + IL_Supported_Medium_Static_Cargo;
 	IL_Supported_Cargo_GMC = IL_Supported_Cargo_Veh_GMC + IL_Supported_Cargo_NonVeh_GMC;
 	
-	IL_Supported_Cargo_Veh_GMCFOW = IL_Supported_Motorcicle_Cargo;
-	IL_Supported_Cargo_NonVeh_GMCFOW = IL_Supported_Cargo_NonVeh_Gaz + IL_Supported_Stacket_Crates + IL_Supported_Barrel + IL_Supported_Tank + IL_Supported_Medium_Static_Cargo;
-	IL_Supported_Cargo_GMCFOW = IL_Supported_Cargo_Veh_GMC + IL_Supported_Cargo_NonVeh_GMC;
+	//IL_Supported_Cargo_Veh_GMCFOW = IL_Supported_Motorcicle_Cargo;
+	//IL_Supported_Cargo_NonVeh_GMCFOW = IL_Supported_Cargo_NonVeh_Gaz + IL_Supported_Stacket_Crates + IL_Supported_Barrel + IL_Supported_Tank + IL_Supported_Medium_Static_Cargo;
+	//IL_Supported_Cargo_GMCFOW = IL_Supported_Cargo_Veh_GMC + IL_Supported_Cargo_NonVeh_GMC;
 	
 	IL_Supported_Cargo_Veh_SdKfz7 = IL_Supported_Car_Cargo + IL_Supported_Motorcicle_Cargo + IL_Supported_Small_Tank_Cargo;
 	IL_Supported_Cargo_NonVeh_SdKfz7 = IL_Supported_Cargo_NonVeh_US6 + IL_Supported_Large_Static_Cargo + IL_Supported_XLarge_Static_Cargo;
@@ -1638,7 +1708,7 @@ if (isnil "IL_Variables") then
 	IL_Supported_Cargo_NonVeh_LCVP = IL_Supported_Cargo_NonVeh_US6;
 	IL_Supported_Cargo_LCVP = IL_Supported_Cargo_Veh_LCVP + IL_Supported_Cargo_NonVeh_LCVP;
 
-	IL_Supported_Cargo_Veh_LCM3 = IL_Supported_Armoured_Cargo + IL_Supported_Gaz_Zis5_Cargo + IL_Supported_Truck_Cargo + IL_Supported_Cargo_Veh_LCVP;
+	IL_Supported_Cargo_Veh_LCM3 = IL_Supported_Medium_Tank_Cargo + IL_Supported_Armoured_Cargo + IL_Supported_Gaz_Zis5_Cargo + IL_Supported_Truck_Cargo + IL_Supported_Cargo_Veh_LCVP;
 	IL_Supported_Cargo_NonVeh_LCM3 = IL_Supported_Cargo_NonVeh_US6;
 	IL_Supported_Cargo_LCM3 = IL_Supported_Cargo_Veh_LCM3 + IL_Supported_Cargo_NonVeh_LCM3;
 	
@@ -1646,18 +1716,23 @@ if (isnil "IL_Variables") then
 	IL_Supported_Cargo_NonVeh_C47 = IL_Supported_Cargo_NonVeh_Gaz + IL_Supported_Stacket_Crates + IL_Supported_Barrel + IL_Supported_Tank;
 	IL_Supported_Cargo_C47 = IL_Supported_Cargo_Veh_C47 + IL_Supported_Cargo_NonVeh_C47;
 	
-	IL_Supported_Cargo_Ship_Liberty = IL_Supported_Landing_Ship_Cargo + IL_Supported_L_Landing_Ship_Cargo;
-	IL_Supported_Cargo_Light_Liberty = IL_Supported_Cargo_Veh_LCM3;
-	IL_Supported_Cargo_Heavy_Liberty = IL_Supported_Medium_Tank_Cargo + IL_Supported_Large_Tank_Cargo;
-	IL_Supported_Cargo_NonVeh_Liberty = IL_Supported_Cargo_NonVeh_LCM3;
-	IL_Supported_Cargo_Veh_Liberty = IL_Supported_Cargo_Veh_LCM3 + IL_Supported_Medium_Tank_Cargo + IL_Supported_Large_Tank_Cargo + IL_Supported_Landing_Ship_Cargo + IL_Supported_L_Landing_Ship_Cargo;
-	//IL_Supported_Cargo_Liberty = IL_Supported_Cargo_Light_Liberty + IL_Supported_Cargo_NonVeh_Liberty;
+	//IL_Supported_Cargo_Ship_Liberty = IL_Supported_Landing_Ship_Cargo + IL_Supported_L_Landing_Ship_Cargo;
+	//IL_Supported_Cargo_Light_Liberty = IL_Supported_Cargo_Veh_LCM3;
+	//IL_Supported_Cargo_Heavy_Liberty = IL_Supported_Medium_Tank_Cargo + IL_Supported_Large_Tank_Cargo;
+	IL_Supported_Cargo_NonVeh_CargoShip = IL_Supported_Cargo_NonVeh_LCM3;
+	IL_Supported_Cargo_Veh_CargoShip = IL_Supported_Cargo_Veh_LCM3 + IL_Supported_Medium_Tank_Cargo + IL_Supported_Large_Tank_Cargo + IL_Supported_Landing_Ship_Cargo + IL_Supported_L_Landing_Ship_Cargo;
+	IL_Supported_Cargo_CargoShip = IL_Supported_Cargo_Veh_CargoShip + IL_Supported_Cargo_NonVeh_CargoShip;
+
+	IL_Supported_Cargo_NonVeh_Carrier = [];
+	IL_Supported_Cargo_Veh_Carrier = IL_Supported_Plane_Cargo;
+	IL_Supported_Cargo_Carrier = IL_Supported_Cargo_NonVeh_Carrier + IL_Supported_Cargo_Veh_Carrier;
 	
 	IL_Supported_ShipCargo = [
 		"Car",
 		"Truck",
 		"Tank",
-		"Ship"
+		"Ship",
+		"Plane"
 	];
 	
 	};
@@ -1693,10 +1768,52 @@ if (isnil "IL_Procedures") then
 	IL_Do_Load = compileFinal preprocessFileLineNumbers "IgiLoad\Functions\DoLoad.sqf";
 	IL_Do_Unload = compileFinal preprocessFileLineNumbers "IgiLoad\Functions\DoUnload.sqf";
 	IL_GetOut = compileFinal preprocessFileLineNumbers "IgiLoad\Functions\GetOut.sqf";
+	IL_Select_Attach = compileFinal preprocessFileLineNumbers "IgiLoad\Functions\SelectToAttach.sqf";
+	IL_Select_Detach = compileFinal preprocessFileLineNumbers "IgiLoad\Functions\SelectToDetach.sqf";
+	IL_Add_Action = compileFinal preprocessFileLineNumbers "IgiLoad\Functions\AddVehicleAction.sqf";
+	IL_Attach = compileFinal preprocessFileLineNumbers "IgiLoad\Functions\Attach.sqf";
+	IL_Create_Camera = compileFinal preprocessFileLineNumbers "IgiLoad\Functions\CreateCamera.sqf";
 
 	IL_Server_AddScore = compileFinal preprocessFileLineNumbers "IgiLoad\Functions\AddScore.sqf";
 	IL_Server_SetDir = compileFinal preprocessFileLineNumbers "IgiLoad\Functions\SetDir.sqf";
 	IL_Server_SetMass = compileFinal preprocessFileLineNumbers "IgiLoad\Functions\SetMass.sqf";
+
+	IL_KeyHandler_BuildMenu_KeyDown = {
+		private ["_key"];
+		_key = _this select 1;
+		
+		switch (_key) do {
+			case (42): {IL_StructureRotateMulti = 10};
+			case (29): {IL_StructureRotate = 0.5};
+			case (56): {IL_StructureRotate = -0.5};
+			case (54): {IL_StructureElevation = 0.1};
+			case (157): {IL_StructureElevation = -0.1};
+		};
+	};
+
+	IL_KeyHandler_BuildMenu_KeyUp = {
+		private ["_key"];
+		_key = _this select 1;
+		
+		switch (_key) do {
+			case (42): {IL_StructureRotateMulti = 1};
+			case (29): {IL_StructureRotate = 0};
+			case (56): {IL_StructureRotate = 0};
+			case (54): {IL_StructureElevation = 0};
+			case (157): {IL_StructureElevation = 0};
+		};
+	};
+
+	IL_KeyHandler_BuildMenu_MouseButtonDown = {
+		private ["_control", "_button"];
+		_button = _this select 1;
+		_control = _this select 4;
+		
+		switch (_button) do {
+			case (0): {IL_StructurePlaced = true};
+			case (1): {IL_StructureCanceled = true};
+		};
+	};
 	
 	//https://community.bistudio.com/wiki/addPublicVariableEventHandler
 	//command is deprecated!!!!

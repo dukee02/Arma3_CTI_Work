@@ -65,9 +65,9 @@ while {true} do
 			_null = [_cargoVehicle] execVM "IgiLoad\IgiLoadCheck.sqf";
 			waitUntil {scriptDone _null};
 			if (IL_DevMod) then {
-				_canCargo = _cargoVehicle getVariable "canCargo";
+				_canCargo = _cargoVehicle getVariable ["canCargo", false];
 				//diag_log format["vehicle can handle cargo: <%1>", _canCargo];
-				//player globalChat Format["vehicle can handle cargo: %1", _canCargo];
+				player globalChat Format["vehicle can handle cargo: %1", _canCargo];
 			};
 		} else {
 			if (IL_DevMod) then {player globalChat Format["vehicle can handle cargo: %1", _canCargo];};
