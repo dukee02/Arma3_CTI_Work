@@ -1927,7 +1927,7 @@ if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 
 		_headers pushBack 		"[IFA] Pak 40";
 		_classes pushBack 		format["%1LIB_Pak40", _sid];
-		_prices pushBack 		5000;
+		_prices pushBack 		_priceGun;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
@@ -1937,7 +1937,7 @@ if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 		if !(("SPE_Pak40") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";} else {_sid = _sid_base;};
 		_headers pushBack 		"[SPE] Pak 40";
 		_classes pushBack 		format["%1SPE_Pak40", _sid];
-		_prices pushBack 		5000;
+		_prices pushBack 		_priceGun;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
@@ -2167,7 +2167,7 @@ if(CTI_SOV_SIDE == (_side) call CTI_CO_FNC_GetSideID || (CTI_GER_SIDE != (_side)
 };
 
 //Heavy AT compat, GER has PAK 40 and SOV has Zis3 others hasn't anyting
-if(CTI_GER_SIDE != (_side) call CTI_CO_FNC_GetSideID || CTI_SOV_SIDE != (_side) call CTI_CO_FNC_GetSideID) then {
+if(CTI_GER_SIDE != (_side) call CTI_CO_FNC_GetSideID && CTI_SOV_SIDE != (_side) call CTI_CO_FNC_GetSideID) then {
 	if(CTI_IFA_ADDON > 0) then {
 		if !(("LIB_Zis3") call CTI_CO_FNC_IsSidePatchLoaded) then {_sid = "";} else {_sid = _sid_base;};
 		_headers pushBack 		"[IFA] Zis3";

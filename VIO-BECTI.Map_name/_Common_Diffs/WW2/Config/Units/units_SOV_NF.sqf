@@ -482,6 +482,27 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 	switch(CTI_CAMO_ACTIVATION) do {
 		case 1: {//Winter camo active
 			_c pushBack format["%1NORTH_SOV_W_39_T20", _sid];
+		};
+		default {
+			_c pushBack format["%1NORTH_SOV_41_T20", _sid];
+		};
+	};
+	//set all other vars in a slope
+	_cntstart = count _c;
+	_cntend = count _p;
+	for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do { 
+		_p pushBack '';
+		_n pushBack '';
+		_o pushBack ([CTI_ECONOMY_PRIZE_TRACKED,_tech_level,false,0.5] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		_t pushBack _building_time;
+		_u pushBack _tech_level;
+		_f pushBack CTI_FACTORY_HEAVY;
+		_s pushBack "";
+		_d pushBack 5;	
+	};
+
+	switch(CTI_CAMO_ACTIVATION) do {
+		case 1: {//Winter camo active
 			_c pushBack format["%1NORTH_SOV_W_39_T38", _sid];
 			_c pushBack format["%1NORTH_SOV_W_41_T26_M33_OT", _sid];
 			_c pushBack format["%1NORTH_SOV_W_41_T26_M31", _sid];
@@ -489,7 +510,6 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 			_c pushBack format["%1NORTH_SOV_W_39_BT5Com", _sid];
 		};
 		default {
-			_c pushBack format["%1NORTH_SOV_41_T20", _sid];
 			_c pushBack format["%1NORTH_SOV_41_T38", _sid];
 			_c pushBack format["%1NORTH_SOV_41_T26_M33_OT", _sid];	
 			_c pushBack format["%1NORTH_SOV_41_T26_M31", _sid];	
