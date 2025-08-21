@@ -29,6 +29,9 @@ while {!IL_StructurePlaced && !IL_StructureCanceled && alive player} do {
 
 	if (count _near > 0) then {
 		_closest = _near select 0;
+		if((typeOf _closest) == "Sign_Arrow_Blue_F") then {
+			if (count _near > 1) then {_closest = _near select 1;};
+		};
 		_closestType = typeOf (_closest);
 		
 		if((_veh distance _targeting) <= (_veh getVariable "load_range") && (_veh distance _targeting) <= (_veh getVariable "load_range")) then {

@@ -15,29 +15,23 @@ _dehKeyDown = (findDisplay 46) displayAddEventHandler ["KeyDown", "nullReturn = 
 _dehKeyUp = (findDisplay 46) displayAddEventHandler ["KeyUp", "nullReturn = _this spawn IL_KeyHandler_BuildMenu_KeyUp"];
 _dehMouse = (findDisplay 46) displayAddEventHandler ["MouseButtonDown", "nullReturn = _this spawn IL_KeyHandler_BuildMenu_MouseButtonDown"];
 
-_dir = 0;
+_dir = getDir _veh; 
 _height = 1;
 _pos = [];
 _unload = false;
 
-_obj disableCollisionWith _veh;
-_obj disableCollisionWith _local;
-_obj disableCollisionWith player;
+_local AttachTo [_veh, getPos _veh];
 
 if (isNil 'IL_PlacementCamera') then {[_veh, (_veh getVariable "load_range"), (_veh getVariable "load_range")] call IL_Create_Camera};
 
 while {!IL_StructurePlaced && !IL_StructureCanceled && alive player} do {
-	_local allowDamage false;
-	_local disableCollisionWith _veh;
-	_local disableCollisionWith _obj;
-	_local disableCollisionWith player;
 	_pos = screenToWorld [0.5,0.5];
 
 	_dir = _dir + (IL_StructureRotate * IL_StructureRotateMulti);
-	_local setDir _dir;	
 	_height = _height + (IL_StructureElevation * IL_StructureRotateMulti);
 	if(_height < 1) then {_height = 1};
 	_local setPos [_pos select 0, _pos select 1, _height];
+	_local setDir _dir;	
 
 	_inragne = "<t color='#F86363'>Placement: to far</t>";
 	if((_veh distance _local) <= (_veh getVariable "load_range") && (_veh distance _local) <= (_veh getVariable "load_range")) then {
@@ -75,7 +69,8 @@ if(!IL_StructureCanceled && _unload) then {
 	_local hideObject true;
 	detach _obj;
 	_obj setPos [_pos select 0, _pos select 1, _height];
-	_obj setDir _dir;
+	if((typeOf _obj) in IL_Supported_Plane_Cargo) then {_obj setDir _dir+180;} else {_obj setDir _dir;};
+	//_obj setDir _dir;
 	if (IL_DevMod) then
 	{
 		diag_log format["[IgiLoad (%1)] IL_Move_Attach _pos <%2><%3> dmg <%4>", IL_Script_Inst, getPos _obj, getDir _obj, damage _obj];
@@ -83,9 +78,6 @@ if(!IL_StructureCanceled && _unload) then {
 	_obj allowDamage true;
 };
 
-//cleanup the keyhandler and the local vehicle
-_obj enableCollisionWith _veh;
-_obj enableCollisionWith player;
 deleteVehicle _local;
 (findDisplay 46) displayRemoveEventHandler ["KeyDown", _dehKeyDown];
 (findDisplay 46) displayRemoveEventHandler ["KeyUp", _dehKeyUp];

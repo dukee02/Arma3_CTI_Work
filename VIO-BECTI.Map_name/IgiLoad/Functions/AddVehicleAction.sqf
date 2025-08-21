@@ -23,8 +23,6 @@ _obj_main = _this select 0;
 _cargo_var = _this select 1;
 _action = _this select 2;
 
-diag_log format["[IgiLoad (%1)] IL_addAction <%2><%3><%4>", IL_Script_Inst, _obj_main, _cargo_var, _action];
-
 switch (_action) do {
 	case "Load": {
 		_obj_main addAction [

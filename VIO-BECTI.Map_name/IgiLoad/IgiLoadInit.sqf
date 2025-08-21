@@ -11,6 +11,10 @@ IL_EV_Count = 0;
 IL_Veh_Array = [];
 
 cutText ["IgiLoad is loading. Please wait...","PLAIN",2];
+with missionNamespace do {
+	//helping function to check the used vehicle classes if sidepatch is used.
+	IL_GetUsedOrAll = compileFinal preprocessFileLineNumbers "IgiLoad\Functions\GetUsedOrAll.sqf";
+};
 sleep (random 30);
 
 cutText [Format ["IgiLoad init Player: %1", Player],"PLAIN",2];

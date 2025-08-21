@@ -32,14 +32,25 @@ _range = _this select 1;
 _height = _this select 2;
 _camera = objNull;
 _pos = getPos _centerObj;
-
-_camera = "camconstruct" camCreate [_pos select 0, (_pos select 1) - 15, 15];
+_camHeight = 0;
+_posASL = getPosASL _centerObj;
+_posATL = getPosATL _centerObj;
+if((_posASL select 2) > _posATL select 0) then {
+	_camHeight = (_posASL select 2) + (_posATL select 2) + (_height*0.20);
+} else {
+	_camHeight = (_posATL select 2) + (_height*0.20);
+};
+_pos set [1, (_pos select 1) - 15];
+_pos set [2, _camHeight];
+_camera = "camconstruct" camCreate _pos;
 _camera cameraEffect ["internal","back"];
 _camera camPrepareFov 0.900;
 _camera camPrepareFocus [-1,-1];
 _camera camCommitPrepared 0;
 cameraEffectEnableHUD true;
 _camera setdir direction _centerObj;
+_camera setPos _pos;
 [_camera,-30,0] call BIS_fnc_setPitchBank;
-_camera camConstuctionSetParams [_pos, _range, _height];
+_camera camConstuctionSetParams [_pos, _range, (_height*2)];
+
 IL_PlacementCamera = _camera;
